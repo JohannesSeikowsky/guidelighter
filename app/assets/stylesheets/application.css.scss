@@ -1,0 +1,306 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  height: 100%;
+  margin-bottom: 22px;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  @media (min-width: 500px){ padding-top: 25px; }
+  @media (max-width: 500px){ padding: 15px 10px 0px 10px; } // varying padding
+  a{
+    color: grey; }
+  .notice{
+    color: red;
+    position: fixed;
+    top: 5px;
+    text-decoration: underline;}}
+
+// header
+.simple_header{
+  @media (min-width: 760px){ position: fixed; }
+  @media (max-width: 760px){ position: absolute; }
+  top: 18px;
+  right: 26px;}
+
+
+// container
+.simple_container{
+  @media (min-width: 500px){ width: 500px; }
+  @media (max-width: 500px){ width: 100%; } // varying width
+  margin: 0px auto;
+  
+  // h1
+  h1{
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;}
+  
+  // h2
+  h2{
+    font-size: 26px;
+    font-weight: bold;
+    padding-bottom: 9px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #eee;}
+
+  // h3
+  h3{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;}
+
+  // h4
+  h4{
+    font-size: 17px;
+    font-weight: bold;
+    padding-bottom: 4px;
+    margin-bottom: 7px;
+    border-bottom: 1px solid #eee;}
+
+  // h5
+  h5{
+    font-weight: bold;
+    padding-bottom: 3px;
+    margin-bottom: 4px;}
+
+  // p
+  p{
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;}
+
+  // hr
+  hr{
+    height: 1px;
+    color: #eee;
+    margin-top: 30px;
+    margin-bottom: 30px;}
+  
+  // img
+  img{
+    width: 80%;
+    height: auto;
+    margin: 15px 10% 15px 10%;
+    border: 1px solid #9F9F9F;
+  }
+  
+  // ul
+  ul{
+    margin-bottom: 30px;
+    li{
+      font-size: 16px;
+      line-height: 1.6;}}
+
+  // ol
+  ol{
+    margin-bottom: 30px;
+    li{
+      font-size: 16px;
+      line-height: 1.6;}}
+
+  // links
+  .button{
+    text-align: center;
+    padding: 30px 0px 25px 0px;
+    a{
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid black;
+      @media (min-width: 500px){ padding: 10px 75px; }
+      @media (max-width: 500px){ padding: 13px 80px; }} // varying button size
+    a:hover { background-color: orange; }}
+
+  // h4 in forms
+  form h4{
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 0px;}
+
+  // textfield
+  input[type=text], input[type=password]{
+    width: 355px;
+    height: 36px;
+    margin-bottom: 0px;
+    border: 2px solid #eee;
+    border-radius: 6px;}
+
+  // submit
+  input[type=submit]{
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid black;
+    margin-top: 20px;
+    @media (min-width: 500px){ padding: 10px 75px; }
+    @media (max-width: 500px){ padding: 13px 80px; }} // varying button size
+
+  input[type=submit]:hover{
+    background-color: orange;
+    cursor: pointer;}
+
+  // textarea
+  textarea{
+    width: 100%;
+    height: 90px;}
+
+  // placeholder texts styling
+  ::-webkit-input-placeholder {
+    //font-size: 16px;
+  }
+}
+
+// debug
+.debug_area{
+  position: fixed;
+  bottom: 5px;
+  left: 5px;}
+
+// logo
+.simple_logo{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  @media (max-width: 790px){ display: none; } // point at whch not to show logo
+  img{
+    width: 26px;
+    height: auto;
+  }
+}
+
+.simple_notice{
+  position: fixed;
+  top: 0px;
+  font-size: 16px;
+  height: 45px;
+  @media (max-width: 790px){ height: 30px; }
+  background-color: white;
+  color: red;
+  padding: 5px 20px;
+  margin: 0px auto;
+}
+
+
+
+
+// 2. individual npg components
+// explaining nowpage
+.explain_now{
+  position: fixed;
+  top: 45px;
+  right: 25px;
+  width: 210px;
+  padding: 24px;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 7px;
+  -webkit-border-radius: 7px; 
+  -moz-border-radius: 7px; 
+  display: none;}
+
+// made with love
+.with_love{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: #BCBCBC;
+  padding-top: 82px;}
+
+// simulating url
+#url_simulation{
+  color: grey;
+  font-size: 16px;
+  padding-top: 5px;}
+
+// graphic after signup
+.signup_loader{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  text-align: center;
+  background: #F7EEE5;
+  img{ 
+    width: 125px;
+    height: auto;
+    margin-top: 100px;}
+  h2{
+    margin-top: 18px;}}
+
+
+// link to edit after signup
+.edit_profile_link{
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid black;
+  // normal and mobile
+  @media (min-width: 500px){ padding: 10px 66px; }
+  @media (max-width: 500px){ padding: 3px 66px; }
+}
+.edit_profile_link:hover{
+  background-color: orange;
+}
+
+// after-signup-directions
+.after_signup_directions{
+  position: fixed;
+  //top: 110px;
+  //left: 75px;
+  top: 55px;
+  right: 25px;
+  width: 186px; 
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+
+  padding: 26px 26px 14px 26px;
+  #close{
+    position: absolute;
+    //top: -8px;
+    //right: -9px;
+    top: 1px;
+    right: 3px;
+    cursor: pointer;
+  }
+}
+
+// 3. user show page
+.user_profile{
+  width: 500px;
+  margin-left: 500px;
+  .headline{
+    font-size: 44px;}
+  .content{
+    padding-top: 32px;
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.25;}}
+
+.profile_sidebar{
+  width: 240px;}
+
