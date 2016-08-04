@@ -9,6 +9,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'thin'
+gem "bcrypt-ruby", :require => "bcrypt"
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
