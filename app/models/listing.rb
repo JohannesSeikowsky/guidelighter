@@ -9,9 +9,8 @@ class Listing < ActiveRecord::Base
   # associate uploaded image with model
   mount_uploader :listing_image, ListingImageUploader
 
-  private
-
   # custom validator for image size
+  private
   def image_upload_max_size
     if listing_image.size > 5.megabytes
       errors.add(:listing_image, "please upload a smaller image.")

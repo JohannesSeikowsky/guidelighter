@@ -9,7 +9,7 @@ class Profile < ActiveRecord::Base
   # associate uploaded image with model
   mount_uploader :profile_image, ProfileImageUploader
 
-  # custom validator for upload img size
+  # custom validator for image size
   private
   def image_upload_max_size      
     if profile_image.size > 5.megabytes
