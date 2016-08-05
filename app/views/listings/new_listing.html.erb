@@ -1,17 +1,31 @@
 
 <h2> Create Listing </h2>
-<%= form_for :listing, path: new_listing_action_path do |f| %>
+<%= form_for :listing, path: new_listing_action_path, html: { multipart: true } do |f| %>
   <!-- passing advisor id -->
   <%= f.hidden_field :advisor_id, :value => @advisor.id %>
   <!-- form -->  
   <%= f.text_field :title, placeholder: "title" %>
   <%= f.text_field :price, placeholder: "price" %> <br> <br>
   <%= f.text_area :description, placeholder: "description", style: "width: 355px" %> <br>
+  <!-- img uplodd -->
+  <%= f.file_field :listing_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %>
 
   <%= f.submit "Publish Listing." %>
 <% end %> <br> <br> <br>
 
-
 <h3> Profile Preview </h3>
 <%= image_tag @advisor.profile.profile_image.url, style: "width: 300px;" if @advisor.profile.profile_image %>
 <p> <%= @advisor.profile.description if @advisor.profile.description %> </p> <br>
+
+<h3> Listings Preview </h3>
+<!-- construct a show image here -->
+
+<!-- alert if user attempts to upload large picture -->
+<script type="text/javascript">
+  $('#image_upload_field').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Please upload a smaller file.');
+    }
+  });
+</script>

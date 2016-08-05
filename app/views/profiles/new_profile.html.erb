@@ -10,7 +10,7 @@
 <% end %>
 
 
-<!-- issue warning if user attempts to upload large picture -->
+<!-- alert if user attempts to upload large picture -->
 <script type="text/javascript">
   $('#image_upload_field').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;

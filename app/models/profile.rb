@@ -6,7 +6,7 @@ class Profile < ActiveRecord::Base
   # validations
   validate :image_upload_max_size
     
-  # associating uploaded image with this model
+  # associate uploaded image with model
   mount_uploader :profile_image, ProfileImageUploader
 
   # custom validator for upload img size
