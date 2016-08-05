@@ -1,0 +1,16 @@
+
+<h2> Create Listing </h2>
+<%= form_for :listing, path: new_listing_action_path do |f| %>
+  <!-- passing advisor id -->
+  <%= f.hidden_field :advisor_id, :value => @advisor.id %>
+  <!-- form -->  
+  <%= f.text_field :title, placeholder: "title" %>
+  <%= f.text_field :price, placeholder: "price" %> <br> <br>
+  <%= f.text_area :description, placeholder: "description", style: "width: 355px" %> <br> <br>
+
+  <div style="width: 355px; height: 100px; background-color: lightgrey; text-align: center; line-height: 100px;">
+    image upload goes here.
+  </div>
+
+  <%= f.submit "Publish Listing." %>
+<% end %>

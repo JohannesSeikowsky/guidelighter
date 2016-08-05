@@ -1,0 +1,13 @@
+
+<h2> Quick Profile </h2>
+<%= form_for :profile, path: new_profile_action_path do |f|%>
+  <p> What do you do? What do you offer? People would like to know a bit about you before booking what you offer. </p>
+  <%= f.text_area :description, placeholder: "brief description", style: "width: 355px" %> <br> <br>
+  <%= f.hidden_field :advisor_id, :value => @advisor.id %>
+
+  <div style="width: 355px; height: 100px; background-color: lightgrey; text-align: center; line-height: 100px;">
+    image upload goes here.
+  </div>
+
+  <%= f.submit "Finish Profile." %>    
+<% end %>

@@ -7,12 +7,9 @@ class AdvisorsController < ApplicationController
   def signup_action
     @advisor = Advisor.new(advisor_params)
     if @advisor.save
-      redirect_to root_path, notice: "signed up"
+      redirect_to new_profile_path(id: @advisor.id), notice: "signed up"
     else
       redirect_to sign_path, notice: "not signed up. try again."
-      # path to new view of profile
-      # other path thats neeeded - new view of listing
-      # for each -> also path to create action
     end
   end
 
