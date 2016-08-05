@@ -6,11 +6,13 @@
   <!-- form -->  
   <%= f.text_field :title, placeholder: "title" %>
   <%= f.text_field :price, placeholder: "price" %> <br> <br>
-  <%= f.text_area :description, placeholder: "description", style: "width: 355px" %> <br> <br>
-
-  <div style="width: 355px; height: 100px; background-color: lightgrey; text-align: center; line-height: 100px;">
-    image upload goes here.
-  </div>
+  <%= f.text_area :description, placeholder: "description", style: "width: 355px" %> <br>
 
   <%= f.submit "Publish Listing." %>
-<% end %>
+<% end %> <br> <br> <br>
+
+
+
+<h3> Profile Preview </h3>
+<%= image_tag @advisor.profile.profile_image.url, style: "width: 300px;" if @advisor.profile.profile_image %>
+<p> <%= @advisor.profile.description if @advisor.profile.description %> </p> <br>
