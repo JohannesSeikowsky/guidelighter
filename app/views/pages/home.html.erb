@@ -12,4 +12,13 @@
   <li> create simple listings stating what you offer </li>
   <li> wait until your offer gets booked </li>
   <li> help out, get paid & be happy </li> 
-</ol>
+</ol> <br>
+
+
+<h3> Listings </h3>
+<!-- listings -->
+<% @listings.each do |listing| %>
+  <%= listing.title %> <br>
+  <%= listing.description %> <br>
+  <%= listing.price %> <br> <br> <br>
+<% end %>
