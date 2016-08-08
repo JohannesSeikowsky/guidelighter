@@ -10,9 +10,9 @@
 <% end %>
 
 <div class="grey_box">
-  <h3> Profile <span style="font-size: 11px;"> - make a quick profile so that people get a sense of you. </span> </h3>
+  <h3> Mini-Profile <span style="font-size: 11px;"> - so that people get a sense of who you are. </span> </h3>
   <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
-    <h6> 1. What do you do and offer? </h6>
+    <h6> 1. What do you do and what do you offer? </h6>
     <%= f.text_area :description, placeholder: "", style: "width: 355px; margin-bottom: 12px;" %>
     <%= f.hidden_field :advisor_id, :value => @advisor.id %>
     <h6> 2. Upload profile image </h6>
