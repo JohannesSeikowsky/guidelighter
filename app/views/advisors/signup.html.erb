@@ -1,13 +1,15 @@
 
-<br> <h3> Signup <span style="font-size: 11px;"> - make a start by creating an account. </span> </h3>
-<%= form_for :advisor, path: signup_action_path do |f| %>
-  <!-- <span>First Name: </span> <br> -->
-  <%= f.text_field :first_name, placeholder: "First name" %> <br>
-  <!-- <span>Second Name: </span> <br> -->
-  <%= f.text_field :second_name, placeholder: "Second name" %> <br>
-  <!-- <span>Email: </span> <br> -->
-  <%= f.text_field :email, placeholder: "Email" %> <br>
-  <!-- <span>Password: </span> <br> -->
-  <%= f.password_field :provided_password, placeholder: "Password" %>
-  <%= f.submit "Done." %>
-<% end %>
+<div style="background: #EEEEEE; padding: 15px 15px 35px 15px;">
+  <h3> Signup <span style="font-size: 11px;"> - make a start by creating an account. </span> </h3>
+  <%= form_for :advisor, path: signup_action_path do |f| %>
+    <!-- <span>First Name: </span> <br> -->
+    <%= f.text_field :first_name, placeholder: "First name" %> <br>
+    <!-- <span>Second Name: </span> <br> -->
+    <%= f.text_field :second_name, placeholder: "Second name" %> <br>
+    <!-- <span>Email: </span> <br> -->
+    <%= f.text_field :email, placeholder: "Email" %> <br>
+    <!-- <span>Password: </span> <br> -->
+    <%= f.password_field :provided_password, placeholder: "Password" %>
+    <%= f.submit "Done." %>
+  <% end %>
+</div>

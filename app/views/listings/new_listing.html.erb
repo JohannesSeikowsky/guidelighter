@@ -1,19 +1,21 @@
 
 <!-- new listing -->
-<br> <h3> Create your Listings <span style="font-size: 11px;"> </span> </h3>
-<%= form_for :listing, path: new_listing_action_path, html: { multipart: true } do |f| %>
-  <!-- passing advisor id -->
-  <%= f.hidden_field :advisor_id, :value => @advisor.id %>
-  <!-- form -->  
-  <h6> 1. What advice/guidance do you offer? Set basic info. </h6>
-  <%= f.text_field :title, placeholder: "Title" %> <br>
-  <%= f.text_area :description, placeholder: "Description", style: "width: 355px" %> <br>
-  <%= f.number_field :price, placeholder: "Price" %> <br> <br>
-  <h6> 2. Upload a cover image for this listing </h6>
-  <%= f.file_field :listing_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br>
+<div style="background: #EEEEEE; padding: 15px 15px 35px 15px;">
+  <h3> Create Listings <span style="font-size: 11px;"> </span> </h3>
+  <%= form_for :listing, path: new_listing_action_path, html: { multipart: true } do |f| %>
+    <!-- passing advisor id -->
+    <%= f.hidden_field :advisor_id, :value => @advisor.id %>
+    <!-- form -->  
+    <h6> 1. Set the basic info of the advice/guidance you want to offer & its price. </h6>
+    <%= f.text_field :title, placeholder: "Title" %> <br>
+    <%= f.text_area :description, placeholder: "Description", style: "width: 355px" %> <br>
+    <%= f.number_field :price, placeholder: "Price" %> <br> <br>
+    <h6> 2. Upload a cover image for this listing </h6>
+    <%= f.file_field :listing_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br>
 
-  <%= f.submit "Done." %>
-<% end %> <br> <br> <br>
+    <%= f.submit "Done." %>
+  <% end %> 
+</div> <br> <br> <br>
 
 <!-- profile preview -->
 <% if @advisor.profile.profile_image.url %>
