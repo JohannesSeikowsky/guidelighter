@@ -17,9 +17,9 @@
     <%= f.hidden_field :advisor_id, :value => @advisor.id %>
     <!-- form -->  
     <h6> 1. Set the basic info of the advice/guidance you want to offer & its price. </h6>
-    <%= f.text_field :title, placeholder: "Title" %> <br>
-    <%= f.text_area :description, placeholder: "Description", style: "width: 355px" %> <br>
-    <%= f.number_field :price, placeholder: "Price" %> <br> <br>
+    <%= f.text_field :title, placeholder: "Title" %>
+    <%= f.text_area :description, placeholder: "Description", style: "width: 355px" %>
+    <%= f.number_field :price, placeholder: "Price", style: "margin-bottom: 30px;" %>
     <h6> 2. Upload a cover image for this listing </h6>
     <%= f.file_field :listing_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br>
 

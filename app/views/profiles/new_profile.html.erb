@@ -13,7 +13,7 @@
   <h3> Profile <span style="font-size: 11px;"> - make a quick profile so that people get a sense of you. </span> </h3>
   <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
     <h6> 1. What do you do and offer? </h6>
-    <%= f.text_area :description, placeholder: "", style: "width: 355px" %> <br> <br>
+    <%= f.text_area :description, placeholder: "", style: "width: 355px; margin-bottom: 12px;" %>
     <%= f.hidden_field :advisor_id, :value => @advisor.id %>
     <h6> 2. Upload profile image </h6>
     <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br>
