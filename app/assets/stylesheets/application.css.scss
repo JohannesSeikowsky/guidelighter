@@ -143,7 +143,8 @@ body {
     height: 36px;
     margin-bottom: 3px;
     border: 2px solid #eee;
-    border-radius: 6px;}
+    //border-radius: 6px;
+  }
 
   // submit
   input[type=submit]{
@@ -303,4 +304,14 @@ body {
 
 .profile_sidebar{
   width: 240px;}
+
+
+
+
+.listing_on_homepage{
+  border: 1px solid lightGrey;
+  width: 310px;
+  margin: 20px auto;
+  padding: 20px;
+}
 

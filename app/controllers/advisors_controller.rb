@@ -7,7 +7,7 @@ class AdvisorsController < ApplicationController
   def signup_action
     @advisor = Advisor.new(advisor_params)
     if @advisor.save
-      redirect_to new_profile_path(id: @advisor.id), notice: "signed up"
+      redirect_to new_profile_path(id: @advisor.id)
     else
       redirect_to sign_path, notice: "not signed up. try again."
     end

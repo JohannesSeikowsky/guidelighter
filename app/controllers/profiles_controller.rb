@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
     @advisor = Advisor.find(params[:profile][:advisor_id])
     @profile = @advisor.build_profile(profile_params)
     if @profile.save
-      redirect_to new_listing_path(id: @advisor.id), notice: "profile created."
+      redirect_to new_listing_path(id: @advisor.id)
     else
       redirect_to new_profile_paths, notice: "something went wrong. try again."
     end

@@ -1,24 +1,36 @@
 
 <h2> Offer your personal advice, guidance and expertise to those who need it. </h2>
 
-<p> Click below to become a guide at Guideligher. </p>
+<p> Become a guide: </p>
 
 <div class="button">
   <%= link_to "Start", signup_path %>
 </div> <br>
 
-<h3> How it works </h3>
+<!-- <h3> How it works </h3>
 <ol>
   <li> create simple listings stating what you offer </li>
   <li> wait until your offer gets booked </li>
   <li> help out, get paid & be happy </li> 
-</ol> <br>
+</ol> <br> -->
 
-
-<h3> Listings </h3>
-<!-- listings -->
+<h3> Current Listings </h3>
 <% @listings.each do |listing| %>
-  <%= listing.title %> <br>
-  <%= listing.description %> <br>
-  <%= listing.price %> <br> <br> <br>
+  <div class="listing_on_homepage">
+    <% unless listing.title.empty? %>
+      <h4> <%= listing.title %> </h4>
+    <% end %> <br>
+    
+    <% unless listing.description.empty? %>
+      Description: <%= listing.description %>
+    <% end %> <br>
+    
+    <% unless listing.price.nil? %>
+      Price: <%= listing.price %>
+    <% end %> <br> <br>
+
+    <% unless listing.listing_image.url.nil? %>  
+      <%= image_tag listing.listing_image.url %>
+    <% end %> <br>
+  </div>
 <% end %>
