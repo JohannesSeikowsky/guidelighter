@@ -1,23 +1,50 @@
 
-<br> <h3> Listing </h3>
+<!-- new listing -->
+<br> <h3> Create your Listings <span style="font-size: 11px;"> </span> </h3>
 <%= form_for :listing, path: new_listing_action_path, html: { multipart: true } do |f| %>
   <!-- passing advisor id -->
   <%= f.hidden_field :advisor_id, :value => @advisor.id %>
   <!-- form -->  
-  <h6> 1. What is your offering of advice/guidance? </h6>
+  <h6> 1. What advice/guidance do you offer? Set basic info. </h6>
   <%= f.text_field :title, placeholder: "Title" %> <br>
   <%= f.text_area :description, placeholder: "Description", style: "width: 355px" %> <br>
-  <h6> 2. Price </h6>
-  <%= f.text_field :price, placeholder: "" %> <br> 
-  <h6> 3. Image for listing </h6>
+  <%= f.number_field :price, placeholder: "Price" %> <br> <br>
+  <h6> 2. Upload a cover image for this listing </h6>
   <%= f.file_field :listing_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br>
 
   <%= f.submit "Done." %>
 <% end %> <br> <br> <br>
 
-<h3> Profile Preview </h3>
-<%= image_tag @advisor.profile.profile_image.url, style: "width: 300px;" if @advisor.profile.profile_image %>
-<p> <%= @advisor.profile.description if @advisor.profile.description %> </p> <br>
+<!-- profile preview -->
+<% if @advisor.profile.profile_image.url %>
+  <h3> Profile Preview </h3>
+  <%= image_tag @advisor.profile.profile_image.url, style: "width: 300px;" if @advisor.profile.profile_image %>
+  <p> <%= @advisor.profile.description if @advisor.profile.description %> </p> <br>
+<% end %>
+
+<!-- -->
+<% if @advisor.listings.count > 0 %>
+  <h3> All Published Listings <span style="font-size: 11px;"> </span> </h3>
+  <% @listings.each do |listing| %>
+    <div class="listing_on_homepage">
+      <% unless listing.title.empty? %>
+        <h4> <%= listing.title %> </h4>
+      <% end %> <br>
+      
+      <% unless listing.description.empty? %>
+        Description: <%= listing.description %>
+      <% end %> <br>
+      
+      <% unless listing.price.nil? %>
+        Price: <%= listing.price %>
+      <% end %> <br> <br>
+
+      <% unless listing.listing_image.url.nil? %>  
+        <%= image_tag listing.listing_image.url %>
+      <% end %> <br>
+    </div>
+  <% end %>
+<% end %>
 
 
 <!-- alering large uploads -->

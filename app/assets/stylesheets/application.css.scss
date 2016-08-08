@@ -164,7 +164,14 @@ body {
   // textarea
   textarea{
     width: 100%;
-    height: 90px;}
+    height: 90px;
+    border: 2px solid #EEEEEE;
+  }
+
+  input[type=number]{
+    border: 2px solid #EEEEEE;    
+  }
+
 
   // placeholder texts styling
   ::-webkit-input-placeholder {
