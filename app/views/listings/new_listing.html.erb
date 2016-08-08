@@ -35,7 +35,7 @@
 <% end %>
 
 <!-- all listings -->
-<% if @advisor.listings.count > 0 %>
+<% if @advisor.listings %>
   <h3> All Published Listings <span style="font-size: 11px;"> </span> </h3>
   <% @listings.each do |listing| %>
     <div class="listing_on_homepage">

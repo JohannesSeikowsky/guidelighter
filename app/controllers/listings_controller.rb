@@ -9,7 +9,7 @@ class ListingsController < ApplicationController
     @advisor = Advisor.find(params[:listing][:advisor_id])
     @listing = @advisor.listings.build(listing_params)
     if @listing.save
-      redirect_to new_listing_path(id: @advisor.id), notice: "Listing created. Make another one, if you like."
+      redirect_to new_listing_path(id: @advisor.id), notice: "Your Listing has been published successfully. Make another one, if you like."
     else
       render 'new_listing', notice: "Try again."
     end
