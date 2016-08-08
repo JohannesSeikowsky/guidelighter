@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to new_listing_path(id: @advisor.id)
     else
-      redirect_to new_profile_paths, notice: "something went wrong. try again."
+      render 'new_profile', notice: "Try again."
     end
   end
 

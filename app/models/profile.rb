@@ -4,6 +4,7 @@ class Profile < ActiveRecord::Base
   belongs_to :advisor
 
   # validations
+  validates_presence_of :description
   validate :image_upload_max_size
     
   # associate uploaded img with model
@@ -13,7 +14,7 @@ class Profile < ActiveRecord::Base
   private
   def image_upload_max_size      
     if profile_image.size > 5.megabytes
-      errors.add(:profile_image, "please upload a smaller image.")
+      errors.add(:profile_image, "Please upload a smaller image.")
     end
   end
 

@@ -9,7 +9,7 @@ class AdvisorsController < ApplicationController
     if @advisor.save
       redirect_to new_profile_path(id: @advisor.id)
     else
-      redirect_to sign_path, notice: "not signed up. try again."
+      render 'signup', notice: "Try again."
     end
   end
 

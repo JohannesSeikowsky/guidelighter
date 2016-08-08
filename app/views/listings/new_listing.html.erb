@@ -1,6 +1,6 @@
 
 <!-- new listing -->
-<div style="background: #EEEEEE; padding: 15px 15px 35px 15px;">
+<div style="grey_box">
   <h3> Create Listings <span style="font-size: 11px;"> </span> </h3>
   <%= form_for :listing, path: new_listing_action_path, html: { multipart: true } do |f| %>
     <!-- passing advisor id -->
@@ -24,7 +24,7 @@
   <p> <%= @advisor.profile.description if @advisor.profile.description %> </p> <br>
 <% end %>
 
-<!-- -->
+<!-- all listings -->
 <% if @advisor.listings.count > 0 %>
   <h3> All Published Listings <span style="font-size: 11px;"> </span> </h3>
   <% @listings.each do |listing| %>

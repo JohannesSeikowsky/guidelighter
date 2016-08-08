@@ -1,5 +1,13 @@
 
-<div style="background: #EEEEEE; padding: 15px 15px 35px 15px;">
+<% if @profile.errors.any? %>
+  <div class="errors">
+    <% @profile.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="grey_box">
   <h3> Profile <span style="font-size: 11px;"> - make a quick profile so that people get a sense of you. </span> </h3>
   <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
     <h6> 1. What do you do and offer? </h6>

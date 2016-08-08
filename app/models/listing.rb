@@ -4,6 +4,8 @@ class Listing < ActiveRecord::Base
   belongs_to :advisor
 
   # validations
+  validates_presence_of :title, :description, :price
+  validates_uniqueness_of :description
   validate :image_upload_max_size
 
   # associate uploaded image with model
@@ -13,7 +15,7 @@ class Listing < ActiveRecord::Base
   private
   def image_upload_max_size
     if listing_image.size > 5.megabytes
-      errors.add(:listing_image, "please upload a smaller image.")
+      errors.add(:listing_image, "Please upload a smaller image.")
     end
   end
 
