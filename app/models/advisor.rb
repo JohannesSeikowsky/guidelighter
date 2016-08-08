@@ -7,15 +7,15 @@ class Advisor < ActiveRecord::Base
   # validations
   validates_presence_of :first_name, :second_name
   validates_length_of :email, minimum: 6
-  validates :provided_password, length: { minimum: 6 }
+  validates :password_provided, length: { minimum: 6 }
 
   # password security implementation
-  attr_accessor :provided_password
+  attr_accessor :password_provided
   before_save :set_passwords
 
   def set_passwords
     self.password_salt = BCrypt::Engine.generate_salt
-    self.password = BCrypt::Engine.hash_secret(provided_password, password_salt)
+    self.password = BCrypt::Engine.hash_secret(password_provided, password_salt)
   end
 
 end

@@ -5,7 +5,6 @@ class Listing < ActiveRecord::Base
 
   # validations
   validates_presence_of :title, :description, :price
-  validates_uniqueness_of :description
   validate :image_upload_max_size
 
   # associate uploaded image with model

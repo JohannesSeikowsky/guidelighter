@@ -1,10 +1,12 @@
 
-<% if @profile.errors.any? %>
-  <div class="errors">
-    <% @profile.errors.full_messages.each do |msg| %>
-      <p><%= msg %></p>
-    <% end %>
-  </div>
+<!-- errors -->
+<% if @profile && @profile.errors.any? %>
+    <h4> Try again. </h4>
+    <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul> 
 <% end %>
 
 <div class="grey_box">

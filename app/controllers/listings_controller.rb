@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
     if @listing.save
       redirect_to new_listing_path(id: @advisor.id), notice: "Listing created. Make another one, if you like."
     else
-      redirect_to new_listing_path, notice: "something went wrong. try again."
+      render 'new_listing', notice: "Try again."
     end
   end
 

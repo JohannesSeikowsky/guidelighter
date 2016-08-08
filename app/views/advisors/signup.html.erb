@@ -3,8 +3,8 @@
 <% if @advisor.errors.any? %>
  <h4> Try again. </h4>
  <ul>
-  <% @advisor.errors.full_messages.each do |message| %>
-    <li> <%= message %> </li>
+  <% @advisor.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
   <% end %>
   </ul>
 <% end %>
@@ -16,7 +16,7 @@
     <%= f.text_field :first_name, placeholder: "First name" %> <br>
     <%= f.text_field :second_name, placeholder: "Second name" %> <br>
     <%= f.text_field :email, placeholder: "Email" %> <br>
-    <%= f.password_field :provided_password, placeholder: "Password" %>
+    <%= f.password_field :password_provided, placeholder: "Password" %>
     <%= f.submit "Done." %>
   <% end %>
 </div>

@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
 
   def new_profile
     @advisor = Advisor.find(params[:id])
+    @profile = @advisor.profile
   end
 
   def new_profile_action
