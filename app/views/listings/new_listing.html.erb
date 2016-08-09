@@ -1,4 +1,11 @@
 
+<!-- header -->
+<% if !@listings.empty? %>
+  <div class="simple_header">
+    <%= link_to "See your Listings", "#" %>
+  </div>  
+<% end %>
+
 <!-- errors -->
 <% if @listing && @listing.errors.any? %>
     <h4> Try again. </h4>
@@ -35,7 +42,7 @@
 <% end %>
 
 <!-- all listings -->
-<% if @listings %>
+<% if !@listings.empty? %>
   <h3> All Published Listings <span style="font-size: 11px;"> </span> </h3>
   <% @listings.each do |listing| %>
     <div class="listing_on_homepage">
