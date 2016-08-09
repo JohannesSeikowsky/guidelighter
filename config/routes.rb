@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get 'new_listing', to: 'listings#new_listing', as: "new_listing"
   post 'new_listing', to: 'listings#new_listing_action', as: "new_listing_action"
 
+  get 'login', to: 'sessions#login', as: "login"
+  get 'logout', to: 'sessions#logout', as: "logout"
 end

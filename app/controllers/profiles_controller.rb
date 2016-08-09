@@ -1,17 +1,17 @@
 class ProfilesController < ApplicationController
 
   def new_profile
-    @advisor = Advisor.find(params[:id])
+    @advisor = Advisor.find(session[:id])
     @profile = @advisor.profile
   end
 
   def new_profile_action
-    @advisor = Advisor.find(params[:profile][:advisor_id])
+    @advisor = Advisor.find(session[:id])
     @profile = @advisor.build_profile(profile_params)
     if @profile.save
-      redirect_to new_listing_path(id: @advisor.id)
+      redirect_to new_listing_path
     else
-      render 'new_profile', notice: "Try again."
+      render 'new_profile'
     end
   end
 

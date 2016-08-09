@@ -1,4 +1,11 @@
 
+<!-- header -->
+<div class="simple_header">
+  <%= link_to "Logout", "#" %>
+</div> 
+
+<br> <br>
+
 <!-- errors -->
 <% if @profile && @profile.errors.any? %>
     <h4> Try again. </h4>
@@ -9,19 +16,19 @@
     </ul> 
 <% end %>
 
+<!-- form -->
 <div class="grey_box">
   <h3> Mini-Profile <span style="font-size: 11px;"> - so that people get a sense of who you are. </span> </h3>
   <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
     <h6> 1. What do you do and what do you offer? </h6>
     <%= f.text_area :description, placeholder: "", style: "width: 355px; margin-bottom: 12px;" %>
-    <%= f.hidden_field :advisor_id, :value => @advisor.id %>
     <h6> 2. Upload profile image </h6>
     <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br>
     <%= f.submit "Done." %> 
   <% end %>
 </div>
 
-<!-- alering large uploads -->
+<!-- alerting large uploads -->
 <script type="text/javascript">
   $('#image_upload_field').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
