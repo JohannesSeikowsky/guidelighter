@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'pages#home'
+
   get 'signup', to: 'advisors#signup', as: 'signup'
   post 'signup', to: 'advisors#signup_action', as: 'signup_action'
 
@@ -11,5 +12,7 @@ Rails.application.routes.draw do
   post 'new_listing', to: 'listings#new_listing_action', as: "new_listing_action"
 
   get 'login', to: 'sessions#login', as: "login"
+  post 'login', to: 'sessions#login_action', as: "login_action"
   get 'logout', to: 'sessions#logout', as: "logout"
+
 end

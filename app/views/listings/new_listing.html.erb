@@ -1,7 +1,7 @@
 
 <!-- header -->
 <div class="simple_header">
-  <%= link_to "Logout", "#" %>
+  <%= link_to "Logout", logout_path %>
 </div> 
 
 <br> <br>
@@ -35,33 +35,37 @@
 </div> <br> <br> <br>
 
 <!-- profile preview -->
-<% if @advisor.profile.profile_image.url %>
-  <h3> Profile Preview </h3>
-  <%= image_tag @advisor.profile.profile_image.url, style: "width: 300px;" if @advisor.profile.profile_image %>
-  <p> <%= @advisor.profile.description if @advisor.profile.description %> </p> <br>
+<% if @advisor.profile %>
+  <% if @advisor.profile.profile_image.url %>
+    <h3> Profile Preview </h3>
+    <%= image_tag @advisor.profile.profile_image.url, style: "width: 300px;" if @advisor.profile.profile_image %>
+    <p> <%= @advisor.profile.description if @advisor.profile.description %> </p> <br>
+  <% end %>
 <% end %>
 
 <!-- all listings -->
 <% if !@listings.nil? %>
-  <h3> All Published Listings <span style="font-size: 11px;"> </span> </h3>
-  <% @listings.each do |listing| %>
-    <div class="listing_on_homepage">
-      <% unless listing.title.empty? %>
-        <h4> <%= listing.title %> </h4>
-      <% end %> <br>
-      
-      <% unless listing.description.empty? %>
-        Description: <%= listing.description %>
-      <% end %> <br>
-      
-      <% unless listing.price.nil? %>
-        Price: <%= listing.price %>
-      <% end %> <br> <br>
+  <% if !@listings.empty? %>
+    <h3> All Published Listings <span style="font-size: 11px;"> </span> </h3>
+    <% @listings.each do |listing| %>
+      <div class="listing_on_homepage">
+        <% unless listing.title.empty? %>
+          <h4> <%= listing.title %> </h4>
+        <% end %> <br>
+        
+        <% unless listing.description.empty? %>
+          Description: <%= listing.description %>
+        <% end %> <br>
+        
+        <% unless listing.price.nil? %>
+          Price: <%= listing.price %>
+        <% end %> <br> <br>
 
-      <% unless listing.listing_image.url.nil? %>  
-        <%= image_tag listing.listing_image.url %>
-      <% end %> <br>
-    </div>
+        <% unless listing.listing_image.url.nil? %>  
+          <%= image_tag listing.listing_image.url %>
+        <% end %> <br>
+      </div>
+    <% end %>
   <% end %>
 <% end %>
 
