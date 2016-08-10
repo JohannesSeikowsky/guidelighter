@@ -5,8 +5,10 @@ class Profile < ActiveRecord::Base
 
   # validations
   validates_presence_of :description
+  validates_presence_of :profile_image
   validate :image_upload_max_size
-    
+      
+
   # associate uploaded img with model
   mount_uploader :profile_image, ProfileImageUploader
 

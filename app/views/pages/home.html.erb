@@ -1,12 +1,9 @@
 
 <!-- header -->
 <div class="simple_header">
-  <% if logged_in? %>
-    <%= link_to "Create another Listing", new_listing_path %>
-  <% else %>
     <%= link_to "Login", login_path %> |
-    <%= link_to "Signup", signup_path %>
-  <% end %>
+    <%= link_to "Signup", signup_path %> |
+    <%= link_to "Create another Listing", new_listing_path %>
 </div>
 
 <br> <br>
