@@ -1,8 +1,12 @@
-  
+
 <!-- header -->
 <div class="simple_header">
-  <%= link_to "Login", login_path %> |
-  <%= link_to "Signup", signup_path %>
+  <% if logged_in? %>
+    <%= link_to "Create another Listing", new_listing_path %>
+  <% else %>
+    <%= link_to "Login", login_path %> |
+    <%= link_to "Signup", signup_path %>
+  <% end %>
 </div>
 
 <br> <br>
@@ -22,7 +26,7 @@
   <li> help out, get paid & be happy </li> 
 </ol> <br> -->
 
-<h3> Current Listings </h3>
+<h3> Listings </h3>
 <% @listings.each do |listing| %>
   <div class="listing_on_homepage">
     <% unless listing.title.empty? %>
@@ -31,10 +35,10 @@
     
     <% unless listing.description.empty? %>
       Description: <%= listing.description %>
-    <% end %> <br>
+    <% end %> <br> <br>
     
     <% unless listing.price.nil? %>
-      Price: <%= listing.price %>
+      Price: <%= listing.price %> €
     <% end %> <br> <br>
 
     <% unless listing.listing_image.url.nil? %>  
