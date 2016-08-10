@@ -35,11 +35,11 @@
     <% end %> <br> <br>
     
     <% unless listing.price.nil? %>
-      Price: <%= listing.price %> €
-    <% end %> <br> <br>
+      Price: <%= listing.price %> s
+    <% end %> <br>
 
-    <% unless listing.listing_image.url.nil? %>  
-      <%= image_tag listing.listing_image.url %>
+    <% unless listing.advisor.profile.profile_image.url.nil? %>  
+      <%= image_tag listing.advisor.profile.profile_image.url %>
     <% end %> <br>
   </div>
 <% end %>
