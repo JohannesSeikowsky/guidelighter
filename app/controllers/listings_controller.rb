@@ -1,17 +1,25 @@
 class ListingsController < ApplicationController
 
   def new_listing
-    @advisor = Advisor.find(session[:id])
-    @listings = @advisor.listings
+    if logged_in?
+      @advisor = Advisor.find(session[:id])
+      @listings = @advisor.listings
+    else
+      redirect_to login_path, notice: "Please log in."
+    end
   end
 
   def new_listing_action
-    @advisor = Advisor.find(session[:id])
-    @listing = @advisor.listings.build(listing_params)
-    if @listing.save
-      redirect_to new_listing_path, notice: "Listing published. Continue, if you like."
+    if logged_in?
+      @advisor = Advisor.find(session[:id])
+      @listing = @advisor.listings.build(listing_params)
+      if @listing.save
+        redirect_to new_listing_path, notice: "Listing published. Continue, if you like."
+      else
+        render 'new_listing'
+      end
     else
-      render 'new_listing'
+      redirect_to login_path, notice: "Please log in."
     end
   end
 
