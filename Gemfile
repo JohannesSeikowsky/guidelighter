@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'thin'
 gem "bcrypt-ruby", :require => "bcrypt"
+gem "font-awesome-rails"
 
 # for image upload (and for cropping later)
 gem 'carrierwave', '0.11.2'

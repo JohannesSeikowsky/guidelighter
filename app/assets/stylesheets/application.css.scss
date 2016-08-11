@@ -12,7 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
 
 body {
   height: 100%;
@@ -188,11 +194,11 @@ body {
 // logo
 .simple_logo{
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 25px;
+  left: 30px;
   @media (max-width: 790px){ display: none; } // point at whch not to show logo
   img{
-    width: 26px;
+    width: 90px;
     height: auto;
   }
 }
@@ -230,10 +236,13 @@ body {
 // made with love
 .with_love{
   width: 100%;
+  position: fixed;
+  bottom: 20px;;
+  right: 0;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   color: #BCBCBC;
-  padding-top: 82px;}
+}
 
 // simulating url
 #url_simulation{
