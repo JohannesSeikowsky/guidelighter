@@ -1,27 +1,29 @@
 
-<!-- header -->
-<div class="simple_header">
-  <%= link_to "Login", login_path %>
-</div> <br> <br>
+<div class="simple_container">
+  <!-- header -->
+  <div class="simple_header">
+    <%= link_to "Login", login_path %>
+  </div> <br> <br>
 
-<!-- errors -->
-<% if @advisor.errors.any? %>
- <h4> Try again. </h4>
- <ul>
-  <% @advisor.errors.full_messages.each do |msg| %>
-    <li> <%= msg %> </li>
+  <!-- errors -->
+  <% if @advisor.errors.any? %>
+   <h4> Try again. </h4>
+   <ul>
+    <% @advisor.errors.full_messages.each do |msg| %>
+      <li> <%= msg %> </li>
+    <% end %>
+    </ul>
   <% end %>
-  </ul>
-<% end %>
 
-<!-- form -->
-<div class="grey_box">
-  <h3> Start <span style="font-size: 11px;"> - make a start by creating an account. </span> </h3>
-  <%= form_for :advisor, path: signup_action_path do |f| %>
-    <%= f.text_field :first_name, placeholder: "First name" %>
-    <%= f.text_field :second_name, placeholder: "Second name" %>
-    <%= f.text_field :email, placeholder: "Email" %>
-    <%= f.password_field :password_provided, placeholder: "Password" %>
-    <%= f.submit "Done." %>
-  <% end %>
+  <!-- form -->
+  <div class="grey_box">
+    <h3> Start <span style="font-size: 11px;"> - make a start by creating an account. </span> </h3>
+    <%= form_for :advisor, path: signup_action_path do |f| %>
+      <%= f.text_field :first_name, placeholder: "First name" %>
+      <%= f.text_field :second_name, placeholder: "Second name" %>
+      <%= f.text_field :email, placeholder: "Email" %>
+      <%= f.password_field :password_provided, placeholder: "Password" %>
+      <%= f.submit "Done." %>
+    <% end %>
+  </div>
 </div>

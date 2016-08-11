@@ -1,45 +1,50 @@
 
-<!-- header -->
-<div class="simple_header">
-    <%= link_to "Login", login_path %> |
-    <%= link_to "Signup", signup_path %> |
-    <%= link_to "Create another Listing", new_listing_path %>
-</div>
-
-<br> <br>
-
-<!-- body -->
-<h2> Offer your personal advice, guidance and expertise to those who need it. </h2>
-<p> Become a guide: </p>
-
-<div class="button">
-  <%= link_to "Start", signup_path %>
-</div> <br>
-
-<!-- <h3> How it works </h3>
-<ol>
-  <li> create simple listings stating what you offer </li>
-  <li> wait until your offer gets booked </li>
-  <li> help out, get paid & be happy </li> 
-</ol> <br> -->
-
-<h3> Listings </h3>
-<% @listings.each do |listing| %>
-  <div class="listing_on_homepage">
-    <% unless listing.title.empty? %>
-      <h4> <%= listing.title %> </h4>
-    <% end %> <br>
-    
-    <% unless listing.description.empty? %>
-      Description: <%= listing.description %>
-    <% end %> <br> <br>
-    
-    <% unless listing.price.nil? %>
-      Price: <%= listing.price %> s
-    <% end %> <br>
-
-    <% unless listing.advisor.profile.profile_image.url.nil? %>  
-      <%= image_tag listing.advisor.profile.profile_image.url %>
-    <% end %> <br>
+<div class="home_container">
+  <!-- header -->
+  <div class="simple_header">
+    <% if logged_in? %>
+      <%= link_to "Logout", logout_path %> |
+    <% else %>  
+      <%= link_to "Login", login_path %> |
+      <%= link_to "Signup", signup_path %> |
+    <% end %>
+      <%= link_to "Create another Listing", new_listing_path %>
   </div>
-<% end %>
+
+  <br> <br>
+
+  <!-- body -->
+  <h2 style="font-size: 34px; text-align: center;"> Offer your personal advice, guidance and expertise to those who need it. </h2>
+
+  <div class="button">
+    <%= link_to "BECOME A GUIDE", signup_path %>
+  </div> <br>
+
+  <!-- <h3> How it works </h3>
+  <ol>
+    <li> create simple listings stating what you offer </li>
+    <li> wait until your offer gets booked </li>
+    <li> help out, get paid & be happy </li> 
+  </ol> <br> -->
+
+  <h3> Listings </h3>
+  <% @listings.each do |listing| %>
+    <div class="listing_on_homepage">
+      <% unless listing.title.empty? %>
+        <h4> <%= listing.title %> </h4>
+      <% end %> <br>
+      
+      <% unless listing.description.empty? %>
+        Description: <%= listing.description %>
+      <% end %> <br> <br>
+      
+      <% unless listing.price.nil? %>
+        Price: <%= listing.price %> s
+      <% end %> <br>
+
+      <% unless listing.advisor.profile.profile_image.url.nil? %>  
+        <%= image_tag listing.advisor.profile.profile_image.url %>
+      <% end %> <br>
+    </div>
+  <% end %>
+</div>

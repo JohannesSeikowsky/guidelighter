@@ -1,32 +1,34 @@
 
-<!-- header -->
-<div class="simple_header">
-  <%= link_to "Logout", logout_path %>
-</div> <br> <br>
+<div class="simple_container">
+  <!-- header -->
+  <div class="simple_header">
+    <%= link_to "Logout", logout_path %>
+  </div> <br> <br>
 
-<!-- errors -->
-<% if @profile && @profile.errors.any? %>
-    <h4> Try again. </h4>
-    <ul>
-      <% @profile.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul> 
-<% end %>
-
-<!-- form -->
-<div class="grey_box">
-  <h3> Mini-Profile <span style="font-size: 11px;"> - so that people get a sense of who you are. </span> </h3>
-  <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
-    <h6> 1. What do you do and what do you offer? </h6>
-    <%= f.text_area :description, placeholder: "", style: "width: 355px; margin-bottom: 12px;" %>
-    <h6> 2. Upload profile image </h6>
-    <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br>
-    <%= f.submit "Done." %> 
+  <!-- errors -->
+  <% if @profile && @profile.errors.any? %>
+      <h4> Try again. </h4>
+      <ul>
+        <% @profile.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul> 
   <% end %>
-</div>
-<div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
-  This is a one time thing. It will help your offer receive interest.
+
+  <!-- form -->
+  <div class="grey_box">
+    <h3> Mini-Profile <span style="font-size: 11px;"> - so that people get a sense of who you are. </span> </h3>
+    <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
+      <h6> 1. What do you do and what do you offer? </h6>
+      <%= f.text_area :description, placeholder: "", style: "width: 355px; margin-bottom: 12px;" %>
+      <h6> 2. Upload profile image </h6>
+      <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br>
+      <%= f.submit "Done." %> 
+    <% end %>
+  </div>
+  <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
+    This is a one time thing. It will help your offer receive interest.
+  </div>
 </div>
 
 <!-- alerting large uploads -->
