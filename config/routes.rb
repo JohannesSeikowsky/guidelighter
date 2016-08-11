@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#login', as: "login"
   post 'login', to: 'sessions#login_action', as: "login_action"
-  get 'logout', to: 'sessions#logout', as: "logout"
+  get 'logout', to: 'sessions#logout', as: 'logout'
+
+  get 'listing/:listing_id', to: 'listings#show', as: 'show_listing'
 
 end

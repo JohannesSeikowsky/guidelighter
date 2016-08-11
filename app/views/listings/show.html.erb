@@ -1,0 +1,14 @@
+
+<div class="simple_container">
+  <h2>The Offer</h2>
+  <h3><%= @listing.title %> </h3>
+  <p><%= @listing.description %> </p>
+  <p>Price: <%= @listing.price %> € </p> 
+
+  <br> <br>
+
+  <h4> Offered by </h4>
+  <p><%= @advisor.first_name %> <%= @advisor.second_name %> </p>
+  <p><%= @profile.description %> </p>
+  <%= image_tag @profile.profile_image.url  %>
+</div>

@@ -23,6 +23,13 @@ class ListingsController < ApplicationController
     end
   end
 
+  def show
+    @listing = Listing.find(params[:listing_id])
+    @advisor = @listing.advisor
+    @profile = @advisor.profile
+  end
+
+
   private
   def listing_params
     params.require(:listing).permit(:title, :description, :price, :listing_image)

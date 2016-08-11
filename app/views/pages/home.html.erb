@@ -29,22 +29,26 @@
 
   <h3> Listings </h3>
   <% @listings.each do |listing| %>
-    <div class="listing_on_homepage">
-      <% unless listing.title.empty? %>
-        <h4> <%= listing.title %> </h4>
-      <% end %> <br>
-      
-      <% unless listing.description.empty? %>
-        Description: <%= listing.description %>
-      <% end %> <br> <br>
-      
-      <% unless listing.price.nil? %>
-        Price: <%= listing.price %> s
-      <% end %> <br>
 
-      <% unless listing.advisor.profile.profile_image.url.nil? %>  
-        <%= image_tag listing.advisor.profile.profile_image.url %>
-      <% end %> <br>
-    </div>
+    <a href="<%= show_listing_path(listing_id: listing.id) %>" >
+      <div class="listing_on_homepage">
+        <% unless listing.title.empty? %>
+          <h4> <%= listing.title %> </h4>
+        <% end %> <br>
+        
+        <% unless listing.description.empty? %>
+          Description: <%= listing.description %>
+        <% end %> <br> <br>
+        
+        <% unless listing.price.nil? %>
+          Price: <%= listing.price %> €
+        <% end %> <br>
+
+        <% unless listing.advisor.profile.profile_image.url.nil? %>  
+          <%= image_tag listing.advisor.profile.profile_image.url %>
+        <% end %> <br>
+      </div>
+    </a>
+
   <% end %>
 </div>
