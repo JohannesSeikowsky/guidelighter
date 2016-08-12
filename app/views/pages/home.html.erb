@@ -18,7 +18,7 @@
   <br> <br>
 
   <!-- body -->
-  <h2 style="font-size: 34px; text-align: center;"> Offer your personal advice, guidance and expertise to those who need it. </h2>
+  <h2 style="font-size: 35px; text-align: center;"> Offer your personal advice, guidance and expertise to those who need it. </h2>
 
   <div class="button">
     <%= link_to "BECOME A GUIDE", signup_path %>
@@ -31,28 +31,34 @@
     <li> help out, get paid & be happy </li> 
   </ol> <br> -->
 
-  <h3> Listings </h3>
-  <% @listings.each do |listing| %>
+  <h3> Book a session: </h3>
 
-    <a href="<%= show_listing_path(listing_id: listing.id) %>" >
-      <div class="listing_on_homepage">
-        <% unless listing.title.empty? %>
-          <h4> <%= listing.title %> </h4>
-        <% end %> <br>
-        
-        <% unless listing.description.empty? %>
-          Description: <%= listing.description %>
-        <% end %> <br> <br>
-        
-        <% unless listing.price.nil? %>
-          Price: <%= listing.price %> €
-        <% end %> <br>
+  <div class="row">
+    <% @listings.each do |listing| %>
+      <a href="<%= show_listing_path(listing_id: listing.id) %>" >
+        <div class="listing_on_homepage col-xs-3">
 
-        <% unless listing.advisor.profile.profile_image.url.nil? %>  
-          <%= image_tag listing.advisor.profile.profile_image.url %>
-        <% end %> <br>
-      </div>
-    </a>
+          <% unless listing.title.empty? %>
+            <div style="height: 85px;">
+              <h4> <%= listing.title %> </h4>
+            </div>
+          <% end %>
+          
+          <!-- <% unless listing.description.empty? %>
+            <%= listing.description %>
+          <% end %> <br> <br> -->
+          
+          <% unless listing.advisor.profile.profile_image.url.nil? %>  
+            <%= image_tag listing.advisor.profile.profile_image.url %>
+          <% end %> <br>
 
-  <% end %>
+          <% unless listing.price.nil? %>
+            <div style="text-align: center; font-weight: bold;"> Price: <%= listing.price %> € </div>
+          <% end %> <br>
+
+        </div>
+      </a>
+    <% end %>
+  </div>
+
 </div>

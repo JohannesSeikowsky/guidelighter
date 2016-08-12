@@ -1,7 +1,7 @@
 // container
 .home_container{
-  @media (min-width: 500px){ width: 800px; }
-  @media (max-width: 500px){ width: 100%; } // varying width
+  @media (min-width: 0px){ width: 800px; }
+  // @media (max-width: 500px){ width: 100%; } // varying width
   margin: 0px auto;
   
   // h1
@@ -140,11 +140,12 @@
 
   .listing_on_homepage{
     border: 1px solid lightGrey;
-    width: 370px;
-    float: left;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    padding: 12px;
+    width: 31%;
+    height: 350px;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    padding: 12px 22px;
+    h4 {font-weight: normal;}
   }
 }
 
