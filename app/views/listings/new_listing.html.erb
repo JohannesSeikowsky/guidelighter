@@ -15,16 +15,17 @@
       </ul> 
   <% end %>
 
+  <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <!-- new listing -->
   <div class="grey_box">
-    <h3> Create a Listing <span style="font-size: 11px;"> </span> </h3>
+    <h3> Create Listing <span style="font-size: 11px;"> </span> </h3>
     <%= form_for :listing, path: new_listing_action_path, html: { multipart: true } do |f| %>
       <!-- passing advisor id -->
       <%= f.hidden_field :advisor_id, :value => @advisor.id %>
       <!-- form -->  
-      <h6> 1. Set the basic info of the advice/guidance you want to offer & its price. </h6>
+      <h6> 1. What advice/guidance do you offer? Set basic info. </h6>
       <%= f.text_field :title, placeholder: "Title" %>
-      <%= f.text_area :description, placeholder: "Description", style: "width: 355px; height: 130px;" %>
+      <%= f.text_area :description, placeholder: "Description", style: "width: 355px; height: 145px;" %>
       <%= f.number_field :price, placeholder: "Price (in €)" %> <br>
       <!--  <h6> 2. Upload a cover image for this listing </h6>
       <%= f.file_field :listing_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br> -->
@@ -33,21 +34,22 @@
     <% end %> 
   </div> 
   <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
-      Your Listing will appear you our homepage and can be booked.
+    The Listings you create will be bookable on guidelighter.com.
   </div> <br> <br>
 
-    <h3> Oleg's Example Listing <span style="font-size: 11px;"> </span> </h3>
-    <div class="example_listing grey_box" style="padding: 20px 50px; margin-bottom: 55px;">
-      <h4> Oxford Interview Prep for Economics & Management </h4>
-      <div> Description: offering advice/guidance session for people interviewing at Oxford. Either general preparatory advice and more depth advice for Economics related Interview. Length: 1,5 roughly. </div> <br>
-      <div>Price: 50 €</div>
-      <%= image_tag 'oleg.jpg' %>
-    </div>
+    <% if @listings.empty? %>
+      <h3> Oleg's Example Listing <span style="font-size: 11px;"> </span> </h3>
+      <div class="example_listing grey_box" style="padding: 20px 50px; margin-bottom: 55px; background-color: #F7F7F7;">
+        <h4> Oxford Interview Prep for Economics & Management </h4>
+        <div> Offering advice/guidance session for people interviewing at Oxford. Either general preparatory advice and more depth advice for Economics related Interview. Length: 1,5 roughly. </div> <br>
+        <div>Price: 50 €</div>
+        <%= image_tag 'oleg.jpg' %>
+      </div>
+    <% end %>
 
-  <!-- all listings 
   <% if !@listings.nil? %>
     <% if !@listings.empty? %>
-      <h3> All Published Listings <span style="font-size: 11px;"> </span> </h3>
+      <h3> Your published Listings <span style="font-size: 11px;"> </span> </h3> <br>
       <% @listings.each do |listing| %>
         <div class="listing_on_homepage">
           <% unless listing.title.empty? %>
@@ -68,7 +70,8 @@
         </div> <br>
       <% end %>
     <% end %>
-  <% end %> -->
+  <% end %>
+
 </div>
 
 <!-- alerting large uploads -->

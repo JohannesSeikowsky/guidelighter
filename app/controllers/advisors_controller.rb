@@ -8,7 +8,7 @@ class AdvisorsController < ApplicationController
     @advisor = Advisor.new(advisor_params)
     if @advisor.save
       log_in
-      redirect_to new_profile_path
+      redirect_to new_profile_path, notice: "You have signed up."
     else
       render 'signup'
     end

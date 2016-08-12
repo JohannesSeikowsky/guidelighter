@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
       @advisor = Advisor.find(session[:id])
       @profile = @advisor.build_profile(profile_params)
       if @profile.save
-        redirect_to new_listing_path
+        redirect_to new_listing_path, notice: "Your profile has been created."
       else
         render 'new_profile'
       end

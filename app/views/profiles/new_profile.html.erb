@@ -3,7 +3,7 @@
   <!-- header -->
   <div class="simple_header">
     <%= link_to "Logout", logout_path %>
-  </div> <br> <br> <br>
+  </div> <br> <br>
 
   <!-- errors -->
   <% if @profile && @profile.errors.any? %>
@@ -15,19 +15,20 @@
       </ul> 
   <% end %>
 
+  <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <!-- form -->
   <div class="grey_box">
     <h3> Mini-Profile <span style="font-size: 11px;"> - so that people get a sense of who you are. </span> </h3>
     <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
       <h6> 1. About yourself. </h6>
-      <%= f.text_area :description, style: "width: 355px; height: 155px; margin-bottom: 12px;" %>
+      <%= f.text_area :description, style: "width: 355px; height: 145px; margin-bottom: 12px;" %>
       <h6> 2. Your image. </h6>
       <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br>
       <%= f.submit "Done." %> 
     <% end %>
   </div>
   <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
-    This is a one time thing. It will help your offer receive interest.
+     This will help your offers receive interest.
   </div>
 
   <div class="with_love">
