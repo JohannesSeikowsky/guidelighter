@@ -52,11 +52,11 @@
             <%= image_tag listing.advisor.profile.profile_image.url %>
           <% end %> <br>
 
-          <% unless listing.price.nil? %>
-            <div style="text-align: center; font-weight: bold;"> <%= listing.advisor.first_name %> </div>
+          <% unless listing.advisor.first_name.nil? %>
+            <div style="text-align: center; font-weight: bold;"> guide: <%= listing.advisor.first_name %> </div>
           <% end %> <br>
 
-          <% unless listing.advisor.first_name.nil? %>
+          <% unless listing.price.nil? %>
             <div style="text-align:center; position: absolute; bottom: 3px;"> Price: <%= listing.price %> € </div>
           <% end %> <br>
 
