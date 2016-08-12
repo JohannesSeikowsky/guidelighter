@@ -53,8 +53,13 @@
           <% end %> <br>
 
           <% unless listing.price.nil? %>
-            <div style="text-align: center; font-weight: bold;"> Price: <%= listing.price %> € </div>
+            <div style="text-align: center; font-weight: bold;"> <%= listing.advisor.first_name %> </div>
           <% end %> <br>
+
+          <% unless listing.advisor.first_name.nil? %>
+            <div style="text-align:center; position: absolute; bottom: 3px;"> Price: <%= listing.price %> € </div>
+          <% end %> <br>
+
 
         </div>
       </a>

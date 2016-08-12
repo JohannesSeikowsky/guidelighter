@@ -141,11 +141,13 @@
   .listing_on_homepage{
     border: 1px solid lightGrey;
     width: 31%;
-    height: 350px;
+    height: 365px;
     margin-right: 2%;
     margin-bottom: 20px;
-    padding: 12px 22px;
-    h4 {font-weight: normal;}
+    padding: 12px 25px;
+    position: relative;
+    h4 { font-weight: normal; }
+    img{ margin-bottom: 4px; }
   }
 }
 
