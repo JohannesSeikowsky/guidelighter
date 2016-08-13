@@ -81,14 +81,14 @@
   // links
   .button{
     text-align: center;
-    padding: 30px 0px 25px 0px;
+    padding: 25px 0px 10px 0px;
     a{
       color: black;
       font-size: 16px;
       font-weight: bold;
       text-decoration: none;
       border: 2px solid black;
-      @media (min-width: 500px){ padding: 10px 75px; }
+      @media (min-width: 500px){ padding: 10px 35px; }
       @media (max-width: 500px){ padding: 13px 80px; }} // varying button size
     a:hover { background-color: orange; }}
 
@@ -133,22 +133,31 @@
     border: 2px solid #EEEEEE;    
   }
 
-  // placeholder texts styling
-  ::-webkit-input-placeholder {
-    //font-size: 16px;
-  }
-
   .listing_on_homepage{
     border: 1px solid lightGrey;
-    width: 31%;
+    width: 32%;
+
     height: 365px;
-    margin-right: 2%;
+    float: left;
+    margin-right: 0.66%;
+    margin-left: 0.66%;
     margin-bottom: 20px;
     padding: 12px 25px;
     position: relative;
     h4 { font-weight: normal; }
     img{ margin-bottom: 4px; }
   }
+
 }
 
+
+.simple_logo_home{
+  position: fixed;
+  top: 25px;
+  left: 30px;
+  img{
+    width: 90px;
+    height: auto;
+  }
+}
 
