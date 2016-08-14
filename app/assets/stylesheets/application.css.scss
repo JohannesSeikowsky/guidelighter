@@ -137,7 +137,6 @@ body {
       @media (max-width: 500px){ padding: 13px 80px; }} // varying button size
     a:hover { background-color: orange; }}
 
-  // h4 in forms
   form h4{
     padding-bottom: 5px;
     margin-bottom: 5px;
@@ -178,11 +177,17 @@ body {
     border: 2px solid #EEEEEE;    
   }
 
-
-  // placeholder texts styling
-  ::-webkit-input-placeholder {
-    //font-size: 16px;
+  .listing_on_new{
+    background-color: #EEEEEE;
+    padding: 1px 15px 26px 15px;
+    position: relative;
+    .links{
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+    }
   }
+
 }
 
 // debug

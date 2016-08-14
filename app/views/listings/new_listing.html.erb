@@ -41,12 +41,13 @@
 
   <% if !@listings.nil? %>
     <% if !@listings.empty? %>
-      <h3> Your published Listings <span style="font-size: 11px;"> </span> </h3> <br>
+      <h3> Manage Your Listings <span style="font-size: 11px;"> </span> </h3> <br>
       <% @listings.each do |listing| %>
-        <div class="listing_on_homepage">
+        <div class="listing_on_new">
+          <br>
           <% unless listing.title.empty? %>
-            <h4> <%= listing.title %> </h4>
-          <% end %> <br>
+            Title: <%= listing.title %>
+          <% end %> <br> <br>
           
           <% unless listing.description.empty? %>
             Description: <%= listing.description %>
@@ -54,11 +55,17 @@
           
           <% unless listing.price.nil? %>
             Price: <%= listing.price %>
-          <% end %> <br> <br>
+          <% end %>
 
           <% unless listing.listing_image.url.nil? %>  
             <%= image_tag listing.listing_image.url %>
           <% end %> <br>
+
+          <div class="links" style="color: lightGrey;">
+            <%= link_to "Edit", edit_listing_path(listing_id: listing.id) %> |
+            <%= link_to "Delete", delete_listing_path(listing_id: listing.id), method: :delete %>
+          </div>
+
         </div> <br>
       <% end %>
     <% end %>

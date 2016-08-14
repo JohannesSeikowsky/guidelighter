@@ -34,6 +34,10 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:listing_id])
   end
 
+  def update
+  end
+
+
 
   private
   def listing_params
