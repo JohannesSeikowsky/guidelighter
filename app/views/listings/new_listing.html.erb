@@ -9,12 +9,12 @@
 
   <!-- errors -->
   <% if @listing && @listing.errors.any? %>
-      <h4> Try again. </h4>
-      <ul>
-        <% @listing.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul> 
+    <h4> Try again. </h4>
+    <ul>
+      <% @listing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul> 
   <% end %>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>

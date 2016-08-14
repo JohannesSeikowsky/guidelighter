@@ -1,7 +1,11 @@
-<h3>Editing</h3>
 
-<form action="update" method="patch" >
-
-
-</form>
-
+<br> <br> <br>
+<div class="simple_container grey_box">
+  <h3>Edit Listing</h3>
+  <%= form_for @listing, url: update_listing_path(listing_id: @listing.id) do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_area :description %>
+    <%= f.number_field :price %> <br>
+    <%= f.submit "Done." %>
+  <% end %>
+</div>

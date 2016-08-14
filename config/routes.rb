@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get 'edit_profile', to: 'profiles#edit', as: 'edit_profile'
   patch 'update_profile', to: 'profiles#update', as: 'update_profile'
 
-
   # listings related
   get 'listing/:listing_id', to: 'listings#show', as: 'show_listing'
   
@@ -21,10 +20,9 @@ Rails.application.routes.draw do
   post 'new_listing', to: 'listings#new_listing_action', as: "new_listing_action"
   
   get 'edit_listing/:listing_id', to: 'listings#edit', as: 'edit_listing'
+  patch 'update_listing/:listing_id', to: 'listings#update', as: 'update_listing'
 
   delete 'delete_listing', to: 'listing#destroy', as: 'delete_listing'
-
-
 
   # session related
   get 'login', to: 'sessions#login', as: "login"

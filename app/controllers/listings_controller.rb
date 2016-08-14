@@ -31,10 +31,21 @@ class ListingsController < ApplicationController
   end
 
   def edit
-    @listing = Listing.find(params[:listing_id])
+    if logged_in?
+      @listing = Listing.find(params[:listing_id])
+    else
+      redirect_to login_path, notice: "Please log in."
+    end
   end
 
   def update
+    if logged_in?
+      @listing = Listing.find(params[:listing_id])
+      @listing.update(listing_params)
+      redirect_to new_listing_path, notice: "Your Listing got updated."
+    else
+      redirect_to login_path, notice: "Please log in."
+    end
   end
 
 
