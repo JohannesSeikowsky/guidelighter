@@ -24,9 +24,25 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:profile_id])
-    @advisor = @profile.advisor
+    if logged_in?
+      @advisor = Advisor.find(session[:id])
+      @profile = @advisor.profile
+    else
+      redirect_to login_path, notice: "Please log in."
+    end
   end
+
+  def update
+    if logged_in?
+      @advisor = Advisor.find(session[:id])
+      @profile = @advisor.profile
+      @profile.update(profile_params)
+      redirect_to edit_profile_path(profile_id: @profile.id)
+    else
+      redirect_to login_path, notice: "Please log in."
+    end
+  end
+
 
 
   private

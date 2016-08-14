@@ -6,10 +6,13 @@ Rails.application.routes.draw do
   get 'signup', to: 'advisors#signup', as: 'signup'
   post 'signup', to: 'advisors#signup_action', as: 'signup_action'
 
-  # profiel related
+  # profile related
+  # new
   get 'new_profile', to: 'profiles#new_profile', as: 'new_profile'
   post 'new_profile', to: 'profiles#new_profile_action', as: "new_profile_action"
-  get 'edit_profile/:profile_id', to: 'profiles#edit', as: 'edit_profile'
+  # edit
+  get 'edit_profile', to: 'profiles#edit', as: 'edit_profile'
+  patch 'update_profile', to: 'profiles#update', as: 'update_profile'
 
   # listings
   get 'listing/:listing_id', to: 'listings#show', as: 'show_listing'

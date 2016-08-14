@@ -1,22 +1,30 @@
 
-<!-- add styling -->
-<br> <br> <br>
 <div class="simple_container">
+
+  <div class="simple_header">
+    <%= link_to "Logout", logout_path %> |
+    <%= link_to "Create Listing", new_listing_path %> |
+    <%= link_to "Edit Listings", "" %>
+  </div> <br> <br> <br>
+
+
   <h3> Current Profile </h3>
   <div>
-    <!-- <%= @advisor.first_name %> <%= @advisor.second_name %> -->
+    <%= @advisor.first_name %> <%= @advisor.second_name %>
     <%= image_tag @profile.profile_image.url %>
     <p style="margin: 0 10% 10px 10%;"> Description: <%= @profile.description %> </p>
   </div> <br> <br>
 
   <div class="grey_box">
     <h3> Edit <span style="font-size: 11px;"> - update this profile to make it more appealing. </span> </h3>
-    <form action="/update_profile" method="put">
+
+    <%= form_for @profile, url: update_profile_path do |f| %>
       <h6> 1. Edit description </h6>
-      <textarea name=""></textarea> <br> <br>
+      <%= f.text_area :description %> 
       <h6> 2. Edit Image </h6>
-      <input type="file">
-      <input type="submit" value="Done.">
-    </form>
+      <%= f.file_field :profile_image %>
+      <%= f.submit "Done." %>
+    <% end %> 
   </div>
-</div> <br> <br> <br> <br> <br> <br> <br>
+</div>
+<br> <br> <br> <br> <br> <br> <br>
