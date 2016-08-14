@@ -1,20 +1,25 @@
 <br> <br> <br>
 
 <div class="simple_container">
-  <h3>Listing</h3>
+
+  <h6 style="text-decoration: underline;">The Guide</h6>
+  <h3><%= @advisor.first_name %> <%= @advisor.second_name %>  </h3>
+  <%= image_tag @profile.profile_image.url  %> <br>
+  <!-- <p style="text-align: center;"><%= @profile.description %> </p> <br> -->
+
+  <h6 style="text-decoration: underline;">The Offer</h6>
   <h3><%= @listing.title %> </h3>
   <p><%= @listing.description %> </p>
-  <p>Price: <%= @listing.price %> € </p> <br>
+  <p>Price: <%= @listing.price %> € </p>
   <div class="button">
     <%= link_to "Book now", "#" %>
   </div>
 
-  <br>
 
-  <h3>Guide</h3>
-  <p><%= @advisor.first_name %> <%= @advisor.second_name %> </p>
-  <p><%= @profile.description %> </p>
-  <%= image_tag @profile.profile_image.url  %>
+
+
 </div>
+
+
 
 <br> <br> <br> <br> <br>
