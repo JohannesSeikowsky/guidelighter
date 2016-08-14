@@ -1,8 +1,15 @@
 class ListingsController < ApplicationController
 
+  def show
+    @listing = Listing.find(params[:listing_id])
+    @advisor = @listing.advisor
+    @profile = @advisor.profile
+  end
+
   def new_listing
     if logged_in?
       @advisor = Advisor.find(session[:id])
+      @profile = @advisor.profile
       @listings = @advisor.listings
     else
       redirect_to login_path, notice: "Please log in."
@@ -23,10 +30,8 @@ class ListingsController < ApplicationController
     end
   end
 
-  def show
+  def edit
     @listing = Listing.find(params[:listing_id])
-    @advisor = @listing.advisor
-    @profile = @advisor.profile
   end
 
 

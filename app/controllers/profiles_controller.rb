@@ -23,6 +23,12 @@ class ProfilesController < ApplicationController
     end 
   end
 
+  def edit
+    @profile = Profile.find(params[:profile_id])
+    @advisor = @profile.advisor
+  end
+
+
   private
   def profile_params
     params.require(:profile).permit(:description, :profile_image)
