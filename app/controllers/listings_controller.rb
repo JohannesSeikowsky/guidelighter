@@ -48,6 +48,16 @@ class ListingsController < ApplicationController
     end
   end
 
+  def destroy
+    if logged_in?
+      @listing = Listing.find(params[:listing_id])
+      @listing.delete
+      redirect_to new_listing_path, notice: "Listing deleted."
+    else
+      redirect_to login_path, notice: "Please log in."
+    end      
+  end
+
 
 
   private

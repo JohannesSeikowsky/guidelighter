@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'edit_listing/:listing_id', to: 'listings#edit', as: 'edit_listing'
   patch 'update_listing/:listing_id', to: 'listings#update', as: 'update_listing'
 
-  delete 'delete_listing', to: 'listing#destroy', as: 'delete_listing'
+  delete 'delete_listing/:listing_id', to: 'listings#destroy', as: 'delete_listing'
 
   # session related
   get 'login', to: 'sessions#login', as: "login"
