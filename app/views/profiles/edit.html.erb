@@ -9,23 +9,26 @@
 
 
   <div style="color: grey;"> <%= notice %> </div>
-  <h3> Current Profile </h3>
-  <div>
-    <%= @advisor.first_name %> <%= @advisor.second_name %>
-    <%= image_tag @profile.profile_image.url %>
-    <p style="margin: 0 10% 10px 10%;"> Description: <%= @profile.description %> </p>
-  </div> <br> <br>
-
+  
   <div class="grey_box">
     <h3> Edit <span style="font-size: 11px;"> - update this profile to make it more appealing. </span> </h3>
 
     <%= form_for @profile, url: update_profile_path do |f| %>
       <h6> 1. Edit description </h6>
-      <%= f.text_area :description %> 
+      <%= f.text_area :description, style: "height: 250px;" %> 
       <h6> 2. Edit Image </h6>
       <%= f.file_field :profile_image %>
       <%= f.submit "Done." %>
     <% end %> 
+  </div> <br> <br>
+
+  <h3> Current Profile </h3>
+  <div>
+    <%= @advisor.first_name %> <%= @advisor.second_name %>
+    <%= image_tag @profile.profile_image.url %>
+    <p style="margin: 0 10% 10px 10%;"> <%= @profile.description %> </p>
   </div>
+
+
 </div>
 <br> <br> <br> <br> <br> <br> <br>
