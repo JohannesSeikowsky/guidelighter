@@ -13,20 +13,23 @@
   </div> <br> <br> <br>
 
 
-  <h6 style="text-decoration: underline;">The Guide</h6>
-  <h3><%= @advisor.first_name %> <%= @advisor.second_name %>  </h3>
+  <h6 style="text-decoration: underline;"> <%= @advisor.first_name %> <%= @advisor.second_name %> / your guide </h6>
+
   <%= image_tag @profile.profile_image.url  %> <br>
   <!-- <p style="text-align: center;"><%= @profile.description %> </p> <br> -->
 
-  <h6 style="text-decoration: underline;">The Offer</h6>
-  <h3><%= @listing.title %> </h3>
-  <p><%= @listing.description %> </p>
-  <p>Price: <%= @listing.price %> € </p>
-  <div class="button">
-    <%= link_to "Book now", "#" %>
+    <h6 style="text-decoration: underline;">The Offer</h6>
+
+  <div class="grey_box">
+    <h3><%= @listing.title %> </h3>
+    <p><%= @listing.description %> </p>
+    <p>Price: <%= @listing.price %> € </p>
+    <div class="button">
+      <%= link_to "Book now", "#" %>
+    </div>
   </div>
 
-  <br> <br>
+  <br> 
   <h6 style="text-decoration: underline;"> About <%= @advisor.first_name %> </h6>
   <p> <%= @profile.description %> </p>
 
