@@ -6,6 +6,7 @@
     <% if logged_in? %>
       <%= link_to "Logout", logout_path %> |
       <%= link_to "Edit Profile", edit_profile_path %> |
+      <%= link_to "Create Listing", new_listing_path %> |
       <%= link_to "Manage Listings", new_listing_path %>
     <% else %>  
       <%= link_to "Login", login_path %> |

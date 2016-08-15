@@ -11,7 +11,7 @@
     <h3>Edit Listing</h3>
     <%= form_for @listing, url: update_listing_path(listing_id: @listing.id) do |f| %>
       <%= f.text_field :title %>
-      <%= f.text_area :description %>
+      <%= f.text_area :description, style: "height: 225px;" %>
       <%= f.number_field :price %> <br>
       <%= f.submit "Done." %>
     <% end %>

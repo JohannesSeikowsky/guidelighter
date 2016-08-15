@@ -15,12 +15,12 @@
 
     <%= form_for @profile, url: update_profile_path do |f| %>
       <h6> 1. Edit description </h6>
-      <%= f.text_area :description, style: "height: 250px;" %> 
+      <%= f.text_area :description, style: "height: 205px;" %> 
       <h6> 2. Edit Image </h6>
       <%= f.file_field :profile_image %>
       <%= f.submit "Done." %>
     <% end %> 
-  </div> <br> <br>
+  </div> <br>
 
   <h3> Current Profile </h3>
   <div>
