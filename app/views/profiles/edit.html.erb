@@ -3,10 +3,11 @@
 
   <div class="simple_header">
     <%= link_to "Logout", logout_path %> |
-    <%= link_to "Create Listing", new_listing_path %>
+    <%= link_to "Manage Listings", new_listing_path %>
   </div> <br> <br> <br>
 
 
+  <div style="color: grey;"> <%= notice %> </div>
   <h3> Current Profile </h3>
   <div>
     <%= @advisor.first_name %> <%= @advisor.second_name %>

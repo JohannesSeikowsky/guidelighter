@@ -3,7 +3,7 @@
   <!-- header -->
   <div class="simple_header">
     <%= link_to "Logout", logout_path %> |
-    <%= link_to "Edit Profile", edit_profile_path %> |
+    <%= link_to "Edit Profile", edit_profile_path %>
   </div> <br> <br> <br>
 
   <!-- errors -->
@@ -62,7 +62,7 @@
 
           <div class="links" style="color: lightGrey;">
             <%= link_to "Edit", edit_listing_path(listing_id: listing.id) %> |
-            <%= link_to "Delete", delete_listing_path(listing_id: listing.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to "Delete", delete_listing_path(listing_id: listing.id), method: :delete, data: { confirm: 'Want to delete this listing?' } %>
           </div>
 
         </div> <br>
