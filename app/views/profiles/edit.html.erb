@@ -26,7 +26,7 @@
   <div>
     <%= @advisor.first_name %> <%= @advisor.second_name %>
     <%= image_tag @profile.profile_image.url %>
-    <p style="margin: 0 10% 10px 10%;"> simple_format <%= @profile.description %> </p>
+    <p style="margin: 0 10% 10px 10%;"> <%= simple_format @profile.description %> </p>
   </div>
 
 
