@@ -1,5 +1,4 @@
 
-
 <div class="home_container">
   <!-- header -->
   <div class="simple_header">
@@ -85,7 +84,11 @@
         <% end %> <br>
 
         <% unless listing.price.nil? %>
-          <div style="text-align:center; position: absolute; bottom: 3px;"> Price: <%= listing.price %> £ </div>
+          <% unless listing.price == 0 %>
+            <div style="text-align:center; position: absolute; bottom: 3px;"> Price: <%= listing.price %> £ </div>
+          <% else %>
+            <div style="text-align:center; position: absolute; bottom: 3px;"> FREE </div>
+          <% end %>
         <% end %> <br>
       </div>
     </a>
@@ -93,4 +96,3 @@
 
 </div>
 
-<br> <br> <br> <br>
