@@ -27,7 +27,8 @@
       <h6> What advice/guidance do you offer? Set basic info. <br> (your experience, how you can help, etc.) </h6>
       <%= f.text_field :title, placeholder: "Title" %>
       <%= f.text_area :description, placeholder: "Description", style: "width: 355px; height: 190px;" %>
-      <%= f.number_field :price, placeholder: "Price per hour (in £)" %> <br>
+      <%= f.number_field :price, placeholder: "Price per session (in £)", style: "width: 165px;" %> 
+                  <span style="font-size: 11px;"> Currency: British pounds. </span>
       <!--  <h6> 2. Upload a cover image for this listing </h6>
       <%= f.file_field :listing_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br> -->
 
@@ -53,7 +54,7 @@
           <% end %> <br> <br>
           
           <% unless listing.price.nil? %>
-            Price: <%= listing.price %>
+            Price: <%= listing.price %> £
           <% end %>
 
           <% unless listing.listing_image.url.nil? %>  
@@ -71,10 +72,12 @@
   <% end %>
 
   <h3> Example <span style="font-size: 11px;"> </span> </h3>
-  <div class="example_listing grey_box" style="padding: 20px 50px; margin-bottom: 55px; background-color: #F7F7F7;">
-    <h4> Oxford Interview Prep for Economics & Management </h4>
-    <div> Offering advice/guidance session for people interviewing at Oxford. Either general preparatory advice and more depth advice for Economics related Interview. Length: 1,5 roughly. </div> <br>
-    <div>Price: 50 €</div>
+  <div class="example_listing grey_box" style="padding: 20px 35px; margin-bottom: 55px; background-color: #F7F7F7;">
+    <h4> Advice on Finance Careers & Applications </h4>
+    <div>
+     Are you considering to apply for jobs in finance but are not sure where to start? I have worked in Private Banking, Corporate Banking and Sovereign Risk at Citigroup for 4 years. I can share my experience of working in different areas of finance and help you to get a grasp of what goes on where and how you can get in (and whether you should). In case you already know what you are interested in, I can guide you through the most important issues and what you should know before applying. We can communicate via Skype or in person (if we can arrange it). If you are unsure whether to proceed, book my free listing first and we can have an intro chat!
+     </div> <br>
+    <div>Price: 30 £</div>
     <%= image_tag 'oleg.jpg' %>
   </div>
 
