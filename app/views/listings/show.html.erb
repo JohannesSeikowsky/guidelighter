@@ -31,7 +31,7 @@
   <h6 style="text-decoration: underline;"> About the guide </h6>
   <div class="grey_box" style="padding: 4px 52px 8px 52px;">
     <h3> <%= @advisor.first_name %> <%= @advisor.second_name %>  </h3>
-    <p> <%= @profile.description %> </p>
+    <p> <%= simple_format @profile.description %> </p>
   </div> <br>
 
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">

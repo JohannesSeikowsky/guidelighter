@@ -50,7 +50,7 @@
           <% end %> <br> <br>
           
           <% unless listing.description.empty? %>
-            Description: <%= listing.description %>
+            Description: <%= simple_format listing.description %>
           <% end %> <br> <br>
           
           <% unless listing.price.nil? %>
