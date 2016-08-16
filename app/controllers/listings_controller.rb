@@ -21,7 +21,7 @@ class ListingsController < ApplicationController
       @advisor = Advisor.find(session[:id])
       @listing = @advisor.listings.build(listing_params)
       if @listing.save
-        redirect_to new_listing_path, notice: "√ Listing published. Continue or wait until you get contacted."
+        redirect_to new_listing_path, notice: "√ Listing published. Post another one?"
       else
         render 'new_listing'
       end

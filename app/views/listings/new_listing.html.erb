@@ -24,10 +24,10 @@
       <!-- passing advisor id -->
       <%= f.hidden_field :advisor_id, :value => @advisor.id %>
       <!-- form -->  
-      <h6> 1. What advice/guidance do you offer? Set basic info. </h6>
+      <h6> What advice/guidance do you offer? Set basic info. <br> (your experience, how you can help, etc.) </h6>
       <%= f.text_field :title, placeholder: "Title" %>
       <%= f.text_area :description, placeholder: "Description", style: "width: 355px; height: 190px;" %>
-      <%= f.number_field :price, placeholder: "Price per lesson (in €)" %> <br>
+      <%= f.number_field :price, placeholder: "Price per hour (in £)" %> <br>
       <!--  <h6> 2. Upload a cover image for this listing </h6>
       <%= f.file_field :listing_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br> -->
 
