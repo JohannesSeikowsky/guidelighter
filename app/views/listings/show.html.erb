@@ -15,28 +15,31 @@
 
   <h6 style="text-decoration: underline;"> <%= @advisor.first_name %> <%= @advisor.second_name %> / your guide </h6>
 
-  <%= image_tag @profile.profile_image.url  %> <br>
+  <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> <br>
   <!-- <p style="text-align: center;"><%= @profile.description %> </p> <br> -->
 
-    <h6 style="text-decoration: underline;">The Offer</h6>
-
-  <div class="grey_box">
+  <h6 style="text-decoration: underline;">The Offer</h6>
+  <div class="grey_box" style="padding: 4px 52px 14px 52px;">
     <h3><%= @listing.title %> </h3>
-    <p><%= @listing.description %> </p>
-    <p>Price: <%= @listing.price %> £ </p>
-    <div class="button">
-      <%= link_to "Request Guide", "#" %>
+    <p style="font-size: 16px;"><%= @listing.description %> </p>
+    <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
+      <div class="button">
+      <%= link_to "Request this Listing", "#", style: "padding: 12px 58px;" %>
     </div>
+  </div> <br>
+
+  <h6 style="text-decoration: underline;"> About the guide </h6>
+  <div class="grey_box" style="padding: 4px 52px 8px 52px;">
+    <h3> <%= @advisor.first_name %> <%= @advisor.second_name %>  </h3>
+    <p> <%= @profile.description %> </p>
+  </div> <br>
+
+  <div class="grey_box" style="padding: 14px 52px 8px 52px;">
+    <h6 style="text-decoration: underline;"> Contact </h6>
+    <form action="listing" method="post">
+      <textarea name="question"></textarea>
+      <div class="button" style="padding-top: 0px;"> <input type="submit" value="Send Message" style="padding: 2px 30px;"> </input> </div>
+    </form>
   </div>
-
-  <br> 
-  <h6 style="text-decoration: underline;"> About <%= @advisor.first_name %> </h6>
-  <p> <%= @profile.description %> </p>
-
-  <h6 style="text-decoration: underline;"> Get in touch </h6>
-  <form action="listing" method="post">
-    <textarea name="question"></textarea>
-    <div class="button" style="padding-top: 0px;"> <input type="submit" value="Send" style="padding: 2px 30px;"> </input> </div>
-  </form>
 
 </div> <br> <br> <br> <br> <br>

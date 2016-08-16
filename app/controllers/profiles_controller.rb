@@ -41,7 +41,7 @@ class ProfilesController < ApplicationController
       @advisor = Advisor.find(session[:id])
       @profile = @advisor.profile
       @profile.update(profile_params)
-      redirect_to edit_profile_path(profile_id: @profile.id), notice: "Profile update."
+      redirect_to edit_profile_path(profile_id: @profile.id), notice: "Your profile has been updated."
     else
       redirect_to login_path, notice: "Please log in."
     end
