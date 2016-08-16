@@ -19,38 +19,18 @@
   <p style="text-align: center;"> <%= notice %> </p>
   <h2 style="font-size: 38px; text-align: center;"> Offer your personal advice, guidance and expertise to those who need it. </h2>
 
-
   <div class="button">
   <% if logged_in? %>
     <%= link_to "POST A LISTING", new_listing_path, style: "background-color: orange; padding: 13px 45px;" %>
   <% else %>
     <%= link_to "BECOME A GUIDE", signup_path, style: "background-color: orange; padding: 13px 45px;" %>
     <% end %>
-
-
   </div> <br> <br> <br>
 
-  <!-- <h3> How it works </h3>
-  <ol>
-    <li> create simple listings stating what you offer </li>
-    <li> wait until your offer gets booked </li>
-    <li> help out, get paid & be happy </li> 
-  </ol> <br>
-  <h3> Book a session: </h3> -->
+
   <h3> Find your guide: </h3>
 
-
   <div class="row"> 
-
-  <!--  <div class="col-xs-4 button"> <a href=""> Oxbridge Interview help </a> </div>
-    <div class="col-xs-4 button"> <a href=""> Personal Teaching </a>  </div>
-    <div class="col-xs-4 button"> <a href=""> Industry Insights </a> </div>
-
-    <div class="col-xs-4 button"> <a href=""> Career Advice </a>  </div>
-    <div class="col-xs-4 button"> <a href=""> Consulting / I-Banking </a> </div>
-    <div class="col-xs-4 button"> <a href=""> Product Testers </a> </div> -->
-
-
     <div class="col-xs-4 button"> <a href=""> Finance / Consulting </a> </div>
     <div class="col-xs-4 button"> <a href=""> CV / Cover letter </a>  </div>
     <div class="col-xs-4 button"> <a href=""> Interview prep </a> </div>
@@ -58,9 +38,6 @@
     <div class="col-xs-4 button"> <a href=""> Career Intros </a>  </div>
     <div class="col-xs-4 button"> <a href=""> Entrepreneurship </a> </div>
     <div class="col-xs-4 button"> <a href=""> Find Internships </a> </div>
-
-
-
   </div> <hr>
   
   <h3> All Guides and listings: </h3>
@@ -69,7 +46,7 @@
     <a href="<%= show_listing_path(listing_id: listing.id) %>" >
       <div class="listing_on_homepage">
         <% unless listing.title.empty? %>
-          <div style="height: 85px;">
+          <div style="height: 73px;">
             <h4> <%= listing.title %> </h4>
           </div>
         <% end %>
@@ -80,12 +57,12 @@
         <% end %> <br>
 
         <% unless listing.advisor.first_name.nil? %>
-          <div style="text-align: center; font-weight: bold;"> Guide: <%= listing.advisor.first_name %> </div>
+          <div style="text-align: center;"> Guide: <%= listing.advisor.first_name %> </div>
         <% end %> <br>
 
         <% unless listing.price.nil? %>
           <% unless listing.price == 0 %>
-            <div style="text-align:center; position: absolute; bottom: 3px;"> Price: <%= listing.price %> £ </div>
+            <div style="text-align:center; position: absolute; bottom: 3px; font-size: 12px;"> Price: <%= listing.price %> £ </div>
           <% else %>
             <div style="text-align:center; position: absolute; bottom: 3px;"> Free </div>
           <% end %>
@@ -95,4 +72,3 @@
   <% end %>
 
 </div>
-

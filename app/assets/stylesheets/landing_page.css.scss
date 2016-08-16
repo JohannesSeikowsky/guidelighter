@@ -4,7 +4,13 @@
   // @media (max-width: 500px){ width: 100%; } // varying width
   margin: 0px auto;
   margin-bottom: 80px;
-  
+ 
+  /* background: asset-url("leucht1.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+
   // h1
   h1{
     text-transform: uppercase;
@@ -145,11 +151,12 @@
     margin-bottom: 20px;
     padding: 12px 21px;
     position: relative;
-    h4 { font-size: 16px; font-weight: normal; text-align: center;}
+    h4 { font-size: 15px; font-weight: normal; text-align: center;}
     img{ margin-bottom: 4px; border: 1px solid #A6A6A6; }
+
   }
   .listing_on_homepage:hover{
-    background-color: #F8F8F8;
+    background-color: #FCFCFC;
   }
 
 }
