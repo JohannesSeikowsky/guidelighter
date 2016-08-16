@@ -7,6 +7,7 @@ class Advisor < ActiveRecord::Base
   # validations
   validates_presence_of :first_name, :second_name
   validates_length_of :email, minimum: 6
+  validates_uniqueness_of :email
   validates :password_provided, length: { minimum: 6 }
 
   # password security implementation
