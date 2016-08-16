@@ -26,7 +26,11 @@ class ProfilesController < ApplicationController
   def edit
     if logged_in?
       @advisor = Advisor.find(session[:id])
-      @profile = @advisor.profile
+      unless @advisor.profile.nil?  
+        @profile = @advisor.profile
+      else 
+        redirect_to login_path, notice: "You don't have a profile. Sign up again."        
+      end
     else
       redirect_to login_path, notice: "Please log in."
     end
