@@ -27,7 +27,7 @@
       <h6> What advice/guidance do you offer? Set basic info. <br> (your experience, how you can help, etc.) </h6>
       <%= f.text_field :title, placeholder: "Title" %>
       <%= f.text_area :description, placeholder: "Description", style: "width: 355px; height: 190px;" %>
-      <%= f.number_field :price, placeholder: "Price per session (in £)", style: "width: 165px;" %> 
+      <%= f.number_field :price, placeholder: "Price per session (in £)", min: "0", style: "width: 165px;" %> 
                   <span style="font-size: 11px;"> Currency: British pounds. </span>
       <!--  <h6> 2. Upload a cover image for this listing </h6>
       <%= f.file_field :listing_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br> -->
