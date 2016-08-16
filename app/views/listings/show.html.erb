@@ -21,7 +21,7 @@
   <h6 style="text-decoration: underline;">The Offer</h6>
   <div class="grey_box" style="padding: 4px 52px 20px 52px;">
     <h3><%= @listing.title %> </h3>
-    <p style="font-size: 16px;"><%= @listing.description %> </p>
+    <p style="font-size: 16px;"><%= simple_format @listing.description %> </p>
     <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
       <div class="button">
       <%= link_to "Request this Listing", "#", style: "padding: 12px 58px;" %>
