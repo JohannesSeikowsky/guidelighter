@@ -20,7 +20,7 @@
     <h3> Start <span style="font-size: 11px;"> - make a start by creating an account. </span> </h3>
     <%= form_for :advisor, path: signup_action_path do |f| %>
       <%= f.text_field :first_name, placeholder: "First name" %>
-      <%= f.text_field :second_name, placeholder: "Second name" %>
+      <%= f.text_field :second_name, placeholder: "Last name" %>
       <%= f.text_field :email, placeholder: "Email" %>
       <%= f.password_field :password_provided, placeholder: "Password" %>
       <%= f.submit "Done." %>
