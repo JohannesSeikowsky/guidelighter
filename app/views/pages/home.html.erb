@@ -52,7 +52,9 @@
         <% end %>
         <% unless listing.advisor.profile.nil? %>  
           <% unless listing.advisor.profile.profile_image.url.nil? %>  
-            <%= image_tag listing.advisor.profile.profile_image.url, style: "height: 172px;" %>
+            <div style="text-align:center;">
+              <%= image_tag listing.advisor.profile.profile_image.url, style: "height: 172px; width: auto;" %>
+            </div>
           <% end %>
         <% end %> <br>
 
