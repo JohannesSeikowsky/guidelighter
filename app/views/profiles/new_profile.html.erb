@@ -18,7 +18,7 @@
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <!-- form -->
   <div class="grey_box">
-    <h3> Mini-Profile <span style="font-size: 11px;"> - so that people get a sense of who you are. </span> </h3>
+    <h3> Mini-Profile <span style="font-size: 11px;"> - In the next step you can create your listings. </span> </h3>
     <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
       <h6> 1. About yourself. </h6>
       <%= f.text_area :description, style: "width: 355px; height: 145px; margin-bottom: 12px;" %>
@@ -28,7 +28,7 @@
     <% end %>
   </div>
   <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
-     This will make your listings look more interesting.
+     A Mini-Profile is important, so that your offers look more personal.
   </div>
 
   <div class="with_love">

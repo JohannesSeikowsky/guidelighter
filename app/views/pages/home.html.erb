@@ -11,37 +11,30 @@
       <%= link_to "Login", login_path %> |
       <%= link_to "Signup", signup_path %>
     <% end %>
-  </div>
-
-  <br> <br> <br>
+  </div> <br> <br> <br>
 
   <!-- body -->
   <p style="text-align: center;"> <%= notice %> </p>
   <h2 style="font-size: 38px; text-align: center;"> Offer your personal advice, guidance and expertise to those who need it. </h2>
-
   <div class="button">
-  <% if logged_in? %>
-    <%= link_to "POST A LISTING", new_listing_path, style: "background-color: orange; padding: 13px 45px;" %>
-  <% else %>
-    <%= link_to "BECOME A GUIDE", signup_path, style: "background-color: orange; padding: 13px 45px;" %>
+    <% if logged_in? %>
+      <%= link_to "POST A LISTING", new_listing_path, style: "background-color: orange; padding: 13px 45px;" %>
+    <% else %>
+      <%= link_to "BECOME A GUIDE", signup_path, style: "background-color: orange; padding: 13px 45px;" %>
     <% end %>
   </div> <br> <br> <br>
 
-
   <h3> Find your guide: </h3>
-
   <div class="row"> 
     <div class="col-xs-4 button"> <a href=""> Finance / Consulting </a> </div>
     <div class="col-xs-4 button"> <a href=""> CV / Cover letter </a>  </div>
     <div class="col-xs-4 button"> <a href=""> Interview prep </a> </div>
-
     <div class="col-xs-4 button"> <a href=""> Career Intros </a>  </div>
     <div class="col-xs-4 button"> <a href=""> Entrepreneurship </a> </div>
     <div class="col-xs-4 button"> <a href=""> Find Internships </a> </div>
   </div> <hr>
   
   <h3> All Guides and listings: </h3>
-
   <% @listings.each do |listing| %>
     <a href="<%= show_listing_path(listing_id: listing.id) %>" >
       <div class="listing_on_homepage">
