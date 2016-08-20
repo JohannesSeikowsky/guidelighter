@@ -7,7 +7,7 @@ class AdvisorsController < ApplicationController
   def signup_action
     @advisor = Advisor.new(advisor_params)
     if @advisor.save
-      #GeneralMailer.successful_signup(@advisor).deliver
+      GeneralMailer.successful_signup(@advisor).deliver
       log_in
       redirect_to new_profile_path, notice: "You have signed up."
     else
