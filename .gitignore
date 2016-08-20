@@ -20,3 +20,6 @@
 /public/uploads
 # Ignore application configuration
 /config/application.yml
+
+# env variables set with figaro
+/config/application.yml
