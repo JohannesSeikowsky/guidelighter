@@ -15,7 +15,9 @@
 
   <!-- body -->
   <p style="text-align: center;"> <%= notice %> </p>
-  <h2 style="font-size: 38px; text-align: center;"> Offer your personal advice, guidance and expertise to those who need it. </h2>
+  <h2 style="font-size: 38px; text-align: center;"> 
+    Help someone out by sharing your professional experience. </h2>
+    <h4 style="text-align: center;">and get paid for it.</h4>
   <div class="button">
     <% if logged_in? %>
       <%= link_to "POST A LISTING", new_listing_path, style: "background-color: orange; padding: 13px 45px;" %>
@@ -47,8 +49,7 @@
           <% unless listing.advisor.profile.profile_image.url.nil? %>  
             <div style="text-align:center;">
               <%= image_tag listing.advisor.profile.profile_image.url %>
-            </div>
-          <% end %>
+            </div>          <% end %>
         <% end %> <br>
 
         <% unless listing.advisor.first_name.nil? %>
