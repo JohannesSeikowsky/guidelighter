@@ -1,0 +1,15 @@
+
+<div class="simple_container">
+  <br> <br> <br>
+  <div class="grey_box">  
+    <h3> Request this Listing (informally) </h3>
+
+    <%= form_for :request, path: create_request_path do |f| %>
+      <h6>When would you be available for the session? (in words) </h6>
+      <%= f.text_area :requesting_availability, placeholder: "Days, times etc." %>
+      <h6>Your Email (so that we can get back to you with a suggestion asap)</h6>
+      <%= f.text_field :requesting_email, placeholder: "Email" %>
+      <%= f.submit "Done." %>
+    <% end %> 
+  </div> 
+</div>

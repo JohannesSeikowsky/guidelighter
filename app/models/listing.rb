@@ -2,6 +2,7 @@ class Listing < ActiveRecord::Base
 
   # association
   belongs_to :advisor
+  has_many :requests
 
   # validations
   validates_presence_of :title, :description, :price

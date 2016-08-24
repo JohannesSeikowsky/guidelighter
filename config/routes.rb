@@ -24,6 +24,10 @@ Rails.application.routes.draw do
 
   delete 'delete_listing/:listing_id', to: 'listings#destroy', as: 'delete_listing'
 
+  # listing request
+  get 'request/:listing_id', to: "requests#new_request", as: 'new_request'
+  post 'request', to: 'requests#create_request', as: 'create_request'
+  
   # session related
   get 'login', to: 'sessions#login', as: "login"
   post 'login', to: 'sessions#login_action', as: "login_action"

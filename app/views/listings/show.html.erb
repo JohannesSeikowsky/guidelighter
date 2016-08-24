@@ -10,13 +10,15 @@
       <%= link_to "Login", login_path %> |
       <%= link_to "Signup", signup_path %>
     <% end %>
-  </div> <br> <br> <br>
+  </div> 
+  <br> <br> <br>
 
+  <h6 style="text-decoration: underline;"> 
+    <%= @advisor.first_name %> <%= @advisor.second_name %> / your guide 
+  </h6>
 
-  <h6 style="text-decoration: underline;"> <%= @advisor.first_name %> <%= @advisor.second_name %> / your guide </h6>
-
-  <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> <br>
-  <!-- <p style="text-align: center;"><%= @profile.description %> </p> <br> -->
+  <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> 
+  <br>
 
   <h6 style="text-decoration: underline;">The Offer</h6>
   <div class="grey_box" style="padding: 4px 52px 20px 52px;">
@@ -24,9 +26,11 @@
     <p style="font-size: 16px;"><%= simple_format @listing.description %> </p>
     <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
       <div class="button">
-      <%= link_to "Request this Listing", "#", style: "padding: 12px 58px;" %>
+
+      <%= link_to "Request this Listing", new_request_path(listing_id: @listing.id), style: "padding: 12px 58px;" %>
     </div>
-  </div> <br>
+  </div> 
+  <br>
 
   <h6 style="text-decoration: underline;"> About the guide </h6>
   <div class="grey_box" style="padding: 4px 52px 8px 52px;">
@@ -42,4 +46,5 @@
     </form>
   </div>
 
-</div> <br> <br> <br> <br> <br>
+</div> 
+<br> <br> <br> <br> <br>
