@@ -26,8 +26,9 @@ Rails.application.routes.draw do
 
   # listing request
   get 'request/:listing_id', to: "requests#new_request", as: 'new_request'
-  post 'request', to: 'requests#create_request', as: 'create_request'
-  
+  post 'request/:listing_id', to: 'requests#create_request', as: 'create_request'
+  get 'request_successful', to: 'requests#successful_request', as: 'successful_request'
+
   # session related
   get 'login', to: 'sessions#login', as: "login"
   post 'login', to: 'sessions#login_action', as: "login_action"

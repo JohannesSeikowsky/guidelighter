@@ -1,10 +1,13 @@
 class RequestsController < ApplicationController
 
   def new_request
-    @listing = Listing.find(params[:listing_id])
   end
 
-  def create_listing
+  def create_request
+    redirect_to successful_request_path, notice: "Your request has been sent."
+  end
+
+  def successful_request
   end
 
 end
