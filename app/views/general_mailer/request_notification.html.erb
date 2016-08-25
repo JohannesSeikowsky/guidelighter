@@ -1,13 +1,13 @@
-<h3> User with email "<%= @request.requesting_email %>" has requested listing "<%= @listing.title %>" from guide "<%= @advisor.first_name %> <%= @advisor.second_name %>". </h3>
+<h3> User with email "<%= @request.requesting_email %>" has just requested listing "<%= @listing.title %>" from guide "<%= @advisor.first_name %> <%= @advisor.second_name %>". Here all relevant data: </h3>
 
 <p style="text-decoration: underline;"> 1. Availability of requesting user </p>
-<p> User input: <%= @request.requesting_availability %>" </p> <br>
+<p> User availability: <%= @request.requesting_availability %> </p> <br>
 
 <p style="text-decoration: underline;"> 2. Info to contact requested guide to check his/her availability </p>
-<p> Name: <%= @advisor.first_name %> <%= @advisor.second_name %> </p>
-<p> Email: <%= @advisor.email %> </p> <br>
+<p> Guide name: <%= @advisor.first_name %> <%= @advisor.second_name %> </p>
+<p> Guide email: <%= @advisor.email %> </p> <br>
 
 <p style="text-decoration: underline;"> 3. Info to reply to requesting user afterwards </p>
-<p> Email: <%= @request.requesting_email %> </p> <br>
+<p> User email: <%= @request.requesting_email %> </p> <br>
 
 <p> <strong> Also, Win! 5 points for Gryffindor. </strong> </p>
