@@ -1,6 +1,20 @@
 
 <div class="simple_container">
-  <br> <br> <br>
+  
+  <!-- header -->
+  <div class="simple_header">
+    <% if logged_in? %>
+      <%= link_to "Logout", logout_path %> |
+      <%= link_to "Edit Profile", edit_profile_path %> |
+      <%= link_to "Manage Listings", new_listing_path %>
+    <% else %>  
+      <%= link_to "Login", login_path %> |
+      <%= link_to "Signup", signup_path %>
+    <% end %>
+  </div> <br> <br> <br>
+
+  <!-- new request form -->
+  <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <div class="grey_box">  
     <h3> Request this Listing <span style="font-size: 11px;"></span> </h3>
     <%= form_for :request, path: create_request_path do |f| %>
@@ -13,4 +27,10 @@
       <span style="font-size: 11px;">* This request is informal. It's <b> NOT </b> binding. </span>
     <% end %> 
   </div> 
+
+  <!-- love -->
+  <div class="with_love">
+    Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona
+  </div>
+
 </div>
