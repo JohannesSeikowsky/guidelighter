@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  # root
   root 'pages#home'
 
   # advisors related
@@ -24,12 +25,12 @@ Rails.application.routes.draw do
 
   delete 'delete_listing/:listing_id', to: 'listings#destroy', as: 'delete_listing'
 
-  # listing request
+  # requests related
   get 'request/:listing_id', to: "requests#new_request", as: 'new_request'
   post 'request/:listing_id', to: 'requests#create_request', as: 'create_request'
   get 'request_successful', to: 'requests#successful_request', as: 'successful_request'
 
-  # session related
+  # sessions related
   get 'login', to: 'sessions#login', as: "login"
   post 'login', to: 'sessions#login_action', as: "login_action"
   get 'logout', to: 'sessions#logout', as: 'logout'
