@@ -5,12 +5,20 @@
   margin: 0px auto;
   margin-bottom: 80px;
  
-  /* background: asset-url("leucht1.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
+  .image_background{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 508px;
+    z-index: -100;
 
+    background: asset-url("guidelighter.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } 
   // h1
   h1{
     text-transform: uppercase;
@@ -142,6 +150,7 @@
 
   .listing_on_homepage{
     border: 1px solid lightGrey;
+    background-color: white;
     width: 32%;
     height: 365px;
     float: left;
