@@ -1,7 +1,7 @@
-<h5> User with email "<%= @request.requesting_email %>" has requested listing "<%= @listing.title %>" from guide "<%= @advisor.first_name %> <%= @advisor.second_name %>" </h5> <br>
+<p> <b> User with email "<%= @request.requesting_email %>" has requested listing "<%= @listing.title %>" from guide "<%= @advisor.first_name %> <%= @advisor.second_name %>" </b> </p> <br>
 
 <p> 1. Availability of requesting user: </p>
-<p> "<%= @request.requesting_availability %>" </p> <br>
+<p> User input: <%= @request.requesting_availability %>" </p> <br>
 
 <p> 2. Info to contact requested <b> guide </b> to check his/her availability: </p>
 <p> Name: <%= @advisor.first_name %> <%= @advisor.second_name %> </p>
