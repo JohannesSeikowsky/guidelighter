@@ -8,7 +8,7 @@ class RequestsController < ApplicationController
     @listing = Listing.find(params[:listing_id])
     @request = @listing.requests.build(request_params)
     if @request.save
-      # email
+      GeneralMailer.request_notification(@request).deliver
       redirect_to successful_request_path, notice: "Your request has been sent."
     else
       redirect_to new_request_path(listing_id: @listing.id), notice: "Try again."

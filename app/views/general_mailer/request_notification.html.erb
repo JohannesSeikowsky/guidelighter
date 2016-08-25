@@ -1,0 +1,12 @@
+<h6 style="text-decoration: underline;"> A request for a listing has been issued: </h6> <br>
+
+<p> <strong> User with email address "<%= @request.requesting_email %>" </strong> has requested the listing <strong> "<%= @listing.title %>" </strong> from guide <strong> "<%= @advisor.first_name %> <%= @advisor.second_name %>" </strong> </p> <br>
+
+<p> The requesting user is available, when? </p>
+<p> <%= @request.requesting_availability %> </p> <br>
+
+<p> Now, lets contact the guide to check for his/her availabiltiy to get back to the requesting user with a suggestion afterwards: </p>
+<p> Guide name: <%= @advisor.first_name %> <%= @advisor.second_name %> </p>
+<p> Guide email: <%= @advisor.email %> </p> <br>
+
+<p> 5 points for Gryffindor </p>
