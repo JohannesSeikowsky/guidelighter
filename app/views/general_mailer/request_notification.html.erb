@@ -1,13 +1,13 @@
-<p> <strong> User with email "" </strong> has requested listing <strong> "<%= @listing.title %>" </strong> from guide <strong> "<%= @advisor.first_name %> <%= @advisor.second_name %>" </strong> </p> <br>
+<h5> User with email "<%= @request.requesting_email %>" has requested listing "<%= @listing.title %>" from guide "<%= @advisor.first_name %> <%= @advisor.second_name %>" </h5> <br>
 
-<p> Porvided availability of requesting user: </p>
+<p> 1. Availability of requesting user: </p>
 <p> "<%= @request.requesting_availability %>" </p> <br>
 
-<p> Info to contact requested <b> guide </b> to check his/her availability: </p>
+<p> 2. Info to contact requested <b> guide </b> to check his/her availability: </p>
 <p> Name: <%= @advisor.first_name %> <%= @advisor.second_name %> </p>
-<p> Email: <%= @advisor.email %> </p>
+<p> Email: <%= @advisor.email %> </p> <br>
 
-<p> Info to reply to requesting <b> user </b> afterwards: </p>
+<p> 3. Info to reply to requesting <b> user </b> afterwards: </p>
 <p> Email: <%= @request.requesting_email %> </p> <br> <br>
 
-<p> Also, Win. 5 points for Gryffindor! ;) </p>
+<p> <strong> Also, Win! 5 points for Gryffindor! ;) </strong> </p>
