@@ -325,10 +325,8 @@ body {
     line-height: 1.25;}}
 
 .profile_sidebar{
-  width: 240px;}
-
-
-
+  width: 240px;
+}
 
 
 
@@ -343,4 +341,28 @@ body {
   margin: 0px auto 40px auto;
   padding: 12px;
 }
+
+.signup_loader{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  text-align: center;
+  background: #F7EEE5;
+  img{ 
+    width: 125px;
+    height: auto;
+    margin-top: 100px;
+    border: none;
+  }
+  p{
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: bold;  
+  }
+  }
+
+
 

@@ -1,5 +1,10 @@
 
 <div class="simple_container">
+  <!-- signup loader -->
+  <div class="signup_loader">
+    <%= image_tag "page-loader.gif" %>
+    <p> We are processing your request. </p>
+  </div> 
 
   <!-- header -->
   <div class="simple_header">
@@ -24,9 +29,16 @@
     </div>
   </div> 
 
-    <!-- love -->
+  <!-- love -->
   <div class="with_love">
     Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona
   </div>
-
 </div>
+
+<!-- js -->
+<script type="text/javascript">
+  // fadeOut signup_loader
+  $(window).load(function() {
+    $(".signup_loader").delay(5500).fadeOut("slow");
+  })
+</script>
