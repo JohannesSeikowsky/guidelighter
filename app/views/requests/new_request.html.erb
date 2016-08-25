@@ -13,10 +13,12 @@
     <% end %>
   </div> <br> <br> <br>
 
+
   <!-- new request form -->
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
+  <h6 style="text-decoration: underline;">"<%= @listing.title %>"</h6>
   <div class="grey_box">  
-    <h3> Request this Listing <span style="font-size: 11px;"></span> </h3>
+    <h3> Request this Listing (informally) <span style="font-size: 11px;"></span> </h3>
     <%= form_for :request, path: create_request_path do |f| %>
       <h6>When would you be free for a session? Days? Times? In words... </h6>
       <%= f.text_area :requesting_availability, placeholder: "Availability", style: "width: 372px; height: 115px;" %>
@@ -24,7 +26,7 @@
       <%= f.text_field :requesting_email, placeholder: "Email" %>
       <%= f.hidden_field :listing_id, value: @listing_id %>
       <%= f.submit "Done." %> <br>
-      <span style="font-size: 11px;">* This request is informal. It's <b> NOT </b> binding. </span>
+      <span style="font-size: 11px;">* This request is informal and absolutely <b> not </b> binding. </span>
     <% end %> 
   </div> 
 
