@@ -19,7 +19,7 @@
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <!-- new listing -->
   <div class="grey_box">
-    <h3> Create Listing <span style="font-size: 11px;"> </span> </h3>
+    <h3> Create Listing </h3>
     <%= form_for :listing, path: new_listing_action_path, html: { multipart: true } do |f| %>
       <!-- passing advisor id -->
       <%= f.hidden_field :advisor_id, :value => @advisor.id %>

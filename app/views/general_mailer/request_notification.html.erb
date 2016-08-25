@@ -1,14 +1,13 @@
-<h4 style="text-decoration: underline;"> A request for a listing has been issued: </h4>
+<p> <strong> User with email "" </strong> has requested listing <strong> "<%= @listing.title %>" </strong> from guide <strong> "<%= @advisor.first_name %> <%= @advisor.second_name %>" </strong> </p> <br>
 
-<p> <strong> User with email "<%= @request.requesting_email %>" </strong> has requested <strong> "<%= @listing.title %>" </strong> from <strong> "<%= @advisor.first_name %> <%= @advisor.second_name %>" </strong> </p> <br>
+<p> Porvided availability of requesting user: </p>
+<p> "<%= @request.requesting_availability %>" </p> <br>
 
-<p> Requesting user - availability: </p>
-<p> "<%= @request.requesting_availability %>" </p>
-
-<p> Now, contact guide to check his/her availabiltiy: </p>
+<p> Info to contact requested <b> guide </b> to check his/her availability: </p>
 <p> Name: <%= @advisor.first_name %> <%= @advisor.second_name %> </p>
 <p> Email: <%= @advisor.email %> </p>
 
-<p> Upon reply --> get back to requesting user with a specific suggestion to conduct the session. </p>
+<p> Info to reply to requesting <b> user </b> afterwards: </p>
+<p> Email: <%= @request.requesting_email %> </p> <br> <br>
 
-<p> Win. 5 points for Gryffindor. </p>
+<p> Also, Win. 5 points for Gryffindor! ;) </p>

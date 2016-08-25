@@ -10,6 +10,6 @@ class GeneralMailer < ApplicationMailer
     @request = request
     @listing = request.listing
     @advisor = @listing.advisor
-    mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com", subject: "Incoming Listing Request.")
+    mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com", subject: "Request!")
   end
 end

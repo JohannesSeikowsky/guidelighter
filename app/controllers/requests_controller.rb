@@ -2,6 +2,7 @@ class RequestsController < ApplicationController
 
   def new_request
     @listing_id = params[:listing_id]
+    @listing = Listing.find(params[:listing_id])
   end
 
   def create_request
