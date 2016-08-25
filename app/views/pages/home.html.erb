@@ -49,11 +49,12 @@
           <% unless listing.advisor.profile.profile_image.url.nil? %>  
             <div style="text-align:center;">
               <%= image_tag listing.advisor.profile.profile_image.url %>
-            </div>          <% end %>
-        <% end %> <br>
+            </div>          
+          <% end %>
+        <% end %>
 
         <% unless listing.advisor.first_name.nil? %>
-          <div style="text-align: center;"> Guide: <%= listing.advisor.first_name %> </div>
+          <div style="text-align: center;"> <%= listing.advisor.first_name %> </div>
         <% end %> <br>
 
         <% unless listing.price.nil? %>
