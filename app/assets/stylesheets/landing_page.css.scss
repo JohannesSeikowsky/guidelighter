@@ -1,3 +1,15 @@
+
+// background color below the background image on homepage
+.color_background{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: -250;
+    background-color: #F6F6EF;
+  }
+
 // container
 .home_container{
   @media (min-width: 0px){ width: 810px; }
@@ -6,19 +18,23 @@
   margin-bottom: 80px;
  
   .image_background{
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0px;
     right: 0px;
-    height: 510px;
+    height: 523px;
+    opacity: 0.93;
     z-index: -100;
 
-    background: asset-url("guidelighter.jpg") no-repeat center center fixed; 
+    background: asset-url("guidelighter-color.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
   } 
+
+
+
   // h1
   h1{
     text-transform: uppercase;
@@ -150,7 +166,7 @@
 
   .listing_on_homepage{
     border: 1px solid lightGrey;
-    background-color: white;
+    background-color: #FCFCFC;
     width: 32%;
     height: 365px;
     float: left;
