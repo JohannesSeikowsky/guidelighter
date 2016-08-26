@@ -2,27 +2,40 @@
 <!-- background color below background image -->
 <div class="color_background"> </div>
 
-<div class="home_container">  
-  <!-- background image -->
-  <div class="image_background"> </div>
-
-  <!-- header -->
-  <div class="simple_header" style= "color: #F5EFE6;">
-    <% if logged_in? %>
+<!-- header -->
+<div class="gl_header">
+  <% if logged_in? %>
+    <div class="links">
       <%= link_to "Logout", logout_path, style: "color: #F5EFE6;" %> |
       <%= link_to "Edit Profile", edit_profile_path, style: "color: #F5EFE6;" %> |
       <%= link_to "Create Listing", new_listing_path, style: "color: #F5EFE6;" %> |
       <%= link_to "Manage Listings", new_listing_path, style: "color: #F5EFE6;" %>
-    <% else %>  
-      <%= link_to "Login", login_path, class: "", style: "color: #F5EFE6;" %> |
-      <%= link_to "Signup", signup_path, class: "", style: "color: #F5EFE6;" %>
-    <% end %>
-  </div> <br> <br> <br>
+    </div>
+  <% else %>
+    <div class="links">
+      <%= link_to "Support", root_path, class: "", style: "color: #F5EFE6;" %> |
+      <%= link_to "How does it work", root_path, class: "", style: "color: #F5EFE6;" %> |
+      <%= link_to "Guide Login", login_path, class: "", style: "color: #F5EFE6;" %> |
+      <%= link_to "Guide Signup", signup_path, class: "", style: "color: #F5EFE6;" %>
+    </div>
+  <% end %>
+</div> 
+
+
+
+<!-- home container -->
+<div class="home_container">  
+  <!-- background image -->
+  <div class="image_background"> </div>
+
+
+
+  <br> <br> <br>
 
   <!-- body -->
   <p style="text-align: center;"> <%= notice %> </p>
   <h2 style="font-size: 39px; text-align: center; font-weight: normal;"> 
-    Help someone out by sharing your professional experience (and get paid for it). </h2>
+    <span style="font-weight: bold;"> Help someone </span> out by sharing your professional experience (and get paid for it). </h2>
   <div class="button">
     <% if logged_in? %>
       <%= link_to "POST A LISTING", new_listing_path, style: "background-color: orange; padding: 13px 45px;" %>
@@ -31,7 +44,7 @@
     <% end %>
   </div> <br> <br> <br> <br>
 
-  <h2 style="font-weight: normal";> Request advice and guidance from a real, breathing person. </h2>
+  <h2 style="font-weight: normal";> Easily request guidance from a real, breathing person. </h2>
   <div class="row"> 
     <div class="col-xs-4 button"> <a href="" style="background-color: #FFCD6F;"> Finance / Consulting </a> </div>
     <div class="col-xs-4 button"> <a href="" style="background-color: #FFCD6F;"> CV / Cover letter </a>  </div>
