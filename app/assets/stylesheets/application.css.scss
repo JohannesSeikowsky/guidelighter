@@ -33,6 +33,13 @@ body {
   top: 18px;
   right: 26px;}
 
+.large_image_background{
+      background: asset-url("guidelighter-color.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 // container
 .simple_container{
@@ -56,7 +63,6 @@ body {
     -o-background-size: cover;
     background-size: cover;
   } 
-
 
   // h1
   h1{
