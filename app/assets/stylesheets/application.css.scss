@@ -22,7 +22,8 @@ body {
     color: red;
     position: fixed;
     top: 5px;
-    text-decoration: underline;}}
+    text-decoration: underline;}
+  }
 
 // header
 .simple_header{
@@ -39,6 +40,24 @@ body {
   @media (max-width: 500px){ width: 100%; } // varying width
   margin: 0px auto;
   
+  // background image
+  .image_background{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 524px;
+    opacity: 0.88;
+    z-index: -100;
+
+    background: asset-url("guidelighter-color.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } 
+
+
   // h1
   h1{
     text-transform: uppercase;
@@ -321,6 +340,11 @@ body {
 
 .grey_box{
   background-color: #EEEEEE; 
+  padding: 1px 15px 26px 15px;
+}
+
+.white_box{
+  background-color: #F6F6EF; 
   padding: 1px 15px 26px 15px;
 }
 

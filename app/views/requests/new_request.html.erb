@@ -1,18 +1,22 @@
-
-<div class="simple_container">
-
-  <!-- header -->
-  <div class="simple_header">
-    <% if logged_in? %>
+<!-- header -->
+<div class="gl_header">
+  <% if logged_in? %>
+    <div class="links">    
       <%= link_to "Logout", logout_path %> |
       <%= link_to "Edit Profile", edit_profile_path %> |
       <%= link_to "Manage Listings", new_listing_path %>
-    <% else %>  
+    </div>
+  <% else %>  
+    <div class="links">
+      <%= link_to "Support", root_path, class: "", style: "color: #F5EFE6;" %> |
+      <%= link_to "How does it work", root_path, class: "", style: "color: #F5EFE6;" %> |
       <%= link_to "Login", login_path %> |
       <%= link_to "Signup", signup_path %>
-    <% end %>
-  </div> <br> <br> <br>
+    </div>
+  <% end %>
+</div> <br> <br> <br>
 
+<div class="simple_container">
   <!-- new request -->
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <h6 style="text-decoration: underline;"><%= @listing.title %></h6>
@@ -28,7 +32,6 @@
       <span style="font-size: 11px;">* This request is informal and in no way binding. </span>
     <% end %> 
   </div> 
-
   <!-- love -->
   <div class="with_love">
     Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona

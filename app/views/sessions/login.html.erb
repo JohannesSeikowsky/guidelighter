@@ -1,13 +1,17 @@
-
 <!-- header -->
-<div class="simple_header">
-  <%= link_to "Signup", signup_path %>
-</div> <br> <br> <br>
+<div class="gl_header">
+  <div class="links">
+    <%= link_to "Support", root_path, class: "", style: "color: #F5EFE6;" %> |
+    <%= link_to "How does it work", root_path, class: "", style: "color: #F5EFE6;" %> |
+    <%= link_to "Signup", signup_path %>
+  </div>
+</div> <br> <br> <br> <br>
 
-<div class="simple_container">
-  <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
+
+<div class="simple_container">  
   <!-- form -->
-  <div class="grey_box">
+  <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
+  <div class="white_box">
     <h3> Login <span style="font-size: 11px;"> - provide your email and password. </span> </h3>
     <%= form_for :login, path: login_action_path do |f| %>
       <%= f.text_field :email, placeholder: "Email" %>
@@ -15,10 +19,8 @@
       <%= f.submit "Login." %>
     <% end %>
   </div>
-
   <!-- love -->
   <div class="with_love">
     Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona
   </div>
-
 </div>

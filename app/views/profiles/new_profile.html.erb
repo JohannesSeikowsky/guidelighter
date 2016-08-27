@@ -1,10 +1,11 @@
+<!-- header -->
+<div class="gl_header">
+  <div class="links"> 
+    <%= link_to "Logout", logout_path %>
+  </div>
+</div> <br> <br> <br>
 
 <div class="simple_container">
-  <!-- header -->
-  <div class="simple_header">
-    <%= link_to "Logout", logout_path %>
-  </div> <br> <br> <br>
-
   <!-- errors -->
   <% if @profile && @profile.errors.any? %>
       <h4> Try again. </h4>
@@ -14,9 +15,8 @@
         <% end %>
       </ul> 
   <% end %>
-
-  <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <!-- form -->
+  <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <div class="grey_box">
     <h3> Mini-Profile <span style="font-size: 11px;"> - In the next step you can create your listings. </span> </h3>
     <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
@@ -30,14 +30,13 @@
   <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
      A profile is important to make your listings more personal.
   </div>
-
+  <!-- love -->
   <div class="with_love">
     Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona
   </div>
-
 </div>
 
-<!-- alerting large uploads -->
+<!-- alert if large uploads -->
 <script type="text/javascript">
   $('#image_upload_field').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;

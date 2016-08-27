@@ -1,18 +1,18 @@
-
-<div class="simple_container">
-
-  <div class="simple_header">
+<!-- header -->
+<div class="gl_header">
+  <div class="links"> 
     <%= link_to "Logout", logout_path %> |
     <%= link_to "Create Listing", new_listing_path %> |
     <%= link_to "Manage Listings", new_listing_path %>
-  </div> <br> <br> <br>
+  </div>
+</div> <br> <br> <br>
 
-
-  <div style="color: grey;"> <%= notice %> </div>
-  
+<!-- container -->
+<div class="simple_container">
+  <!-- edit form -->
+  <div style="color: grey;"> <%= notice %> </div>  
   <div class="grey_box">
     <h3> Edit <span style="font-size: 11px;"> - update this profile to your liking. </span> </h3>
-
     <%= form_for @profile, url: update_profile_path do |f| %>
       <h6> 1. Edit description </h6>
       <%= f.text_area :description, style: "height: 205px;" %> 
@@ -21,14 +21,12 @@
       <%= f.submit "Done." %>
     <% end %> 
   </div> <br>
-
+  <!-- profile show -->
   <h3> Current Profile </h3>
   <div>
     <%= @advisor.first_name %> <%= @advisor.second_name %>
     <%= image_tag @profile.profile_image.url %>
     <p style="margin: 0 10% 10px 10%;"> <%= simple_format @profile.description %> </p>
   </div>
-
-
 </div>
 <br> <br> <br> <br> <br> <br> <br>
