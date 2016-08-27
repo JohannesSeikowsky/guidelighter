@@ -18,14 +18,12 @@
   <% end %>
   <!-- new listing -->
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
-  
-  <h6 style="text-decoration: underline;"> Decide what you'd like to offer. </h6>
+  <h6 style="text-decoration: underline;"> Decide on your offers. </h6>
   <div class="grey_box">
-    <h3> What would like to share on Guidelighter? </h3>
+    <h3> What would you like to share on Guidelighter? </h3>
     <%= form_for :listing, path: new_listing_action_path, html: { multipart: true } do |f| %>
       <%= f.hidden_field :advisor_id, :value => @advisor.id %>
-      <h6> Many people like to share something related to their professional expierence, knowledge related to their careers and education. 
-</h6>
+      <h6> Many people share something related to their professional expierence, knowledge and skills. For some inspiration, have a look at the examples at the bottom.</h6>
       <%= f.text_field :title, placeholder: "Title" %>
       <%= f.text_area :description, placeholder: "Description", style: "width: 355px; height: 190px;" %>
       <%= f.number_field :price, placeholder: "Price per session (in £)", min: "0", style: "width: 165px;" %> 
@@ -35,7 +33,7 @@
   </div> 
   <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
     See examples below.
-  </div> <br> <br>
+  </div> <br>
   <!-- manage listings -->
   <% if !@listings.nil? %>
     <% if !@listings.empty? %>
@@ -69,12 +67,39 @@
     <% end %>
   <% end %>
 
-  <h3> Example <span style="font-size: 11px;"> </span> </h3>
-  <div class="example_listing grey_box" style="padding: 20px 35px; margin-bottom: 55px; background-color: #F7F7F7;">
+  <h3> Examples </h3>
+  <div class="example_listing grey_box" style="padding: 20px 35px; margin-bottom: 25px; background-color: #F7F7F7;">
     <h4> Advice on Finance Careers & Applications </h4>
     <div>
-     Are you considering to apply for jobs in finance but are not sure where to start? I have worked in Private Banking, Corporate Banking and Sovereign Risk at Citigroup for 4 years. I can share my experience of working in different areas of finance and help you to get a grasp of what goes on where and how you can get in (and whether you should). In case you already know what you are interested in, I can guide you through the most important issues and what you should know before applying. We can communicate via Skype or in person (if we can arrange it). If you are unsure whether to proceed, book my free listing first and we can have an intro chat!
-     </div> <br>
+     Are you considering to apply for jobs in finance but are not sure where to start? I have worked in Private Banking, Corporate Banking and Sovereign Risk at Citigroup for 4 years. I can share my experience of working in different areas of finance and help you to get a grasp of what goes on where and how you can get in (and whether you should). <br> <br> In case you already know what you are interested in, I can guide you through the most important issues and what you should know before applying. <br> <br> We can communicate via Skype or in person (if we can arrange it.
+    </div> <br>
+    <div>Price: 30 £</div>
+    <%= image_tag 'oleg.jpg' %>
+  </div>
+
+  <div class="example_listing grey_box" style="padding: 20px 35px; margin-bottom: 25px; background-color: #F7F7F7;">
+    <h4> Oxbridge Interview prep (general advice + economics focus) </h4>
+    <div>
+     I did my BA at the University of Oxford in "Economics and Management" (E&M). As one would expect, I had to go through the official application and interview process (which is similar to the Cambridge one). As a result I can help out by sharing my experience and knowledge of the Oxbridge application process and give useable advice related to it. This is valuable in the general case irrespective of what course you're applying to. Knowing what awaits you in general will sooth your mind. Evidently I can help out even more if you are applying for courses that have an Economics component (like PPE for example). Good luck to all of you and feel free to get in touch.
+    </div> <br>
+    <div>Price: 25 £</div>
+    <%= image_tag 'johannes.jpg' %>
+  </div>
+
+  <div class="example_listing grey_box" style="padding: 20px 35px; margin-bottom: 55px; background-color: #F7F7F7;">
+    <h4> Mentoring for beginning programmers </h4>
+    <div>
+      I have been a programmer for a couple of years. Yet I've never had any formal education in Computer science whatsoever and mostly taught myself through trial and error. Therefore I know how hard and how frustrating it can be to wiggle yourself through the stages of becoming a competent programmer. And that's why I offer my support in this regard here on Guidelighter. Either in the form of specific one-off support sessions when you need them or in a more continuous format, like monthly or bi-weekly mentoring sessions. That is up to you. If you are interested in this principal offering, just get in touch and we'll figure out the details together.
+    </div> <br>
+    <div>Price: 35 £</div>
+    <%= image_tag 'suro.jpg' %>
+  </div>
+
+  <div class="example_listing grey_box" style="padding: 20px 35px; margin-bottom: 25px; background-color: #F7F7F7;">
+    <h4> CV / Personal Statement Reviews & Help </h4>
+    <div>
+    I can review your personal statements, cover letters and CVs and help you take them onto the next level. My experience is based on successfully applying for degrees at Oxford, Cambridge, the LSE and UCL as well as for jobs at organisations like Citi, Goldman Sachs, McKinsey or Boston Consulting. <br> <br> You can send me your material and I will go through it, provide comments, suggestions and talk you through it. We can communicate via email and Skype. <br> <br> If you are unsure whether to proceed, book my free listing first and we can have an intro chat!
+    </div> <br>
     <div>Price: 30 £</div>
     <%= image_tag 'oleg.jpg' %>
   </div>

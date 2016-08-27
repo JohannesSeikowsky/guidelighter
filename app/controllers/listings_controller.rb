@@ -21,7 +21,7 @@ class ListingsController < ApplicationController
       @advisor = Advisor.find(session[:id])
       @listing = @advisor.listings.build(listing_params)
       if @listing.save
-        redirect_to new_listing_path, notice: "√ Listing published. Post another one?"
+        redirect_to new_listing_path, notice: "√ Your offer has been published successfully. Post another one?"
       else
         render 'new_listing'
       end
@@ -42,7 +42,7 @@ class ListingsController < ApplicationController
     if logged_in?
       @listing = Listing.find(params[:listing_id])
       @listing.update(listing_params)
-      redirect_to new_listing_path, notice: "Your Listing got updated."
+      redirect_to new_listing_path, notice: "The Listing has been updated."
     else
       redirect_to login_path, notice: "Please log in."
     end
@@ -52,7 +52,7 @@ class ListingsController < ApplicationController
     if logged_in?
       @listing = Listing.find(params[:listing_id])
       @listing.delete
-      redirect_to new_listing_path, notice: "Listing deleted."
+      redirect_to new_listing_path, notice: "The Listing has been deleted."
     else
       redirect_to login_path, notice: "Please log in."
     end      

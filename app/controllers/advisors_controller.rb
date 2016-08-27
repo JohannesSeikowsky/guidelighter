@@ -9,7 +9,7 @@ class AdvisorsController < ApplicationController
     if @advisor.save
       GeneralMailer.successful_signup(@advisor).deliver if Rails.env.production?
       log_in
-      redirect_to new_profile_path, notice: "You have signed up."
+      redirect_to new_profile_path, notice: "You've signed up. Make a quick profile."
     else
       render 'signup'
     end
