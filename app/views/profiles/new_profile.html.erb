@@ -3,7 +3,7 @@
   <div class="links"> 
     <%= link_to "Logout", logout_path %>
   </div>
-</div> <br> <br> <br>
+</div> <br> <br> <br> <br>
 
 <div class="simple_container">
   <!-- errors -->
@@ -19,9 +19,9 @@
   <!-- form -->
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <div class="grey_box">
-    <h3> Mini-Profile <span style="font-size: 11px;"> - In the next step you can create your listings. </span> </h3>
+    <h3> Mini-Profile <span style="font-size: 11px;"> - to make things look more personal. </span> </h3>
     <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
-      <h6> 1. About yourself. </h6>
+      <h6> 1. About yourself (briefly and informally). </h6>
       <%= f.text_area :description, style: "width: 355px; height: 145px; margin-bottom: 12px;" %>
       <h6> 2. Your image. </h6>
       <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br>

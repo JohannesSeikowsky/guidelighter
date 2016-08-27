@@ -4,7 +4,7 @@
     <%= link_to "Logout", logout_path %> |
     <%= link_to "Edit Profile", edit_profile_path %>
   </div>
-</div> <br> <br> <br>
+</div> <br> <br> <br> <br>
 
 <div class="simple_container">
   <!-- errors -->
@@ -18,11 +18,14 @@
   <% end %>
   <!-- new listing -->
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
+  
+  <h6 style="text-decoration: underline;"> Decide what you'd like to offer. </h6>
   <div class="grey_box">
-    <h3> Create Listing </h3>
+    <h3> What would like to share on Guidelighter? </h3>
     <%= form_for :listing, path: new_listing_action_path, html: { multipart: true } do |f| %>
       <%= f.hidden_field :advisor_id, :value => @advisor.id %>
-      <h6> What advice/guidance do you offer? Set basic info. <br> (your experience, how you can help, etc.) </h6>
+      <h6> Many people like to share something related to their professional expierence, knowledge related to their careers and education. 
+</h6>
       <%= f.text_field :title, placeholder: "Title" %>
       <%= f.text_area :description, placeholder: "Description", style: "width: 355px; height: 190px;" %>
       <%= f.number_field :price, placeholder: "Price per session (in £)", min: "0", style: "width: 165px;" %> 
@@ -31,7 +34,7 @@
     <% end %> 
   </div> 
   <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
-    The Listings you create here will be bookable on guidelighter.com.
+    See examples below.
   </div> <br> <br>
   <!-- manage listings -->
   <% if !@listings.nil? %>
