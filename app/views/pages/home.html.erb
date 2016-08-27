@@ -11,8 +11,8 @@
     <div class="links">
       <%= link_to "Support", root_path, class: "", style: "color: #F5EFE6;" %> |
       <%= link_to "How does it work", root_path, class: "", style: "color: #F5EFE6;" %> |
-      <%= link_to "Guide Login", login_path, class: "", style: "color: #F5EFE6;" %> |
-      <%= link_to "Guide Signup", signup_path, class: "", style: "color: #F5EFE6;" %>
+      <%= link_to "Login", login_path, class: "", style: "color: #F5EFE6;" %> |
+      <%= link_to "Signup", signup_path, class: "", style: "color: #F5EFE6;" %>
     </div>
   <% end %>
 </div>  <br> <br> <br>
@@ -76,4 +76,16 @@
     </a>
   <% end %>
 
+  <div class="bottom_right_links">
+    <%= link_to "Find Listings though filters.", root_path, class: "btn btn-small btn-primary", onclick: "stillInProgress();" %>
+  </div>
+
 </div>
+
+  <!-- js -->
+  <script type="text/javascript">
+    function stillInProgress(){
+      alert("This feature is being built right now. It will be online next week. We apologize for the roose.");
+    }
+  </script>
+
