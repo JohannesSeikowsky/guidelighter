@@ -8,7 +8,7 @@
     </div>
   <% else %>  
     <div class="links">
-      <%= link_to "Support", root_path, class: "", style: "color: #F5EFE6;" %> |
+      <%= link_to "Contact Us", root_path, class: "", style: "color: #F5EFE6;" %> |
       <%= link_to "How does it work", root_path, class: "", style: "color: #F5EFE6;" %> |
       <%= link_to "Login", login_path %> |
       <%= link_to "Signup", signup_path %>
@@ -23,15 +23,15 @@
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <h6 style="text-decoration: underline;"><%= @listing.title %></h6>
   <div class="grey_box">  
-    <h3> Request this Listing (informally) <span style="font-size: 11px;"></span> </h3>
+    <h3> Request this Listing <span style="font-size: 11px;"></span> </h3>
     <%= form_for :request, path: create_request_path do |f| %>
       <h6>When would you be free for a session? Days? Times? In words... </h6>
       <%= f.text_area :requesting_availability, placeholder: "Availability", style: "width: 372px; height: 115px;" %>
-      <h6>Your Email (so that we can get back to you asap)</h6>
+      <h6>Your Email (so that we can get back to you)</h6>
       <%= f.text_field :requesting_email, placeholder: "Email" %>
       <%= f.hidden_field :listing_id, value: @listing_id %>
       <%= f.submit "Done." %> <br>
-      <span style="font-size: 11px;">* This request is informal and in no way binding. </span>
+      <span style="font-size: 11px;">* This request is not yet a booking – we will be in touch with further details asap. </span>
     <% end %> 
   </div> 
   <!-- love -->
