@@ -27,8 +27,8 @@
 
   <h6 style="text-decoration: underline;">The Offer</h6>
   <div class="grey_box" style="padding: 4px 52px 20px 52px;">
-    <h3><%= @listing.title %> </h3>
-    <p style="font-size: 16px;"><%= simple_format @listing.description %> </p>
+    <h3> <%= @listing.title %> </h3>
+    <p> <%= simple_format @listing.description, style: "line-height: 1.5;" %> </p>
     <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
     <div class="button">
       <%= link_to "Request this Listing", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px;" %>
@@ -38,7 +38,7 @@
   <h6 style="text-decoration: underline;"> About the guide </h6>
   <div class="grey_box" style="padding: 4px 52px 8px 52px;">
     <h3> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>.  </h3>
-    <p> <%= simple_format @profile.description %> </p>
+    <p> <%= simple_format @profile.description, style: "line-height: 1.5;" %> </p>
   </div> <br>
 
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">
@@ -48,4 +48,18 @@
       <div class="button" style="padding-top: 0px;"> <input type="submit" value="Send Message" style="padding: 2px 30px;"> </input> </div>
     </form>
   </div>
+
+  <div class="bottom_right_links">
+    <%= link_to "Browse Listings by Category", root_path, class: "btn btn-small btn-primary", onclick: "stillInProgress();" %>
+  </div>
 </div> <br> <br> <br> <br> <br>
+
+<script type="text/javascript">
+  function stillInProgress(){
+    alert("This feature is being built right now. It will be online next week. We apologize for the roose");
+  }
+</script>
+
+
+
+
