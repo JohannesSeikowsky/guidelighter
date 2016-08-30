@@ -30,6 +30,11 @@
         color: white;
         font-size: 14px;
         margin-left: 18px;
+        font-weight: 690;
+      }
+      .btn-turquoise{
+        background-color: #5A8F96;
+        color: white;
       }
     }
   }
@@ -39,7 +44,12 @@
   position: fixed;
   bottom: 8px;
   right: 8px;
+  .btn-turquoise{
+    background-color: #5A8F96;
+    color: white;
+  }
 }
+
 
 
 // container
@@ -58,7 +68,7 @@
     opacity: 0.88;
     z-index: -100;
 
-    background: asset-url("gl-black.jpg") no-repeat center center fixed; 
+    background: asset-url("gl-color.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

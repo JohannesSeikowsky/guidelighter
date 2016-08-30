@@ -2,10 +2,10 @@
 <div class="gl_header">
   <% if logged_in? %>
     <div class="links">
-      <%= link_to "Logout", logout_path, style: "color: #F5EFE6;" %> |
-      <%= link_to "Edit Profile", edit_profile_path, style: "color: #F5EFE6;" %> |
-      <%= link_to "Post Listing", new_listing_path, style: "color: #F5EFE6;" %> |
-      <%= link_to "Manage Listings", new_listing_path, style: "color: #F5EFE6;" %>
+      <%= link_to "Edit Profile", edit_profile_path %>
+      <%= link_to "Post Listing", new_listing_path %>
+      <%= link_to "Manage Listings", new_listing_path %>
+      <%= link_to "Logout", logout_path, class: "btn btn-small btn-turquoise" %>
     </div>
   <% else %>
     <div class="links">
@@ -13,7 +13,7 @@
       <%= link_to "Contact Us", root_path %>
       <%= link_to "How It Works", root_path %>
       <%= link_to "Login", login_path %>
-      <%= link_to "Signup", signup_path, class: "", style: "background-color: #80BBC2;", class: "btn btn-small" %>
+      <%= link_to "Signup", signup_path, class: "btn btn-small btn-turquoise" %>
     </div>
   <% end %>
 </div>  <br> <br> <br>
@@ -35,7 +35,7 @@
     <% end %>
   </div> <br> <br> <br> <br>
 
-  <h2 style="font-weight: normal";> Easily request guidance from a real, breathing person. </h2>
+  <h2 style="font-weight: normal";> Easily request guidance from a real person. </h2>
   <div class="row"> 
     <div class="col-xs-4 button"> <a href="" style="background-color: #FFCD6F;"> Uni. Applications </a> </div>
     <div class="col-xs-4 button"> <a href="" style="background-color: #FFCD6F;"> Career Advice & Insights </a>  </div>
@@ -45,7 +45,7 @@
     <div class="col-xs-4 button"> <a href=""> Find Internships </a> </div>-->
   </div> <br> <br> <br>
   
-  <h5 style="text-align: center;"> Browse all our guides and listings: </h5> <br>
+  <h5 style="text-align: center;"> Browse all guides and listings: </h5> <br>
   <% @listings.each do |listing| %>
     <a href="<%= show_listing_path(listing_id: listing.id) %>" >
       <div class="listing_on_homepage">
@@ -78,7 +78,7 @@
   <% end %>
 
   <div class="bottom_right_links">
-    <%= link_to "Browse Listings by Category", root_path, class: "btn btn-small btn-primary", onclick: "stillInProgress();" %>
+    <%= link_to "Browse Listings by Category", root_path, class: "btn btn-small btn-turquoise", onclick: "stillInProgress();" %>
   </div>
 
 </div>
