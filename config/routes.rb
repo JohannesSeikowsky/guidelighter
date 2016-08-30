@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   # root
   root 'pages#home'
 
+  # statics
+  get 'contact', to: 'pages#contact', as: 'contact'
+  get 'about', to: 'pages#about', as: 'about'
+  get 'how', to: 'pages#how', as: 'how'
+
   # advisors related
   get 'signup', to: 'advisors#signup', as: 'signup'
   post 'signup', to: 'advisors#signup_action', as: 'signup_action'
