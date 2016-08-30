@@ -2,19 +2,24 @@
 <div class="gl_header">
   <% if logged_in? %>  
     <div class="links"> 
+      <%= link_to "About Us", root_path %>
+      <%= link_to "Contact Us", root_path %>
       <%= link_to "Edit Profile", edit_profile_path %>
       <%= link_to "Manage Listings", new_listing_path %>
       <%= link_to "Logout", logout_path, class: "btn btn-small btn-turquoise" %>
     </div>
   <% else %>  
     <div class="links">
+      <%= link_to "About Us", root_path %>
       <%= link_to "Contact Us", root_path %>
-      <%= link_to "How does it work", root_path %>
+      <%= link_to "How It Works", root_path %>
       <%= link_to "Login", login_path %>
       <%= link_to "Signup", signup_path, class: "btn btn-small btn-turquoise" %>
     </div>
   <% end %>
-</div> <br> <br> <br>
+</div>
+
+
 
 <div class="simple_container">
     <!-- setting background color -->

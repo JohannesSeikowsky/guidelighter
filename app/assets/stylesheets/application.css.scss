@@ -14,7 +14,7 @@ body {
   margin-bottom: 22px;
   color: #333;
   background-color: #F6F6EF;
-  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-family: "Helvetica", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   @media (min-width: 500px){ padding-top: 25px; }
   @media (max-width: 500px){ padding: 15px 10px 0px 10px; } // varying padding
   a{
@@ -39,7 +39,7 @@ body {
 .simple_container{
   @media (min-width: 500px){ width: 500px; }
   @media (max-width: 500px){ width: 100%; } // varying width
-  margin: 0px auto;
+  margin: 93px auto 250px auto;
   
   // background image
   .image_background{
