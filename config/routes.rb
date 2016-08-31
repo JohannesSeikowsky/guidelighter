@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   get 'how', to: 'pages#how', as: 'how'
 
   # contact
-  get 'contact', to: 'messages#new', as: 'contact'
-  post 'contact', to: 'messages#create', as: 'create_contact'
+  get 'contact', to: 'contact_messages#new', as: 'contact'
+  post 'contact', to: 'contact_messages#create', as: 'create_contact'
 
   # advisors related
   get 'signup', to: 'advisors#signup', as: 'signup'
