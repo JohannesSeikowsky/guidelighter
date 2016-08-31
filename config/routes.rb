@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'messages/create_contact_us_msg'
+
   # root
   root 'pages#home'
 
   # statics
-  get 'contact', to: 'pages#contact', as: 'contact'
   get 'about', to: 'pages#about', as: 'about'
   get 'how', to: 'pages#how', as: 'how'
+
+  # contact
+  get 'contact', to: 'messages#new', as: 'contact'
+  post 'contact', to: 'messages#create', as: 'create_contact'
 
   # advisors related
   get 'signup', to: 'advisors#signup', as: 'signup'
