@@ -9,7 +9,11 @@ class RequestsController < ApplicationController
     @listing = Listing.find(params[:listing_id])
     @request = @listing.requests.build(request_params)
     if @request.save
-      GeneralMailer.request_notification(@request).deliver
+      # notifying us with details of request
+      GeneralMailer.request_notification(@request).deliver if Rails.env.production?
+      # notifying user that request was sent
+      GeneralMailer.request_delivery_confirmation(@request).deliver
+      # redirect
       redirect_to successful_request_path, notice: "Your request has been sent successfully."
     else
       redirect_to new_request_path(listing_id: @listing.id), notice: "Please fill out both fields before send your request."

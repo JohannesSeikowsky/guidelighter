@@ -13,6 +13,12 @@ class GeneralMailer < ApplicationMailer
     mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com, surojitc@gmail.com", subject: "New Request for a Listing")
   end
 
+  def request_delivery_confirmation(request)
+    @requested_title = request.listing.title
+    @requesting_email = request.requesting_email
+    mail(to: @requesting_email, subject: "Your request has been sent.")
+  end
+
   def contact_us_message(message)
     @message = message
     mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com, surojitc@gmail.com", subject: "New Message from Contact-Us Form")
