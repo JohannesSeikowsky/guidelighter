@@ -2,8 +2,10 @@ class ListingMessagesController < ApplicationController
 
   def create
     @listing = Listing.find(params[:message][:listing_id])
-    ListingMessage.create(listing_message_params)
+    @message = ListingMessage.create(listing_message_params)
     # mailer
+    GeneralMailer.listing_message(@message, @listing).deliver
+    # redirect
     redirect_to show_listing_path(params[:message][:listing_id]), notice: "Your message has been sent. We will get back to you asap."
   end
 

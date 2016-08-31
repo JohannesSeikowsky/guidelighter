@@ -1,0 +1,8 @@
+<h4> We have received a message from the page of a specific listing: </h4>
+<p> <%= @message.content %> </p> <br>
+
+<p> Email address of sender (for responding): </p>
+<p> <%= @message.reply_address %> </p>
+
+<p> Listing from which this message was sent: </p>
+<p> <%= @listing.title %> by <%= @listing.advisor.first_name %> <%= @listing.advisor.second_name %> </p>
