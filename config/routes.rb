@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'messages/create_contact_us_msg'
-
   # root
   root 'pages#home'
 
@@ -9,9 +7,12 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: 'about'
   get 'how', to: 'pages#how', as: 'how'
 
-  # contact
+  # contact message
   get 'contact', to: 'contact_messages#new', as: 'contact'
   post 'contact', to: 'contact_messages#create', as: 'create_contact'
+
+  # listing message
+  post 'listing_message', to: 'listing_messages#create', as: 'create_listing_message'
 
   # advisors related
   get 'signup', to: 'advisors#signup', as: 'signup'
