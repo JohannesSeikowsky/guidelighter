@@ -46,11 +46,15 @@
 
   <!-- contact form -->
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">
-    <h6 style="text-decoration: underline;"> <span style="font-weight: bold; font-size: 14px;"> Contact </span> - do you have any questions about this listing? </h6>
+
+    <h3> Contact </h3>
+    <h6 style="text-decoration: underline;"> <span style=" font-size: 14px;"> Interested but have questions? Write a quick message. </h6>
+    <!-- <h6 style="text-decoration: underline;"> <span style=" font-size: 14px;"> Do you have any questions about this listing? </h6> -->
+    
     <%= form_for :message, url: create_listing_message_path do |f| %> 
-      <%= f.text_area :content %>
-      <h6 style="text-decoration: underline;"> Your email - so that we can get back to you. </h6>
-      <%= f.text_field :reply_address %> <br> <span style="font-size: 11px;"> </span>
+      <%= f.text_area :content, placeholder: "Message"  %>
+      <h6 style="text-decoration: underline;"> Your Email Address - so that we can get back to you. </h6>
+      <%= f.text_field :reply_address, placeholder: "galt@gmail.com" %> <br>
       <%= f.hidden_field :listing_id, value: @listing.id %>
       <div class="button" style="padding-top: 0px;"> 
         <%= f.submit "Send message", style: "padding: 2px 30px;"%>
