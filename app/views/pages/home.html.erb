@@ -49,6 +49,7 @@
   
   <h5 style="text-align: center;"> Browse all guides and listings: </h5> <br>
   <% @listings.each do |listing| %>
+  <!-- THIS NEEDS EDITING SO BADLY !!! -->
     <% if listing.advisor && listing.advisor.profile %>
       <a href="<%= show_listing_path(listing_id: listing.id) %>" >
         <div class="listing_on_homepage">
