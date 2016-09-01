@@ -69,11 +69,17 @@
 
         <% unless listing.price.nil? %>
           <% unless listing.price == 0 %>
-            <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> Price: <%= listing.price %> £ </div>
+            <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> 
+              Price: <%= listing.price %> £ 
+              <%= link_to "Request Guide", new_request_path(listing_id: listing.id), class: "small_request_guide_btn" %>
+            </div>
           <% else %>
-            <div style="text-align:center; position: absolute; bottom: 5px;"> free </div>
+            <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> 
+              free 
+              <%= link_to "Request Guide", new_request_path(listing_id: listing.id), class: "small_request_guide_btn" %>
+            </div>
           <% end %>
-        <% end %> <br>
+        <% end %>
       </div>
     </a>
   <% end %>

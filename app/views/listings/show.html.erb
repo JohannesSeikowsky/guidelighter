@@ -54,7 +54,7 @@
     <%= form_for :message, url: create_listing_message_path do |f| %> 
       <%= f.text_area :content, placeholder: "Message", style: "height: 130px;" %>
       <h6 style="text-decoration: underline;"> Your Email Address - so that we can get back to you. </h6>
-      <%= f.text_field :reply_address, placeholder: "galt@gmail.com" %> <br>
+      <%= f.text_field :reply_address, placeholder: "me@gmail.com" %> <br>
       <%= f.hidden_field :listing_id, value: @listing.id %>
       <div class="button" style="padding-top: 0px;"> 
         <%= f.submit "Send message", style: "padding: 2px 30px;"%>
