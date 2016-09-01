@@ -25,7 +25,7 @@ class RequestsController < ApplicationController
 
   private
   def request_params
-    params.require(:request).permit(:requesting_email, :requesting_availability, :listing_id)
+    params.require(:request).permit(:requesting_email, :indicated_interest, :requesting_availability, :listing_id)
   end
 
 end

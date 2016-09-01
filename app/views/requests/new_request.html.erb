@@ -30,21 +30,18 @@
   <div class="grey_box">  
     <h3> Request <span style="font-size: 11px;"></span> </h3>
     <%= form_for :request, path: create_request_path do |f| %>
-
-
+      <!-- 1 -->
       <h6> Briefly, what is your situation? What would you like help with? <br> </h6>
-      <%= f.text_area :requesting_email , placeholder: "e.g. about to apply for this, looking for help with that", style: "width: 372px; height: 65px;", class: "small_placeholder_text" %>
-
+      <%= f.text_area :indicated_interest , placeholder: "e.g. about to apply for this, looking for help with that", style: "width: 372px; height: 65px;", class: "small_placeholder_text" %>
+      <!-- 2 -->
       <h6>When would you usually be available for a session? </h6>
       <%= f.text_area :requesting_availability, placeholder: "e.g. during the week after 19:30 and on Sundays", style: "width: 372px; height: 65px;", class: "small_placeholder_text" %>
-
+      <!-- 3 -->
       <h6>Your Email - so that we can get back to you. </h6>
       <%= f.text_field :requesting_email, placeholder: "you@gmail.com", class: "small_placeholder_text" %>
       <%= f.hidden_field :listing_id, value: @listing_id %>
       <%= f.submit "Done." %> <br>
-      <!--
-      *so we can get you what you're looking for
-      <span style="font-size: 11px;">* This is just a request, not a booking. <br> After we receive the request – we will be in touch with further details asap. </span> <span style="font-size: 11px;">* This request is not yet a booking – we will be in touch with further details asap. </span> -->
+ 
     <% end %>     
   </div> <br> <br>
 
