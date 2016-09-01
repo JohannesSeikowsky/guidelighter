@@ -49,40 +49,42 @@
   
   <h5 style="text-align: center;"> Browse all guides and listings: </h5> <br>
   <% @listings.each do |listing| %>
-    <a href="<%= show_listing_path(listing_id: listing.id) %>" >
-      <div class="listing_on_homepage">
-        <% unless listing.title.empty? %>
-          <div style="height: 73px;">
-            <h4> <%= listing.title %> </h4>
-          </div>
-        <% end %>
-        <% unless listing.advisor.profile.nil? %>  
-          <% unless listing.advisor.profile.profile_image.url.nil? %>  
-            <div style="text-align:center;">
-              <%= image_tag listing.advisor.profile.profile_image.url %>
-            </div>          
-          <% end %>
-        <% end %>
-
-        <% unless listing.advisor.first_name.nil? %>
-          <div style="text-align: center;"> <%= listing.advisor.first_name %> </div>
-        <% end %> <br>
-
-        <% unless listing.price.nil? %>
-          <% unless listing.price == 0 %>
-            <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> 
-              Price: <%= listing.price %> £ 
-              <%= link_to "Request Guide", new_request_path(listing_id: listing.id), class: "small_request_guide_btn" %>
-            </div>
-          <% else %>
-            <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> 
-              free 
-              <%= link_to "Request Guide", new_request_path(listing_id: listing.id), class: "small_request_guide_btn" %>
+    <% if listing.advisor && listing.advisor.profile %>
+      <a href="<%= show_listing_path(listing_id: listing.id) %>" >
+        <div class="listing_on_homepage">
+          <% unless listing.title.empty? %>
+            <div style="height: 73px;">
+              <h4> <%= listing.title %> </h4>
             </div>
           <% end %>
-        <% end %>
-      </div>
-    </a>
+          <% unless listing.advisor.profile.nil? %>  
+            <% unless listing.advisor.profile.profile_image.url.nil? %>  
+              <div style="text-align:center;">
+                <%= image_tag listing.advisor.profile.profile_image.url %>
+              </div>          
+            <% end %>
+          <% end %>
+
+          <% unless listing.advisor.first_name.nil? %>
+            <div style="text-align: center;"> <%= listing.advisor.first_name %> </div>
+          <% end %> <br>
+
+          <% unless listing.price.nil? %>
+            <% unless listing.price == 0 %>
+              <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> 
+                Price: <%= listing.price %> £ 
+                <%= link_to "Request Guide", new_request_path(listing_id: listing.id), class: "small_request_guide_btn" %>
+              </div>
+            <% else %>
+              <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> 
+                free 
+                <%= link_to "Request Guide", new_request_path(listing_id: listing.id), class: "small_request_guide_btn" %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </a>
+    <% end %>
   <% end %>
 
   <div class="bottom_right_links">
