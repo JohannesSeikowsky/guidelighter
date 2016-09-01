@@ -39,7 +39,7 @@
     }
   }
 
-// bottom right links
+// bottom right
 .bottom_right_links{
   position: fixed;
   bottom: 8px;
@@ -51,6 +51,7 @@
 }
 
 
+// request guide btn on hp
 .small_request_guide_btn{
   padding: 3px 9px 1px 9px;
   border: 1px solid #F6F6EF;
@@ -61,6 +62,11 @@
   background-color: #F6F6EF;
   text-decoration: none;
 }
+
+// small placeholder text in textarea
+.small_placeholder_text::-webkit-input-placeholder {
+  font-size: 11px;
+} 
 
 
 
@@ -220,7 +226,7 @@
     border: 1px solid lightGrey;
     background-color: #FCFCFC;
     width: 32%;
-    height: 378px;
+    height: 374px;
     float: left;
     margin-right: 0.66%;
     margin-left: 0.66%;

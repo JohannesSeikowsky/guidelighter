@@ -26,20 +26,20 @@
 
   <!-- Request -->
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>  
-  <h6 style="text-decoration: underline;"> Send a request </h6>
+  <h6 style="text-decoration: underline;"> <%= @listing.title %> </h6>
   <div class="grey_box">  
-    <h3> Send a request for this Listing <span style="font-size: 11px;"></span> </h3>
+    <h3> Request <span style="font-size: 11px;"></span> </h3>
     <%= form_for :request, path: create_request_path do |f| %>
 
 
-      <h6> Briefly, what is your situation? What are you looking for?<br> </h6>
-      <%= f.text_area :requesting_email , placeholder: "e.g. about to apply for this, looking for help with that", style: "width: 372px; height: 82px;" %>
+      <h6> Briefly, what is your situation? What would you like help with? <br> </h6>
+      <%= f.text_area :requesting_email , placeholder: "e.g. about to apply for this, looking for help with that", style: "width: 372px; height: 65px;", class: "small_placeholder_text" %>
 
       <h6>When would you usually be available for a session? </h6>
-      <%= f.text_area :requesting_availability, placeholder: "e.g. during the week after 19:30 and Sundays", style: "width: 372px; height: 82px;" %>
+      <%= f.text_area :requesting_availability, placeholder: "e.g. during the week after 19:30 and on Sundays", style: "width: 372px; height: 65px;", class: "small_placeholder_text" %>
 
       <h6>Your Email - so that we can get back to you. </h6>
-      <%= f.text_field :requesting_email, placeholder: "you@gmail.com" %>
+      <%= f.text_field :requesting_email, placeholder: "you@gmail.com", class: "small_placeholder_text" %>
       <%= f.hidden_field :listing_id, value: @listing_id %>
       <%= f.submit "Done." %> <br>
       <!--
