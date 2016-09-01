@@ -6,7 +6,11 @@ class SessionsController < ApplicationController
     @advisor = Advisor.find_by_email(params[:login][:email])
     if @advisor && @advisor.password == BCrypt::Engine.hash_secret(params[:login][:password_provided], @advisor.password_salt)
       log_in
-      redirect_to new_listing_path, notice: "Logged in."
+      if !@advisor.profile
+        redirect_to new_profile_path, notice: "Logged in. Make a Profile."      
+      else
+        redirect_to new_listing_path, notice: "Logged in."
+      end
     else
       redirect_to login_path, notice: "Try again."
     end
