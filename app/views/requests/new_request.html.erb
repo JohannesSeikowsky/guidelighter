@@ -26,23 +26,31 @@
 
   <!-- Request -->
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>  
-  <h6 style="text-decoration: underline;">Request this Listing by briefly filling out the form. </h6>
+  <h6 style="text-decoration: underline;"> Send a request </h6>
   <div class="grey_box">  
     <h3> Send a request for this Listing <span style="font-size: 11px;"></span> </h3>
     <%= form_for :request, path: create_request_path do |f| %>
+
+
+      <h6> Briefly, what is your situation? What are you looking for?<br> </h6>
+      <%= f.text_area :requesting_email , placeholder: "e.g. about to apply for this, looking for help with that", style: "width: 372px; height: 82px;" %>
+
       <h6>When would you usually be available for a session? </h6>
-      <%= f.text_area :requesting_availability, placeholder: "e.g. during the week after 19:30 and Sundays", style: "width: 372px; height: 115px;" %>
+      <%= f.text_area :requesting_availability, placeholder: "e.g. during the week after 19:30 and Sundays", style: "width: 372px; height: 82px;" %>
+
       <h6>Your Email - so that we can get back to you. </h6>
       <%= f.text_field :requesting_email, placeholder: "you@gmail.com" %>
       <%= f.hidden_field :listing_id, value: @listing_id %>
       <%= f.submit "Done." %> <br>
-      <!--<span style="font-size: 11px;">* This is just a request, not a booking. <br> After we receive the request – we will be in touch with further details asap. </span> <span style="font-size: 11px;">* This request is not yet a booking – we will be in touch with further details asap. </span> -->
+      <!--
+      *so we can get you what you're looking for
+      <span style="font-size: 11px;">* This is just a request, not a booking. <br> After we receive the request – we will be in touch with further details asap. </span> <span style="font-size: 11px;">* This request is not yet a booking – we will be in touch with further details asap. </span> -->
     <% end %>     
   </div> <br> <br>
 
 
   <!-- Listing -->
-  <h6 style="text-decoration: underline;">Details of the Listing that is to be requested. </h6>
+  <h6 style="text-decoration: underline;"> The Listing in question </h6>
   <div class="grey_box" style="padding: 4px 52px 20px 52px;">
     <h3> <%= @listing.advisor.first_name %> <%= @listing.advisor.second_name[0] %>.  </h3>
     <%= image_tag @listing.advisor.profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> <br>
