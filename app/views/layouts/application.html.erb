@@ -12,9 +12,13 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+  <!-- attempting to set img that gets used as thumbnail -->
+  <link rel=”image_src” href=”<%= image_url('gl3.png') %>” />
+
   <!-- set data that facebook is using -->
   <meta property="og:image" content="<%= image_url('gl3.png') %>" />
   <meta property="og:title" content="Guidelighter is a peer to peer marketplace for personal mentoring, advice and guidance." />
+
 
   <!--  analytics -->
   <script>
