@@ -31,9 +31,11 @@
     <!-- <span style="font-weight: bold;"> Share </span> your professional experience with someone in need  </h2> -->
   <div class="button">
     <% if logged_in? %>
-      <%= link_to "POST A LISTING", new_listing_path, style: "background-color: orange; padding: 13px 45px;" %>
+      <%= link_to "POST A LISTING", new_listing_path, style: "background-color: orange; padding: 13px 45px;" %> <br> <br>
+       <div class="fb-like" data-href="https://www.facebook.com/GuidelighterMP/?fref=ts" data-width="100" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" style="padding-top: 10px;"></div>
     <% else %>
-      <%= link_to "BECOME A GUIDE", signup_path, style: "background-color: orange; padding: 13px 48px;" %>
+      <%= link_to "BECOME A GUIDE", signup_path, style: "background-color: orange; padding: 13px 48px;" %> <br> <br>
+       <div class="fb-like" data-href="https://www.facebook.com/GuidelighterMP/?fref=ts" data-width="100" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" style="padding-top: 10px;"></div>
     <% end %>
   </div> <br> <br> <br> <br>
 
