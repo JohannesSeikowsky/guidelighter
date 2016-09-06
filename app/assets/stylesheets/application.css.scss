@@ -13,7 +13,8 @@ body {
   height: 100%;
   margin-bottom: 22px;
   color: #333;
-  font-family: "Helvetica", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-family: 'Lato', sans-serif;
+  // font-family: "Helvetica", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   @media (min-width: 500px){ padding-top: 25px; }
   @media (max-width: 500px){ padding: 15px 10px 0px 10px; }
   a{
