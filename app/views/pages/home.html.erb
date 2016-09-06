@@ -57,11 +57,8 @@
     <% if listing.advisor && listing.advisor.profile %>
       <a href="<%= show_listing_path(listing_id: listing.id) %>" >
         <div class="listing_on_homepage">
-          <% unless listing.title.empty? %>
-            <div style="height: 73px;">
-              <h4> <%= listing.title %> </h4>
-            </div>
-          <% end %>
+
+
           <% unless listing.advisor.profile.nil? %>  
             <% unless listing.advisor.profile.profile_image.url.nil? %>  
               <div style="text-align:center;">
@@ -69,10 +66,17 @@
               </div>          
             <% end %>
           <% end %>
-
+          
           <% unless listing.advisor.first_name.nil? %>
             <div style="text-align: center;"> <%= listing.advisor.first_name %> </div>
           <% end %> <br>
+
+
+          <% unless listing.title.empty? %>
+            <div style="height: 73px;">
+              <h4 style="border: none;"> <%= listing.title %> </h4>
+            </div>
+          <% end %>
 
           <% unless listing.price.nil? %>
             <% unless listing.price == 0 %>
