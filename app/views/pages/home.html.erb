@@ -29,28 +29,29 @@
   <div class="color_background"> </div>
   <!-- body -->
   <p style="text-align: center;"> <%= notice %> </p>
-  <h2 style="font-size: 39px; text-align: center; font-weight: normal;"> 
+  <h2 style="font-size: 40px; text-align: center; font-weight: normal;"> 
     <b> Help out </b> by sharing your professional experience (and get paid for it). 
   </h2>
     <!-- <span style="font-weight: bold;"> Share </span> your professional experience with someone in need  </h2> -->
   <div class="button">
     <% if logged_in? %>
-      <%= link_to "POST A LISTING", new_listing_path, style: "background-color: orange; padding: 13px 45px;" %> <br> <br>
-       <div class="fb-like" data-href="https://www.facebook.com/GuidelighterMP/?fref=ts" data-width="100" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" style="padding-top: 10px;"></div>
+      <%= link_to "POST A LISTING", new_listing_path, style: "padding: 15px 52px;" %> 
+      <br> <br>
+      <div class="fb-like" data-href="https://www.facebook.com/GuidelighterMP/?fref=ts" data-width="100" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" style="padding-top: 10px;"></div>
     <% else %>
-      <%= link_to "BECOME A GUIDE", signup_path, style: "background-color: orange; padding: 13px 48px;" %> <br> <br>
+      <%= link_to "BECOME A GUIDE", signup_path, style: "padding: 15px 52px;", class: "btn-turquoise" %> 
+      <br> <br>
        <div class="fb-like" data-href="https://www.facebook.com/GuidelighterMP/?fref=ts" data-width="100" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" style="padding-top: 10px;"></div>
     <% end %>
   </div> <br> <br> <br> <br>
 
   <h2 style="font-weight: normal";> Easily request guidance from a real person. </h2>
   <div class="row"> 
-    <div class="col-xs-4 button"> <a href="" style="background-color: #FFCD6F;"> Uni. Applications </a> </div>
-    <div class="col-xs-4 button"> <a href="" style="background-color: #FFCD6F;"> Career Advice & Insights </a>  </div>
-    <div class="col-xs-4 button"> <a href="" style="background-color: #FFCD6F;"> CV & Interview prep </a> </div>
+    <div class="col-xs-4 button"> <a href="" style="background-color: ;"> Uni. Applications </a> </div>
+    <div class="col-xs-4 button"> <a href="" style="background-color: ;"> Career Advice & Insights </a>  </div>
+    <div class="col-xs-4 button"> <a href="" style="background-color: ;"> CV & Interview prep </a> </div>
   </div> <br> <br> <br>
   
-  <h5 style="text-align: center;"> Browse all guides and listings: </h5> <br>
   <% @listings.each do |listing| %>
   <!-- THIS NEEDS EDITING SO BADLY !!! -->
     <% if listing.advisor && listing.advisor.profile %>
@@ -94,7 +95,6 @@
   <div class="bottom_right_links">
     <%= link_to "Browse Listings by Category", root_path, class: "btn btn-small btn-turquoise", onclick: "stillInProgress();" %>
   </div>
-
 </div>
 
   <!-- js -->

@@ -7,7 +7,7 @@
     left: 0px;
     right: 0px;
     z-index: -250;
-    background-color: #F6F6EF;
+    background-color: #FAFAFA;
   }
 
 // header 
@@ -33,7 +33,7 @@
         font-weight: 690;
       }
       .btn-turquoise{
-        background-color: #5A8F96;
+        background-color: #968D1F;
         color: white;
       }
     }
@@ -45,7 +45,7 @@
   bottom: 8px;
   right: 8px;
   .btn-turquoise{
-    background-color: #5A8F96;
+    background-color: #968D1F;
     color: white;
   }
 }
@@ -82,7 +82,7 @@
     top: 0px;
     left: 0px;
     right: 0px;
-    height: 562px;
+    height: 578px;
     opacity: 0.88;
     z-index: -100;
 
@@ -177,7 +177,7 @@
       font-weight: bold;
       text-decoration: none;
       border: 2px solid black;
-      @media (min-width: 500px){ padding: 10px 35px; }
+      @media (min-width: 500px){ padding: 13px 35px; }
       @media (max-width: 500px){ padding: 13px 80px; }} // varying button size
     a:hover { background-color: orange; }}
 

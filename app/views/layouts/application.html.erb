@@ -2,24 +2,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- title -->  
   <title> Guidelighter - Help someone out by sharing your professional experience. </title>
   <!-- logo -->
   <%= favicon_link_tag 'gl4.png' %>
-  <!-- boostrap CDN -->
+  <!-- boostrap cdn -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-  <!--  rails -->
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
-  <!-- attempting to set img that gets used as thumbnail -->
-
+  
   <!-- set data that facebook is using -->
   <meta property="og:image" content="<%= image_url('gl-color.jpg') %>" />
   <meta property="og:title" content="Guidelighter - the peer to peer marketplace for personal mentoring, advice and guidance." />
 
-
-  <!--  analytics -->
+  <!-- google analytics -->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -32,7 +30,7 @@
 </head>
 <body>
 
-  <!--  Facebook Javascript sdk -->
+  <!--  gacebook Javascript sdk -->
   <div id="fb-root"></div>
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -47,9 +45,9 @@
     <%= link_to root_path, 'data-no-turbolink' => true do %>
      <%= image_tag "gl4.png" %>
     <% end %>
-f
-
   </div>
+  
   <%= yield %>
+
 </body>
 </html>

@@ -13,20 +13,18 @@ body {
   height: 100%;
   margin-bottom: 22px;
   color: #333;
-  background-color: #F6F6EF;
   font-family: "Helvetica", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   @media (min-width: 500px){ padding-top: 25px; }
-  @media (max-width: 500px){ padding: 15px 10px 0px 10px; } // varying padding
+  @media (max-width: 500px){ padding: 15px 10px 0px 10px; }
   a{
-    color: grey; }
+    color: grey; 
+  }
   .notice{
     color: red;
     position: fixed;
     top: 5px;
     text-decoration: underline;}
   }
-
-
 
 // header
 .simple_header{
@@ -37,12 +35,10 @@ body {
   right: 26px;
 }
 
-
-
 // container
 .simple_container{
   @media (min-width: 500px){ width: 500px; }
-  @media (max-width: 500px){ width: 100%; } // varying width
+  @media (max-width: 500px){ width: 100%; }
   margin: 93px auto 250px auto;
   
   // background image
@@ -353,8 +349,6 @@ body {
   width: 240px;
 }
 
-
-
 .grey_box{
   background-color: #EEEEEE; 
   padding: 1px 15px 26px 15px;
@@ -393,7 +387,7 @@ body {
     font-size: 15px;
     font-weight: bold;  
   }
-  }
+}
 
 
 
