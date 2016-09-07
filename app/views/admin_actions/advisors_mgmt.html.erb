@@ -1,0 +1,8 @@
+<div class="gl_header"> </div>
+
+<div class="simple_container">
+  <h2>Admin Area.</h2> <br>
+  <% @all_advisors.each do |adv| %>
+    <p> <%= adv.first_name %> <%= adv.second_name %> | <%= adv.email %> </p> <br>
+  <% end %>
+</div>
