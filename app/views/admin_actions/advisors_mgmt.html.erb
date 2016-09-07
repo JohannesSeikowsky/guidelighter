@@ -1,8 +1,20 @@
-<div class="gl_header"> </div>
+<div class="gl_header"> 
+  <div class="links">
+    <%= link_to "Advisors Mgmt", advisors_mgmt_path %>
+    <%= link_to "Profiles Mgmt", profiles_mgmt_path %>
+    <%= link_to "Listings Mgmt", listings_mgmt_path %>
+  </div>
+</div>
 
 <div class="simple_container">
-  <h2>Admin Area.</h2> <br>
+  <h2> Admin Area - Advisors Mgmt </h2> <br>
   <% @all_advisors.each do |adv| %>
-    <p> <%= adv.first_name %> <%= adv.second_name %> | <%= adv.email %> </p> <br>
+    <p> 
+      <%= adv.first_name %> <%= adv.second_name %> <br>
+      <%= adv.email %> <br> 
+      <%= link_to "Edit", "#" %> <br>
+      <%= link_to "Delete", "#" %> 
+    </p>
+    <br>
   <% end %>
 </div>

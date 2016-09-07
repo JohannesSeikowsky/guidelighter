@@ -15,7 +15,7 @@ class AdminActionsController < ApplicationController
   end
 
   def listings_mgmt
-    @listings = Listing.all
+    @all_listings = Listing.all
   end
 
 end
