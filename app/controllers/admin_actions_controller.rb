@@ -1,7 +1,13 @@
 class AdminActionsController < ApplicationController
 
-  def login
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == ENV['admin_user'] && password == ENV['admin_pw']
+    end 
   end
+
+  before_filter :authenticate
+
 
   def general
   end

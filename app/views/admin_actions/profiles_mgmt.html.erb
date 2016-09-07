@@ -10,7 +10,7 @@
   <h2>Admin Area - Profiles Mgmt</h2> <br>
   <% @all_profiles.each do |pro| %>
     <% if pro.advisor %>
-      <h4> Profile by <%= pro.advisor.first_name %> <%= pro.advisor.first_name %> </h4>
+      <h4> Profile by <%= pro.advisor.first_name %> <%= pro.advisor.second_name %> </h4>
     <% end %> 
     <p> <%= pro.description %> </p>
     <p> <%= link_to "Edit |", "#" %> <%= link_to "Delete", "#" %> </p> <br> <br>

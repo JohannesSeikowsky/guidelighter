@@ -1,11 +1,14 @@
 <div class="gl_header"> 
+  <div class="links">
+    <%= link_to "Advisors Mgmt", advisors_mgmt_path %>
+    <%= link_to "Profiles Mgmt", profiles_mgmt_path %>
+    <%= link_to "Listings Mgmt", listings_mgmt_path %>
+  </div>
 </div>
 
 <div class="simple_container">  
-
   <h2>Admin Area.</h2> <br>
   <% ["advisors", "profiles", "listings"].each do |type| %>
     <%= link_to "#{type.capitalize} Mgmt." , "#{type}_mgmt" %> <br> <br>
   <% end %>
-
 </div>
