@@ -13,4 +13,7 @@ class PagesController < ApplicationController
   def how
   end
 
+  def reviews
+  end
+
 end

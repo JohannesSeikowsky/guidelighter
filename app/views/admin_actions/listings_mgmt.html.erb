@@ -11,7 +11,8 @@
   <% @all_listings.each do |list| %>
     <h4> <%= list.title %> </h4>
     <p> <%= list.description %> </p> 
-    <p> by <%= list.advisor.first_name if list.advisor %> <%= list.advisor.second_name if list.advisor %> </p> 
+    <p> by <%= list.advisor.first_name if list.advisor %> <%= list.advisor.second_name if list.advisor 
+    %> </p> 
     <p> <%= link_to "Edit |", "#" %> <%= link_to "Delete", "#" %> </p> <br> <hr>
   <% end %>
 </div>

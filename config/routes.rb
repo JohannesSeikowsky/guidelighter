@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # statics
   get 'about', to: 'pages#about', as: 'about'
   get 'how', to: 'pages#how', as: 'how'
+  get 'reviews', to: 'pages#reviews', as: 'reviews'
 
   # contact message
   get 'contact', to: 'contact_messages#new', as: 'contact'

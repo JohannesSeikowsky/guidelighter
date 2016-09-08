@@ -2,6 +2,7 @@
 <div class="gl_header">
   <% if logged_in? %>  
     <div class="links"> 
+      <%= link_to "What people say", reviews_path %>
       <%= link_to "About Us", about_path %>
       <%= link_to "Contact Us", contact_path %>
       <%= link_to "How It Works", how_path %>
@@ -11,6 +12,7 @@
     </div>
   <% else %>  
     <div class="links">
+      <%= link_to "What people say", reviews_path %>
       <%= link_to "About Us", about_path %>
       <%= link_to "Contact Us", contact_path %>
       <%= link_to "How It Works", how_path %>
@@ -21,10 +23,11 @@
 </div>
 
 <div class="simple_container">
-    <!-- setting background color -->
+    <!-- background -->
   <div class="color_background"> </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
+
   <h6 style="text-decoration: underline;"> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. / your guide </h6>
 
   <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> <br>
@@ -35,39 +38,39 @@
     <p> <%= simple_format @listing.description, style: "line-height: 1.5;" %> </p>
     <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
     <div class="button">
-      <%= link_to "Request this Listing", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px;" %>
+      <%= link_to "Request this Listing", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px; background-color: #FFD990;" %>
     </div>
   </div> <br>
 
-  <h6 style="text-decoration: underline;"> About the guide </h6>
-  <div class="grey_box" style="padding: 4px 52px 8px 52px;">
-    <h3> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>.  </h3>
-    <p> <%= simple_format @profile.description, style: "line-height: 1.5;" %> </p>
-  </div> <br>
-
   <!-- contact form -->
+  <h6 style="text-decoration: underline;"> Easy Contact </h6>
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">
-
-    <h3> Get in touch </h3>
-    <h6 style="text-decoration: underline;"> <span style=" font-size: 14px;"> You are interested but have a question?  </h6>
-    <!-- <h6 style="text-decoration: underline;"> <span style=" font-size: 14px;"> Do you have any questions about this listing? </h6> -->
-    
+    <h3> Have a question?</h3>
     <%= form_for :message, url: create_listing_message_path do |f| %> 
-      <%= f.text_area :content, placeholder: "Message", style: "height: 130px;" %>
-      <h6 style="text-decoration: underline;"> Your Email Address - so that we can get back to you. </h6>
+      <%= f.text_area :content, placeholder: "your message", style: "height: 85px;" %>
       <%= f.text_field :reply_address, placeholder: "you@gmail.com" %> <br>
       <%= f.hidden_field :listing_id, value: @listing.id %>
       <div class="button" style="padding-top: 0px;"> 
         <%= f.submit "Send message", style: "padding: 2px 30px;"%>
       </div>
     <% end %>
-  </div>
+  </div> <br>
+
+  <h6 style="text-decoration: underline;"> The guide </h6>
+  <div class="grey_box" style="padding: 4px 52px 8px 52px;">
+    <h3> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>.  </h3>
+    <p> <%= simple_format @profile.description, style: "line-height: 1.5;" %> </p>
+    <div class="button">
+      <%= link_to "Request this Listing", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px; background-color: #FFD990;" %>
+    </div>
+  </div> <br>
+
 
 
   <div class="bottom_right_links">
     <%= link_to "Browse Listings by Category", root_path, class: "btn btn-small btn-turquoise", onclick: "stillInProgress();" %>
   </div>
-</div> <br> <br> <br> <br> <br>
+</div>
 
 <script type="text/javascript">
   function stillInProgress(){

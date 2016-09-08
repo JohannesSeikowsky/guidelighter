@@ -1,0 +1,25 @@
+<!-- header -->
+<div class="gl_header">
+  <% if logged_in? %>
+    <div class="links">
+      <%= link_to "Contact Us", contact_path %>
+      <%= link_to "How It Works", how_path %>
+      <%= link_to "Edit Profile", edit_profile_path %>
+      <%= link_to "Post Listing", new_listing_path %>
+      <%= link_to "Manage Listings", new_listing_path %>
+      <%= link_to "Logout", logout_path, class: "btn btn-small btn-turquoise" %>
+    </div>
+  <% else %>
+    <div class="links">
+      <%= link_to "Contact Us", contact_path %>
+      <%= link_to "How It Works", how_path %>
+      <%= link_to "Login", login_path %>
+      <%= link_to "Signup", signup_path, class: "btn btn-small btn-turquoise" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="simple_container">
+  <h3 style="text-decoration: underline;"> What people say </h3>
+  <p>...</p>
+</div>
