@@ -38,7 +38,7 @@
     <p> <%= simple_format @listing.description, style: "line-height: 1.5;" %> </p>
     <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
     <div class="button">
-      <%= link_to "Request this Listing", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px; background-color: #FFD990;" %>
+      <%= link_to "Send Request", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px; background-color: #FFD990;" %>
     </div>
   </div> <br>
 
@@ -61,7 +61,7 @@
     <h3> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>.  </h3>
     <p> <%= simple_format @profile.description, style: "line-height: 1.5;" %> </p>
     <div class="button">
-      <%= link_to "Request this Listing", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px; background-color: #FFD990;" %>
+      <%= link_to "Send Request", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px; background-color: #FFD990;" %>
     </div>
   </div> <br>
 
