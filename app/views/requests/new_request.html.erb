@@ -29,22 +29,22 @@
 
   <!-- Request -->
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>  
-  <h6 style="text-decoration: underline;"> <%= @listing.title %> </h6>
+  <h6>Request</h6>
   <div class="grey_box">  
-    <h3> Request <span style="font-size: 11px;"></span> </h3>
+    <h3> Request Form </h3>
     <%= form_for :request, path: create_request_path do |f| %>
       <!-- 1 -->
       <h6> Briefly, what is your situation? What would you like help with? <br> </h6>
-      <%= f.text_area :indicated_interest , placeholder: "e.g. about to apply for this, looking for help with that", style: "width: 372px; height: 65px;", class: "small_placeholder_text" %>
+      <%= f.text_field :indicated_interest , placeholder: "", style: "width: 372px;", class: "small_placeholder_text" %>
       <!-- 2 -->
-      <h6>When would you usually be available for a session? </h6>
-      <%= f.text_area :requesting_availability, placeholder: "e.g. during the week after 19:30 and on Sundays", style: "width: 372px; height: 65px;", class: "small_placeholder_text" %>
+      <h6>When would you usually be available for a session? Days? Times? </h6>
+      <%= f.text_field :requesting_availability, placeholder: "", style: "width: 372px;", class: "small_placeholder_text" %>
       <!-- 3 -->
-      <h6>Your Email - so that we can get back to you. </h6>
-      <%= f.text_field :requesting_email, placeholder: "you@gmail.com", class: "small_placeholder_text" %>
+      <h6>Your Email - so we can reply </h6>
+      <%= f.text_field :requesting_email, placeholder: "", style: "width: 372px;", class: "small_placeholder_text" %>
       <%= f.hidden_field :listing_id, value: @listing_id %>
       <%= f.submit "Done." %> <br>
- 
+      <h6>Note: This request is not binding. It's entire purpose is to check wether it <br> is possible to arrange a session with the guide. </h6>
     <% end %>     
   </div> <br> <br>
 
