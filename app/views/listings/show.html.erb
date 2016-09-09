@@ -28,11 +28,11 @@
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
 
-  <h6 style="text-decoration: underline;"> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. / your guide </h6>
+  <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. / your guide </h6>
 
   <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> <br>
 
-  <h6 style="text-decoration: underline;">The Offer</h6>
+  <h6> The Offer </h6>
   <div class="grey_box" style="padding: 4px 52px 20px 52px;">
     <h3> <%= @listing.title %> </h3>
     <p> <%= simple_format @listing.description, style: "line-height: 1.5;" %> </p>
@@ -43,9 +43,9 @@
   </div> <br>
 
   <!-- contact form -->
-  <h6 style="text-decoration: underline;"> Easy Contact </h6>
+  <h6> Easy Contact </h6>
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">
-    <h3> Have a question?</h3>
+    <h3> Have a question? </h3>
     <%= form_for :message, url: create_listing_message_path do |f| %> 
       <%= f.text_area :content, placeholder: "your message", style: "height: 85px;" %>
       <%= f.text_field :reply_address, placeholder: "you@gmail.com" %> <br>
@@ -56,7 +56,7 @@
     <% end %>
   </div> <br>
 
-  <h6 style="text-decoration: underline;"> The Guide </h6>
+  <h6> The Guide </h6>
   <div class="grey_box" style="padding: 4px 52px 8px 52px;">
     <h3> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>.  </h3>
     <p> <%= simple_format @profile.description, style: "line-height: 1.5;" %> </p>
@@ -65,11 +65,7 @@
     </div>
   </div> <br>
 
-
-  <div class="">
-    Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona
-  </div>
-
+  <div> Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona </div>
 
   <div class="bottom_right_links">
     <%= link_to "Browse Listings by Category", root_path, class: "btn btn-small btn-turquoise", onclick: "stillInProgress();" %>
