@@ -30,15 +30,14 @@
   <div class="color_background"> </div>
   <!-- body -->
   <br>
-  <div class="z_index">
+  <div class="intro">
     <p style="text-align: center;"> <%= notice %> </p>
-    <h2 style="font-size: 40px; text-align: center; font-weight: normal; z-index: 500;"> 
+    <h2 style="font-size: 40px; text-align: center; font-weight: normal;"> 
       <b> Help out </b> by sharing your professional experience (and get paid for it). 
     </h2>
     <div class="button">
       <% if logged_in? %>
-        <%= link_to "POST A LISTING", new_listing_path, style: "padding: 15px 52px;" %> 
-        <br> <br>
+        <%= link_to "POST A LISTING", new_listing_path, style: "padding: 15px 52px;" %> <br> <br>
         <div class="fb-like" data-href="https://www.facebook.com/GuidelighterMP/?fref=ts" data-width="100" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" style="padding-top: 10px;"></div>
       <% else %>
         <%= link_to "BECOME A GUIDE FOR YOUR PROFESSION IN 3 MINUTES", signup_path, style: "padding: 17px 78px;", class: "btn-turquoise" %> 

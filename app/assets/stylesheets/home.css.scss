@@ -76,7 +76,10 @@
   // @media (max-width: 500px){ width: 100%; } // varying width
   margin: 89px auto 250px auto;
  
-
+  .intro{
+    position: relative;
+    z-index: 100;
+  }
 
   .image_background{
     position: absolute;
@@ -85,7 +88,7 @@
     right: 0px;
     height: 424px;
     opacity: 0.5;
-    z-index: -1;
+    z-index: 0;
     // background
     background: asset-url("gl-color.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
