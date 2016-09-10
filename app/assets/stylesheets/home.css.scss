@@ -83,13 +83,14 @@
     right: 0px;
     height: 424px;
     opacity: 0.88;
-    z-index: -100;
+    z-index: 100;
 
     background: asset-url("gl-color.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
   } 
 
   // h1
