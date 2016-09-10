@@ -76,22 +76,23 @@
   // @media (max-width: 500px){ width: 100%; } // varying width
   margin: 89px auto 250px auto;
  
+
+
   .image_background{
     position: absolute;
     top: 0px;
     left: 0px;
     right: 0px;
     height: 424px;
-    opacity: 0.88;
-    z-index: 100;
-
+    opacity: 0.5;
+    z-index: -1;
+    // background
     background: asset-url("gl-color.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
-  } 
+  }
 
   // h1
   h1{

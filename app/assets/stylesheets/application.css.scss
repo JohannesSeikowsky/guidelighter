@@ -42,23 +42,6 @@ body {
   @media (max-width: 500px){ width: 100%; }
   margin: 93px auto 250px auto;
   
-  // background image
-  .image_background{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    height: 524px;
-    opacity: 0.88;
-    z-index: -100;
-
-    background: asset-url("gl-color.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  } 
-
   // h1
   h1{
     text-transform: uppercase;
