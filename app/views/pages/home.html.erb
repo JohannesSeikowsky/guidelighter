@@ -95,10 +95,9 @@
              
             <% else %>
               <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> 
-                free 
-              </div>
-              <div style="text-align:center; position: absolute; bottom: 5px; right: 5px; font-size: 12px;">
-                <%= link_to "Request #{listing.advisor.first_name}", new_request_path(listing_id: listing.id), class: "small_request_guide_btn" %>
+                Guide: <%= listing.advisor.first_name %> |
+                Free |
+                <%= link_to "Send request", new_request_path(listing_id: listing.id), class: "" %>
               </div>
             <% end %>
           <% end %>
