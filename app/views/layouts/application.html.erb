@@ -2,25 +2,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- title -->  
+  <!-- Title -->  
   <title> Guidelighter - Help someone out by sharing your professional experience. </title>
-  <!-- logo -->
+  <!-- Logo -->
   <%= favicon_link_tag 'gl4.png' %>
-  <!-- boostrap cdn -->
+  <!-- Boostrap cdn -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
+  <!-- Rails -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   
-  <!-- set data that facebook is using -->
+  <!-- Fb settings -->
   <meta property="og:image" content="<%= image_url('gl-color.jpg') %>" />
   <meta property="og:title" content="Guidelighter - the peer to peer marketplace for personal mentoring, advice and guidance." />
 
-  <!-- font -->
+  <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
 
-  <!-- google analytics -->
+  <!-- Google analytics -->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -33,7 +34,7 @@
 </head>
 <body>
 
-  <!--  gacebook Javascript sdk -->
+  <!--  FB sdk -->
   <div id="fb-root"></div>
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -43,14 +44,17 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
-  <!--  content -->
-  <div class="simple_logo" style="color: red;">
-    <%= link_to root_path, 'data-no-turbolink' => true do %>
-     <%= image_tag "gl4.png" %>
-    <% end %>
-  </div>
-  
-  <%= yield %>
+  <!--  Page -->
+    <!-- Logo -->
+    <div class="simple_logo" style="color: red;">
+      <%= link_to root_path, 'data-no-turbolink' => true do %>
+       <%= image_tag "gl4.png" %>
+      <% end %>
+    </div>
+    <!-- Content -->
+    <div>
+      <%= yield %>
+    </div>
 
 </body>
 </html>

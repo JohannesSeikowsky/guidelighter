@@ -1,4 +1,3 @@
-<!-- header -->
 <div class="gl_header">
   <% if logged_in? %>
     <div class="links">
@@ -23,13 +22,12 @@
   <% end %>
 </div>
 
-<!-- home container -->
+
 <div class="home_container">
-  <!-- backgrounds -->
   <div class="image_background"> </div>
-  <div class="color_background"> </div>
-  <!-- body -->
-  <br>
+  <div class="color_background"> </div> <br>
+
+
   <div class="intro">
     <p style="text-align: center;"> <%= notice %> </p>
     <h2 style="font-size: 40px; text-align: center; font-weight: normal;"> 
@@ -37,7 +35,7 @@
     </h2>
     <div class="button">
       <% if logged_in? %>
-        <%= link_to "POST A LISTING", new_listing_path, style: "padding: 15px 52px;" %> <br> <br>
+        <%= link_to "POST A LISTING", new_listing_path, style: "padding: 17px 78px;" %> <br> <br>
         <div class="fb-like" data-href="https://www.facebook.com/GuidelighterMP/?fref=ts" data-width="100" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" style="padding-top: 10px;"></div>
       <% else %>
         <%= link_to "BECOME A GUIDE FOR YOUR PROFESSION IN 3 MINUTES", signup_path, style: "padding: 17px 78px;", class: "btn-turquoise" %> 
@@ -47,62 +45,42 @@
     </div> <br> <br> <br>
   </div>
 
+
   <h3> Personal guidance on careers, applications and life by people who care. </h3>
-  <!-- <h3> Request the help you need. </h3> -->
-
-  <!-- 
-    Easily request guidance from a real person. 
-    <div class="row"> 
-      <div class="col-xs-4 button"> <a href="" style="background-color: ;"> Uni. Applications </a> </div>
-      <div class="col-xs-4 button"> <a href="" style="background-color: ;"> Career Advice & Insights </a>  </div>
-      <div class="col-xs-4 button"> <a href="" style="background-color: ;"> CV & Interview prep </a> </div>
-    </div> <br> <br> <br>
-  -->
-  
+  <!-- Listings -->
   <% @listings.each do |listing| %>
-  <!-- THIS NEEDS EDITING SO BADLY !!! -->
     <% if listing.advisor && listing.advisor.profile %>
-      <a href="<%= show_listing_path(listing_id: listing.id) %>" >
+      <%= link_to show_listing_path(listing_id: listing) do %>
         <div class="listing_on_homepage">
-
-
+          <!-- Image -->
           <% unless listing.advisor.profile.nil? %>  
             <% unless listing.advisor.profile.profile_image.url.nil? %>  
-              <div style="text-align:center;">
                 <%= image_tag listing.advisor.profile.profile_image.url %>
-              </div>          
             <% end %>
           <% end %>
-          
-          <!-- <% unless listing.advisor.first_name.nil? %>
-            <div style="text-align: center;"> <%= listing.advisor.first_name %> </div>
-          <% end %> <br> -->
-
-
+          <!-- Title -->
           <% unless listing.title.empty? %>
             <div style="height: 73px;">
-              <h4 style="border: none; padding: 0px 28px;"> <%= listing.title %> </h4>
+              <h4 style="border: none; padding: 0px 30px;"> <%= listing.title %> </h4>
             </div>
           <% end %>
-
-          <% unless listing.price.nil? %>
-            <% unless listing.price == 0 %>
-              <div style="text-align:center; position: absolute; bottom: 8px; font-size: 12px;"> 
-                Guide: <%= listing.advisor.first_name %> |
-                <%= listing.price %> £ |
-                <%= link_to "Send request", new_request_path(listing_id: listing.id), class: "" %>
-              </div>
-             
-            <% else %>
-              <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> 
-                Guide: <%= listing.advisor.first_name %> |
-                Free |
-                <%= link_to "Send request", new_request_path(listing_id: listing.id), class: "" %>
-              </div>
+          <!-- Bottom -->
+          <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> 
+            <% unless listing.price.nil? %>
+              <% unless listing.price == 0 %>
+                  <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
+                  <%= listing.price %> £ |
+                  <%= link_to "Request guidance.", new_request_path(listing_id: listing.id) %>
+              <% else %>
+                  <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
+                  Free |
+                  <%= link_to "Request guidance.", new_request_path(listing_id: listing.id) %>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
+
         </div>
-      </a>
+      <% end %>
     <% end %>
   <% end %>
 
