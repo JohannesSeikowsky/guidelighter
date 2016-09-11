@@ -25,33 +25,30 @@
 
 <div class="home_container">
   <div class="image_background"> </div>
-  <div class="color_background"> </div> <br>
+  <div class="color_background"> </div>
 
-
+  <!-- Top part -->
   <div class="intro">
-    <p style="text-align: center;"> <%= notice %> </p>
-    <h2 style="font-size: 40px; text-align: center; font-weight: normal;"> 
-      <b> Help out </b> by sharing your professional experience (and get paid for it). 
-    </h2>
+    <p class="centered"> <%= notice %> </p>
+    <h2 id="gl_slogan"> Help out by sharing your professional experience (and get paid for it). </h2>
     <div class="button">
       <% if logged_in? %>
-        <%= link_to "POST A LISTING", new_listing_path, style: "padding: 17px 78px;" %> <br> <br>
+        <%= link_to "POST A LISTING", new_listing_path, id: "hp_button" %> <br> <br>
         <div class="fb-like" data-href="https://www.facebook.com/GuidelighterMP/?fref=ts" data-width="100" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" style="padding-top: 10px;"></div>
       <% else %>
-        <%= link_to "BECOME A GUIDE FOR YOUR PROFESSION IN 3 MINUTES", signup_path, style: "padding: 17px 78px;", class: "btn-turquoise" %> 
-        <br> <br>
+        <%= link_to "BECOME A GUIDE FOR YOUR PROFESSION IN 3 MINUTES", signup_path, id: "hp_button" %> <br> <br>
          <div class="fb-like" data-href="https://www.facebook.com/GuidelighterMP/?fref=ts" data-width="100" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" style="padding-top: 10px;"></div>
       <% end %>
-    </div> <br> <br> <br>
+    </div>
   </div>
 
-
+  <!-- All Listings -->
   <h3> Personal guidance on careers, applications and life by people who care. </h3>
-  <!-- Listings -->
   <% @listings.each do |listing| %>
     <% if listing.advisor && listing.advisor.profile %>
       <%= link_to show_listing_path(listing_id: listing) do %>
-        <div class="listing_on_homepage">
+        
+        <div class="listing">
           <!-- Image -->
           <% unless listing.advisor.profile.nil? %>  
             <% unless listing.advisor.profile.profile_image.url.nil? %> 
@@ -60,39 +57,31 @@
           <% end %>
           <!-- Title -->
           <% unless listing.title.empty? %>
-            <div style="height: 73px;">
-              <h4 style="border: none; padding: 0px 30px;"> <%= listing.title %> </h4>
-            </div>
+            <div id="listing_title"> <h4> <%= listing.title %> </h4> </div>
           <% end %>
           <!-- Bottom -->
-          <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> 
+          <div id="listing_bottom"> 
             <% unless listing.price.nil? %>
               <% unless listing.price == 0 %>
-                  <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
-                  <%= listing.price %> £ |
-                  <%= link_to "Request guidance.", new_request_path(listing_id: listing.id) %>
+                <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
+                <%= listing.price %> £ |
+                <%= link_to "Request guidance", new_request_path(listing_id: listing.id) %>
               <% else %>
-                  <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
-                  Free |
-                  <%= link_to "Request guidance.", new_request_path(listing_id: listing.id) %>
+                <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
+                Free |
+                <%= link_to "Request guidance", new_request_path(listing_id: listing.id) %>
               <% end %>
             <% end %>
           </div>
-
         </div>
+
       <% end %>
     <% end %>
   <% end %>
 
+  <!-- Bottom Link -->
   <div class="bottom_right_links">
     <%= link_to "Browse Listings by Category", root_path, class: "btn btn-small btn-turquoise", onclick: "stillInProgress();" %>
   </div>
 </div>
-
-<!-- js -->
-<script type="text/javascript">
-  function stillInProgress(){
-    alert("This feature is being built right now. It will be online next week. We apologize for the roose.");
-  }
-</script>
 

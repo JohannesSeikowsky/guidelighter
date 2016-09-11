@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+// placeholder buttons
+function stillInProgress(){
+  alert("This feature is being built right now. It will be online next week. We apologize for the roose.");
+}

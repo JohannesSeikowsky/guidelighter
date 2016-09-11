@@ -5,9 +5,90 @@
 */
 
 html, body {
-    margin: 0;
-    height: 100%;
+  margin: 0;
+  height: 100%;
 }
+
+.gl_header{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+
+  width: 100%;
+  height: 44px; 
+  line-height: 44px;
+  color: white;
+  background-color: black;
+  z-index: 250;
+  .links{
+    float: right;
+    margin-right: 15px;
+    a{
+      color: white;
+      font-size: 14px;
+      margin-left: 18px;
+      font-weight: 690;
+    }
+    .btn-turquoise{
+      background-color: #69A0A5;
+      color: white;
+    }
+  }
+}
+
+.color_background{
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: -250;
+  background-color: #FAFAFA;
+}
+
+#gl_slogan{
+  font-size: 41px; 
+  text-align: center; 
+  font-weight: normal;
+}
+
+#hp_button{
+  padding: 17px 78px;
+}
+
+.centered{
+  text-align: center;
+}
+
+.bottom_right_links{
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  .btn-turquoise{
+    background-color: #69A0A5;
+    color: white;
+  }
+}
+
+.small_request_guide_btn{
+  padding: 3px 9px 1px 9px;
+  border: 1px solid #F6F6EF;
+}
+
+.small_request_guide_btn:hover{
+  background-color: #F6F6EF;
+  text-decoration: none;
+}
+
+.small_placeholder_text::-webkit-input-placeholder {
+  font-size: 11px;
+} 
+
+
+
+
+
 
 body {
   height: 100%;

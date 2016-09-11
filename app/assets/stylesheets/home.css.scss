@@ -1,80 +1,5 @@
 
-// background color below the background image on homepage
-.color_background{
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    z-index: -250;
-    background-color: #FAFAFA;
-  }
 
-// header 
- .gl_header{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-
-    width: 100%;
-    height: 44px; 
-    line-height: 44px;
-    color: white;
-    background-color: black;
-    z-index: 250;
-    .links{
-      float: right;
-      margin-right: 15px;
-      a{
-        color: white;
-        font-size: 14px;
-        margin-left: 18px;
-        font-weight: 690;
-      }
-      .btn-turquoise{
-        background-color: #69A0A5;
-        color: white;
-      }
-    }
-  }
-
-// bottom right
-.bottom_right_links{
-  position: fixed;
-  bottom: 8px;
-  right: 8px;
-  .btn-turquoise{
-    background-color: #69A0A5;
-    color: white;
-  }
-}
-
-
-// request guide btn on hp
-.small_request_guide_btn{
-  padding: 3px 9px 1px 9px;
-  border: 1px solid #F6F6EF;
-}
-
-.small_request_guide_btn:hover{
-  background-color: #F6F6EF;
-  text-decoration: none;
-}
-
-// small placeholder text in textarea
-.small_placeholder_text::-webkit-input-placeholder {
-  font-size: 11px;
-} 
-
-
-
-
-.centered{
-  text-align: center;
-}
-
-// container
 .home_container{
   @media (min-width: 0px){ width: 820px; }
   // @media (max-width: 500px){ width: 100%; } // varying width
@@ -83,6 +8,8 @@
   .intro{
     position: relative;
     z-index: 100;
+    margin-top: 122px;
+    margin-bottom: 78px;
   }
 
   .image_background{
@@ -230,7 +157,7 @@
     border: 2px solid #EEEEEE;    
   }
 
-  .listing_on_homepage{
+  .listing{
     border: 1px solid lightGrey;
     background-color: #FCFCFC;
     width: 32%;
@@ -254,6 +181,19 @@
     background-color: #FAFAFA;
     a{text-decoration: none;}
   }
+
+  #listing_title{
+  height: 78px;
+  h4{
+    border: none; 
+    padding: 0px 30px;
+  } 
+  }
+
+  #listing_bottom{
+    text-align: center; position: absolute; bottom: 5px; font-size: 12px;
+  }
+
 
 }
 
