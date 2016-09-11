@@ -28,9 +28,11 @@ class AdminActionsController < ApplicationController
     @advisor = Advisor.find(params[:advisor_id])
     if @advisor
       @advisor.delete 
-      @advisor.profile.delete
-      @advisor.listings.each do |list|
-        list.delete
+      @advisor.profile.delete if @advisor.profile
+      if @advisor.listings
+        @advisor.listings.each do |list|
+          list.delete
+        end
       end
     end
     redirect_to advisors_mgmt_path, notice: "Advisor + Profiles + Listings destroyed."
