@@ -230,7 +230,7 @@
     border: 1px solid lightGrey;
     background-color: #FCFCFC;
     width: 32%;
-    height: 347px;
+    height: 358px;
     float: left;
     margin-right: 0.66%;
     margin-left: 0.66%;
@@ -247,7 +247,9 @@
     }
   }
   .listing_on_homepage:hover{
-    background-color: #FCFCFC;
+    background-color: #FAFAFA;
+    border: 1px solid #69A0A5;
+    a{text-decoration: none;}
   }
 
 }

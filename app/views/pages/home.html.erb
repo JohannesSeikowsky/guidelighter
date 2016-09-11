@@ -88,11 +88,11 @@
           <% unless listing.price.nil? %>
             <% unless listing.price == 0 %>
               <div style="text-align:center; position: absolute; bottom: 8px; font-size: 12px;"> 
-                Price: <%= listing.price %> £ 
+                Guide: <%= listing.advisor.first_name %> |
+                <%= listing.price %> £ |
+                <%= link_to "send request", new_request_path(listing_id: listing.id), class: "" %>
               </div>
-              <div style="text-align:center; position: absolute; bottom: 5px; right: 5px; font-size: 12px;"> 
-                <%= link_to "Request #{listing.advisor.first_name}", new_request_path(listing_id: listing.id), class: "small_request_guide_btn" %>
-              </div>
+             
             <% else %>
               <div style="text-align:center; position: absolute; bottom: 5px; font-size: 12px;"> 
                 free 
