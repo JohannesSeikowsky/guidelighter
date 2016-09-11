@@ -54,8 +54,8 @@
         <div class="listing_on_homepage">
           <!-- Image -->
           <% unless listing.advisor.profile.nil? %>  
-            <% unless listing.advisor.profile.profile_image.url.nil? %>  
-                <%= image_tag listing.advisor.profile.profile_image.url %>
+            <% unless listing.advisor.profile.profile_image.url.nil? %> 
+                <div class="centered"> <%= image_tag listing.advisor.profile.profile_image.url %> </div>
             <% end %>
           <% end %>
           <!-- Title -->
