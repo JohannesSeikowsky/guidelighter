@@ -7,13 +7,14 @@
 </div>
 
 <div class="simple_container">
+  <p> <%= notice %> </p>
   <h2> Admin Area - Advisors Mgmt </h2> <br>
   <% @all_advisors.each do |adv| %>
     <p> 
       <%= adv.first_name %> <%= adv.second_name %> <br>
       <%= adv.email %> <br> 
       <%= link_to "Edit", "#" %> <br>
-      <%= link_to "Delete", "#" %> 
+      <%= link_to "Delete", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: 'Sure? Profile and Listings of this user will be destroyed as well.' } %> 
     </p>
     <br>
   <% end %>

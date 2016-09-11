@@ -3,6 +3,7 @@ class Advisor < ActiveRecord::Base
   # associations
   has_one :profile
   has_many :listings
+  # dependent destroys implemented in controller. Doesnt work here. weired.
 
   # validations
   validates_presence_of :first_name, :second_name

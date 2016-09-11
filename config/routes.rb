@@ -52,5 +52,8 @@ Rails.application.routes.draw do
   get 'advisors_mgmt', to: "admin_actions#advisors_mgmt", as: 'advisors_mgmt'
   get 'profiles_mgmt', to: "admin_actions#profiles_mgmt", as: 'profiles_mgmt'
   get 'listings_mgmt', to: "admin_actions#listings_mgmt", as: 'listings_mgmt'
-
+  delete 'destroy_advisor/:advisor_id', to: "admin_actions#destroy_advisor", as: 'admin_destroy_advisor'
 end
+
+
+
