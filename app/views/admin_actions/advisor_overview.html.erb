@@ -4,15 +4,20 @@
   </div>
 </div>
 
-<div class="simple_container">
-  <h2> Profile - <%= @advisor.first_name %> <%= @advisor.second_name %> </h2> <br>
-  <p> <%= @profile.description %> </p> <br> <br> <br>
+<div class="simple_container">+
+  <% if @profile %>
+    <h2> <%= @advisor.first_name %> <%= @advisor.second_name %> - Profile </h2> <br>
+    <p> <%= @profile.description %> </p> 
+    <p> <%= link_to "Edit", "", class: "btn btn-sm btn-warning" %> </p> <br> <br> <br>
+  <% end %>
 
-  <h2> Listings - <%= @advisor.first_name %> <%= @advisor.second_name %> </h2> <br>
-  <% @listings.each do |list| %>
-    <p> Title: <%= list.title %> </p>
-    <p> Description: <%= list.description %> </p>
-    <p> Price: <%= list.price %> </p> <br> <br> <br>
-
+  <% if @listings %>
+    <h2> <%= @advisor.first_name %> <%= @advisor.second_name %> - Listings </h2> <br>
+    <% @listings.each do |list| %>
+      <p> Title: <%= list.title %> </p>
+      <p> Description: <%= list.description %> </p>
+      <p> Price: <%= list.price %> </p> 
+      <p> <%= link_to "Edit", "", class: "btn btn-sm btn-warning" %> </p> <br> <br> <br> <br>
+    <% end %>
   <% end %>
 </div>
