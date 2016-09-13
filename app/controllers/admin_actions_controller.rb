@@ -40,14 +40,17 @@ class AdminActionsController < ApplicationController
   def admin_update_profile
     @profile = Profile.find(params[:profile_id])
     @profile.update(profile_params)
-    redirect_to advisor_overview_path(advisor_id: @profile.advisor.id), notice: "Updated."
+    redirect_to advisor_overview_path(advisor_id: @profile.advisor.id), notice: "Profile updated."
   end
 
   def admin_edit_listing
-    @listing = Profile.find(params[:listing_id])
+    @listing = Listing.find(params[:listing_id])
   end
 
-  def update_listing
+  def admin_update_listing
+    @listing = Listing.find(params[:listing_id])
+    @listing.update(listing_params)
+    redirect_to advisor_overview_path(advisor_id: @listing.advisor.id), notice: "Listing updated."
   end
 
 
@@ -69,5 +72,9 @@ class AdminActionsController < ApplicationController
   private
   def profile_params
     params.require(:profile).permit(:description, :profile_image)
+  end
+
+  def listing_params
+    params.require(:listing).permit(:title, :description, :price)
   end
 end

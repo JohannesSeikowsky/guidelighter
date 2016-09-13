@@ -4,7 +4,15 @@
   </div>
 </div>
 
-
-<div class="simple_container">
-
+<div class="simple_container">  
+  <h2>  Advisor - <%= @listing.advisor.first_name %> <%= @listing.advisor.second_name %> </h2>  
+  <div class="grey_box">
+  <h3> Edit this Listing </h3>
+  <%= form_for @listing, url: admin_update_listing_path(listing_id: @listing.id) do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_area :description, style: "height: 225px;" %>
+    <%= f.number_field :price %> <br>
+    <%= f.submit "Done." %>
+  <% end %>
+</div>
 </div>

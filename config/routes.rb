@@ -52,10 +52,10 @@ Rails.application.routes.draw do
   get 'advisors_mgmt', to: "admin_actions#advisors_mgmt", as: 'advisors_mgmt'
 
   get 'advisor_overview', to: "admin_actions#advisor_overview", as: "advisor_overview"
-
-  get 'admin_edit_profile', to: "admin_actions#admin_edit_profile", as: "admin_edit_profile"
+  get 'admin_edit_profile/:profile_id', to: "admin_actions#admin_edit_profile", as: "admin_edit_profile"
   patch 'admin_update_profile', to: "admin_actions#admin_update_profile", as: "admin_update_profile"
-  get "admin_edit_listing", to: "admin_actions#admin_edit_listing", as: "admin_edit_listing"  
+  get "admin_edit_listing/:listing_id", to: "admin_actions#admin_edit_listing", as: "admin_edit_listing"
+  patch 'admin_update_listing/:listing_id', to: "admin_actions#admin_update_listing", as: "admin_update_listing"
 
   get 'profiles_mgmt', to: "admin_actions#profiles_mgmt", as: 'profiles_mgmt'
   get 'listings_mgmt', to: "admin_actions#listings_mgmt", as: 'listings_mgmt'

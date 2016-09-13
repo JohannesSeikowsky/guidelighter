@@ -58,11 +58,8 @@ class ListingsController < ApplicationController
     end      
   end
 
-
-
   private
   def listing_params
     params.require(:listing).permit(:title, :description, :price, :listing_image)
   end
-
 end
