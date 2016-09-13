@@ -18,9 +18,10 @@
       <% else %>
         Profile: 1. <br>
       <% end %>
+      Listings <%= adv.listings.count %> <br>
 
 
-      <%= link_to "Delete Advisor", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: 'Sure? Profile and Listings of this user will be destroyed as well.' } %> 
+      <%= link_to "delete advisor", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: 'Sure? Profile and Listings of this user will be destroyed as well.' } %> 
     </p>
     <br>
   <% end %>
