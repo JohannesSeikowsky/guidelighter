@@ -36,10 +36,10 @@
     <div class="button">
       <% if logged_in? %>
         <%= link_to "POST A LISTING", new_listing_path, id: "hp_button" %> <br> <br>
-        <div class="fb-like" data-href="https://www.facebook.com/GuidelighterMP/?fref=ts" data-width="100" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" style="padding-top: 10px;"></div>
+        <div class="fb-like" data-href="https://www.facebook.com/Guidelighter/?fref=ts" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
       <% else %>
         <%= link_to "BECOME A GUIDE FOR YOUR CAREER PATH IN 3 MINUTES", signup_path, id: "hp_button" %> <br> <br>
-         <div class="fb-like" data-href="https://www.facebook.com/GuidelighterMP/?fref=ts" data-width="100" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true" style="padding-top: 10px;"></div>
+        <div class="fb-like" data-href="https://www.facebook.com/Guidelighter/?fref=ts" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
       <% end %>
     </div>
   </div>
@@ -66,12 +66,12 @@
             <% unless listing.price.nil? %>
               <% unless listing.price == 0 %>
                 <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
-                <%= listing.price %> £ |
-                <%= link_to "Request guidance", new_request_path(listing_id: listing.id) %>
+                <%= link_to "Request guidance", new_request_path(listing_id: listing.id) %> |
+                <%= listing.price %> £ 
               <% else %>
                 <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
-                Free |
-                <%= link_to "Request guidance", new_request_path(listing_id: listing.id) %>
+                <%= link_to "Request guidance", new_request_path(listing_id: listing.id) %> |
+                Free
               <% end %>
             <% end %>
           </div>
