@@ -44,14 +44,13 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
-  <!--  Page -->
-    <!-- Logo -->
+
     <div class="simple_logo" style="color: red;">
       <%= link_to root_path, 'data-no-turbolink' => true do %>
        <%= image_tag "gl4.png" %>
       <% end %>
     </div>
-    <!-- Content -->
+
     <div>
       <%= yield %>
     </div>

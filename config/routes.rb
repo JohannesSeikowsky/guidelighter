@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#logout', as: 'logout'
 
   # admin
-  get 'admin', to: "admin_actions#general", as: 'admin_general'
+  get 'admin', to: "admin_actions#advisors_mgmt", as: 'admin_general'
   get 'advisors_mgmt', to: "admin_actions#advisors_mgmt", as: 'advisors_mgmt'
   get 'profiles_mgmt', to: "admin_actions#profiles_mgmt", as: 'profiles_mgmt'
   get 'listings_mgmt', to: "admin_actions#listings_mgmt", as: 'listings_mgmt'

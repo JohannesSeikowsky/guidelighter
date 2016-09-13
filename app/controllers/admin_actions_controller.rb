@@ -13,7 +13,7 @@ class AdminActionsController < ApplicationController
   end
 
   def advisors_mgmt
-    @all_advisors = Advisor.all
+    @all_advisors = Advisor.order("first_name ASC")
   end
 
   def profiles_mgmt
