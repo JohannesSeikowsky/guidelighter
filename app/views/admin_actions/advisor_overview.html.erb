@@ -1,19 +1,20 @@
 <div class="gl_header"> 
   <div class="links">
-    <%= link_to "Back to Bridge", admin_general_path, class: "btn btn-warning" %>
+    <%= link_to "Tags", admin_general_path %>
+    <%= link_to "Admin", admin_general_path %>
   </div>
 </div>
 
 <div class="simple_container">
   <% if @profile %>
     <p> <%= notice %> </p>
-    <h2> <%= @advisor.first_name %> <%= @advisor.second_name %> - Profile </h2> <br>
+    <h2> Profile </h2> <br>
     <p> <%= @profile.description %> </p> 
     <p> <%= link_to "Edit", admin_edit_profile_path(profile_id: @profile.id), class: "btn btn-sm btn-warning" %> </p> <br> <br>
   <% end %>
 
   <% if @listings %>
-    <h2> <%= @advisor.first_name %> <%= @advisor.second_name %> - Listings </h2> <br>
+    <h2> Listings </h2> <br>
     <% @listings.each do |list| %>
       <p> Title: <%= list.title %> </p>
       <p> Description: <%= list.description %> </p>
