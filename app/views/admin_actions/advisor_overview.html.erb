@@ -4,11 +4,11 @@
   </div>
 </div>
 
-<div class="simple_container">+
+<div class="simple_container">
   <% if @profile %>
     <h2> <%= @advisor.first_name %> <%= @advisor.second_name %> - Profile </h2> <br>
     <p> <%= @profile.description %> </p> 
-    <p> <%= link_to "Edit", "", class: "btn btn-sm btn-warning" %> </p> <br> <br> <br>
+    <p> <%= link_to "Edit", admin_edit_profile_path(profile_id: @profile.id), class: "btn btn-sm btn-warning" %> </p> <br> <br>
   <% end %>
 
   <% if @listings %>
@@ -17,7 +17,7 @@
       <p> Title: <%= list.title %> </p>
       <p> Description: <%= list.description %> </p>
       <p> Price: <%= list.price %> </p> 
-      <p> <%= link_to "Edit", "", class: "btn btn-sm btn-warning" %> </p> <br> <br> <br> <br>
+      <p> <%= link_to "Edit", admin_edit_listing_path(listing_id: list.id), class: "btn btn-sm btn-warning" %> </p> <br> <br> <br>
     <% end %>
   <% end %>
 </div>

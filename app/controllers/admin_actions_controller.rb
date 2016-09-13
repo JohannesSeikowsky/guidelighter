@@ -1,14 +1,15 @@
 class AdminActionsController < ApplicationController
 
+  # PROTECTION
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
       username == ENV['admin_user'] && password == ENV['admin_pw']
     end 
   end
-
   before_filter :authenticate if Rails.env.production?
 
 
+  # OVERVIEW PAGES
   def general
   end
 
@@ -24,21 +25,33 @@ class AdminActionsController < ApplicationController
     @all_listings = Listing.all
   end
 
-  # editing
+
+  # UPDATING
   def advisor_overview
     @advisor = Advisor.find(params[:advisor_id])
     @profile = @advisor.profile if @advisor.profile
     @listings = @advisor.listings if @advisor.listings
   end
 
-  def edit_profile
+  def admin_edit_profile
+    @profile = Profile.find(params[:profile_id])
+  end
+  
+  def admin_update_profile
+    @profile = Profile.find(params[:profile_id])
+    @profile.update(profile_params)
+    redirect_to advisor_overview_path(advisor_id: @profile.advisor.id)
   end
 
-  def edit_listing
+  def admin_edit_listing
+    @listing = Profile.find(params[:listing_id])
+  end
+
+  def update_listing
   end
 
 
-  # destroying
+  # DESTROYING
   def destroy_advisor
     @advisor = Advisor.find(params[:advisor_id])
     if @advisor
@@ -53,4 +66,8 @@ class AdminActionsController < ApplicationController
     redirect_to advisors_mgmt_path, notice: "Advisor + Profiles + Listings destroyed."
   end
 
+  private
+  def profile_params
+    params.require(:profile).permit(:description, :profile_image)
+  end
 end

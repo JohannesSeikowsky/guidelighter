@@ -1,0 +1,16 @@
+<div class="gl_header"> 
+  <div class="links">
+    <%= link_to "Advisors Mgmt", advisors_mgmt_path %>
+  </div>
+</div>
+
+<div class="simple_container">  
+  <h2> Edit Profile of <%= @profile.advisor.first_name %> </h2>  
+  <%= form_for @profile, url: admin_update_profile_path(profile_id: @profile.id) do |f| %>
+    <h6> 1. Description </h6>
+    <%= f.text_area :description, style: "height: 205px;" %> 
+    <h6> 2. Image </h6>
+    <%= f.file_field :profile_image %>
+    <%= f.submit "Done." %>
+  <% end %>
+</div>
