@@ -24,6 +24,21 @@ class AdminActionsController < ApplicationController
     @all_listings = Listing.all
   end
 
+  # editing
+  def advisor_overview
+    @advisor = Advisor.find(params[:advisor_id])
+    @profile = @advisor.profile if @advisor.profile
+    @listings = @advisor.listings if @advisor.listings
+  end
+
+  def edit_profile
+  end
+
+  def edit_listing
+  end
+
+
+  # destroying
   def destroy_advisor
     @advisor = Advisor.find(params[:advisor_id])
     if @advisor

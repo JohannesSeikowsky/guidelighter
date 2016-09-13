@@ -21,10 +21,8 @@
         Profile: 1 <br>
       <% end %>
       Listings: <%= adv.listings.count %> <br>
-      <%= link_to "delete -", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: "Destroy this Advisor? The advisor's profile and listings will be destroyed with it." } %> 
-      <%= link_to "edit", root_path %>
-
-
+      <%= link_to "delete", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: "Destroy this Advisor? The advisor's profile and listings will be destroyed with it." } %> 
+      <%= link_to "- edit", advisor_overview_path(advisor_id: adv.id) %>
     </p>
     <br>
   <% end %>

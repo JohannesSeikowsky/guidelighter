@@ -1,0 +1,18 @@
+<div class="gl_header"> 
+  <div class="links">
+    <%= link_to "Advisors Mgmt", advisors_mgmt_path %>
+  </div>
+</div>
+
+<div class="simple_container">
+  <h2> Profile - <%= @advisor.first_name %> <%= @advisor.second_name %> </h2> <br>
+  <p> <%= @profile.description %> </p> <br> <br> <br>
+
+  <h2> Listings - <%= @advisor.first_name %> <%= @advisor.second_name %> </h2> <br>
+  <% @listings.each do |list| %>
+    <p> Title: <%= list.title %> </p>
+    <p> Description: <%= list.description %> </p>
+    <p> Price: <%= list.price %> </p> <br> <br> <br>
+
+  <% end %>
+</div>
