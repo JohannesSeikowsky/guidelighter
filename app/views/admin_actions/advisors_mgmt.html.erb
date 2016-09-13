@@ -1,8 +1,5 @@
 <div class="gl_header"> 
   <div class="links">
-    <%= link_to "Advisors Mgmt", advisors_mgmt_path %>
-    <%= link_to "Profiles Mgmt", profiles_mgmt_path %>
-    <%= link_to "Listings Mgmt", listings_mgmt_path %>
   </div>
 </div>
 
@@ -16,13 +13,13 @@
       <% end %>
       <%= adv.email %> <br>
       <% if adv.profile.nil? %>
-        Profile: 0 <br>
+        profile: 0 <br>
       <% else %>
-        Profile: 1 <br>
+        profile: 1 <br>
       <% end %>
-      Listings: <%= adv.listings.count %> <br>
-      <%= link_to "delete", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: "Destroy this Advisor? The advisor's profile and listings will be destroyed with it." } %> 
-      <%= link_to "- edit", advisor_overview_path(advisor_id: adv.id) %>
+      listings: <%= adv.listings.count %> <br>
+      <%= link_to "see and edit", advisor_overview_path(advisor_id: adv.id) %> <br>
+      <%= link_to "delete", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: "Destroy this Advisor? The advisor's profile and listings will be destroyed with it." } %>
     </p>
     <br>
   <% end %>
