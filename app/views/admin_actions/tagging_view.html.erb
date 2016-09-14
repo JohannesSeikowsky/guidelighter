@@ -9,8 +9,8 @@
   <h2> Tagging Management </h2> <br>
   <!-- listings -->
   <% @all_listings.each do |listing| %>
-    <p> <%= listing.title %> </p>
-    <p style=""> <%= listing.description %> </p> <br> <br> <br> <br>
+    <p> <b> <%= listing.title %> </b> </p>
+    <p style=""> <%= listing.description %> </p> <br> <br> <br> <br> <br> <br>
   <% end %>
 </div>
 
@@ -19,6 +19,4 @@
   function showDescription(){
     documentFindElementById("")
   }
-
-  
 </script>
