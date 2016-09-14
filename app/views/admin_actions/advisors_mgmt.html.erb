@@ -1,12 +1,12 @@
 <div class="gl_header"> 
   <div class="links">
-    <%= link_to "Tags", admin_general_path, class: "btn btn-warning" %>
+    <%= link_to "Tags", tagging_view_path, class: "btn btn-warning" %>
   </div>
 </div>
 
 <div class="simple_container">
   <p> <%= notice %> </p>
-  <h2> Managing Advisors | <%= link_to "Tag Management", admin_general_path, class: "btn btn-md" %> </h2> <br>
+  <h2> Managing Advisors | <%= link_to "Tag Management", tagging_view_path, class: "btn btn-md" %> </h2> <br>
   <% @all_advisors.each do |adv| %>
     <p> 
       <%= link_to "https://www.google.com/search?q=#{adv.first_name}+#{adv.second_name}", target: "_blank" do %>

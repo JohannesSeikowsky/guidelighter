@@ -54,6 +54,15 @@ class AdminActionsController < ApplicationController
   end
 
 
+  # TAGGING
+    def tagging_view
+      @all_listings = Listing.all
+    end
+
+    def tagging_action
+    end
+
+
   # DESTROYING
   def destroy_advisor
     @advisor = Advisor.find(params[:advisor_id])

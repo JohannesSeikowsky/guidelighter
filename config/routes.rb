@@ -57,6 +57,9 @@ Rails.application.routes.draw do
   get "admin_edit_listing/:listing_id", to: "admin_actions#admin_edit_listing", as: "admin_edit_listing"
   patch 'admin_update_listing/:listing_id', to: "admin_actions#admin_update_listing", as: "admin_update_listing"
 
+
+  get "tagging", to: "admin_actions#tagging_view", as: "tagging_view"
+
   get 'profiles_mgmt', to: "admin_actions#profiles_mgmt", as: 'profiles_mgmt'
   get 'listings_mgmt', to: "admin_actions#listings_mgmt", as: 'listings_mgmt'
 
