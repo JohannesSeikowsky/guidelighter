@@ -10,7 +10,6 @@
   <!-- listings -->
   <% @all_listings.each do |listing| %>
     <p> <b> "<%= listing.title %> </b>" </p>
-    <!-- <p> by <%= listing.advisor.first_name if listing.advisor? %> <%= listing.advisor.second_name if listing.advisor? %> </p> -->
     <p> <%= listing.description %> </p> 
     <h6> <%= listing.tags if listing.tags %> </h6>
     <% if listing.tags. nil? %>
