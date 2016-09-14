@@ -7,4 +7,18 @@
 <div class="simple_container">
   <p> <%= notice %> </p>
   <h2> Tagging Management </h2> <br>
+  <!-- listings -->
+  <% @all_listings.each do |listing| %>
+    <p> <%= listing.title %> </p>
+    <p style=""> <%= listing.description %> </p> <br> <br> <br> <br>
+  <% end %>
 </div>
+
+
+<script type="text/javascript">
+  function showDescription(){
+    documentFindElementById("")
+  }
+
+  
+</script>
