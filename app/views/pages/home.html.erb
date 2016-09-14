@@ -66,12 +66,12 @@
             <% unless listing.price.nil? %>
               <% unless listing.price == 0 %>
                 <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
-                <%= link_to "Send Request", new_request_path(listing_id: listing.id) %> |
-                <%= listing.price %> £ 
+                <%= link_to "Send Request |", new_request_path(listing_id: listing.id) %>
+                <%= link_to "#{listing.price} £ ", new_request_path(listing_id: listing.id) %>
               <% else %>
                 <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
-                <%= link_to "Send Request", new_request_path(listing_id: listing.id) %> |
-                Free
+                <%= link_to "Send Request |", new_request_path(listing_id: listing.id) %>
+                <%= link_to "Free", new_request_path(listing_id: listing.id) %>
               <% end %>
             <% end %>
           </div>
