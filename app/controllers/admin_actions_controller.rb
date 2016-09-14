@@ -60,11 +60,10 @@ class AdminActionsController < ApplicationController
     end
 
     def update_tags
-      # find listings
-      # update with tag attribute with relevant data
-      # redirect to tagging view
+      @listing = Listing.find(params[:listing_id])
+      @listing.update_attributes(tags: params[:listing][:tags])
+      redirect_to tagging_view_path, notice: "Tags updated."
     end
-
 
   # DESTROYING
   def destroy_advisor

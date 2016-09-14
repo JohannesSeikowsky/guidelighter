@@ -9,12 +9,16 @@
   <h2> Tags </h2> <br>
   <!-- listings -->
   <% @all_listings.each do |listing| %>
-    <p> <b> Listing: <%= listing.title %> </b> </p>
+    <p> <b> "<%= listing.title %> </b>" by <%= listing.advisor.first_name %> <%= listing.advisor.second_name %>) </p>
     <p> <%= listing.description %> </p> 
-    <p> <%= listing.tags if listing.tags %> </p>
+    <h6> <%= listing.tags if listing.tags %> </h6>
+    <% if listing.tags. nil? %>
+      <h6> tags_need_to_be_added_below. </h6>
+    <% end %>
+
     <!-- set tags -->
-    <%= form_for :listing, path: update_tags_path(listing_id: listing.id) do |f| %>
-      <%= f.text_field :tags, placeholder: "tags" %>
+    <%= form_for :listing, url: update_tags_url(listing_id: listing.id) do |f| %>
+      <%= f.text_field :tags %>
       <%= f.submit "update", style: "padding: 0" %>
     <% end %> 
 
