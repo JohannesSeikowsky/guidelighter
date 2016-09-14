@@ -6,11 +6,19 @@
 
 <div class="simple_container">
   <p> <%= notice %> </p>
-  <h2> Tagging Management </h2> <br>
+  <h2> Tags </h2> <br>
   <!-- listings -->
   <% @all_listings.each do |listing| %>
-    <p> <b> <%= listing.title %> </b> </p>
-    <p style=""> <%= listing.description %> </p> <br> <br> <br> <br> <br> <br>
+    <p> <b> Listing: <%= listing.title %> </b> </p>
+    <p> <%= listing.description %> </p> 
+    <p> <%= listing.tags if listing.tags %> </p>
+    <!-- set tags -->
+    <%= form_for :listing, path: update_tags_path(listing_id: listing.id) do |f| %>
+      <%= f.text_field :tags, placeholder: "tags" %>
+      <%= f.submit "update", style: "padding: 0" %>
+    <% end %> 
+
+    <br> <br> <br> <br> <br> <br>
   <% end %>
 </div>
 

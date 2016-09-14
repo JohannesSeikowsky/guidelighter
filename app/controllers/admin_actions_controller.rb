@@ -59,7 +59,10 @@ class AdminActionsController < ApplicationController
       @all_listings = Listing.all
     end
 
-    def tagging_action
+    def update_tags
+      # find listings
+      # update with tag attribute with relevant data
+      # redirect to tagging view
     end
 
 
