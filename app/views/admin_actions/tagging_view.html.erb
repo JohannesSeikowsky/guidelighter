@@ -16,9 +16,10 @@
   <!-- listings -->
     <% @all_listings.each do |listing| %>
       <div style="margin-bottom: 155px;">
-        <p> <b> "<%= listing.title %> </b>" </p>
+        <p style="font-size: 18px;"> <strong> <%= listing.title %> </strong> </p>
         <p> <%= listing.description %> </p>
         <!-- set tags -->
+        <h6> Tags of this Listing </h6>
         <%= form_for :listing, url: update_tags_url(listing_id: listing.id) do |f| %>
           <%= f.text_area :tags, placeholder: "no_tags_yet", value: listing.tags, style: "width: 100%; height: 65px;" %> <br>
           <%= f.submit "update tags", style: "padding: 0;" %>
