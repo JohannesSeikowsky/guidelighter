@@ -8,21 +8,19 @@
   <p> <%= notice %> </p>
   <h2> Tag Management </h2> 
   <h6> 
-    - Tags are to be separated by commas. <br>
-    - The last listings whose tags were update is on the bottom of the page. <br>
-    - To get there quickly hit cmd+bottom arrow on Mac. <br> 
-    - In the top right is the list of already used tags.
+    * Please separate tags with by commas.
    </h6> <br> <br>
   <!-- listings -->
     <% @all_listings.each do |listing| %>
       <div style="margin-bottom: 155px;">
         <p style="font-size: 18px;"> <strong> <%= listing.title %> </strong> </p>
-        <p> <%= listing.description %> </p>
+        <p style="display: none;"> <%= listing.description %> </p>
         <!-- set tags -->
-        <h6> Tags of this Listing </h6>
+        <h6> Tags </h6>
         <%= form_for :listing, url: update_tags_url(listing_id: listing.id) do |f| %>
-          <%= f.text_area :tags, placeholder: "no_tags_yet", value: listing.tags, style: "width: 100%; height: 65px;" %> <br>
-          <%= f.submit "update tags", style: "padding: 0;" %>
+          <%= f.text_area :tags, placeholder: "...", value: listing.tags, style: "width: 100%; height: 48px;" %> <br>
+          <%= f.submit "update tags", style: "padding: 0px 3px;" %>
+          <%= button_to "show text", "#", style: "padding: 0px 3px; margin-left: 6px;" %>
         <% end %> 
       </div>
   <% end %>

@@ -56,13 +56,13 @@ class AdminActionsController < ApplicationController
 
   # TAGGING
   def tagging_view
-    @all_listings = Listing.all
+    @all_listings = Listing.order("updated_at DESC")
   end
 
   def update_tags
     @listing = Listing.find(params[:listing_id])
     @listing.update_attributes(tags: params[:listing][:tags])
-    redirect_to tagging_view_path, notice: "Tags updated."
+    redirect_to tagging_view_path, notice: "Updated."
   end
 
   # DESTROYING
