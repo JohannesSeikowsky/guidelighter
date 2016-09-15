@@ -55,15 +55,15 @@ class AdminActionsController < ApplicationController
 
 
   # TAGGING
-    def tagging_view
-      @all_listings = Listing.all
-    end
+  def tagging_view
+    @all_listings = Listing.all
+  end
 
-    def update_tags
-      @listing = Listing.find(params[:listing_id])
-      @listing.update_attributes(tags: params[:listing][:tags])
-      redirect_to tagging_view_path, notice: "Tags updated."
-    end
+  def update_tags
+    @listing = Listing.find(params[:listing_id])
+    @listing.update_attributes(tags: params[:listing][:tags])
+    redirect_to tagging_view_path, notice: "Tags updated."
+  end
 
   # DESTROYING
   def destroy_advisor
