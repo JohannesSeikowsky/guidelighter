@@ -7,10 +7,11 @@
 <div class="simple_container">
   <p> <%= notice %> </p>
   <h2> Tagging </h2> 
-  <%= link_to "Listings that don't have any tags yet", "", class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %> <br> <br> <br>
+  <%= link_to "All Listings", tagging_view_path, class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %>
+  <%= link_to "All Listings without tags", tagging_view_path(no_tags: true), class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %> <br> <br> <br>
     <!-- lastly updated listing -->
     <div class="grey_box">
-        <h6> Latest update: </h6>
+        <h6> Lastly update: </h6>
         <p style="font-size: 18px;"> <%= @lastly_updated_listing.title %> </p>
         <%= form_for :listing, url: update_tags_url(listing_id: @lastly_updated_listing.id) do |f| %>
           <%= f.text_area :tags, value: @lastly_updated_listing.tags, style: "width: 100%; height: 48px;" %> <br>
@@ -23,6 +24,8 @@
       <div style="margin-bottom: 115px;">
         <p style="font-size: 18px;"> <strong> <%= listing.title %> </strong> </p>
         <p style="font-size: 14px;"> <%= listing.description %> </p>
+        <p style="font-size: 14px;"> by <%= listing.advisor.first_name %> <%= listing.advisor.second_name %> </p>
+
         <!-- set tags -->
         <h6> Tags </h6>
         <%= form_for :listing, url: update_tags_url(listing_id: listing.id) do |f| %>
