@@ -6,22 +6,23 @@
 
 <div class="simple_container">
   <p> <%= notice %> </p>
-  <h2> Tag Management </h2> <br> <br>
+  <h2> Tag Management </h2> 
+  <h6> 
+    - Tags are to be separated by commas. <br>
+    - The last listings whose tags were update is on the bottom of the page. <br>
+    - To get there quickly hit cmd+bottom arrow on Mac. <br> 
+    - In the top right is the list of already used tags.
+   </h6> <br> <br>
   <!-- listings -->
-  <% @all_listings.each do |listing| %>
-    <p> <b> "<%= listing.title %> </b>" </p>
-    <p> <%= listing.description %> </p>
-    <!-- <h6> <%= listing.tags if listing.tags %> </h6>
-    <% if listing.tags. nil? %>
-      <h6> no_tags_yet. </h6>
-    <% end %> -->
-
-    <!-- set tags -->
-    <%= form_for :listing, url: update_tags_url(listing_id: listing.id) do |f| %>
-      <%= f.text_field :tags, placeholder: "no tags yet", value: listing.tags, style: "width: 100%;" %> <br>
-      <%= f.submit "update tags", style: "padding: 0;" %>
-    <% end %> 
-
-    <br> <br> <br> <br> <br> <br>
+    <% @all_listings.each do |listing| %>
+      <div style="margin-bottom: 155px;">
+        <p> <b> "<%= listing.title %> </b>" </p>
+        <p> <%= listing.description %> </p>
+        <!-- set tags -->
+        <%= form_for :listing, url: update_tags_url(listing_id: listing.id) do |f| %>
+          <%= f.text_area :tags, placeholder: "no_tags_yet", value: listing.tags, style: "width: 100%; height: 65px;" %> <br>
+          <%= f.submit "update tags", style: "padding: 0;" %>
+        <% end %> 
+      </div>
   <% end %>
 </div>
