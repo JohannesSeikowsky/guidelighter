@@ -56,7 +56,7 @@ class AdminActionsController < ApplicationController
 
   # TAGGING
   def tagging_view
-    @all_listings = Listing.order("updated_at DESC")
+    @all_listings = Listing.order("title ASC")
   end
 
   def update_tags

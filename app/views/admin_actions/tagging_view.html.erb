@@ -20,8 +20,16 @@
         <%= form_for :listing, url: update_tags_url(listing_id: listing.id) do |f| %>
           <%= f.text_area :tags, placeholder: "...", value: listing.tags, style: "width: 100%; height: 48px;" %> <br>
           <%= f.submit "update tags", style: "padding: 0px 3px;" %>
-          <%= button_to "show text", "#", style: "padding: 0px 3px; margin-left: 6px;" %>
+          <%= button_to "show text", onclick: "showDescription();" , style: "padding: 0px 3px; margin-left: 6px;" %>
         <% end %> 
       </div>
   <% end %>
 </div>
+
+
+
+<script type="text/javascript">
+  function showDescription(){
+    
+  }
+</script>
