@@ -24,7 +24,9 @@
       <div style="margin-bottom: 115px;">
         <p style="font-size: 18px;"> <strong> <%= listing.title %> </strong> </p>
         <p style="font-size: 14px;"> <%= listing.description %> </p>
-        <p style="font-size: 14px;"> by <%= listing.advisor.first_name %> <%= listing.advisor.second_name %> </p>
+        <% if listing.advisor %>
+          <p style="font-size: 14px;"> by <%= listing.advisor.first_name %> <%= listing.advisor.second_name %> </p>
+        <% end %>
 
         <!-- set tags -->
         <h6> Tags </h6>
