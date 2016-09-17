@@ -38,15 +38,20 @@
         <%= link_to "POST A LISTING", new_listing_path, id: "hp_button" %> <br> <br>
         <div class="fb-like" data-href="https://www.facebook.com/Guidelighter/?fref=ts" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="true" style="padding-top: 10px;"></div>
       <% else %>
-        <%= link_to "BECOME A GUIDE FOR YOUR CAREER IN 3 MINUTES", signup_path, id: "hp_button" %> <br> <br>
+        <%= link_to "BECOME A GUIDE IN 3 MINUTES OR LESS", signup_path, id: "hp_button" %> <br> <br>
         <div class="fb-like" data-href="https://www.facebook.com/Guidelighter/?fref=ts" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="true" style="padding-top: 10px;"></div>
       <% end %>
     </div>
   </div>
 
   <!-- Listings -->
-  <h3> Personal guidance on careers, applications and life by people who care. <br> <br>
-</h3>
+  <h2 style="font-size: 21px; text-align: center;">   <br> Personal guidance by real people who care.  </h2>
+
+  <div style="margin-bottom: 20px;">
+    <%= link_to "Help with your Application", find_listings_path(search: "accounting"), class: "btn btn-lg btn-turquoise", style: "width: 33%;" %>
+    <%= link_to "Insights into Career Paths", find_listings_path(search: "accounting"), class: "btn btn-lg btn-turquoise", style: "width: 33%;" %>
+    <%= link_to "Practical Expertise Offers", find_listings_path(search: "accounting"), class: "btn btn-lg btn-turquoise", style: "width: 33%;" %>
+  </div>
   <!-- testing filter function -->
 
 
