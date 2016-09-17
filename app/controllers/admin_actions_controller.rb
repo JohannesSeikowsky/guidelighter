@@ -56,6 +56,8 @@ class AdminActionsController < ApplicationController
       @tag_string << list.tags
     end
     @tag_array = @tag_string.split(",")
+    # downcase all
+    @tag_array = @tag_array.map!{ |tag| tag.downcase }
     # remove white space in beginning of each strings in array    
     @tag_array = @tag_array.map!(&:lstrip)
     # avoid repetition of tags
