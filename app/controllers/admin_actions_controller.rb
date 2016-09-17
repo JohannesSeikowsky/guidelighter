@@ -49,18 +49,19 @@ class AdminActionsController < ApplicationController
     end
     @lastly_updated_listing = Listing.order("updated_at").last
 
-    # get all tags in one big string, then split into an array 
+    # gather all tag strings
     @tag_string = ""
     Listing.all.each do |list|
       @tag_string << ","
       @tag_string << list.tags
     end
+    # produce tags array
     @tag_array = @tag_string.split(",")
     # downcase all
     @tag_array = @tag_array.map!{ |tag| tag.downcase }
-    # remove white space in beginning of each strings in array    
+    # remove white space in beginning of each strings    
     @tag_array = @tag_array.map!(&:lstrip)
-    # avoid repetition of tags
+    # avoid tag repetition
     @tag_array = @tag_array.uniq
     # order aphabetically
     @tag_array = @tag_array.sort_by(&:downcase)
