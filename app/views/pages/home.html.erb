@@ -45,15 +45,13 @@
   </div>
 
   <!-- Listings -->
-  <h2 style="font-size: 21px; text-align: center;">   <br> Request personal guidance by real people who care.  </h2>
+  <h2 style="font-size: 21px; text-align: center;"> <br> Request personal guidance by real people who care.  </h2>
 
   <div style="margin-bottom: 20px;">
-    <%= link_to "Help with your Application", find_listings_path(search: "accounting"), class: "btn btn-lg btn-turquoise", style: "width: 33%;" %>
-    <%= link_to "Insights into Career Paths", find_listings_path(search: "accounting"), class: "btn btn-lg btn-turquoise", style: "width: 33%;" %>
-    <%= link_to "Practical Expertise Offers", find_listings_path(search: "accounting"), class: "btn btn-lg btn-turquoise", style: "width: 33%;" %>
+    <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg btn-turquoise", style: "width: 33%;" %>
+    <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg btn-turquoise", style: "width: 33%;" %>
+    <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg btn-turquoise", style: "width: 33%;" %>
   </div>
-  <!-- testing filter function -->
-
 
   <% @listings.each do |listing| %>
     <% if listing.advisor && listing.advisor.profile %>
