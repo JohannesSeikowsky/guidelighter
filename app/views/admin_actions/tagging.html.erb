@@ -6,16 +6,12 @@
 
 <div class="simple_container">
   <p> <%= notice %> </p>
-  <h2> Tagging </h2> 
-  
-  <div class="grey_box">
-    <h6> Tags in use: </h6>
-    <p> 
-      <% @tag_array.each do |tag| %>
-        <%= tag %> | 
-      <% end %> 
-    </p>
-    <!-- show all tags that have already been used -->
+  <h2> Tagging </h2>
+  <div class="tags_in_use grey_box">
+    <h6> Tags in use: </h6>    
+    <% @tag_array.each do |tag| %>
+      <%= tag %> | 
+    <% end %> 
   </div> <br> <br>
 
   <%= link_to "All Listings", tagging_path, class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %>
