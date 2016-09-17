@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @listings = Listing.order("RANDOM()")
+    @listings = Listing.order("created_at DESC")
   end
 
   def about
