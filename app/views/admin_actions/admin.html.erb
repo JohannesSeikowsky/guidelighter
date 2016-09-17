@@ -1,12 +1,12 @@
 <div class="gl_header"> 
   <div class="links">
-    <%= link_to "Tags", tagging_view_path, class: "btn btn-warning" %>
+    <%= link_to "Tags", tagging_path, class: "btn btn-warning" %>
   </div>
 </div>
 
 <div class="simple_container">
   <p> <%= notice %> </p>
-  <h2> Managing Advisors | <%= link_to "Tag Management", tagging_view_path, class: "btn btn-md" %> </h2> <br>
+  <h2> Managing Advisors | <%= link_to "Tag Management", tagging_path, class: "btn btn-md" %> </h2> <br>
   <% @all_advisors.each do |adv| %>
     <p> 
       <%= link_to "https://www.google.com/search?q=#{adv.first_name}+#{adv.second_name}", target: "_blank" do %>
@@ -19,7 +19,7 @@
         profile: 1 <br>
       <% end %>
       listings: <%= adv.listings.count %> <br>
-      <%= link_to "see and edit", advisor_overview_path(advisor_id: adv.id) %> <br>
+      <%= link_to "see and edit", advisors_resources_path(advisor_id: adv.id) %> <br>
       <%= link_to "delete", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: "Destroy this Advisor? The advisor's profile and listings will be destroyed with it." } %>
     </p>
     <br>

@@ -1,6 +1,6 @@
 class AdminActionsController < ApplicationController
 
-  # PROTECTION
+  # simplest authentication
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
       username == ENV['admin_user'] && password == ENV['admin_pw']
@@ -9,25 +9,12 @@ class AdminActionsController < ApplicationController
   before_filter :authenticate if Rails.env.production?
 
 
-  # OVERVIEW PAGES
-  def general
-  end
-
-  def advisors_mgmt
+  # entry
+  def admin
     @all_advisors = Advisor.order("first_name ASC")
   end
 
-  def profiles_mgmt
-    @all_profiles = Profile.all
-  end
-
-  def listings_mgmt
-    @all_listings = Listing.all
-  end
-
-
-  # UPDATING
-  def advisor_overview
+  def advisors_resources
     @advisor = Advisor.find(params[:advisor_id])
     @profile = @advisor.profile if @advisor.profile
     @listings = @advisor.listings if @advisor.listings
@@ -53,24 +40,36 @@ class AdminActionsController < ApplicationController
     redirect_to advisor_overview_path(advisor_id: @listing.advisor.id), notice: "Listing updated."
   end
 
-
-  # TAGGING
-  def tagging_view
+  # tagging
+  def tagging
     if params[:no_tags]
       @all_listings = Listing.where("tags is NULL or tags = ''").order("title ASC")
     else 
       @all_listings = Listing.order("title ASC")      
     end
     @lastly_updated_listing = Listing.order("updated_at").last
+
+    # get all tags in one big string, then split into an array 
+    @tag_string = ""
+    Listing.all.each do |list|
+      @tag_string << ","
+      @tag_string << list.tags
+    end
+    @tag_array = @tag_string.split(",")
+    # remove white space in beginning of each strings in array    
+    @tag_array.map(&:lstrip)
+    # remove empty string from array
+    @tag_array.delete("")
+    # avoid repetition
   end
 
   def update_tags
     @listing = Listing.find(params[:listing_id])
     @listing.update_attributes(tags: params[:listing][:tags])
-    redirect_to tagging_view_path, notice: "Updated."
+    redirect_to tagging_path, notice: "Updated."
   end
 
-  # DESTROYING
+  # destroying
   def destroy_advisor
     @advisor = Advisor.find(params[:advisor_id])
     if @advisor
@@ -84,6 +83,7 @@ class AdminActionsController < ApplicationController
     end
     redirect_to advisors_mgmt_path, notice: "Advisor + Profiles + Listings destroyed."
   end
+
 
   private
   def profile_params

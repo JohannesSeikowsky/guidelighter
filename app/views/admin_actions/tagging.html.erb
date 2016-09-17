@@ -1,15 +1,26 @@
 <div class="gl_header"> 
   <div class="links">
-    <%= link_to "Admin", admin_general_path %>
+    <%= link_to "Admin", admin_path %>
   </div>
 </div>
 
 <div class="simple_container">
   <p> <%= notice %> </p>
   <h2> Tagging </h2> 
-  <%= link_to "All Listings", tagging_view_path, class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %>
-  <%= link_to "All Listings without tags", tagging_view_path(no_tags: true), class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %> <br> <br> <br>
-    <!-- lastly updated listing -->
+  
+  <div class="grey_box">
+    <h6> Tags in use: </h6>
+    <p> 
+      <% @tag_array.each do |tag| %>
+        <%= tag %> | 
+      <% end %> 
+    </p>
+    <!-- show all tags that have already been used -->
+  </div> <br> <br>
+
+  <%= link_to "All Listings", tagging_path, class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %>
+  <%= link_to "Only Listings without tags", tagging_path(no_tags: true), class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %> <br> <br> <br>
+    <!-- lastly updated -->
     <div class="grey_box">
         <h6> Lastly update: </h6>
         <p style="font-size: 18px;"> <%= @lastly_updated_listing.title %> </p>

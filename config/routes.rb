@@ -47,23 +47,26 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#login_action', as: "login_action"
   get 'logout', to: 'sessions#logout', as: 'logout'
 
-  # admin
-  get 'admin', to: "admin_actions#advisors_mgmt", as: 'admin_general'
-  get 'advisors_mgmt', to: "admin_actions#advisors_mgmt", as: 'advisors_mgmt'
 
-  get 'advisor_overview', to: "admin_actions#advisor_overview", as: "advisor_overview"
+  # overview
+  get 'admin', to: "admin_actions#admin", as: 'admin'
+
+  # resources of an advisor
+  get 'advisors_resources/:advisor_id', to: "admin_actions#advisors_resources", as: "advisors_resources"
+
+  # admin edits
   get 'admin_edit_profile/:profile_id', to: "admin_actions#admin_edit_profile", as: "admin_edit_profile"
   patch 'admin_update_profile', to: "admin_actions#admin_update_profile", as: "admin_update_profile"
+
   get "admin_edit_listing/:listing_id", to: "admin_actions#admin_edit_listing", as: "admin_edit_listing"
   patch 'admin_update_listing/:listing_id', to: "admin_actions#admin_update_listing", as: "admin_update_listing"
 
-  get "tagging", to: "admin_actions#tagging_view", as: "tagging_view"
-  post "update_tags/:listing_id", to: "admin_actions#update_tags", as: "update_tags"
-
-  get 'profiles_mgmt', to: "admin_actions#profiles_mgmt", as: 'profiles_mgmt'
-  get 'listings_mgmt', to: "admin_actions#listings_mgmt", as: 'listings_mgmt'
-
+  # admin deletes
   delete 'destroy_advisor/:advisor_id', to: "admin_actions#destroy_advisor", as: 'admin_destroy_advisor'
+
+  # tags
+  get "tagging", to: "admin_actions#tagging", as: "tagging"
+  post "update_tags/:listing_id", to: "admin_actions#update_tags", as: "update_tags"
 end
 
 
