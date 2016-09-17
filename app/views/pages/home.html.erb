@@ -45,7 +45,11 @@
   </div>
 
   <!-- Listings -->
-  <h3> Personal guidance on careers, applications and life by people who care. </h3>
+  <h3> Personal guidance on careers, applications and life by people who care. <br> <br>
+</h3>
+  <!-- testing filter function -->
+
+
   <% @listings.each do |listing| %>
     <% if listing.advisor && listing.advisor.profile %>
       <%= link_to show_listing_path(listing_id: listing) do %>

@@ -1,0 +1,19 @@
+<div class="gl_header"> 
+  <div class="links">
+    <%= link_to "Admin", admin_path %>
+  </div>
+</div>
+
+<div class="simple_container">
+  <!-- listings -->
+  <h1> All Listings </h1>
+  <% @listings.each do |listing| %>
+    <div>
+      <p style="font-size: 18px;"> <strong> <%= listing.title %> </strong> </p>
+      <p style="font-size: 14px;"> <%= listing.description %> </p>
+      <% if listing.advisor %>
+        <p style="font-size: 14px;"> by <%= listing.advisor.first_name %> <%= listing.advisor.second_name %> </p>
+      <% end %>
+    </div> <br> <br> <br> <br>
+  <% end %>
+</div>

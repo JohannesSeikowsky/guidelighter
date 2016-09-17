@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'listingsfilter/find_listing'
+
   # root
   root 'pages#home'
 
@@ -47,9 +49,14 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#login_action', as: "login_action"
   get 'logout', to: 'sessions#logout', as: 'logout'
 
+  
+  #FILTERING
+  get "find_listings/:search", to: "listingsfilter#find_listings", as: "find_listings"
 
+  # ADMIN
   # overview
   get 'admin', to: "admin_actions#admin", as: 'admin'
+  get 'listings_overview', to: "admin_actions#listings_overview", as: "listings_overview"
 
   # resources of an advisor
   get 'advisors_resources/:advisor_id', to: "admin_actions#advisors_resources", as: "advisors_resources"
@@ -64,7 +71,7 @@ Rails.application.routes.draw do
   # admin deletes
   delete 'destroy_advisor/:advisor_id', to: "admin_actions#destroy_advisor", as: 'admin_destroy_advisor'
 
-  # tags
+  # setting tags
   get "tagging", to: "admin_actions#tagging", as: "tagging"
   post "update_tags/:listing_id", to: "admin_actions#update_tags", as: "update_tags"
 end

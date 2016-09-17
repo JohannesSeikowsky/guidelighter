@@ -14,6 +14,12 @@ class AdminActionsController < ApplicationController
     @all_advisors = Advisor.order("first_name ASC")
   end
 
+
+  def listings_overview
+    @listings = Listing.all
+  end
+
+
   def advisors_resources
     @advisor = Advisor.find(params[:advisor_id])
     @profile = @advisor.profile if @advisor.profile
