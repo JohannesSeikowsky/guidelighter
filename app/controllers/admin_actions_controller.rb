@@ -57,9 +57,7 @@ class AdminActionsController < ApplicationController
     end
     @tag_array = @tag_string.split(",")
     # remove white space in beginning of each strings in array    
-    @tag_array = @tag_array.map(&:lstrip)
-    # remove empty string from array
-    @tag_array = @tag_array.delete("")
+    @tag_array = @tag_array.map!(&:lstrip)
     # avoid repetition of tags
     @tag_array = @tag_array.uniq
     # order aphabetically
