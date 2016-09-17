@@ -9,10 +9,12 @@
   <p> <%= notice %> </p>
   <h2> Tagging </h2> <br>
   <div class="tags_in_use grey_box">
-    <h6> Tags in use: </h6>    
-    <% @tag_array.each do |tag| %>
-      <%= tag %> | 
-    <% end %> 
+    <h6> Tags already in use. </h6>
+    <h6>    
+      <% @tag_array.each do |tag| %>
+        <%= tag %> | 
+      <% end %> 
+    </h6>
   </div>
 
   <%= link_to "All Listings", tagging_path, class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %>
