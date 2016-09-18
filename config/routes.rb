@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # contact message
   get 'contact', to: 'contact_messages#new', as: 'contact'
   post 'contact', to: 'contact_messages#create', as: 'create_contact'
+  get 'new_user_request', to: 'contact_messages#new_user_request', as: 'new_user_request'
 
   # listing message
   post 'listing_message', to: 'listing_messages#create', as: 'create_listing_message'
