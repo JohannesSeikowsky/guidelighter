@@ -113,7 +113,10 @@
       border: 2px solid black;
       @media (min-width: 500px){ padding: 13px 35px; }
       @media (max-width: 500px){ padding: 13px 80px; }} // varying button size
-    a:hover { background-color: orange; }}
+      a:hover{ 
+        background-color: orange; 
+      }
+  }
 
   // h4 in forms
   form h4{

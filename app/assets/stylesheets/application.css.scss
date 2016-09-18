@@ -37,11 +37,17 @@ html, body {
   }
 }
 
-.btn-turquoise{
+
+
+.tag-btn{
   background-color: #F5EFE6;
   color: white;
   border: 1px solid black;
   color: black;
+}
+
+.tag-btn:hover{
+  background-color: #FFD990;
 }
 
 
@@ -66,7 +72,7 @@ html, body {
 }
 
 #hp_button:hover{
-  ba
+  background-color: #FFD990;
 }
 
 
