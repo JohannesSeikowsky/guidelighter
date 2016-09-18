@@ -16,8 +16,8 @@
       <%= link_to "About Us", about_path %>
       <%= link_to "Contact Us", contact_path %>
       <%= link_to "How It Works", how_path %>
-      <%= link_to "Login", login_path %>
-      <%= link_to "Signup", signup_path, class: "btn btn-small btn-turquoise" %>
+      <%= link_to "Guide Login", login_path, class: "btn btn-small btn-turquoise" %>
+      <%= link_to "What are you looking for?", login_path, class: "btn btn-small btn-turquoise", style: "margin-left: 3px;" %>
     </div>
   <% end %>
 </div>
@@ -66,9 +66,5 @@
   </div> <br>
 
   <div> Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona </div>
-
-  <div class="bottom_right_links">
-    <%= link_to "Browse Listings by Category", root_path, class: "btn btn-small btn-turquoise", onclick: "stillInProgress();" %>
-  </div>
 </div>
 

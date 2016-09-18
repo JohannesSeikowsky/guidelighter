@@ -17,9 +17,8 @@
       <%= link_to "About Us", about_path %>
       <%= link_to "Contact Us", contact_path %>
       <%= link_to "How It Works", how_path %>
-      <%= link_to "Login", login_path %>
-      <%= link_to "Admin", admin_path, class: "btn btn-warning" if Rails.env.development? %>
-      <%= link_to "Signup", signup_path, class: "btn btn-small btn-turquoise" %>
+      <%= link_to "Guide Login", login_path, class: "btn btn-small btn-turquoise" %>
+      <%= link_to "What are you looking for?", login_path, class: "btn btn-small btn-turquoise", style: "margin-left: 3px;" %>
     </div>
   <% end %>
 </div>
@@ -88,8 +87,8 @@
     <% end %>
   <% end %>
 
-  <!-- Bottom Link -->
+  <!-- Bottom Link 
   <div class="bottom_right_links">
     <%= link_to "Request specific guidance.", root_path, class: "btn btn-small btn-turquoise", onclick: "stillInProgress();" %>
-  </div>
+  </div>-->
 </div>
