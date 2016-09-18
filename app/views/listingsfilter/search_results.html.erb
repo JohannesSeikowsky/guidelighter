@@ -24,9 +24,54 @@
   <% end %>
 </div>
 
-<div class="simple_container">
-  <h1> Results </h1>  
+
+<div class="home_container">
+  <div class="image_background"> </div>
+  <div class="color_background"> </div>
+
+
+  <!-- Listings -->
+  <h2 style="font-size: 21px; text-align: center;"> <br> Request personal guidance by real people who care.  </h2>
+
+  <div style="margin-bottom: 20px;">
+    <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+    <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+    <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+  </div>
+
   <% @listings.each do |listing| %>
-    <%= listing.title %> <br> <br>
+    <% if listing.advisor && listing.advisor.profile %>
+      <%= link_to show_listing_path(listing_id: listing) do %>
+        
+        <div class="listing">
+          <!-- Image -->
+          <% unless listing.advisor.profile.nil? %>  
+            <% unless listing.advisor.profile.profile_image.url.nil? %> 
+                <div class="centered"> <%= image_tag listing.advisor.profile.profile_image.url %> </div>
+            <% end %>
+          <% end %>
+          <!-- Title -->
+          <% unless listing.title.empty? %>
+            <div id="listing_title"> <h4> <%= listing.title %> </h4> </div>
+          <% end %>
+          <!-- Bottom -->
+          <div id="listing_bottom"> 
+            <% unless listing.price.nil? %>
+              <% unless listing.price == 0 %>
+                <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
+                <%= link_to "Send Request |", new_request_path(listing_id: listing.id) %>
+                <%= link_to "#{listing.price} £ ", new_request_path(listing_id: listing.id) %>
+              <% else %>
+                <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
+                <%= link_to "Send Request |", new_request_path(listing_id: listing.id) %>
+                <%= link_to "Free", new_request_path(listing_id: listing.id) %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+      <% end %>
+    <% end %>
   <% end %>
-<div>
+
+</div>
