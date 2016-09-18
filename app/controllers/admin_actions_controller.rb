@@ -91,7 +91,7 @@ class AdminActionsController < ApplicationController
         end
       end
     end
-    redirect_to advisors_mgmt_path, notice: "Advisor + Profiles + Listings destroyed."
+    redirect_to admin_path, notice: "Advisor + Profiles + Listings destroyed."
   end
 
 
