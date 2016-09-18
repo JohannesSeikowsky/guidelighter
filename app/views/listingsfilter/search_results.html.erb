@@ -30,13 +30,23 @@
   <div class="color_background"> </div>
 
 
-  <!-- Listings -->
-  <h2 style="font-size: 21px; text-align: center;"> <br> Request personal guidance by real people who care.  </h2>
+  <div style="z-index: 100;">
+    <!-- Listings -->
+    <h2 style="font-size: 21px; text-align: center;"> <br> Request personal guidance by real people who care.  </h2>
 
-  <div style="margin-bottom: 20px;">
-    <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
-    <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
-    <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+    <div style="margin-bottom: 20px;">
+      <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+      <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+      <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+    </div>
+
+    <% if @search == "application_help" %>
+      <h2 style="font-size: 21px; text-align: center;"> Help with your Application </h2>
+    <% elsif @search == "career_insights" %>
+      <h2 style="font-size: 21px; text-align: center;"> Insights into Career Paths </h2>
+    <% else %>
+      <h2 style="font-size: 21px; text-align: center;"> Practical Expertise Offers </h2>
+    <% end %>
   </div>
 
   <% @listings.each do |listing| %>
