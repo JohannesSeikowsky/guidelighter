@@ -41,13 +41,15 @@
     </div>
   </div>
 
-  <% if @search == "application_help" %>
-    <h2 style="font-size: 21px; text-align: center;"> Help with your Application </h2>
-  <% elsif @search == "career_insights" %>
-    <h2 style="font-size: 21px; text-align: center;"> Insights into Career Paths </h2>
-  <% else %>
-    <h2 style="font-size: 21px; text-align: center;"> Practical Expertise Offers </h2>
-  <% end %>
+  <div style="z-index: 100;"
+    <% if @search == "application_help" %>
+      <h2 style="font-size: 24px; text-align: center;"> Help with your Application </h2>
+    <% elsif @search == "career_insights" %>
+      <h2 style="font-size: 24px; text-align: center;"> Insights into Career Paths </h2>
+    <% else %>
+      <h2 style="font-size: 24px; text-align: center;"> Practical Expertise Offers </h2>
+    <% end %>
+  </div>
 
 
   <% @listings.each do |listing| %>
