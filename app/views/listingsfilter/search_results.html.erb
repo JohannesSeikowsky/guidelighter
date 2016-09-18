@@ -39,17 +39,17 @@
       <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
       <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
     </div>
+
+    <% if @search == "application_help" %>
+      <h2 style="font-size: 26px; text-align: center;"> Help with your Application </h2>
+    <% elsif @search == "career_insights" %>
+      <h2 style="font-size: 26px; text-align: center;"> Insights into Career Paths </h2>
+    <% else %>
+      <h2 style="font-size: 26px; text-align: center;"> Practical Expertise Offers </h2>
+    <% end %>
+
   </div>
 
-  <div style="z-index: 100;"
-    <% if @search == "application_help" %>
-      <h2 style="font-size: 24px; text-align: center;"> Help with your Application </h2>
-    <% elsif @search == "career_insights" %>
-      <h2 style="font-size: 24px; text-align: center;"> Insights into Career Paths </h2>
-    <% else %>
-      <h2 style="font-size: 24px; text-align: center;"> Practical Expertise Offers </h2>
-    <% end %>
-  </div>
 
 
   <% @listings.each do |listing| %>
