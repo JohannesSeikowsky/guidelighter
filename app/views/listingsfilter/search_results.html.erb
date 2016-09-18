@@ -32,7 +32,7 @@
 
   <div class="intro">
     <!-- Listings -->
-    <h2 style="font-size: 25px; text-align: center;"> <br> Request personal guidance by real people who cares.  </h2>
+    <h2 style="font-size: 25px; text-align: center;"> <br> Request personal guidance from a real person who cares.  </h2>
 
     <div style="margin-bottom: 20px;">
       <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
@@ -41,16 +41,14 @@
     </div>
 
     <% if @search == "application_help" %>
-      <h2 style="font-size: 26px; text-align: center;"> Help with your Application </h2>
+      <h2 style="font-size: 27px; text-align: center;"> Help with your Application </h2>
     <% elsif @search == "career_insights" %>
-      <h2 style="font-size: 26px; text-align: center;"> Insights into Career Paths </h2>
+      <h2 style="font-size: 27px; text-align: center;"> Insights into Career Paths </h2>
     <% else %>
-      <h2 style="font-size: 26px; text-align: center;"> Practical Expertise Offers </h2>
+      <h2 style="font-size: 27px; text-align: center;"> Practical Expertise Offers </h2>
     <% end %>
 
   </div>
-
-
 
   <% @listings.each do |listing| %>
     <% if listing.advisor && listing.advisor.profile %>
