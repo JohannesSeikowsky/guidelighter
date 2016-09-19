@@ -17,6 +17,7 @@
       <%= link_to "About Us", about_path %>
       <%= link_to "Contact Us", contact_path %>
       <%= link_to "How It Works", how_path %>
+      <%= link_to "Admin", admin_path, class: "btn btn-warning" if Rails.env.development? %>
       <%= link_to "Guide Login", login_path, class: "btn btn-small btn-turquoise" %>
       <%= link_to "What are you looking for?", new_user_request_path, class: "btn btn-small btn-turquoise", style: "margin-left: 3px;" %>
     </div>
@@ -47,7 +48,7 @@
   <h2 style="font-size: 21px; text-align: center;"> <br> Personal guidance from real people who care. </h2>
 
   <div style="margin-bottom: 20px;">
-    <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+    <%= link_to "Help with Applications", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
     <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
     <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
   </div>
