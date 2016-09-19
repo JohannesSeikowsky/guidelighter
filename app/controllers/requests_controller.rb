@@ -16,7 +16,7 @@ class RequestsController < ApplicationController
       # redirect
       redirect_to successful_request_path, notice: "Your request has been sent successfully."
     else
-      redirect_to new_request_path(listing_id: @listing.id), notice: "Please fill out the fields before send your request."
+      redirect_to new_request_path(listing_id: @listing.id), notice: "Please fill out all fields before sending your request."
     end
   end
 
