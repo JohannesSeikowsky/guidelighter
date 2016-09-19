@@ -69,9 +69,7 @@ html, body {
 
 #hp_button{
   padding: 17px 78px;
-  @media (max-width: 500px){ 
-    padding: 11px 18px;
-  } 
+  font-size: 15px;
 }
 
 #hp_button:hover{
