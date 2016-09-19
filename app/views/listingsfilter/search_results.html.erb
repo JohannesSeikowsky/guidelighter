@@ -43,19 +43,19 @@
 
     <div style="margin-bottom: 0px;">
       <% if @search == "application_help" %>
-        <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #FFD990;" %>
+        <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %>
       <% else %>
         <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
       <% end %>
 
       <% if @search == "career_insights" %>
-        <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #FFD990;" %>
+        <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %>
       <% else %>
         <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
       <% end %>
       
       <% if @search == "practical_expertise" %>
-        <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #FFD990;" %>
+        <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %> <!-- old color: #FFD990 -->
       <% else %>
         <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
       <% end %>
