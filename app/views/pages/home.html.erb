@@ -18,7 +18,7 @@
       <%= link_to "Contact Us", contact_path %>
       <%= link_to "How It Works", how_path %>
       <%= link_to "Admin", admin_path, class: "btn btn-warning" if Rails.env.development? %>
-      <%= link_to "Guide Login", login_path, class: "btn btn-small btn-turquoise" %>
+      <%= link_to "Guide Login", login_path, class: "btn", style: "border: 1px white solid;" %>
       <%= link_to "What are you looking for?", new_user_request_path, class: "btn btn-small btn-turquoise", style: "margin-left: 3px;" %>
     </div>
   <% end %>
