@@ -75,6 +75,16 @@ html, body {
   background-color: #E49362;
 }
 
+@media (max-width: 500px){ 
+ #hp_button {
+  font-size: 10px;
+  padding: 13px 40px;
+  }
+}
+
+
+
+
 
 .centered{
   text-align: center;
