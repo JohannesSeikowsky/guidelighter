@@ -30,7 +30,7 @@
       <%= form_for :message, url: contact_path do |f| %>
         <%= f.text_area :user_input, placeholder: "your message" %>
         <%= f.text_field :email, placeholder: "you@gmail.com" %>
-        <%= f.submit "Done." %>
+        <%= f.submit "Done.", id: "std-btn" %>
       <% end %>
     </div>
 
