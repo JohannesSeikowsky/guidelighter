@@ -30,4 +30,8 @@ class GeneralMailer < ApplicationMailer
     mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com, surojitc@gmail.com", subject: "New Message from a specific Listing")
   end
 
+  def daily_requests_count(number_of_requests)
+    @number_of_requests = number_of_requests
+    mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com, surojitc@gmail.com, jannik-black@gmx.de", subject: "Daily Requests Count")
+  end
 end

@@ -43,7 +43,7 @@
       <h6>Your Email - so we can reply </h6>
       <%= f.text_field :requesting_email, placeholder: "", style: "width: 372px;", class: "small_placeholder_text" %>
       <%= f.hidden_field :listing_id, value: @listing_id %>
-      <%= f.submit "Done." id: "std-btn" %> <br>
+      <%= f.submit "Done.", id: "std-btn" %> <br>
       <h6>Note: This request is not binding. It's entire purpose is to check wether it <br> is possible to arrange a session with the guide. </h6>
     <% end %>     
   </div> <br> <br>
