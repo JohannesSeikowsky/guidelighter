@@ -8,7 +8,7 @@
       <%= link_to "Edit Profile", edit_profile_path %>
       <%= link_to "Post Listing", new_listing_path %>
       <%= link_to "Manage Listings", new_listing_path %>
-      <%= link_to "Admin", admin_path, class: "btn btn-warning" if Rails.env.development? %>
+      <%= link_to "Admin", admin_path if Rails.env.development? %>
       <%= link_to "Logout", logout_path, class: "btn btn-small btn-turquoise" %>
     </div>
   <% else %>
@@ -17,9 +17,8 @@
       <%= link_to "About Us", about_path %>
       <%= link_to "Contact Us", contact_path %>
       <%= link_to "How It Works", how_path %>
-      <%= link_to "Admin", admin_path, class: "btn btn-warning" if Rails.env.development? %>
-      <%= link_to "Guide Login", login_path, class: "btn", style: "border: 1px white solid;" %>
-      <%= link_to "What are you looking for?", new_user_request_path, class: "btn btn-small btn-turquoise", style: "margin-left: 3px;" %>
+      <%= link_to "Guide Login", login_path %>
+      <%= link_to "What are you looking for?", new_user_request_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
     </div>
   <% end %>
 </div>
