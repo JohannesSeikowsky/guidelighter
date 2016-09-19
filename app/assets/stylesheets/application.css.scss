@@ -31,7 +31,7 @@ html, body {
       font-weight: 690;
     }
     .btn-turquoise{
-      background-color: #69A0A5;
+      background-color: #E49362;
       color: white;
     }
   }
@@ -448,6 +448,16 @@ body {
   background-color: #EEEEEE; 
   padding: 1px 15px 26px 15px;
   border: 1px solid lightGrey;
+  #std-btn{
+    background-color: #F5EFE6;
+    color: white;
+    border: 1px solid black;
+    color: black;
+  }
+
+  #std-btn:hover{
+    background-color: #E49362;
+  }
 }
 
 .white_box{

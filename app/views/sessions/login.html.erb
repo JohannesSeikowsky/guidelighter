@@ -17,7 +17,7 @@
     <%= form_for :login, path: login_action_path do |f| %>
       <%= f.text_field :email, placeholder: "Email" %>
       <%= f.password_field :password_provided, placeholder: "Password" %>
-      <%= f.submit "Login." %>
+      <%= f.submit "Login.", id: "std-btn" %>
     <% end %>
   </div>
   <!-- love -->
