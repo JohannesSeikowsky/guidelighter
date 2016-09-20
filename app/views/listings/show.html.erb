@@ -45,10 +45,10 @@
   <!-- contact form -->
   <h6> Easy Contact </h6>
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">
-    <h6> Have a question? </h6>
+    <h6> Any questions about this? </h6>
     <%= form_for :message, url: create_listing_message_path do |f| %> 
       <%= f.text_area :content, placeholder: "your message", style: "height: 72px;" %>
-      <%= f.text_field :reply_address, placeholder: "you@gmail.com", style: "width: 100%;" %> <br>
+      <%= f.text_field :reply_address, placeholder: "your@email.com", style: "width: 100%;" %> <br>
       <%= f.hidden_field :listing_id, value: @listing.id %>
       <div class="button" style="padding-top: 0px;"> 
         <%= f.submit "Ask", style: "padding: 2px 30px;", id: "std-btn" %>
@@ -56,7 +56,7 @@
     <% end %>
   </div> <br>
 
-  <h6> The Guide </h6>
+  <h6> About the Guide </h6>
   <div class="grey_box" style="padding: 4px 52px 8px 52px;">
     <h3> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>.  </h3>
     <p> <%= simple_format @profile.description, style: "line-height: 1.5;" %> </p>
