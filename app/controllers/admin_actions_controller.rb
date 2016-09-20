@@ -33,7 +33,7 @@ class AdminActionsController < ApplicationController
   def admin_update_profile
     @profile = Profile.find(params[:profile_id])
     @profile.update(profile_params)
-    redirect_to advisors_resources_path(advisor_id: @profile.advisor.id), notice: "Profile updated."
+    redirect_to admin_path, notice: "Profile updated."
   end
 
   def admin_edit_listing
@@ -43,7 +43,7 @@ class AdminActionsController < ApplicationController
   def admin_update_listing
     @listing = Listing.find(params[:listing_id])
     @listing.update(listing_params)
-    redirect_to advisors_resources_path(advisor_id: @listing.advisor.id), notice: "Listing updated."
+    redirect_to admin_path, notice: "Listing updated."
   end
 
   # tagging
