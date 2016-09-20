@@ -38,20 +38,20 @@
     <p> <%= simple_format @listing.description, style: "line-height: 1.5;" %> </p>
     <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
     <div class="button">
-      <%= link_to "Send Request", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px; background-color: #FFD990;" %>
+      <%= link_to "Send Request", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px;", id: "std-btn" %>
     </div>
   </div> <br>
 
   <!-- contact form -->
   <h6> Easy Contact </h6>
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">
-    <h3> Have a question? </h3>
+    <h6> Have a question? </h6>
     <%= form_for :message, url: create_listing_message_path do |f| %> 
-      <%= f.text_area :content, placeholder: "your message", style: "height: 85px;" %>
-      <%= f.text_field :reply_address, placeholder: "you@gmail.com" %> <br>
+      <%= f.text_area :content, placeholder: "your message", style: "height: 72px;" %>
+      <%= f.text_field :reply_address, placeholder: "you@gmail.com", style: "width: 100%;" %> <br>
       <%= f.hidden_field :listing_id, value: @listing.id %>
       <div class="button" style="padding-top: 0px;"> 
-        <%= f.submit "Send message", style: "padding: 2px 30px;"%>
+        <%= f.submit "Ask", style: "padding: 2px 30px;", id: "std-btn" %>
       </div>
     <% end %>
   </div> <br>
@@ -61,7 +61,7 @@
     <h3> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>.  </h3>
     <p> <%= simple_format @profile.description, style: "line-height: 1.5;" %> </p>
     <div class="button">
-      <%= link_to "Send Request", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px; background-color: #FFD990;" %>
+      <%= link_to "Send Request", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px;", id: "std-btn" %>
     </div>
   </div> <br>
 
