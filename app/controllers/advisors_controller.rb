@@ -2,7 +2,8 @@ class AdvisorsController < ApplicationController
 
   # Password reset
   def pw_reset
-    @advisor = Advisor.find_by(pw_reset_identifier: params[:pw_reset_identifier])
+    #@identifier = params[:pw_reset_identifier]
+    #@advisor = Advisor.find_by(pw_reset_identifier: params[:pw_reset_identifier])
   end
 
   def pw_reset_action
