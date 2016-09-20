@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919120742) do
+ActiveRecord::Schema.define(version: 20160920210111) do
 
   create_table "advisors", force: :cascade do |t|
     t.string   "first_name"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20160919120742) do
     t.string   "email"
     t.string   "password_salt"
     t.string   "password"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "pw_reset_identifier"
   end
 
   create_table "contact_messages", force: :cascade do |t|

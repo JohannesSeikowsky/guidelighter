@@ -1,5 +1,18 @@
 class AdvisorsController < ApplicationController
 
+  # Password reset
+  def pw_reset
+    @advisor = Advisor.find_by(pw_reset_identifier: params[:pw_reset_identifier])
+  end
+
+  def pw_reset_action
+  end
+
+  def pw_reset_success
+  end
+
+
+  # Advisor signup
   def signup
     @advisor = Advisor.new
   end

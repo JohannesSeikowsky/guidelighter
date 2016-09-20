@@ -15,6 +15,13 @@ Rails.application.routes.draw do
   post 'contact', to: 'contact_messages#create', as: 'create_contact'
   get 'new_user_request', to: 'contact_messages#new_user_request', as: 'new_user_request'
 
+  # password reset related
+  get 'new_password_request', to: 'contact_messages#new_password_request', as: 'new_password_request'
+  post 'pw_retrieval_email', to: 'contact_messages#pw_retrieval_email', as: 'pw_retrieval_email'
+  
+  get 'pw_reset', to: 'advisors#pw_reset', as: 'pw_reset'
+
+
   # listing message
   post 'listing_message', to: 'listing_messages#create', as: 'create_listing_message'
 

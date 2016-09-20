@@ -29,7 +29,7 @@
     <h3> Let us know and we will try to find you the support and guidance you are looking for. </h3>
       <%= form_for :message, url: contact_path do |f| %>
         <%= f.text_area :user_input, placeholder: "your message" %>
-        <%= f.text_field :email, placeholder: "you@gmail.com" %>
+        <%= f.text_field :email, placeholder: "you@gmail.com", style: "width: 100%;" %>
         <%= f.submit "Done.", id: "std-btn" %>
       <% end %>
     </div>

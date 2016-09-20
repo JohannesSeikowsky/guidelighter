@@ -34,4 +34,11 @@ class GeneralMailer < ApplicationMailer
     @number_of_requests = number_of_requests
     mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com, surojitc@gmail.com, jannik-black@gmx.de", subject: "Daily Requests Count")
   end
+
+  def pw_retrieval_email(requesting_email, pw_reset_identifier)
+    @pw_reset_identifier = pw_reset_identifier
+    @requesting_email = requesting_email
+    mail(to: @requesting_email, subject: "Password reset")
+  end
+
 end
