@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'listingsfilter/find_listing'
-
   # root
   root 'pages#home'
 
@@ -19,7 +17,7 @@ Rails.application.routes.draw do
   get 'new_password_request', to: 'contact_messages#new_password_request', as: 'new_password_request'
   post 'pw_retrieval_email', to: 'contact_messages#pw_retrieval_email', as: 'pw_retrieval_email'
   
-  get 'pw_reset', to: 'advisors#pw_reset', as: 'pw_reset'
+  get 'pw_reset/:pw_reset_identifier', to: 'advisors#pw_reset', as: 'pw_reset'
 
 
   # listing message

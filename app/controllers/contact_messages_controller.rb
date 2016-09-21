@@ -19,7 +19,7 @@ class ContactMessagesController < ApplicationController
     # find advisor who is requesting new pw
     @advisor = Advisor.find_by(email: params[:password_request][:email])
     # set advisors pw identifier attr to a salt
-    @pw_reset_identifier = BCrypt::Engine.generate_salt
+    @pw_reset_identifier = SecureRandom.urlsafe_base64
     @advisor.pw_reset_identifier = @pw_reset_identifier
     @advisor.save(:validate => false)
     # send out email and render view
