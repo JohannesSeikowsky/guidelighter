@@ -46,11 +46,11 @@
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">
     <br>
     <%= form_for :message, url: create_listing_message_path do |f| %> 
-      <%= f.text_area :content, placeholder: "Any questions?", style: "height: 72px;" %>
+      <%= f.text_area :content, placeholder: "your question", style: "height: 72px;" %>
       <%= f.text_field :reply_address, placeholder: "your@email.com", style: "width: 100%;" %> <br>
       <%= f.hidden_field :listing_id, value: @listing.id %>
       <div class="button" style="padding-top: 0px;"> 
-        <%= f.submit "Ask", style: "padding: 2px 30px;", id: "std-btn" %>
+        <%= f.submit "Ask your question", style: "padding: 2px 30px;", id: "std-btn" %>
       </div>
     <% end %>
   </div> <br>

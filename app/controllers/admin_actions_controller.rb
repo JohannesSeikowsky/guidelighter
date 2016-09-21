@@ -12,6 +12,7 @@ class AdminActionsController < ApplicationController
   # entry
   def admin
     @all_advisors = Advisor.order("first_name ASC")
+    @listings_count = Listing.all.count
   end
 
 
