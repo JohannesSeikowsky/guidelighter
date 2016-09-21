@@ -38,7 +38,7 @@ class GeneralMailer < ApplicationMailer
   def pw_retrieval_email(requesting_email, pw_reset_identifier)
     @pw_reset_identifier = pw_reset_identifier
     @requesting_email = requesting_email
-    mail(to: @requesting_email, subject: "Password reset")
+    mail(to: @requesting_email, subject: "Guidelighter Password reset")
   end
-
+  
 end

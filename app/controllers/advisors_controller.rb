@@ -2,14 +2,25 @@ class AdvisorsController < ApplicationController
 
   # Password reset
   def pw_reset
-    @identifier = params[:pw_reset_identifier]
     @advisor = Advisor.find_by_pw_reset_identifier(params[:pw_reset_identifier])
+    cookies.permanent[:pw_reset_identifier] = params[:pw_reset_identifier]
   end
 
   def pw_reset_action
-    @advisor = Advisor.find(params[:advisor_id])
-    @advisor.update(advisor_params)
-    redirect_to login_path, notice: "Your password has been reset. Login."
+    @advisor = Advisor.find_by_pw_reset_identifier(cookies[:pw_reset_identifier])
+    if @advisor
+      # updating with new pw
+      @advisor.update(advisor_params)
+      # setting identifier attribute to nil 
+      @advisor.pw_reset_identifier = nil
+      @advisor.save(:validate => false)
+      # delete cookie
+      cookies.delete[:pw_reset_identifier].
+      # redirecting
+      redirect_to login_path, notice: "Your password has been reset. Login."
+    else
+      redirect_to root_path, notice: "Not valid. Try again."
+    end
   end
 
   # Advisor signup
@@ -30,7 +41,7 @@ class AdvisorsController < ApplicationController
 
   private
   def advisor_params
-    params.require(:advisor).permit(:first_name, :second_name, :email, :password_provided, :new_password_provided)
+    params.require(:advisor).permit(:first_name, :second_name, :email, :password_provided)
   end
 
 end
