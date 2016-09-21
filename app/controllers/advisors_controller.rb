@@ -7,9 +7,9 @@ class AdvisorsController < ApplicationController
   end
 
   def pw_reset_action
-  end
-
-  def pw_reset_success
+    @advisor = Advisor.find(params[:advisor_id])
+    @advisor.update(advisor_params)
+    redirect_to login_path, notice: "Your password has been reset. Login."
   end
 
   # Advisor signup
@@ -30,7 +30,7 @@ class AdvisorsController < ApplicationController
 
   private
   def advisor_params
-    params.require(:advisor).permit(:first_name, :second_name, :email, :password_provided)
+    params.require(:advisor).permit(:first_name, :second_name, :email, :password_provided, :new_password_provided)
   end
 
 end
