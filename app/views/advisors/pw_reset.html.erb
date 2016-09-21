@@ -12,10 +12,12 @@
 <div class="simple_container">
   <div class="grey_box"> 
     <h3> Reset your password </h3>
-    <%= @advisor.first_name %> <br>
     <%= form_for @advisor, url: pw_reset_action_url(advisor_id: @advisor.id) do |f| %>
-      <%= f.password_field :new_password_provided, placeholder: "your_password" %>
-      <%= f.submit "Done.", id: "std-btn" %>
+      <%= f.password_field :new_password_provided, placeholder: "set_new_password", id: "password_field" %> <br>
+
+
+      <div onmouseover="makeVisible();" onmouseout="makeInvisible();" class="reveal_typed_pw" id="std-btn"> Reveal </div>
+      <%= f.submit "Submit", id: "std-btn" %>
     <% end %>
   </div>
 
@@ -25,3 +27,15 @@
   </div>
 </div>
 
+<!-- Making types password visible -->
+<script type="text/javascript">
+  function makeVisible() {
+    var obj = document.getElementById('password_field');
+    obj.type = "text";
+  }
+  
+  function makeInvisible() {
+    var obj = document.getElementById('password_field');
+    obj.type = "password";
+  }
+</script>
