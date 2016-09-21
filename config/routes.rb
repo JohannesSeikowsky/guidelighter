@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post 'pw_retrieval_email', to: 'contact_messages#pw_retrieval_email', as: 'pw_retrieval_email'
   
   get 'pw_reset/:pw_reset_identifier', to: 'advisors#pw_reset', as: 'pw_reset'
+  post 'pw_reset_action/:advisor_id', to: "advisors/pw_reset_action", as: "pw_reset_action"
 
 
   # listing message

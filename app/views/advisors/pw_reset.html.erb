@@ -13,10 +13,10 @@
   <div class="grey_box"> 
     <h3> Reset your password </h3>
     <%= @advisor.first_name %> <br>
-    <!-- <%= form_for @advisor, path: reset_password_path do |f| %>
+    <%= form_for @advisor, url: pw_reset_action_url(advisor_id: @advisor.id) do |f| %>
       <%= f.password_field :new_password_provided, placeholder: "your_password" %>
       <%= f.submit "Done.", id: "std-btn" %>
-    <% end %> -->
+    <% end %>
   </div>
 
   <!-- love -->
