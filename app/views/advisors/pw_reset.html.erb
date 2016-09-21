@@ -1,3 +1,28 @@
-<p> is it working? </p>
-<%= params[:pw_reset_identifier] %>
-<%= debug(params) %>
+<!-- header -->
+<div class="gl_header">
+  <div class="links">
+    <%= link_to "What people say", reviews_path %>
+    <%= link_to "About Us", about_path %>
+    <%= link_to "Contact Us", contact_path %>
+    <%= link_to "How It Works", how_path %>
+    <%= link_to "Guide Login", login_path, class: "btn btn-small btn-turquoise"  %>
+  </div>
+</div>
+
+<div class="simple_container">
+  <div class="grey_box"> 
+    <h3> Reset password </h3>
+    <!-- here goes password update field only accessible to the user to whose email the link leading
+    to this was send, with the capacity to update his password and his password only. </p> -->
+    <%= @advisor.first_name %> <br>
+    <%= @advisor.second_name %> <br>
+    <%= @advisor.email %> <br>
+    <%= params[:pw_reset_identifier] %> <br>
+    <%= debug(params) %>
+  </div>
+
+  <!-- love -->
+  <div class="with_love">
+    Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona
+  </div>
+</div>
