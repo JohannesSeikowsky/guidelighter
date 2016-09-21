@@ -12,7 +12,7 @@
 <div class="simple_container">
   <div class="grey_box"> 
     <h3> Set your password </h3>
-    <%= form_for :advisor, url: pw_reset_action_url(advisor_id: @advisor.id) do |f| %>
+    <%= form_for @advisor, url: pw_reset_action_url(advisor_id: @advisor.id) do |f| %>
       <%= f.password_field :password_provided, placeholder: "set_new_password", id: "password_field" %> <br>
       <div onmouseover="makeVisible();" onmouseout="makeInvisible();" class="reveal_typed_pw" id="std-btn"> Reveal </div>
       <%= f.submit "Done", id: "std-btn", style: "width: 203px;"  %>
