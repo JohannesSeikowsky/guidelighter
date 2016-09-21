@@ -12,7 +12,6 @@ class AdvisorsController < ApplicationController
   def pw_reset_success
   end
 
-
   # Advisor signup
   def signup
     @advisor = Advisor.new
