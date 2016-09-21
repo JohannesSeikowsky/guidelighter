@@ -43,11 +43,10 @@
   </div> <br>
 
   <!-- contact form -->
-  <h6> Easy Contact </h6>
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">
-    <h6> Any questions about this? </h6>
+    <br>
     <%= form_for :message, url: create_listing_message_path do |f| %> 
-      <%= f.text_area :content, placeholder: "your message", style: "height: 72px;" %>
+      <%= f.text_area :content, placeholder: "Any questions?", style: "height: 72px;" %>
       <%= f.text_field :reply_address, placeholder: "your@email.com", style: "width: 100%;" %> <br>
       <%= f.hidden_field :listing_id, value: @listing.id %>
       <div class="button" style="padding-top: 0px;"> 
