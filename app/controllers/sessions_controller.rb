@@ -12,7 +12,6 @@ class SessionsController < ApplicationController
         redirect_to new_listing_path, notice: "Logged in."
       end
     else
-      Rails.logger.debug @advisor.errors.full_messages.join("\n")
       redirect_to login_path, notice: "Try again."
     end
   end

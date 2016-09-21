@@ -7,7 +7,8 @@ class Advisor < ActiveRecord::Base
   # validations
   validates_presence_of :first_name, :second_name
   validates_length_of :email, minimum: 6
-  # validates_uniqueness_of :email
+  # making sure email is unique and JSeiko@ is treated just like jseiko...case sensitivity
+  validates :email, uniqueness: { case_sensitive: false }
   validates :password_provided, length: { minimum: 6 }
 
   # password security implementation
