@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920210111) do
+ActiveRecord::Schema.define(version: 20160921235112) do
 
   create_table "advisors", force: :cascade do |t|
     t.string   "first_name"
@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20160920210111) do
     t.datetime "updated_at",          null: false
     t.string   "pw_reset_identifier"
   end
+
+  add_index "advisors", ["email"], name: "index_advisors_on_email", unique: true
+  add_index "advisors", ["pw_reset_identifier"], name: "index_advisors_on_pw_reset_identifier"
 
   create_table "contact_messages", force: :cascade do |t|
     t.text     "content"
