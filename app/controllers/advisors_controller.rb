@@ -15,7 +15,7 @@ class AdvisorsController < ApplicationController
       @advisor.pw_reset_identifier = nil
       @advisor.save(:validate => false)
       # delete cookie
-      cookies.delete[:pw_reset_identifier]
+      cookies.delete(:pw_reset_identifier)
       # redirecting
       redirect_to login_path, notice: "Your password has been reset. Login."
     else
