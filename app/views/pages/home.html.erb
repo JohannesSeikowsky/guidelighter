@@ -50,24 +50,51 @@
   <!-- Listings -->
   <h2 style="font-size: 21px; text-align: center;"> <br> Personal guidance from real people who care. </h2>
 
+  <!-- Category buttons -->
   <div style="margin-bottom: 12px;">
     <%= link_to "Help with Applications", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showSubtags();" %>
     <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
     <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
   </div>
 
+  <!-- application help subtags -->
   <%= link_to find_listings_path(search: "application_help") do %>
-  <div class="application_help_subtags" style="display: none;">
-    <div style="text-align: center;">
-      <% {"accounting" => "Accounting","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry"}.each do |tag, name| %>
-        <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
-            <%= name %>
-        </div>
-      <% end %> <%= link_to "AND MANY MORE", find_listings_path(search: "many"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
+    <div class="application_help_subtags" style="display: none;">
+      <div style="text-align: center;">
+        <% {"accounting" => "Accounting","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry"}.each do |tag, name| %>
+          <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
+              <%= name %>
+          </div>
+        <% end %> <%= link_to "AND MANY MORE", find_listings_path(search: "many"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
+      </div>
     </div>
-  </div>
   <% end %>
 
+  <!-- career insights subtags -->
+  <%= link_to find_listings_path(search: "career_insights") do %>
+    <div class="career_insights_subtags" style="display: none;">
+      <div style="text-align: center;">
+        <% {"accounting" => "Accounting","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry"}.each do |tag, name| %>
+          <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
+              <%= name %>
+          </div>
+        <% end %> <%= link_to "AND MANY MORE", find_listings_path(search: "many"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
+      </div>
+    </div>
+  <% end %>
+
+    <!-- practical expertise subtags -->
+  <%= link_to find_listings_path(search: "practical_expertise") do %>
+    <div class="practical_expertise_subtags" style="display: none;">
+      <div style="text-align: center;">
+        <% {"accounting" => "Accounting","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry"}.each do |tag, name| %>
+          <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
+              <%= name %>
+          </div>
+        <% end %> <%= link_to "AND MANY MORE", find_listings_path(search: "many"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
+      </div>
+    </div>
+  <% end %>
 
 
   <% @listings.each do |listing| %>
