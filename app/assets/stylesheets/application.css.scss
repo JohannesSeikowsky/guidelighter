@@ -38,6 +38,14 @@ html, body {
 }
 
 
+.application_help_subtags:hover{
+  .more-tags-btn{
+    background-color: #E49362;
+    color: white;
+    border: 1px solid black;
+    color: black;
+  }
+}
 
 .tag-btn{
   background-color: #F5EFE6;
@@ -49,6 +57,14 @@ html, body {
 .tag-btn:hover{
   background-color: #E49362;
 }
+
+.subtag-btn{
+  background-color: #F5EFE6;
+  color: white;
+  border: 1px solid black;
+  color: black;
+}
+
 
 
 .color_background{
