@@ -10,7 +10,8 @@
 </div>
 
 <div class="simple_container">
-  <div class="grey_box"> 
+  <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
+  <div class="grey_box">
     <h3> Set your password </h3>
     <%= form_for @advisor, url: pw_reset_action_url(advisor_id: @advisor.id) do |f| %>
       <%= f.password_field :password_provided, placeholder: "new password", id: "password_field" %> <br>

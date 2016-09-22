@@ -3,21 +3,20 @@ class AdvisorsController < ApplicationController
   # Password reset
   def pw_reset
     @advisor = Advisor.find_by_pw_reset_identifier(params[:pw_reset_identifier])
-    cookies.permanent[:pw_reset_identifier] = params[:pw_reset_identifier]
+    cookies.permanent[:pw_reset_identifier] = params[:pw_reset_identifier] unless cookies[:pw_reset_identifier]
   end
 
   def pw_reset_action
     @advisor = Advisor.find_by_pw_reset_identifier(cookies[:pw_reset_identifier])
     if @advisor
       # updating with new pw
-      @advisor.update(advisor_params)
-      # setting identifier attribute to nil 
-      @advisor.pw_reset_identifier = nil
-      @advisor.save(:validate => false)
-      # delete cookie
-      cookies.delete(:pw_reset_identifier)
-      # redirecting
-      redirect_to login_path, notice: "Your password has been reset. Login."
+      if @advisor.update(advisor_params)
+        @advisor.pw_reset_identifier = nil
+        cookies.delete(:pw_reset_identifier)
+        redirect_to login_path, notice: "Your password has been reset. Login."
+      else
+        redirect_to pw_reset_path(pw_reset_identifier: cookies[:pw_reset_identifier]), notice: "Password must be at least 6 characters."
+      end 
     else
       redirect_to root_path, notice: "Not valid. Try again."
     end
