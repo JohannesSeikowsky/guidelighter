@@ -61,11 +61,11 @@
   <%= link_to find_listings_path(search: "application_help") do %>
     <div class="application_help_subtags" style="display: none;">
       <div style="text-align: center;">
-        <% {"accounting" => "Accounting","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry"}.each do |tag, name| %>
+        <% {"art_school" => "Art School","asset_management" => "Oxford & Cambridge","banking" => "Management Consulting","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Scholarships","phd" => "PhD", "world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","wharton" => "Conservation & Heritage", "travel_industry" => "Travel Industry", "travel_industry" => "Case Studies"}.each do |tag, name| %>
           <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
               <%= name %>
           </div>
-        <% end %> <%= link_to "AND MANY MORE", find_listings_path(search: "many"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
+        <% end %> <%= link_to "CLICK TO SEE ALL", find_listings_path(search: "many"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
       </div>
     </div>
   <% end %>
@@ -74,11 +74,11 @@
   <%= link_to find_listings_path(search: "career_insights") do %>
     <div class="career_insights_subtags" style="display: none;">
       <div style="text-align: center;">
-        <% {"accounting" => "Accounting","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry"}.each do |tag, name| %>
+        <% {"asset_management" => "Asset Management","banking" => "Management Consulting","big4" => "Fraud Investigation","biochemistry" => "Neuroscience","cambridge" => "Travel Industry","phd" => "IR & Diplomacy","ucl" => "Product Management" ,"world_bank" => "Gaming Industry","wharton" => "Conservation & Heritage","university_application" => "Hospitality"}.each do |tag, name| %>
           <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
               <%= name %>
           </div>
-        <% end %> <%= link_to "AND MANY MORE", find_listings_path(search: "many"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
+        <% end %> <%= link_to "CLICK TO SEE ALL", find_listings_path(search: "many"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
       </div>
     </div>
   <% end %>
@@ -87,11 +87,11 @@
   <%= link_to find_listings_path(search: "practical_expertise") do %>
     <div class="practical_expertise_subtags" style="display: none;">
       <div style="text-align: center;">
-        <% {"accounting" => "Accounting","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry"}.each do |tag, name| %>
+        <% ["Personal Mentoring", "Networking","Marketing and Sales Advice", "Programming & Dev. Support", "Interview Prep","TOEFL & IELTS", "Startup support", "Career Choices Aid", "CFA Tutoring", "Product Testing"].each do |name| %>
           <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
               <%= name %>
           </div>
-        <% end %> <%= link_to "AND MANY MORE", find_listings_path(search: "many"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
+        <% end %> <%= link_to "CLICK TO SEE ALL", find_listings_path(search: "many"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
       </div>
     </div>
   <% end %>
