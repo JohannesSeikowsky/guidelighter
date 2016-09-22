@@ -52,14 +52,14 @@
 
   <!-- Category buttons -->
   <div style="margin-bottom: 12px;">
-    <%= link_to "Help with Applications", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showApplicationTags();" %>
-    <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showCareerInsightsTags();" %>
-    <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showPracticalExpertiseTags();" %>
+    <%= link_to "Help with Applications", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showApplicationTags();", id: "applications_category" %>
+    <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showCareerInsightsTags();", id: "insights_category" %>
+    <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showPracticalExpertiseTags();", id: "practical_category" %>
   </div>
 
   <!-- application help subtags -->
   <%= link_to find_listings_path(search: "application_help") do %>
-    <div class="application_help_subtags subtags" style="display: none;">
+    <div class="application_help_subtags" style="display: none;">
       <div style="text-align: center;">
         <% {"accounting" => "Accounting","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry"}.each do |tag, name| %>
           <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
@@ -72,7 +72,7 @@
 
   <!-- career insights subtags -->
   <%= link_to find_listings_path(search: "career_insights") do %>
-    <div class="career_insights_subtags subtags" style="display: none;">
+    <div class="career_insights_subtags" style="display: none;">
       <div style="text-align: center;">
         <% {"accounting" => "Accounting","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry"}.each do |tag, name| %>
           <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
@@ -85,7 +85,7 @@
 
     <!-- practical expertise subtags -->
   <%= link_to find_listings_path(search: "practical_expertise") do %>
-    <div class="practical_expertise_subtags subtags" style="display: none;">
+    <div class="practical_expertise_subtags" style="display: none;">
       <div style="text-align: center;">
         <% {"accounting" => "Accounting","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry"}.each do |tag, name| %>
           <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
@@ -140,21 +140,35 @@
 
 <script type="text/javascript">
   function showApplicationTags(){
+    // show subtags & hide others
     $(".career_insights_subtags").css("display", "none");
     $(".practical_expertise_subtags").css("display", "none");
     $(".application_help_subtags").fadeIn(1200);
+    // colorize button & normalize others
+    $("#applications_category").css("background-color", "#E49362");
+    $("#insights_category").css("background-color", "#F5EFE6");
+    $("#practical_category").css("background-color", "#F5EFE6");
   };
 
   function showCareerInsightsTags(){
+    // show subtags & hide others
     $(".application_help_subtags").css("display", "none");
     $(".practical_expertise_subtags").css("display", "none");  
     $(".career_insights_subtags").fadeIn(1200);
-  };
+    // colorize button & normalize others
+    $("#applications_category").css("background-color", "#F5EFE6");
+    $("#insights_category").css("background-color", "#E49362");
+    $("#practical_category").css("background-color", "#F5EFE6");  };
 
   function showPracticalExpertiseTags(){
+    // show subtags & hide others
     $(".application_help_subtags").css("display", "none");
     $(".career_insights_subtags").css("display", "none");
     $(".practical_expertise_subtags").fadeIn(1200);
+    // colorize button & normalize others
+    $("#applications_category").css("background-color", "#F5EFE6");
+    $("#insights_category").css("background-color", "#F5EFE6");
+    $("#practical_category").css("background-color", "#E49362");
   };
 </script>
 

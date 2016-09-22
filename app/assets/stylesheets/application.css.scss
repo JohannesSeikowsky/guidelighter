@@ -38,15 +38,6 @@ html, body {
 }
 
 
-.subtags:hover{
-  .more-tags-btn{
-    background-color: #E49362;
-    color: white;
-    border: 1px solid black;
-    color: black;
-  }
-}
-
 .application_help_subtags:hover{
   .more-tags-btn{
     background-color: #E49362;
@@ -55,6 +46,24 @@ html, body {
     color: black;
   }
 }
+
+.career_insights_subtags:hover{
+  .more-tags-btn{
+    background-color: #E49362;
+    color: white;
+    border: 1px solid black;
+    color: black;
+  }
+}
+.practical_expertise_subtags:hover{
+  .more-tags-btn{
+    background-color: #E49362;
+    color: white;
+    border: 1px solid black;
+    color: black;
+  }
+}
+
 
 .tag-btn{
   background-color: #F5EFE6;
