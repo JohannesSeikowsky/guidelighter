@@ -65,20 +65,16 @@
 
   <% if @search == "application_help" %>
     <div class="subtags_on_searchpage" style="text-align: center;">
-      <%  {"accounting" => "Accounting","art" => "Art","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry","sales_careers" => "Sales","un" => "UN","scholarships" => "Scholarships","trading" => "Trading","theatre" => "Theatre","think_tanks" => "Think Tanks","product_manager" => "Product Management", "politics" => "Politics","neuroscience" => "Neuroscience","teacher" => "Teaching","personal_statement" => "Personal Statements","psychotherapy" => "Personal Statements","ngos" => "NGOs","nonprofit" => "Non-profits", "oxford" => "Oxford","case_studies" => "Case Studies","Management_Consulting" => "Management Consulting", "mathematics" => "Mathematics","humanitarian_careers" => "Humanitarian Careers","m&a" => "M&A","mba" => "MBA","mckinsey" => "McKinsey","hospitality" => "Hospitality","hr" => "HR","life_sciences" => "Life Sciences","international_relations"=> "International Relations","investment_banking" => "Investment Banking","interviews" => "Interview Prep","finance" => "Finance","healthcare" => "Healthcare","grad_school" => "Grad School","gmat" => "GMAT","history" => "History","grande_ecoles" => "Grand Ecoles","fintech" => "Fintech","food_science" => "Food Science","funding_applications" => "Funding Applications","fraud_investigations" => "Fraud Investigation","games_industry" => "Games Industry","economic_consulting" => "Economics Consulting","economics" => "Economics","diplomacy" => "Diplomacy","corporate_finance" => "Corporate Finance","cv" => "CV","yale" => "Yale"}.each do |tag, name| %>
+      <%  {"accounting" => "Accounting","art" => "Art","art_school" => "Art School","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry","sales_careers" => "Sales","un" => "UN","scholarships" => "Scholarships","trading" => "Trading","theatre" => "Theatre","think_tanks" => "Think Tanks","product_management" => "Product Management", "politics" => "Politics","neuroscience" => "Neuroscience","teaching" => "Teaching","personal_statements" => "Personal Statements","ngos" => "NGOs","nonprofit" => "Non-profits", "oxford" => "Oxford","case_studies" => "Case Studies","management_consulting" => "Management Consulting", "mathematics" => "Mathematics","humanitarian_careers" => "Humanitarian Careers","m&a" => "M&A","mba" => "MBA","mckinsey" => "McKinsey","hospitality" => "Hospitality","hr" => "HR","life_sciences" => "Life Sciences","international_relations"=> "International Relations","investment_banking" => "Investment Banking","interviewing" => "Interview Prep","finance" => "Finance","healthcare" => "Healthcare","grad_school" => "Grad School","gmat" => "GMAT","history" => "History","grande_ecoles" => "Grand Ecoles","fintech" => "Fintech","funding_applications" => "Funding Applications","fraud_investigation" => "Fraud Investigation","games_industry" => "Games Industry","economic_consulting" => "Economics Consulting","economics" => "Economics","diplomacy" => "Diplomacy","corporate_finance" => "Corporate Finance","cv" => "CV","yale" => "Yale"}.each do |tag, name| %>
         <!-- generating links -->
         <%= link_to "#{name}", find_listings_path(search: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;" %>
       <% end %> 
-      <%= link_to "ALL", find_listings_path(search: "many"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 110px; margin: 1px; background-color: #E49362" %>
-
+      <%= link_to "ALL", find_listings_path(search: "application_help"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 110px; margin: 1px; background-color: #E49362" %>
     </div>
   <% end %>
 
 
-
-
-
-
+  <h3> All Application Help Listings </h3>
   <% @listings.each do |listing| %>
     <% if listing.advisor && listing.advisor.profile %>
       <%= link_to show_listing_path(listing_id: listing) do %>
