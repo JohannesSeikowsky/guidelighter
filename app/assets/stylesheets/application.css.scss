@@ -38,6 +38,15 @@ html, body {
 }
 
 
+.subtags:hover{
+  .more-tags-btn{
+    background-color: #E49362;
+    color: white;
+    border: 1px solid black;
+    color: black;
+  }
+}
+
 .application_help_subtags:hover{
   .more-tags-btn{
     background-color: #E49362;
