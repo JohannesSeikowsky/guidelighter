@@ -50,7 +50,7 @@ class AdminActionsController < ApplicationController
   # tagging
   def tagging
     if params[:no_tags]
-      @all_listings = Listing.where("tags is NULL or tags = ''").order("updated_at ASC")
+      @all_listings = Listing.where(tags: "no_tag_yet").order("updated_at ASC")
     else 
       @all_listings = Listing.order("updated_at ASC")      
     end
