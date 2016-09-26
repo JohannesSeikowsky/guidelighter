@@ -59,7 +59,7 @@
 
   <!-- application help subtags -->
   <%= link_to find_listings_path(search: "application_help") do %>
-    <div class="application_help_subtags" style="display: none;">
+    <div class="homepage_subtags" id="application_help_subtags">
       <div style="text-align: center;">
         <% {"art_school" => "Art School","asset_management" => "Oxford & Cambridge","banking" => "Management Consulting","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Scholarships","phd" => "PhD", "world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","wharton" => "Conservation & Heritage", "travel_industry" => "Travel Industry", "travel_industry" => "Case Studies"}.each do |tag, name| %>
           <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
@@ -72,11 +72,11 @@
 
   <!-- career insights subtags -->
   <%= link_to find_listings_path(search: "career_insights") do %>
-    <div class="career_insights_subtags" style="display: none;">
+    <div class="homepage_subtags" id="career_insights_subtags">
       <div style="text-align: center;">
         <% {"asset_management" => "Asset Management","banking" => "Management Consulting","big4" => "Fraud Investigation","biochemistry" => "Neuroscience","cambridge" => "Travel Industry","phd" => "IR & Diplomacy","ucl" => "Product Management" ,"world_bank" => "Gaming Industry","wharton" => "Conservation & Heritage","university_application" => "Hospitality"}.each do |tag, name| %>
           <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
-              <%= name %>
+            <%= name %>
           </div>
         <% end %> 
         <%= link_to "CLICK TO SEE ALL", find_listings_path(search: "career_insights"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
@@ -86,7 +86,7 @@
 
   <!-- practical expertise subtags -->
   <%= link_to find_listings_path(search: "practical_expertise") do %>
-    <div class="practical_expertise_subtags" style="display: none;">
+    <div class="homepage_subtags" id="practical_expertise_subtags">
       <div style="text-align: center;">
         <% ["Personal Mentoring", "Networking","Marketing and Sales Advice", "Programming & Dev. Support", "Interview Prep","TOEFL & IELTS", "Startup support", "Career Choices Aid", "CFA Tutoring", "Product Testing"].each do |name| %>
           <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
@@ -142,9 +142,9 @@
 <script type="text/javascript">
   function showApplicationTags(){
     // show subtags & hide others
-    $(".career_insights_subtags").css("display", "none");
-    $(".practical_expertise_subtags").css("display", "none");
-    $(".application_help_subtags").fadeIn(1200);
+    $("#career_insights_subtags").css("display", "none");
+    $("#practical_expertise_subtags").css("display", "none");
+    $("#application_help_subtags").fadeIn(1200);
     // colorize button & normalize others
     $("#applications_category").css("background-color", "#E49362");
     $("#insights_category").css("background-color", "#F5EFE6");
@@ -153,9 +153,9 @@
 
   function showCareerInsightsTags(){
     // show subtags & hide others
-    $(".application_help_subtags").css("display", "none");
-    $(".practical_expertise_subtags").css("display", "none");  
-    $(".career_insights_subtags").fadeIn(1200);
+    $("#application_help_subtags").css("display", "none");
+    $("#practical_expertise_subtags").css("display", "none");  
+    $("#career_insights_subtags").fadeIn(1200);
     // colorize button & normalize others
     $("#applications_category").css("background-color", "#F5EFE6");
     $("#insights_category").css("background-color", "#E49362");
@@ -163,9 +163,9 @@
 
   function showPracticalExpertiseTags(){
     // show subtags & hide others
-    $(".application_help_subtags").css("display", "none");
-    $(".career_insights_subtags").css("display", "none");
-    $(".practical_expertise_subtags").fadeIn(1200);
+    $("#application_help_subtags").css("display", "none");
+    $("#career_insights_subtags").css("display", "none");
+    $("#practical_expertise_subtags").fadeIn(1200);
     // colorize button & normalize others
     $("#applications_category").css("background-color", "#F5EFE6");
     $("#insights_category").css("background-color", "#F5EFE6");
