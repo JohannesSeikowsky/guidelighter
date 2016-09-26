@@ -50,16 +50,16 @@
     <!-- Listings -->
     <br>
     <% if @search == "application_help" %>
-      <h2 style="font-size: 34px; text-align: center;"> Help with your Application <span style="font-size: 11px;"> </span> </h2>
+      <h2 style="font-size: 36px; text-align: center;"> Application Help <span style="font-size: 11px;"> </span> </h2>
     <% elsif @search == "career_insights" %>
-      <h2 style="font-size: 34px; text-align: center;"> Insights into Career Paths <span style="font-size: 11px;"> </span>  </h2>
+      <h2 style="font-size: 36px; text-align: center;"> Career Insights <span style="font-size: 11px;"> </span>  </h2>
     <% else %>
-      <h2 style="font-size: 34px; text-align: center;"> Practical Expertise Offers <span style="font-size: 11px;"> </span>  </h2>
+      <h2 style="font-size: 36px; text-align: center;"> Practical Expertise <span style="font-size: 11px;"> </span>  </h2>
     <% end %>
 
     <div style="margin-bottom: 0px;">
       <% if @search == "application_help" %>
-        <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %>
+        <%= link_to "Application Help", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %>
       <% else %>
         <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
       <% end %>
@@ -89,7 +89,7 @@
     </div>
   <% end %>
 
-  <h5> Choose what you are interested in to find what you are looking for.</h5> <hr>
+  <h5> Use the filter above to find the help you are looking for or just browse </h5> <hr>
   <!-- <h3> All Application Help Listings </h3> -->
   <% @listings.each do |listing| %>
     <% if listing.advisor && listing.advisor.profile %>
