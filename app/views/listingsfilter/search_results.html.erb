@@ -84,12 +84,12 @@
         <!-- generating links --> 
         <%= link_to "#{name}", find_listings_path(search: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;" %>
       <% end %> 
-      <%= link_to "All Application Help Offers", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 6px 60px; margin: 1px; background-color: #E5D5BD; color: black; margin-top: 4px; border: 1px solid black;" %>
-      <%= link_to "Make a peticular request", new_user_request_path, class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 6px 60px; margin: 1px; background-color: #E5D5BD; color: black;  margin-top: 4px; border: 1px solid black;" %>
+      <%= link_to "All Application Help Offers", find_listings_path(search: "application_help"), class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Make a peticular request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
     </div>
   <% end %>
 
-  <h5> Use the filtera above to find the help you are looking for </h5> <hr>
+  <h6 style="text-decoration: underline;"> Application Help Offers - use the filters above to find what is useful to you. </h6>
   <!-- <h3> All Application Help Listings </h3> -->
   <% @listings.each do |listing| %>
     <% if listing.advisor && listing.advisor.profile %>

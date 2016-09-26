@@ -140,7 +140,8 @@
     border: 2px solid black;
     margin-top: 20px;
     @media (min-width: 500px){ padding: 10px 75px; }
-    @media (max-width: 500px){ padding: 13px 80px; }} // varying button size
+    @media (max-width: 500px){ padding: 13px 80px; }
+  } // varying button size
 
   input[type=submit]:hover{
     background-color: orange;
@@ -199,9 +200,22 @@
     padding: 0px 30px;
   } 
   }
-
   #listing_bottom{
     text-align: center; position: absolute; bottom: 5px; font-size: 12px;
+  }
+
+  .btn-mild-highlight{
+    background-color: #E5D5BD;
+    font-size: 11px;
+    padding: 6px 60px;
+    margin: 1px; 
+    color: black;
+    margin-top: 4px;
+    border: 1px solid black;
+  }
+
+  .btn-mild-highlight:hover{
+    background-color: #E49362;
   }
 
 
