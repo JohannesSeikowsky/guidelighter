@@ -84,12 +84,12 @@
         <!-- generating links --> 
         <%= link_to "#{name}", find_listings_path(search: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;" %>
       <% end %> 
-      <%= link_to "See all", find_listings_path(search: "application_help"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 110px; margin: 1px; background-color: #E49362" %>
-      <%= link_to "Make a request", new_user_request_path, class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 40px; margin: 1px; background-color: #E49362" %>
+      <%= link_to "All Application Help Offers", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 6px 60px; margin: 1px; background-color: #E5D5BD; color: black; margin-top: 4px; border: 1px solid black;" %>
+      <%= link_to "Make a peticular request", new_user_request_path, class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 6px 60px; margin: 1px; background-color: #E5D5BD; color: black;  margin-top: 4px; border: 1px solid black;" %>
     </div>
   <% end %>
 
-  <h5> Choose what you are interested in to filter all "application help" offers </h5>
+  <h5> Choose what you are interested in to find what you are looking for.</h5> <hr>
   <!-- <h3> All Application Help Listings </h3> -->
   <% @listings.each do |listing| %>
     <% if listing.advisor && listing.advisor.profile %>

@@ -40,5 +40,4 @@ class GeneralMailer < ApplicationMailer
     @requesting_email = requesting_email
     mail(to: @requesting_email, subject: "Guidelighter Password reset")
   end
-  
 end
