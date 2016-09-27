@@ -24,9 +24,9 @@
 <!--content  -->
 <div class="simple_container">
   <!-- form  -->
-  <h6> Personal Request </h6>
+  <h6> What are you looking for? </h6>
   <div class="grey_box">
-    <h3> Let us know what you are looking for and we will try to find you the support you need. </h3>
+    <h3> If you can't find what you are looking for, let us know and we will try to find you the support you need. </h3>
       <%= form_for :message, url: contact_path do |f| %>
         <%= f.text_area :user_input, placeholder: "your message" %>
         <%= f.text_field :email, placeholder: "you@gmail.com", style: "width: 100%;" %>

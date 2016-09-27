@@ -18,12 +18,12 @@ class SearchController < ApplicationController
         end
       end
     end
-    
+
     # response block
     respond_to do |format|
       format.html { render "get_results.html.erb" }
       format.js { render "get_results.erb.js" }
     end
   end
-
+  
 end
