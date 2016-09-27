@@ -1,6 +1,5 @@
 <div class="gl_header"> 
   <div class="links">
-    Listings: <%= @listings_count %>
     <%= link_to "Tagging", tagging_path, class: "btn btn-warning" %>
   </div>
 </div>
@@ -8,6 +7,14 @@
 <div class="simple_container">
   <p> <%= notice %> </p>
   <h2> Managing Advisors | <%= link_to "Tag Management", tagging_path, class: "btn btn-md" %> </h2> <br>
+
+  <div> 
+    <span style="text-decoration: underline;"> Metrics </span> <br>
+    Total Listings: <%= @listings_count %> <br> 
+    Advisors with Listings: <%= @advisors_with_listings %> <br>
+    Advisors without Listings: <%= @all_advisors.count - @advisors_with_listings %> <br>
+  </div> <br> <br>
+
   <% @all_advisors.each do |adv| %>
     <p> 
       <%= link_to "https://www.google.com/search?q=#{adv.first_name}+#{adv.second_name}", target: "_blank" do %>

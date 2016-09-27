@@ -9,13 +9,19 @@ class AdminActionsController < ApplicationController
   before_filter :authenticate if Rails.env.production?
 
 
-  # entry
   def admin
     @all_advisors = Advisor.order("first_name ASC")
     @listings_count = Listing.all.count
+    
+    @advisors_with_listings = 0
+    @all_advisors.each do |adv|
+      if adv.listings.count > 0
+        @advisors_with_listings += 1
+      end
+    end
   end
 
-
+  
   def listings_overview
     @listings = Listing.all
   end
@@ -80,7 +86,6 @@ class AdminActionsController < ApplicationController
     redirect_to tagging_path, notice: "Updated."
   end
 
-  # destroying
   def destroy_advisor
     @advisor = Advisor.find(params[:advisor_id])
     if @advisor
