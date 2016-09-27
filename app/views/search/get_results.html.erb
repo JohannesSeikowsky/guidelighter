@@ -33,11 +33,11 @@
     <!-- Listings -->
     <br>
     <% if @category == "application_help" %>
-      <h2 style="font-size: 36px; text-align: center;"> Application Help <span style="font-size: 11px;"> </span> </h2>
+      <h2 style="font-size: 37px; text-align: center;"> Application Help <span style="font-size: 11px;"> </span> </h2>
     <% elsif @category == "career_insights" %>
-      <h2 style="font-size: 36px; text-align: center;"> Career Insights <span style="font-size: 11px;"> </span>  </h2>
+      <h2 style="font-size: 37px; text-align: center;"> Career Insights <span style="font-size: 11px;"> </span>  </h2>
     <% else %>
-      <h2 style="font-size: 36px; text-align: center;"> Practical Expertise <span style="font-size: 11px;"> </span>  </h2>
+      <h2 style="font-size: 37px; text-align: center;"> Practical Expertise <span style="font-size: 11px;"> </span>  </h2>
     <% end %>
 
     <div style="margin-bottom: 0px;">
@@ -61,6 +61,7 @@
     </div>
   </div>
 
+
   <% if @category == "application_help" %>
     <div class="subtags_on_searchpage" style="text-align: center;">
       <%  {"accounting" => "Accounting","art_school" => "Art School", "oxford" => "Oxford","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry","sales_careers" => "Sales","un" => "UN","scholarships" => "Scholarships","trading" => "Trading","theatre" => "Theatre","think_tanks" => "Think Tanks","product_management" => "Product Management", "politics" => "Politics","neuroscience" => "Neuroscience","teaching" => "Teaching","personal_statement" => "Personal Statements","ngos" => "NGOs","nonprofit" => "Non-profits","case_studies" => "Case Studies","management_consulting" => "Management Consulting", "mathematics" => "Mathematics","humanitarian_careers" => "Humanitarian Careers","m&a" => "M&A","mba" => "MBA","mckinsey" => "McKinsey","hospitality" => "Hospitality","hr" => "HR","life_sciences" => "Life Sciences","international_relations"=> "International Relations","investment_banking" => "Investment Banking","interviews" => "Interview Prep","finance" => "Finance","healthcare" => "Healthcare","grad_school" => "Grad School","gmat" => "GMAT","history" => "History","grande_ecoles" => "Grand Ecoles","fintech" => "Fintech","funding_applications" => "Funding Applications","fraud_investigation" => "Fraud Investigation","games_industry" => "Games Industry","economic_consulting" => "Economic Consulting","economics" => "Economics","diplomacy" => "Diplomacy", "cv" => "CV","yale" => "Yale"}.each do |tag, name| %>
@@ -71,6 +72,29 @@
       <%= link_to "Issue specific Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
     </div>
   <% end %>
+
+  <% if @category == "career_insights" %>
+    <div class="subtags_on_searchpage" style="text-align: center;">
+      <%  {"accounting" => "Accounting","art_school" => "Art School", "oxford" => "Oxford","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry","sales_careers" => "Sales","un" => "UN","scholarships" => "Scholarships","trading" => "Trading","theatre" => "Theatre","think_tanks" => "Think Tanks","product_management" => "Product Management", "politics" => "Politics","neuroscience" => "Neuroscience","teaching" => "Teaching","personal_statement" => "Personal Statements","ngos" => "NGOs","nonprofit" => "Non-profits","case_studies" => "Case Studies","management_consulting" => "Management Consulting", "mathematics" => "Mathematics","humanitarian_careers" => "Humanitarian Careers","m&a" => "M&A","mba" => "MBA","mckinsey" => "McKinsey","hospitality" => "Hospitality","hr" => "HR","life_sciences" => "Life Sciences","international_relations"=> "International Relations","investment_banking" => "Investment Banking","interviews" => "Interview Prep","finance" => "Finance","healthcare" => "Healthcare","grad_school" => "Grad School","gmat" => "GMAT","history" => "History","grande_ecoles" => "Grand Ecoles","fintech" => "Fintech","funding_applications" => "Funding Applications","fraud_investigation" => "Fraud Investigation","games_industry" => "Games Industry","economic_consulting" => "Economic Consulting","economics" => "Economics","diplomacy" => "Diplomacy", "cv" => "CV","yale" => "Yale"}.each do |tag, name| %>
+        <!-- generating links --> 
+        <%= link_to "#{name}", search_path(category: "career_insights", tag: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
+      <% end %> 
+      <%= link_to "Career Insights - All Offers", search_path(category: "career_insights"), class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Issue specific Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
+    </div>
+  <% end %>
+
+  <% if @category == "practical_expertise" %>
+    <div class="subtags_on_searchpage" style="text-align: center;">
+      <%  ["accounting","apps","beginning_programmers","blogging","brainstorming","business","business_development","canadian visa","capital_strategy","career_advice","career_change","career_opportunities","career_start","cfa","china","cima","co_founders","coach","colombia","customer_acquisition","data_analysis","data_marketing","developer","developer_agency","diet","digital_marketing","early_stage","edinburgh","enterprise_finance","entrepreneurship","essays","facebook_advertising","financial_forecasts","financing","france","free_intro","freelance_developers","funding","fundraising","geneva","graphic_design","guitar","hiring","incorporation","international_students","knowledge_sharing","language_exams","lean_startup","legal","linkedin","london","m&a team","macros","marketing","meditation","mentoring","mindfulness","mobile_apps","mobile_development","musical_instrument","mvp","networking","nontech_founders","nutritionist","obesity_prevention","personal_development","portfolio_review","presentations","product_development","product_testing","productivity","programming","programming_language","quantitative_analysis","sales","sales_strategy","self_presentation","side_projects","software_developer","software_development","startup","startup_accounting","startup_legal","stata","stress_management","student_life","tax_practices","tutor","ui","uni_life","valuation","vba excel","web applications","workshop","writing","yoga"].each do |name| %>
+        <!-- generating links --> 
+        <%= link_to "#{name}", search_path(category: "practical_expertise", tag: "#{name}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
+      <% end %> 
+      <%= link_to "Practical Expertise - All Offers", search_path(category: "practical_expertise"), class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Issue specific Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
+    </div>
+  <% end %>
+
 
   <div id="mini_header">
     <h6> Use the filters above to find the right guidance for you. </h6>
