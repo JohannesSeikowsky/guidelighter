@@ -61,6 +61,9 @@ html, body {
   bottom: 12px; 
   right: 12px;
   a { background-color: #69A0A5; color: white; }
+  @media (max-width: 1240px){
+    display: none;
+  }
 }
 
 .more-tags-btn:hover{
