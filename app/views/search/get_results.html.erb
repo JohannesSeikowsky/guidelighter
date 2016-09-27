@@ -43,41 +43,43 @@
 
     <div style="margin-bottom: 0px;">
       <% if @search == "application_help" %>
-        <%= link_to "Application Help", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %>
+        <%= link_to "Application Help", search_path(category: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %>
       <% else %>
-        <%= link_to "Help with your Application", find_listings_path(search: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+        <%= link_to "Help with your Application", search_path(category: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
       <% end %>
 
       <% if @search == "career_insights" %>
-        <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %>
+        <%= link_to "Insights into Career Paths", search_path(category: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %>
       <% else %>
-        <%= link_to "Insights into Career Paths", find_listings_path(search: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+        <%= link_to "Insights into Career Paths", search_path(category: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
       <% end %>
       
       <% if @search == "practical_expertise" %>
-        <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %> <!-- old color: #FFD990 -->
+        <%= link_to "Practical Expertise Offers", search_path(category: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %> <!-- old color: #FFD990 -->
       <% else %>
-        <%= link_to "Practical Expertise Offers", find_listings_path(search: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+        <%= link_to "Practical Expertise Offers", search_path(category: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
       <% end %>
     </div>
   </div>
 
-  <% if @search == "application_help" %>
+  <% if @category == "application_help" %>
     <div class="subtags_on_searchpage" style="text-align: center;">
       <%  {"accounting" => "Accounting","art_school" => "Art School", "oxford" => "Oxford","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry","sales_careers" => "Sales","un" => "UN","scholarships" => "Scholarships","trading" => "Trading","theatre" => "Theatre","think_tanks" => "Think Tanks","product_management" => "Product Management", "politics" => "Politics","neuroscience" => "Neuroscience","teaching" => "Teaching","personal_statement" => "Personal Statements","ngos" => "NGOs","nonprofit" => "Non-profits","case_studies" => "Case Studies","management_consulting" => "Management Consulting", "mathematics" => "Mathematics","humanitarian_careers" => "Humanitarian Careers","m&a" => "M&A","mba" => "MBA","mckinsey" => "McKinsey","hospitality" => "Hospitality","hr" => "HR","life_sciences" => "Life Sciences","international_relations"=> "International Relations","investment_banking" => "Investment Banking","interviews" => "Interview Prep","finance" => "Finance","healthcare" => "Healthcare","grad_school" => "Grad School","gmat" => "GMAT","history" => "History","grande_ecoles" => "Grand Ecoles","fintech" => "Fintech","funding_applications" => "Funding Applications","fraud_investigation" => "Fraud Investigation","games_industry" => "Games Industry","economic_consulting" => "Economic Consulting","economics" => "Economics","diplomacy" => "Diplomacy", "cv" => "CV","yale" => "Yale"}.each do |tag, name| %>
         <!-- generating links --> 
-        <%= link_to "#{name}", find_listings_path(search: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
+        <!--  link needs to include application help encoded as well as the clicked tag. -->
+        <%= link_to "#{name}", search_path(category: "application_help", tag: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
       <% end %> 
-      <%= link_to "All Application Help Offers", find_listings_path(search: "application_help"), class: "btn tag-btn btn-mild-highlight" %>
-      <%= link_to "Make a particular request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "All Application Help Offers", search_path(category: "application_help"), class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Make a Personal Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
     </div>
+
   <% end %>
 
   <div id="tag_search_results" style="display: none;">
     <%= render "looping_through_results" %>
   </div>
 
-  <div class="general_results" style="display: block;">
+  <div class="general_results">
     <%= render "looping_through_results" %>
   </div>
 </div>
