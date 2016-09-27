@@ -56,8 +56,13 @@ html, body {
   }
 }
 
-
-
+.bottom_right_buttons{
+  position: fixed;
+  bottom: 12px; 
+  right: 12px;
+  a { background-color: #69A0A5; color: white; }
+  
+}
 
 
 .more-tags-btn:hover{
@@ -81,8 +86,6 @@ html, body {
   border: 1px solid black;
   color: black;
 }
-
-
 
 .color_background{
   position: fixed;
@@ -109,28 +112,16 @@ html, body {
   background-color: #E49362;
 }
 
-
-
 .subtags_on_searchpage{
   position: relative;
   z-index: 100;
   margin-bottom: 36px;
 }
 
-
 .centered{
   text-align: center;
 }
 
-.bottom_right_links{
-  position: fixed;
-  bottom: 8px;
-  right: 8px;
-  .btn-turquoise{
-    background-color: #69A0A5;
-    color: white;
-  }
-}
 
 .small_request_guide_btn{
   padding: 3px 9px 1px 9px;

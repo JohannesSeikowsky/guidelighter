@@ -19,8 +19,7 @@
       <%= link_to "How It Works", how_path %>
       <%= link_to "Login", login_path %>
       <%= link_to "Admin", admin_path if Rails.env.development? %>
-      <%= link_to "Guide Signup", signup_path %>
-      <%= link_to "What are you looking for?", new_user_request_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+      <%= link_to "Become a Guide", signup_path, class: "btn btn-small", style: "margin-left: 18px; border: 2px solid white;" %>
     </div>
   <% end %>
 </div>
@@ -70,10 +69,9 @@
         <%= link_to "#{name}", search_path(category: "application_help", tag: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
       <% end %> 
       <%= link_to "All Application Help Offers", search_path(category: "application_help"), class: "btn tag-btn btn-mild-highlight" %>
-      <%= link_to "Make a Personal Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Personal Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
     </div>
   <% end %>
-
 
   <div id="tag_search_results" style="display: none;">
     <%= render "looping_through_results" %>
@@ -82,6 +80,11 @@
   <div class="general_results">
     <%= render "looping_through_results" %>
   </div>
+
+  <div class="bottom_left_buttons">
+    <%= link_to "What are you looking for?", new_user_request_path, class: "btn btn-md" %>
+  </div>
+
 </div>
 
 
