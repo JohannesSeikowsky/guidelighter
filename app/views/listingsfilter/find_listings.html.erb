@@ -25,22 +25,6 @@
   <% end %>
 </div>
 
-<!-- 
-  get tags right
-  - implement the right tags in backend (gather disperse ones - like consulting, management consulting)
-  - add missing ones / get rid of some
-  - approach: look at the listings in each category (application help) - then give tags
-
-  get search right
-  - implement search (as in superb category and subtag category together. Search needs to find listings that have tags "category" and "subcategory")  / also discrimnating serach - as in making it work (as for now art turns up all things where tags has art in it)
-
-  get page dependent on serach right
-  - empty page problem
-  - title of each search result page
-  - which buttons are highlighted
-  - subtitle (as in title further down)
-  - generall how things should look dependent on serach
--->
 
 <div class="home_container">
   <div class="image_background"> </div>
@@ -82,47 +66,25 @@
     <div class="subtags_on_searchpage" style="text-align: center;">
       <%  {"accounting" => "Accounting","art_school" => "Art School", "oxford" => "Oxford","asset_management" => "Asset Management","audit" => "Auditing","banking" => "Banking","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry","sales_careers" => "Sales","un" => "UN","scholarships" => "Scholarships","trading" => "Trading","theatre" => "Theatre","think_tanks" => "Think Tanks","product_management" => "Product Management", "politics" => "Politics","neuroscience" => "Neuroscience","teaching" => "Teaching","personal_statement" => "Personal Statements","ngos" => "NGOs","nonprofit" => "Non-profits","case_studies" => "Case Studies","management_consulting" => "Management Consulting", "mathematics" => "Mathematics","humanitarian_careers" => "Humanitarian Careers","m&a" => "M&A","mba" => "MBA","mckinsey" => "McKinsey","hospitality" => "Hospitality","hr" => "HR","life_sciences" => "Life Sciences","international_relations"=> "International Relations","investment_banking" => "Investment Banking","interviews" => "Interview Prep","finance" => "Finance","healthcare" => "Healthcare","grad_school" => "Grad School","gmat" => "GMAT","history" => "History","grande_ecoles" => "Grand Ecoles","fintech" => "Fintech","funding_applications" => "Funding Applications","fraud_investigation" => "Fraud Investigation","games_industry" => "Games Industry","economic_consulting" => "Economics Consulting","economics" => "Economics","diplomacy" => "Diplomacy", "cv" => "CV","yale" => "Yale"}.each do |tag, name| %>
         <!-- generating links --> 
-        <%= link_to "#{name}", find_listings_path(search: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;" %>
+        <%= link_to "#{name}", find_listings_path(search: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
       <% end %> 
       <%= link_to "All Application Help Offers", find_listings_path(search: "application_help"), class: "btn tag-btn btn-mild-highlight" %>
-      <%= link_to "Make a peticular request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Make a particular request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
     </div>
   <% end %>
 
-  <h6 style="text-decoration: underline;"> Application Help Offers - use the filters above to find what is useful to you. </h6>
-  <!-- <h3> All Application Help Listings </h3> -->
-  <% @listings.each do |listing| %>
-    <% if listing.advisor && listing.advisor.profile %>
-      <%= link_to show_listing_path(listing_id: listing) do %>
-        
-        <div class="listing">
-          <!-- Image -->
-          <% unless listing.advisor.profile.nil? %>  
-            <% unless listing.advisor.profile.profile_image.url.nil? %> 
-                <div class="centered"> <%= image_tag listing.advisor.profile.profile_image.url %> </div>
-            <% end %>
-          <% end %>
-          <!-- Title -->
-          <% unless listing.title.empty? %>
-            <div id="listing_title"> <h4> <%= listing.title %> </h4> </div>
-          <% end %>
-          <!-- Bottom -->
-          <div id="listing_bottom"> 
-            <% unless listing.price.nil? %>
-              <% unless listing.price == 0 %>
-                <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
-                <%= link_to "Send Request |", new_request_path(listing_id: listing.id) %>
-                <%= link_to "#{listing.price} £ ", new_request_path(listing_id: listing.id) %>
-              <% else %>
-                <%= listing.advisor.first_name %> <%= listing.advisor.second_name[0] %>. |
-                <%= link_to "Send Request |", new_request_path(listing_id: listing.id) %>
-                <%= link_to "Free", new_request_path(listing_id: listing.id) %>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+  <div id="tag_search_results" style="display: none;">
+    <%= render "looping_through_results" %>
+  </div>
 
-      <% end %>
-    <% end %>
-  <% end %>
+
+  <div class="general_results" style="display: block;">
+  
+  <!-- <h6 style="text-decoration: underline; display: block;"> Application Help Offers - use the filters above to find those offers useful to you. </h6> -->
+
+    <%= render "looping_through_results" %>
+  </div>
 </div>
+
+
+
