@@ -60,8 +60,8 @@ html, body {
   position: fixed;
   bottom: 12px; 
   right: 12px;
-  a { background-color: #69A0A5; color: white; }
-  @media (max-width: 1240px){
+  a { background-color: #69A0A5; color: white; padding: 9px 32px;}
+  @media (max-width: 1300px){
     display: none;
   }
 }
