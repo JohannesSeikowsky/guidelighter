@@ -5,9 +5,10 @@ class SearchController < ApplicationController
     @tag = params[:tag] if params[:tag]
    
     if @tag.nil?
-      # category andtag search 
+      # category only search
       @listings = Listing.where("tags like ?", "%#{@category}%").order("updated_at DESC")
     else
+      # category and tag search 
       @listings_in_category = Listing.where("tags like ?", "%#{@category}%").order("updated_at DESC")
 
       @listings = []
@@ -16,9 +17,8 @@ class SearchController < ApplicationController
           @listings << list
         end
       end
-      # category only search
     end
-
+    
     # response block
     respond_to do |format|
       format.html { render "get_results.html.erb" }
