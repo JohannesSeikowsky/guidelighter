@@ -68,7 +68,7 @@
         <!-- generating links --> 
         <%= link_to "#{name}", search_path(category: "application_help", tag: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
       <% end %> 
-      <%= link_to "Application Help - All Offers", search_path(category: "application_help"), class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Browse all - Application Help", search_path(category: "application_help"), class: "btn tag-btn btn-mild-highlight" %>
       <%= link_to "Issue specific Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
     </div>
   <% end %>
@@ -79,7 +79,7 @@
         <!-- generating links --> 
         <%= link_to "#{name}", search_path(category: "career_insights", tag: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
       <% end %> 
-      <%= link_to "Career Insights - All Offers", search_path(category: "career_insights"), class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Browse All - Career Insights", search_path(category: "career_insights"), class: "btn tag-btn btn-mild-highlight" %>
       <%= link_to "Issue specific Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
     </div>
   <% end %>
@@ -88,9 +88,9 @@
     <div class="subtags_on_searchpage" style="text-align: center;">
       <%  ["accounting","apps","beginning_programmers","blogging","brainstorming","business","business_development","canadian visa","capital_strategy","career_advice","career_change","career_opportunities","career_start","cfa","china","cima","co_founders","coach","colombia","customer_acquisition","data_analysis","data_marketing","developer","developer_agency","diet","digital_marketing","early_stage","edinburgh","enterprise_finance","entrepreneurship","essays","facebook_advertising","financial_forecasts","financing","france","free_intro","freelance_developers","funding","fundraising","geneva","graphic_design","guitar","hiring","incorporation","international_students","knowledge_sharing","language_exams","lean_startup","legal","linkedin","london","m&a team","macros","marketing","meditation","mentoring","mindfulness","mobile_apps","mobile_development","musical_instrument","mvp","networking","nontech_founders","nutritionist","obesity_prevention","personal_development","portfolio_review","presentations","product_development","product_testing","productivity","programming","programming_language","quantitative_analysis","sales","sales_strategy","self_presentation","side_projects","software_developer","software_development","startup","startup_accounting","startup_legal","stata","stress_management","student_life","tax_practices","tutor","ui","uni_life","valuation","vba excel","web applications","workshop","writing","yoga"].each do |name| %>
         <!-- generating links --> 
-        <%= link_to "#{name}", search_path(category: "practical_expertise", tag: "#{name}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
+        <%= link_to "#{name.capitalize.tr('_', ' ')}", search_path(category: "practical_expertise", tag: "#{name}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
       <% end %> 
-      <%= link_to "Practical Expertise - All Offers", search_path(category: "practical_expertise"), class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Browse All - Practical Expertise", search_path(category: "practical_expertise"), class: "btn tag-btn btn-mild-highlight" %>
       <%= link_to "Issue specific Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
     </div>
   <% end %>
