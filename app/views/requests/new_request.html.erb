@@ -32,7 +32,7 @@
       <%= f.text_field :requesting_email, placeholder: "", style: "width: 372px;", class: "small_placeholder_text" %>
       <%= f.hidden_field :listing_id, value: @listing_id %>
       <%= f.submit "Done.", id: "std-btn" %> <br>
-      <h6>Note: This request is not binding. It's sole purpose is to check wether it <br> is possible to arrange a session with the guide you are requesting. </h6>
+      <h6>Note: This request is not binding. It's purpose is to check wether it <br> is possible to arrange a session with the guide you are requesting. </h6>
     <% end %>     
   </div> <br> <br>
 
@@ -46,4 +46,6 @@
     <p> <%= simple_format @listing.description, style: "line-height: 1.5;" %> </p>
     <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
   </div> <br> 
+
+  <p style=""> Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona </p>
 </div>
