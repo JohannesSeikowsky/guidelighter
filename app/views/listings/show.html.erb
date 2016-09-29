@@ -5,8 +5,7 @@
     <%= link_to "Contact Us", contact_path %>
     <%= link_to "How it works", how_path %>
     <%= link_to "What people say", reviews_path %>
-    <%= link_to "EXPLORE LISTINGS", search_path(category: "career_insights"), class: "btn white_border" %>
-    <%= link_to "BECOME A GUIDE", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+    <%= link_to "Become a Guide", signup_path, class: "", style: "margin-left: 12; text-decoration: underline; font-size: 15px;" %>
   </div>
 </div>
 
@@ -15,6 +14,10 @@
 <div class="simple_container">
 
   <div class="color_background"> </div>
+  
+  <div class="playing">
+    <%= link_to "Browse more Listings", search_path(category: "career_insights"), class: "btn btn-md", style: "margin-bottom: 4px; padding: 13px 55px;" %> <br>
+  </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. / your guide </h6>
@@ -39,11 +42,11 @@
     </div>
   </div> <br>
 
-  <h6> Questions </h6>
+  <h6> Any Questions? </h6>
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">
     <br>
     <%= form_for :message, url: create_listing_message_path do |f| %> 
-      <%= f.text_area :content, placeholder: "Any questions?", style: "height: 72px;" %>
+      <%= f.text_area :content, placeholder: "your question", style: "height: 72px;" %>
       <%= f.text_field :reply_address, placeholder: "your@email.com", style: "width: 100%;" %> <br>
       <%= f.hidden_field :listing_id, value: @listing.id %>
       <div class="button" style="padding-top: 0px;"> 
@@ -53,9 +56,9 @@
   </div> <br>
 
   <div class="bottom_right_buttons">
-    <%= link_to "Issue a request.", new_user_request_path, class: "btn btn-md" %>
+    <%= link_to "Issue a special request.", new_user_request_path, class: "btn btn-md" %>
   </div>
 
-  <p style=""> Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona </p>
+  <p> Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona </p>
 </div>
 
