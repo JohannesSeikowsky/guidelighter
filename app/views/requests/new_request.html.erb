@@ -1,26 +1,14 @@
 <!-- header -->
 <div class="gl_header">
-  <% if logged_in? %>
-    <div class="links">    
-      <%= link_to "What people say", reviews_path %>
-      <%= link_to "About Us", about_path %>
-      <%= link_to "Contact Us", contact_path %>
-      <%= link_to "How It Works", how_path %>
-      <%= link_to "Edit Profile", edit_profile_path %>
-      <%= link_to "Manage Listings", new_listing_path %>
-      <%= link_to "Logout", logout_path, class: "btn btn-small btn-turquoise" %>
-    </div>
-  <% else %>  
-    <div class="links">
-      <%= link_to "What people say", reviews_path %>
-      <%= link_to "About Us", about_path %>
-      <%= link_to "Contact Us", contact_path %>
-      <%= link_to "How It Works", how_path %>
-      <%= link_to "Login", login_path %>
-      <%= link_to "Signup", signup_path, class: "btn btn-small btn-turquoise" %>
-    </div>
-  <% end %>
-</div> 
+  <div class="links">
+    <%= link_to "About Us", about_path %>
+    <%= link_to "Contact Us", contact_path %>
+    <%= link_to "How it works", how_path %>
+    <%= link_to "What people say", reviews_path %>
+    <%= link_to "EXPLORE LISTINGS", search_path(category: "career_insights"), class: "btn white_border" %>
+    <%= link_to "BECOME A GUIDE", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+  </div>
+</div>
 
 
 <div class="simple_container">
@@ -40,14 +28,13 @@
       <h6>When would you usually be available for a session? Days? Times? </h6>
       <%= f.text_field :requesting_availability, placeholder: "", style: "width: 372px;", class: "small_placeholder_text" %>
       <!-- 3 -->
-      <h6>Your Email - so we can reply </h6>
+      <h6>Your Email - so we can reply. </h6>
       <%= f.text_field :requesting_email, placeholder: "", style: "width: 372px;", class: "small_placeholder_text" %>
       <%= f.hidden_field :listing_id, value: @listing_id %>
       <%= f.submit "Done.", id: "std-btn" %> <br>
-      <h6>Note: This request is not binding. It's entire purpose is to check wether it <br> is possible to arrange a session with the guide. </h6>
+      <h6>Note: This request is not binding. It's sole purpose is to check wether it <br> is possible to arrange a session with the guide you are requesting. </h6>
     <% end %>     
   </div> <br> <br>
-
 
   <!-- Listing -->
   <h6 style="text-decoration: underline;"> The Listing in question </h6>
@@ -59,6 +46,4 @@
     <p> <%= simple_format @listing.description, style: "line-height: 1.5;" %> </p>
     <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
   </div> <br> 
-
-
 </div>
