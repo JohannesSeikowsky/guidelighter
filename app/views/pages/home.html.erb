@@ -13,11 +13,12 @@
     </div>
   <% else %>
     <div class="links">
+      <%= link_to "About", about_path %>
+      <%= link_to "Contact", contact_path %>
+      <%= link_to "How", how_path %>
       <%= link_to "What people say", reviews_path %>
-      <%= link_to "About Us", about_path %>
-      <%= link_to "Contact Us", contact_path %>
-      <%= link_to "How It Works", how_path %>
-      <%= link_to "Guide Login", login_path %>
+
+      <%= link_to "Login", login_path %>
       <%= link_to "What are you looking for?", new_user_request_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
     </div>
   <% end %>
@@ -31,7 +32,7 @@
   <!-- Intro  -->
   <div class="intro">
     <p class="centered"> <%= notice %> </p>
-    <h2 id="gl_slogan"> Help out by sharing your professional experience and get paid for it </h2>
+    <h2 id="gl_slogan"> Personal guidance from real people <br> who care </h2>
     <div class="button">
       <% if logged_in? %>
         <%= link_to "POST A LISTING", new_listing_path, id: "hp_button" %> <br> <br>
@@ -48,13 +49,13 @@
   </div>
 
   <!-- subheader -->
-  <h2 style="font-size: 21px; text-align: center;"> <br> Personal guidance from real people who care. </h2>
+  <br> <h6> Use the categories and tags to find the right support for you. </h6>
 
   <!-- category_buttons -->
   <div style="margin-bottom: 12px;">
-    <%= link_to "Help with Applications", search_path(category: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showApplicationTags();", id: "applications_category" %>
     <%= link_to "Insights into Career Paths", search_path(category: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showCareerInsightsTags();", id: "insights_category" %>
-    <%= link_to "Practical Expertise Offers", search_path(category: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showPracticalExpertiseTags();", id: "practical_category" %>
+    <%= link_to "Help with Applications", search_path(category: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showApplicationTags();", id: "applications_category" %>
+    <%= link_to "Personal Mentoring", search_path(category: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "showPracticalExpertiseTags();", id: "practical_category" %>
   </div>
 
   <!-- onhover subtags -->
@@ -131,7 +132,13 @@
       <% end %>
     <% end %>
   <% end %>
+
+  <div class="bottom_right_buttons">
+    <%= link_to "What are you looking for?", new_user_request_path, class: "btn btn-md" %>
+  </div>
+
 </div>
+
 
 
 <script type="text/javascript">
