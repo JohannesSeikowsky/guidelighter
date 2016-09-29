@@ -32,21 +32,15 @@
   <div class="intro" style="margin-bottom: 10px;">
     <!-- Listings -->
     <br>
-    <% if @category == "application_help" %>
-      <h2 style="font-size: 37px; text-align: center;"> Application Help <span style="font-size: 11px;"> </span> </h2>
-    <% elsif @category == "career_insights" %>
-      <h2 style="font-size: 37px; text-align: center;"> Career Insights <span style="font-size: 11px;"> </span>  </h2>
+    <% if @category == "career_insights" %>
+      <h2 style="font-size: 37px; text-align: center;"> Insights into career paths <span style="font-size: 11px;"> </span> </h2>    
+    <% elsif @category == "practical_expertise" %>
+      <h2 style="font-size: 37px; text-align: center;"> Personal Mentoring <span style="font-size: 11px;"> </span> </h2>
     <% else %>
-      <h2 style="font-size: 37px; text-align: center;"> Practical Expertise <span style="font-size: 11px;"> </span>  </h2>
+      <h2 style="font-size: 37px; text-align: center;"> Application Help <span style="font-size: 11px;"> </span> </h2>
     <% end %>
 
     <div style="margin-bottom: 0px;">
-      <% if @category == "application_help" %>
-        <%= link_to "Application Help", search_path(category: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %>
-      <% else %>
-        <%= link_to "Help with your Application", search_path(category: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
-      <% end %>
-
       <% if @category == "career_insights" %>
         <%= link_to "Insights into Career Paths", search_path(category: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %>
       <% else %>
@@ -54,9 +48,15 @@
       <% end %>
       
       <% if @category == "practical_expertise" %>
-        <%= link_to "Practical Expertise Offers", search_path(category: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %> <!-- old color: #FFD990 -->
+        <%= link_to "Personal Mentoring", search_path(category: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %> <!-- old color: #FFD990 -->
       <% else %>
-        <%= link_to "Practical Expertise Offers", search_path(category: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+        <%= link_to "Personal Mentoring", search_path(category: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
+      <% end %>
+
+      <% if @category == "application_help" %>
+        <%= link_to "Application Help", search_path(category: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%; background-color: #E49362;" %>
+      <% else %>
+        <%= link_to "Application Help", search_path(category: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;" %>
       <% end %>
     </div>
   </div>

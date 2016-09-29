@@ -1,26 +1,13 @@
 <!-- header -->
 <div class="gl_header">
-  <% if logged_in? %>
-    <div class="links">
-      <%= link_to "What people say", reviews_path %>
-      <%= link_to "About Us", about_path %>
-      <%= link_to "Contact Us", contact_path %>
-      <%= link_to "Edit Profile", edit_profile_path %>
-      <%= link_to "Post Listing", new_listing_path %>
-      <%= link_to "Manage Listings", new_listing_path %>
-      <%= link_to "Logout", logout_path, class: "btn btn-small btn-turquoise" %>
-    </div>
-  <% else %>
-    <div class="links">
-      <%= link_to "What people say", reviews_path %>
-      <%= link_to "About Us", about_path %>
-      <%= link_to "Contact Us", contact_path %>
-      <%= link_to "Login", login_path %>
-      <%= link_to "Signup", signup_path, class: "btn btn-small btn-turquoise" %>
-    </div>
-  <% end %>
+  <div class="links">
+    <%= link_to "About Us", about_path %>
+    <%= link_to "Contact Us", contact_path %>
+    <%= link_to "What people say", reviews_path %>
+    <%= link_to "EXPLORE LISTINGS", login_path, class: "btn white_border" %>
+    <%= link_to "BECOME A GUIDE", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+  </div>
 </div>
-
 
 <!--content  -->
 <div class="simple_container">
@@ -33,17 +20,6 @@
   </p>
 
   <%= image_tag "gl-color.jpg" %>
-
-   <!-- <h2> Why </h2>
-   <p>
-    When making career or university decisions, all you sometimes need is a chat with someone who has been there and has done it. You shouldn’t be in the position of not having anyone to ask such important questions. <br> <br> 
-
-    Guidelighter is the easy way to talk to such a person. We are a marketplace for students, professionals and firms to offer their experience, coaching or any other form of career/university advice & help to those who need it right now. <br> <br>
-
-    All of us have valuable experience that others could benefit from. Therefore on Guidelighter, everyone can become a guide and share their knowledge and experience peer to peer on their own terms and at whatever price they deem appropriate – or for free. <br> <br>
-
-    Our goal is to make many more people share experience and many more people to access experience before making important life and career decisions. Everyone deserves their personal career guide and Guidelighter is here to give you one!"
-   </p> <br> -->
 
   <br>
   <h2> FAQs </h2>
