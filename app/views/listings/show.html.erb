@@ -16,7 +16,8 @@
   <div class="color_background"> </div>
   
   <div class="playing">
-    <%= link_to "Browse more Listings", search_path(category: "career_insights"), class: "btn btn-md", style: "margin-bottom: 4px; padding: 18px 57px;" %> <br>
+    <%= link_to "Back", "", class: "btn btn-md", style: "margin-bottom: 4px; padding: 8px 32px;" %>
+    <%= link_to "Browse more Listings", search_path(category: "career_insights"), class: "btn btn-md", style: "margin-bottom: 4px; padding: 8px 32px;" %> <br>
   </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
@@ -42,7 +43,7 @@
     </div>
   </div> <br>
 
-  <h6> Any Questions? </h6>
+  <h6> Questions? </h6>
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">
     <br>
     <%= form_for :message, url: create_listing_message_path do |f| %> 
