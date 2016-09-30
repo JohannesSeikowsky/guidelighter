@@ -4,19 +4,23 @@ class SearchController < ApplicationController
     @category = params[:category] if params[:category]
     @tag = params[:tag] if params[:tag]
    
-    if @tag.nil?
-      # category only search
-      @listings = Listing.where("tags like ?", "%#{@category}%").order("updated_at DESC")
-    else
-      # category and tag search 
-      @listings_in_category = Listing.where("tags like ?", "%#{@category}%").order("updated_at DESC")
+    if @category    
+      if @tag.nil?
+        # category only search
+        @listings = Listing.where("tags like ?", "%#{@category}%").order("updated_at DESC")
+      else
+        # category and tag search 
+        @listings_in_category = Listing.where("tags like ?", "%#{@category}%").order("updated_at DESC")
 
-      @listings = []
-      @listings_in_category.each do |list|
-        if list.tags && list.tags.include?(@tag)
-          @listings << list
+        @listings = []
+        @listings_in_category.each do |list|
+          if list.tags && list.tags.include?(@tag)
+            @listings << list
+          end
         end
       end
+    else
+      @listings = Listing.all
     end
 
     # response block

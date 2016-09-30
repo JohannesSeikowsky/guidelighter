@@ -17,13 +17,18 @@
   <div class="intro" style="margin-bottom: 10px;">
     <!-- Listings -->
     <br>
-    <% if @category == "career_insights" %>
-      <h2 style="font-size: 37px; text-align: center;"> Insights into Career Paths <span style="font-size: 11px;"> </span> </h2>    
-    <% elsif @category == "practical_expertise" %>
-      <h2 style="font-size: 37px; text-align: center;"> Personal Mentoring <span style="font-size: 11px;"> </span> </h2>
+    <% if @category %>
+      <% if @category == "career_insights" %>
+        <h2 style="font-size: 37px; text-align: center;"> Insights into Career Paths </span> </h2>    
+      <% elsif @category == "practical_expertise" %>
+        <h2 style="font-size: 37px; text-align: center;"> Personal Mentoring> </span> </h2>
+      <% else %>
+        <h2 style="font-size: 37px; text-align: center;"> Application Help> </span> </h2>
+      <% end %>
     <% else %>
-      <h2 style="font-size: 37px; text-align: center;"> Application Help <span style="font-size: 11px;"> </span> </h2>
+      <h2 style="font-size: 27px; text-align: center;"> Use our categories and tags to find the right guidance for you. </span> </h2>    
     <% end %>
+
 
     <div style="margin-bottom: 0px;">
       <% if @category == "career_insights" %>
