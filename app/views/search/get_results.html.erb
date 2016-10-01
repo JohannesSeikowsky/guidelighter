@@ -51,16 +51,17 @@
     </div>
   </div>
 
+
   
   <!-- career insights --> 
   <% if @category == "career_insights" %>
     <div class="subtags_on_searchpage" style="text-align: center;">
-      <% {"career_advice" => "Accounting","career_advice" => "Art, Design and Graphics","career_advice" => "Theatre Careers","career_advice" => "Heritag/Conservation","career_advice" => "Non-Profits","career_advice" => "Humanitarian Careers","career_advice" => "General Carrer Advice","career_advice" => "Auditing","career_advice" => "Investment Banking","career_advice" => "Management Consulting","career_advice" => "Postdoc","career_advice" => "Diplomacy & IR (one or two groups? - Oleg?)","career_advice" => "Teaching","career_advice" => "Travel Industry ","career_advice" => "Hospitality","career_advice" => "Product Management","career_advice" => "Healthcare Sector","career_advice" => "Entrepreneurship","career_advice" => "Science Careers","career_advice" => "International Organizations","career_advice" => "Programming & Software Development","career_advice" => "Career Change","career_advice" => "Business School","career_advice" => "Grand Ecoles","career_advice" => "Sales Careers","career_advice" => "Engineering","career_advice" => "Freelance Translation","career_advice" => "Games Industry","career_advice" => "MBA","career_advice" => "Finance"}.each do |tag, name| %>
+      <% {"art_design_graphics"=>"Art, Design and Graphics", "theatre"=>"Theatre Careers", "business" => "Business and Business Development", "heritage"=>"Heritage and Conservation", "non_profit"=>"Non-Profits", "humanitarian_careers"=>"Humanitarian Careers", "accounting"=>"Accounting", "career_advice"=>"General Career Advice", "auditing"=>"Auditing", "investment_banking"=>"Investment Banking","management_consulting"=>"Management Consulting", "pdh" => "PhD", "postdoc_and_academic"=>"Postdoc and academic careers", "diplomacy_ir"=>"Diplomatic careers & International Relations", "teaching" => "Teaching","travel_industry" => "Travel Industry","hospitality" => "Hospitality","product_management" => "Product Management","healthcare_sector" => "Healthcare sector","entrepreneurship" => "Startup and Entrepreneurship","science_careers" => "Careers in Science","international_organizations" => "International Organizations","development_programming" => "Software, Programming and Development","career_change" => "Career Change","business_school" => "Business School","sales_careers" => "Sales Careers","Engineering" => "Engineering Careers","freelance_translating" => "Freelance Translating","games_industry" => "Games Industry","mba" => "MBA", "finance" => "Finance"}.each do |tag, name| %>
         <!-- generating links --> 
         <%= link_to "#{name}", search_path(category: "career_insights", tag: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
-      <% end %> 
-      <%= link_to "Browse All - Career Insights", search_path(category: "career_insights"), class: "btn tag-btn btn-mild-highlight" %>
-      <%= link_to "Submit personal Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
+      <% end %> <br>
+      <%= link_to "See All", search_path(category: "career_insights"), class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Submit Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
     </div>
   <% end %>
 
@@ -70,9 +71,9 @@
       <% {"accounting"=>"Programming & Development", "apps"=>"Specific Skill Development", "beginning_programmers"=>"Personal Development", "blogging"=>"Art, Design and Graphics", "brainstorming"=>"Exam Preparation", "business"=>"Start-up & Entrepreneurship", "business_development"=>"Health & Wellbeing", "canadian visa"=>"Business and Business Development", "capital_strategy"=>"Visa support","career_advice"=>"Personal Advice from People", "career_change"=>"Application help", "career_opportunities"=>"Career Advice"}.each do |tag, name| %>
         <!-- generating links --> 
         <%= link_to "#{name}", search_path(category: "practical_expertise", tag: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
-      <% end %> 
-      <%= link_to "Browse All - Personal Mentoring", search_path(category: "practical_expertise"), class: "btn tag-btn btn-mild-highlight" %>
-      <%= link_to "Submit personal Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
+      <% end %> <br>
+      <%= link_to "See All", search_path(category: "practical_expertise"), class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Submit Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
     </div>
   <% end %>
 
@@ -83,8 +84,8 @@
         <!-- generating links --> 
         <%= link_to "#{name}", search_path(category: "application_help", tag: "#{tag}"), class: "btn btn-lg tag-btn", style: "font-size: 11px; padding: 8px 10px; margin: 1px; z-index: 1000;", :remote => true %>
       <% end %> 
-      <%= link_to "Browse all - Application Help", search_path(category: "application_help"), class: "btn tag-btn btn-mild-highlight" %>
-      <%= link_to "Submit personal Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "See All", search_path(category: "application_help"), class: "btn tag-btn btn-mild-highlight" %>
+      <%= link_to "Submit Request", new_user_request_path, class: "btn tag-btn btn-mild-highlight" %>
     </div>
   <% end %>
 
