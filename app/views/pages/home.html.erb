@@ -61,7 +61,7 @@ p<div class="gl_header">
   <!-- onhover subtags -->
   <%= link_to search_path(category: "application_help") do %>
     <div class="homepage_subtags" id="application_help_subtags" style="text-align: center;">
-      <% ["Art School", "Oxford & Cambridge", "Management Consulting", "Big4", "Biochemistry", "Business School", "Scholarships", "PhD", "World Bank", "Conservation & Heritage", "University Applications", "Case Studies"].each do |title| %>
+      <% ["Accounting", "Auditing", "Banking", "Art School", "Management Consulting", "Investment Banking", "Oxford", "Asset Management", "Big4", "Biochemistry","Business School", "Cambridge","PhD"].each do |title| %>
         <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
           <%= title %>
         </div>
@@ -71,25 +71,25 @@ p<div class="gl_header">
   <% end %>
 
   <!-- onhover subtags -->
-  <%= link_to search_path(category: "practical_expertise") do %>
-    <div class="homepage_subtags" id="practical_expertise_subtags" style="text-align: center;">
-      <% ["Personal Mentoring", "Networking","Marketing and Sales Advice", "Programming & Dev. Support", "Interview Prep","TOEFL & IELTS", "Startup support", "Career Choices Aid", "CFA Tutoring", "Product Testing"].each do |title| %>
-        <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
-          <%= title %>
-        </div>
-      <% end %> <%= link_to "CLICK TO SEE ALL", search_path(category: "practical_expertise"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
-    </div>
-  <% end %>
-
-  <!-- onhover subtags -->
   <%= link_to search_path(category: "career_insights") do %>
     <div class="homepage_subtags" id="career_insights_subtags" style="text-align: center;">
-      <% ["Asset Management", "Management Consulting", "Fraud Investigation", "Neuroscience", "Travel Industry", "IR & Diplomacy", "Product Management", "Gaming Industry", "Conservation & Heritage", "Hospitality"].each do |title| %>
+      <% ["Accounting", "Investment Banking", "Management Consulting", "Business and Business Development", "Finance", "Theatre Careers", "Heritage and Conservation", "Non-Profits", "Product Management"].each do |title| %>
         <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
           <%= title %>
         </div>
       <% end %> 
       <%= link_to "CLICK TO SEE ALL", search_path(category: "career_insights"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
+    </div>
+  <% end %>
+
+  <!-- onhover subtags -->
+  <%= link_to search_path(category: "practical_expertise") do %>
+    <div class="homepage_subtags" id="practical_expertise_subtags" style="text-align: center;">
+      <% ["Entrepreneurship", "Programming, Software and Development", "Personal Development", "Design, Art and Graphics", "Exam Preparation", "Specific Skills", "Health & Wellbeing", "Business Development"].each do |title| %>
+        <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
+          <%= title %>
+        </div>
+      <% end %> <%= link_to "CLICK TO SEE ALL", search_path(category: "practical_expertise"), class: "btn btn-lg subtag-btn more-tags-btn", style: "font-size: 11px; padding: 8px 127px; margin: 1px;" %> <br> <br>
     </div>
   <% end %>
 
