@@ -68,22 +68,18 @@ class AdminActionsController < ApplicationController
     end
     @lastly_updated_listing = Listing.order("updated_at").last
 
-    # gather all tag strings
-    @tag_string = ""
-    Listing.all.each do |list|
-      @tag_string << ","
-      @tag_string << list.tags
-    end
-    # produce tags array
-    @tag_array = @tag_string.split(",")
-    # downcase all
-    @tag_array = @tag_array.map!{ |tag| tag.downcase }
-    # remove white space in beginning of each strings    
-    @tag_array = @tag_array.map!(&:lstrip)
-    # avoid tag repetition
-    @tag_array = @tag_array.uniq
-    # order aphabetically
-    @tag_array = @tag_array.sort_by(&:downcase)
+
+    # getting a catalogue of all tags currently in use. // not sure wether this will be needed or wanted in the future
+    #@tag_string = ""
+    #Listing.all.each do |list|
+    #  @tag_string << ","
+    #  @tag_string << list.tags
+    # end
+    # @tag_array = @tag_string.split(",")
+    # @tag_array = @tag_array.map!{ |tag| tag.downcase }
+    # @tag_array = @tag_array.map!(&:lstrip)
+    # @tag_array = @tag_array.uniq
+    # @tag_array = @tag_array.sort_by(&:downcase)
   end
 
   def update_tags

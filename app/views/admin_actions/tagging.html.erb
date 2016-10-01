@@ -7,52 +7,47 @@
 
 <!-- content -->
 <div class="col-xs-6 col-xs-offset-2">
-  <!-- headline -->
-  <br> <br>
+  <br> <br> <br>
   <p> <%= notice %> </p>
-  <h2> Tagging </h2> <br>
+  <h2> Assigning Tags to Listings </h2> <br>
+
+  <!-- search options -->
   <%= link_to "All Listings", tagging_path, class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %>
-  <%= link_to "Untagged Listings", tagging_path(category: "none"), class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %> <br> <br>
+  <%= link_to "Untagged Listings", tagging_path(category: "none"), class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %> | 
   <%= link_to "Application Help", tagging_path(category: "application_help"), class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %>
   <%= link_to "Career Insights", tagging_path(category: "career_insights"), class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %>
-  <%= link_to "Mentoring & Coaching", tagging_path(category: "practical_expertise"), class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %> <br> <br> <br>
+  <%= link_to "Mentoring & Coaching", tagging_path(category: "practical_expertise"), class: "btn", style: "background-color: #FFD990; color: black; border: 1px solid black;" %> <br> <br> <br> <br>
   
-  <!-- lastly updated  -->
-  <div class="grey_box">
-      <h6> Lastly updated: </h6>
-      <p style="font-size: 18px;"> <%= @lastly_updated_listing.title %> </p>
-      <%= form_for :listing, url: update_tags_url(listing_id: @lastly_updated_listing.id) do |f| %>
-        <%= f.text_area :tags, value: @lastly_updated_listing.tags, style: "width: 100%; height: 48px;" %> <br>
-        <%= f.submit "update", style: "padding: 0px 3px; margin-right: 5px;" %>
-      <% end %> 
-  </div> <br> <br> <br> <br> <br>
-
-  <!-- listings -->
+  <!-- looping through all -->
   <% @all_listings.each do |listing| %>
-    <div style="margin-bottom: 115px;">
-      <p style="font-size: 18px;"> <strong> <%= listing.title %> </strong> </p>
-      <p style="font-size: 14px;"> <%= listing.description %> </p>
-      <% if listing.advisor %>
-        <p style="font-size: 14px;"> by <%= listing.advisor.first_name %> <%= listing.advisor.second_name %> </p>
-      <% end %>
-
-      <!-- set tags -->
-      <h6> Tags </h6>
-      <%= form_for :listing, url: update_tags_url(listing_id: listing.id) do |f| %>
-        <%= f.text_area :tags, value: listing.tags, style: "width: 100%; height: 68px;" %> <br>
-        <%= f.submit "update", style: "padding: 0px 3px; margin-right: 5px;" %>
-      <% end %> 
-    </div>
-  <% end %>
-</div>
-
-<!-- all tags -->
-<div class="tags_in_use grey_box">
-  <h6> Tags in use. </h6>
-  <h6>    
-    <% @tag_array.each do |tag| %>
-      <%= tag %> | 
+  <div style="margin-bottom: 65px;">
+    <p style="font-size: 18px;"> <strong> <%= listing.title %> by <%= listing.advisor.first_name if listing.advisor %> <%= listing.advisor.second_name if listing.advisor %></strong> </p>
+    <p style="font-size: 14px;"> <%= listing.description %> </p>
+    <!-- setting tags -->
+    <%= form_for :listing, url: update_tags_url(listing_id: listing.id) do |f| %>
+      <%= f.text_area :tags, value: listing.tags, style: "width: 100%; height: 68px;" %> <br>
+      <%= f.submit "update tags", style: "padding: 0px 3px; margin-right: 5px;" %>
     <% end %> 
-  </h6>
-</div>
+  </div>
+  <% end %>
 
+  <!-- tags directory -->
+  <div class="tags_in_use grey_box">
+    <h4> Application help tags </h4>
+    <% {"accounting" => "Accounting","audit" => "Auditing","banking" => "Banking","art_school" => "Art School","management_consulting" => "Management Consulting", "investment_banking" => "Investment Banking", "oxford" => "Oxford","asset_management" => "Asset Management","big4" => "Big4","biochemistry" => "Biochemistry","business_school" => "Business School","cambridge" => "Cambridge","phd" => "PhD","ucl" => "UCL" ,"world_bank" => "World Bank","wharton" => "Wharton","university_application" => "University Applications","travel_industry" => "Travel Industry","sales_careers" => "Sales","un" => "UN","scholarships" => "Scholarships","trading" => "Trading","theatre" => "Theatre","think_tanks" => "Think Tanks","product_management" => "Product Management", "politics" => "Politics","neuroscience" => "Neuroscience","teaching" => "Teaching","personal_statement" => "Personal Statements","ngos" => "NGOs","nonprofit" => "Non-profits","case_studies" => "Case Studies", "mathematics" => "Mathematics","humanitarian_careers" => "Humanitarian Careers","m&a" => "M&A","mba" => "MBA","mckinsey" => "McKinsey","hospitality" => "Hospitality","hr" => "HR","life_sciences" => "Life Sciences","international_relations"=> "International Relations", "interviews" => "Interview Prep","finance" => "Finance","healthcare" => "Healthcare","grad_school" => "Grad School","gmat" => "GMAT","history" => "History","grande_ecoles" => "Grand Ecoles","fintech" => "Fintech","funding_applications" => "Funding","fraud_investigation" => "Fraud Investigation","games_industry" => "Games Industry","economic_consulting" => "Economic Consulting","economics" => "Economics","diplomacy" => "Diplomacy", "cv" => "CV","yale" => "Yale"}.each do |key, value| %>
+      <%= key %>,
+    <% end %>
+    <br> <br>
+    <h4> Career Insights tags </h4>
+    <% {"accounting"=>"Accounting", "auditing"=>"Auditing", "asset_management" => "Asset Management","investment_banking"=>"Investment Banking", "management_consulting"=>"Management Consulting", "business" => "Business and Business Development", "finance" => "Finance", "theatre"=>"Theatre Careers", "heritage"=>"Heritage and Conservation", "non_profit"=>"Non-Profits", "humanitarian_careers"=>"Humanitarian Careers", "postdoc_and_academic"=>"Postdoc and Academic Careers", "diplomacy_ir"=>"Diplomacy, International Organizations & Relations", "teaching" => "Teaching","travel_industry" => "Travel Industry","hospitality" => "Hospitality", "art_design_graphics"=>"Art, Design and Graphics","product_management" => "Product Management","healthcare_sector" => "Healthcare Sector","entrepreneurship" => "Startup and Entrepreneurship","science_careers" => "Careers in Science","development_programming" => "Software, Development and Programming","career_change" => "Changing Careers","sales_careers" => "Sales Careers","Engineering" => "Engineering Careers", "freelance_translating" => "Freelance Translating","games_industry" => "Games Industry"}.each do |key, value| %>
+      <%= key %>,
+    <% end %>
+    <br> <br>
+    <h4> Mentoring & Coaching tags </h4>
+    <% {"accounting"=>"Entrepreneurship", "apps"=>"Software, Development and Programming", "beginning_programmers"=>"Personal Development", "blogging"=>"Design, Art and Graphics", "brainstorming"=>"Exam Preparation", "business"=>"Specific Skills", "business_development"=>"Health & Wellbeing", "canadian visa"=>"Business and Business Development", "capital_strategy"=>"Visa support", "startup"=>"Startup", "career_advice"=>"Personal Advice from People", "career_advice"=>"General Career Aid and Insight"}.each do |key, value| %>
+      <%= key %>,
+    <% end %>
+
+
+  </div>
+</div>
