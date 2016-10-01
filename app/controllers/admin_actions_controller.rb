@@ -55,10 +55,16 @@ class AdminActionsController < ApplicationController
 
   # tagging
   def tagging
-    if params[:no_tags]
-      @all_listings = Listing.where(tags: "no_tag_yet").order("updated_at ASC")
+    if params[:category] == "none"
+      @all_listings = Listing.where(tags: "no_tag_yet").order("updated_at DESC")   
+    elsif params[:category] == "application_help"
+      @all_listings = Listing.where("tags like ?", "%application_help%").order("updated_at DESC")
+    elsif params[:category] == "career_insights"
+      @all_listings = Listing.where("tags like ?", "%career_insights%").order("updated_at DESC")
+    elsif params[:category]== "practical_expertise"
+      @all_listings = Listing.where("tags like ?", "%practical_expertise%").order("updated_at DESC")
     else 
-      @all_listings = Listing.order("updated_at ASC")      
+      @all_listings = Listing.order("updated_at DESC")      
     end
     @lastly_updated_listing = Listing.order("updated_at").last
 
