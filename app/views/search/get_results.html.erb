@@ -16,15 +16,20 @@
 
   <div class="intro" style="margin-bottom: 10px;">
     
+    <div class="btn-on-show">
+      <%= link_to "What are you looking for?", new_user_request_path, class: "btn btn-md", style: "color: black;" %> <br>
+    </div>
+
     <!-- headline -->
-    <br>
+    <h3 style="border: none; padding: 8px; margin-bottom: 26px; text-decoration: underline; font-size: 28px;"> Find the right guidance for you. </h3>
+
     <% if @category %>
       <% if @category == "career_insights" %>
-        <h2 style="font-size: 37px; text-align: center;"> Insights into Career Paths </span> </h2>    
+        <h2 style="font-size: 27px; text-align: center;"> Insights into Career Paths </span> </h2>    
       <% elsif @category == "practical_expertise" %>
-        <h2 style="font-size: 37px; text-align: center;"> Mentoring & Support </span> </h2>
+        <h2 style="font-size: 27px; text-align: center;"> Mentoring & Support </span> </h2>
       <% else %>
-        <h2 style="font-size: 37px; text-align: center;"> Help with Applications </span> </h2>
+        <h2 style="font-size: 27px; text-align: center;"> Help with Applications </span> </h2>
       <% end %>
     <% else %>
       <h2 style="font-size: 27px; text-align: center;"> Use our categories and tags to find the right guidance for you. </span> </h2>    
@@ -88,7 +93,6 @@
 
   <!-- search results section -->
   <div id="mini_header">
-    <h6> Use the filters above to find the right guidance for you. </h6>
   </div>
 
   <div id="tag_search_results" style="display: none;">
