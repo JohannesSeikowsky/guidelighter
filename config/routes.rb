@@ -60,7 +60,7 @@ Rails.application.routes.draw do
 
   # tagging by admin
   get "tagging", to: "admin_actions#tagging", as: "tagging"
-  post "update_tags/:listing_id", to: "admin_actions#update_tags", as: "update_tags"
+  post "update_tags", to: "admin_actions#update_tags", as: "update_tags"
 
 
   # functionalities

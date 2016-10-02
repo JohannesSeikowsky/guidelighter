@@ -66,27 +66,19 @@ class AdminActionsController < ApplicationController
     else 
       @all_listings = Listing.order("updated_at DESC")      
     end
-    @lastly_updated_listing = Listing.order("updated_at").last
-
-
-    # getting a catalogue of all tags currently in use. // not sure wether this will be needed or wanted in the future
-    #@tag_string = ""
-    #Listing.all.each do |list|
-    #  @tag_string << ","
-    #  @tag_string << list.tags
-    # end
-    # @tag_array = @tag_string.split(",")
-    # @tag_array = @tag_array.map!{ |tag| tag.downcase }
-    # @tag_array = @tag_array.map!(&:lstrip)
-    # @tag_array = @tag_array.uniq
-    # @tag_array = @tag_array.sort_by(&:downcase)
   end
 
   def update_tags
-    @listing = Listing.find(params[:listing_id])
-    @listing.update_attributes(tags: params[:listing][:tags])
-    redirect_to tagging_path, notice: "Updated."
+    @all_listings = Listing.order("updated_at DESC")
+    render "tagging"
   end
+
+  def mass_updating
+    # find each listing using an identifier
+    # update each listing with the associated new tag
+  end
+
+
 
   def destroy_advisor
     @advisor = Advisor.find(params[:advisor_id])
