@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @listings = Listing.order("updated_at DESC")
+    @listings = Listing.order("updated_at ASC")
   end
 
   def about
