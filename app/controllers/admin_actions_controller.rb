@@ -56,28 +56,23 @@ class AdminActionsController < ApplicationController
   # tagging
   def tagging
     if params[:category] == "none"
-      @all_listings = Listing.where(tags: "no_tag_yet").order("updated_at DESC")   
+      @all_listings = Listing.where(tags: "no_tag_yet").order("updated_at ASC")   
     elsif params[:category] == "application_help"
-      @all_listings = Listing.where("tags like ?", "%application_help%").order("updated_at DESC")
+      @all_listings = Listing.where("tags like ?", "%application_help%").order("updated_at ASC")
     elsif params[:category] == "career_insights"
-      @all_listings = Listing.where("tags like ?", "%career_insights%").order("updated_at DESC")
+      @all_listings = Listing.where("tags like ?", "%career_insights%").order("updated_at ASC")
     elsif params[:category]== "practical_expertise"
-      @all_listings = Listing.where("tags like ?", "%practical_expertise%").order("updated_at DESC")
+      @all_listings = Listing.where("tags like ?", "%practical_expertise%").order("updated_at ASC")
     else 
-      @all_listings = Listing.order("updated_at DESC")      
+      @all_listings = Listing.order("updated_at ASC")      
     end
   end
 
   def update_tags
-    @all_listings = Listing.order("updated_at DESC")
-    render "tagging"
+    @listing = Listing.find(params[:listing_id])
+    @listing.update_attributes(tags: params[:listing][:tags])
+    redirect_to tagging_path, notice: "Tags Updated."
   end
-
-  def mass_updating
-    # find each listing using an identifier
-    # update each listing with the associated new tag
-  end
-
 
 
   def destroy_advisor
