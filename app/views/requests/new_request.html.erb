@@ -5,8 +5,7 @@
     <%= link_to "Contact Us", contact_path %>
     <%= link_to "How it works", how_path %>
     <%= link_to "What people say", reviews_path %>
-    <%= link_to "EXPLORE LISTINGS", search_path(category: "career_insights"), class: "btn white_border" %>
-    <%= link_to "BECOME A GUIDE", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+    <%= link_to "EXPLORE MORE LISTINGS!", search_path(category: "career_insights"), class: "btn white_border" %>
   </div>
 </div>
 
@@ -14,6 +13,10 @@
 <div class="simple_container">
   <!-- Background color -->
   <div class="color_background"> </div>
+
+  <div class="btn-on-show">
+    <%= link_to "Can't find what you need?", new_user_request_path, class: "btn btn-md", style: "color: white; background-color: #69A0A5; padding: 8px 32px;" %> <br>
+  </div>
 
   <!-- Request -->
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>  
@@ -46,5 +49,5 @@
     <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
   </div> <br> 
 
-  <p style=""> Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona </p>
+  <p> Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona </p>
 </div>
