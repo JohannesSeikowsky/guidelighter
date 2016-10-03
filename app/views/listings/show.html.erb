@@ -28,7 +28,7 @@
     <p> <%= simple_format @listing.description, style: "line-height: 1.5;" %> </p>
     <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
     <div class="button">
-      <%= link_to "Request #{@advisor.first_name}", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px;", id: "std-btn" %>
+      <%= link_to "Request Guide", new_request_path(listing_id: @listing.id), style: "padding: 15px 58px;", id: "std-btn" %>
     </div>
   </div> <br>
 

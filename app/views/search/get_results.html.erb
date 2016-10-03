@@ -16,7 +16,7 @@
   <div class="intro" style="margin-bottom: 10px;">
     
     <div class="btn-on-show">
-      <%= link_to "Can't find what you need?", new_user_request_path, class: "btn btn-md", style: "color: white; background-color: #69A0A5; padding: 7px 32px;" %> <br>
+      <%= link_to "Can't find what you need?", new_user_request_path, class: "btn btn-md", style: "color: white; background-color: #69A0A5; padding: 8px 32px;" %> <br>
     </div>
 
     <!-- headline -->
@@ -93,7 +93,8 @@
     <%= render "looping_through_results" %>
   </div>
 
-  <div class="bottom_right_buttons">
+  <div class="bottom_right_buttons" style="width: 180px;">
+    <p style="font-size: 13px;"> Note:  <br> If you request a guide, is not binding. It's about getting in touch in the first place. </p>
     <%= link_to "Submit a request", new_user_request_path, class: "btn btn-md", style: "background-color: white; color: black; border: 1px solid black;" %>
   </div>
 
