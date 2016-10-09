@@ -31,7 +31,32 @@
     ga('create', 'UA-75880941-1', 'auto');
     ga('send', 'pageview');
   </script>
+
+  <!-- Crazy-Egg -->
+  <script type="text/javascript">
+  setTimeout(function(){var a=document.createElement("script");
+  var b=document.getElementsByTagName("script")[0];
+  a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0056/4456.js?"+Math.floor(new Date().getTime()/3600000);
+  a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+  </script>
+
+  <!-- Kissmetrics -->
+  <script type="text/javascript">var _kmq = _kmq || [];
+  var _kmk = _kmk || 'fce97bcc3ab73b38b8f96424ce81980fd71aeaf6';
+  function _kms(u){
+    setTimeout(function(){
+      var d = document, f = d.getElementsByTagName('script')[0],
+      s = d.createElement('script');
+      s.type = 'text/javascript'; s.async = true; s.src = u;
+      f.parentNode.insertBefore(s, f);
+    }, 1);
+  }
+  _kms('//i.kissmetrics.com/i.js');
+  _kms('//scripts.kissmetrics.com/' + _kmk + '.2.js');
+  </script>
 </head>
+
+
 <body>
   <!--  FB sdk -->
   <div id="fb-root"></div>
@@ -53,17 +78,9 @@
     <div>
       <%= yield %>
     </div>
-
 </body>
 </html>
 
-<!--
-  Backlog:
-  
-  currently email attribute of advisr is case senstive (it does discriminate)
-  - meainng for instance I could not log into my accout using email Seikowsky@gmail.com  (it discriminates..)
-  solve??
--->
 
 
 
