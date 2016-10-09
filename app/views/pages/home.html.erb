@@ -1,4 +1,4 @@
-p<div class="gl_header">
+<div class="gl_header">
   <% if logged_in? %>
     <div class="links">
       <%= link_to "About Us", about_path %>
@@ -22,7 +22,6 @@ p<div class="gl_header">
     </div>
   <% end %>
 </div>
-
 
 <div class="home_container">
   <div class="image_background"> </div>
@@ -83,7 +82,7 @@ p<div class="gl_header">
   <!-- onhover subtags -->
   <%= link_to search_path(category: "practical_expertise") do %>
     <div class="homepage_subtags" id="practical_expertise_subtags" style="text-align: center;">
-      <% ["Entrepreneurship", "Exam Preparation", "Sparrings Partner"].each do |title| %>
+      <% ["Entrepreneurship", "Exam Preparation", "Brainstorming Partner"].each do |title| %>
         <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
           <%= title %>
         </div>
@@ -137,7 +136,6 @@ p<div class="gl_header">
   </div>
 
 </div>
-
 
 
 <script type="text/javascript">
