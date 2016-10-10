@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 'signup', to: 'advisors#signup_action', as: 'signup_action'
 
   # profiles
+  get 'profile/:profile_id', to: 'profiles#show', as: 'show_profile'
+
   get 'new_profile', to: 'profiles#new_profile', as: 'new_profile'
   post 'new_profile', to: 'profiles#new_profile_action', as: "new_profile_action"
 

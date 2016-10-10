@@ -23,6 +23,11 @@ class ProfilesController < ApplicationController
     end 
   end
 
+  def show
+    @profile = Profile.find(params[:profile_id])
+    @advisor = @profile.advisor
+  end
+
   def edit
     if logged_in?
       @advisor = Advisor.find(session[:id])

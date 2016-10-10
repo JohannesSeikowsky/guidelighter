@@ -96,7 +96,7 @@
   <!-- listings -->
   <% @listings.each do |listing| %>
     <% if listing.advisor && listing.advisor.profile %>
-      <%= link_to show_listing_path(listing_id: listing) do %>
+      <%= link_to show_profile_path(profile_id: listing.advisor.profile) do %>
         
         <div class="listing">
           <!-- Image -->
