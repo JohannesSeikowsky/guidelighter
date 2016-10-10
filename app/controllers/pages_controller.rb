@@ -1,12 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @advisors = Advisor.all
-    @listings = []
-    
-    @advisors.each do |adv|
-      @listings << adv.listings.first
-    end
+    @listings = Listing.order("updated_at ASC")
   end
 
   def about
