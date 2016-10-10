@@ -15,35 +15,42 @@
   
   <div class="btn-on-show">
     <%= link_to "Back", "#", onclick: "goBack();", class: "btn btn-md" %>
-    <%= link_to "Browse more Listings", search_path(), class: "btn btn-md" %> <br>
+    <!-- <%= link_to "Browse more Listings", search_path(), class: "btn btn-md" %> <br> -->
   </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
   <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. / your guide </h6>
   <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> <br>
 
- 
+  <div id="request_from" style="display: none;">
+    <h6> Request </h6>
+    <div class="grey_box">  
+      <h3> Request Form </h3>
+      <%= form_for :message, url: create_listing_message_path do |f| %> 
+        <h6> Briefly, what is your situation? What would you like help with? <br> </h6>
+        <%= f.text_field :indicated_interest , style: "width: 372px;", class: "small_placeholder_text" %>
+        <h6>When would you usually be available for a session? Days? Times? </h6>
+        <%= f.text_field :requesting_availability, style: "width: 372px;", class: "small_placeholder_text" %>
+        <h6>Your Email - so we can reply. </h6>
+        <%= f.text_field :requesting_email, style: "width: 372px;", class: "small_placeholder_text" %>
+        <h6>Your Name - for a personal touch. </h6>
+        <%= f.text_field :requesting_name, style: "width: 372px;", class: "small_placeholder_text" %>
+        <%= f.hidden_field :listing_id, value: @listing_id %>
+        <%= f.submit "Done.", id: "std-btn" %> <br>
+        <h6>Note: This request is not binding. It's purpose is to check wether it <br> is possible to arrange a session with the guide you are requesting. </h6>
+      <% end %>     
+    </div>
+  </div>
+
+  <h6> The Guide </h6>
   <div class="grey_box" style="padding: 4px 52px 8px 52px;">
     <h3> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>.  </h3>
     <p> <%= simple_format @profile.description, style: "line-height: 1.5;" %> </p>
     <div class="button">
-      <%= link_to "Request Guide", new_request_path(listing_id: @profile.id), style: "padding: 19px 100px;", id: "std-btn" %>
+      <%= link_to "Request #{@advisor.first_name}", "", onmouseup: "showRequest();", style: "padding: 19px 90px;", id: "std-btn" %>
     </div>
   </div> <br>
 
-
-  <h6> Can  <%= @advisor.first_name %> help? </h6>
-  <div class="grey_box" style="padding: 14px 52px 8px 52px;">
-    <br>
-    <%= form_for :message, url: create_listing_message_path do |f| %> 
-      <%= f.text_area :content, placeholder: "What do you need help with?", style: "height: 72px;" %>
-      <%= f.text_field :reply_address, placeholder: "your@email.com", style: "width: 100%;" %> <br>
-      <%= f.hidden_field :listing_id, value: @profile.id %>
-      <div class="button" style="padding-top: 0px;"> 
-        <%= f.submit "Check wether guide can help you out", style: "padding: 2px 30px;", id: "std-btn" %>
-      </div>
-    <% end %>
-  </div> <br>
 
   <div class="bottom_right_buttons">
     <%= link_to "Submit a request", new_user_request_path, class: "btn btn-md" %>
@@ -56,6 +63,10 @@
 <script type="text/javascript">
   function goBack(){
     window.history.back()
+  }
+
+  function showRequest(){
+    $("#request_from").css("display", "block");
   }
 </script>
 
