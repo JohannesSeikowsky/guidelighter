@@ -98,7 +98,7 @@
     <% if advisor && advisor.profile %>
 
 
-      <%= link_to show_listing_path(listing_id: advisor.listings[0]) do %>
+      <%= link_to show_listing_path(listing_id: advisor.listings[0].id) do %>
         <div class="listing">
           <!-- Image -->
           <% unless advisor.profile.nil? %>  
