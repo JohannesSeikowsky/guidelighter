@@ -40,7 +40,7 @@
     </div>
   </div> <br>
 
-  <!-- <h6> Check with us wether this guide can help </h6>
+  <h6> Can  <%= @advisor.first_name %> help? </h6>
   <div class="grey_box" style="padding: 14px 52px 8px 52px;">
     <br>
     <%= form_for :message, url: create_listing_message_path do |f| %> 
@@ -48,10 +48,10 @@
       <%= f.text_field :reply_address, placeholder: "your@email.com", style: "width: 100%;" %> <br>
       <%= f.hidden_field :listing_id, value: @listing.id %>
       <div class="button" style="padding-top: 0px;"> 
-        <%= f.submit "Ask your question", style: "padding: 2px 30px;", id: "std-btn" %>
+        <%= f.submit "Check wether guide can help", style: "padding: 2px 30px;", id: "std-btn" %>
       </div>
     <% end %>
-  </div> <br> -->
+  </div> <br>
 
   <div class="bottom_right_buttons">
     <%= link_to "Submit a request", new_user_request_path, class: "btn btn-md" %>
