@@ -39,13 +39,12 @@
   </div> <br> <br>
 
   <!-- Listing -->
-  <h6 style="text-decoration: underline;"> The Listing in question </h6>
+  <h6 style="text-decoration: underline;"> The Guide </h6>
   <div class="grey_box" style="padding: 4px 52px 20px 52px;">
     <h3> <%= @listing.advisor.first_name %> <%= @listing.advisor.second_name[0] %>.  </h3>
     <%= image_tag @listing.advisor.profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> <br>
 
-    <h3> <%= @listing.title %> </h3>
-    <p> <%= simple_format @listing.description, style: "line-height: 1.5;" %> </p>
+    <p> <%= simple_format @listing.advisor.profile.description, style: "line-height: 1.5;" %> </p>
     <p style="font-size: 15px; text-decoration: underline; margin-bottom: 0px;">Price: <%= @listing.price %> £ </p>
   </div> <br> 
 

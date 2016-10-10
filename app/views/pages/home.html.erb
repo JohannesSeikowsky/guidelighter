@@ -30,7 +30,7 @@
   <!-- Intro  -->
   <div class="intro">
     <p class="centered"> <%= notice %> </p>
-    <h2 id="gl_slogan">  <br> who care </h2>
+    <h2 id="gl_slogan"> Personal guidance from real people <br> who care </h2>
     <div class="button">
       <% if logged_in? %>
         <%= link_to "POST A LISTING", new_listing_path, id: "hp_button" %> <br> <br>
@@ -47,7 +47,7 @@
   </div>
 
   <!-- subheader -->
-  <h5 style="padding-top: 12px;"> Personal guidance from real people </h5>
+  <h5 style="padding-top: 15px;"> Find the guide and guidance you are looking for. </h5>
 
   <!-- the threee categories -->
   <div style="margin-bottom: 12px;">
@@ -112,14 +112,14 @@
             <% unless listing.price.nil? %>
               <% unless listing.price == 0 %>
               <span class="bottom">              
-                <%= link_to "#{listing.advisor.first_name} #{listing.advisor.second_name[0]}. |", new_request_path(listing_id: listing.id) %>
-                <%= link_to "Send Request |", new_request_path(listing_id: listing.id) %>
+                <!-- <%= link_to "#{listing.advisor.first_name} #{listing.advisor.second_name[0]}. |", new_request_path(listing_id: listing.id) %> -->
+                <%= link_to "Request #{listing.advisor.first_name} |", new_request_path(listing_id: listing.id) %>
                 <%= link_to "#{listing.price} £ ", new_request_path(listing_id: listing.id) %>
               </span>
               <% else %>
               <span class="bottom">              
-                <%= link_to "#{listing.advisor.first_name} #{listing.advisor.second_name[0]}. |", new_request_path(listing_id: listing.id) %>
-                <%= link_to "Request Guide |", new_request_path(listing_id: listing.id) %>
+                <!-- <%= link_to "#{listing.advisor.first_name} #{listing.advisor.second_name[0]}. |", new_request_path(listing_id: listing.id) %> -->
+                <%= link_to "Request #{listing.advisor.first_name} |", new_request_path(listing_id: listing.id) %>
                 <%= link_to "Free", new_request_path(listing_id: listing.id) %>
               </span>
               <% end %>
