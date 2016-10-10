@@ -95,7 +95,7 @@
 
   <!-- listings -->
   <% @advisors.each do |advisor| %>
-    <% if advisor && advisor.profile %>
+    <% if advisor && advisor.profile && advisor.listings %>
 
 
       <%= link_to show_listing_path(listing_id: advisor.listings[0].id) do %>
