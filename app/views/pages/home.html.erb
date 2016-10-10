@@ -94,34 +94,35 @@
 
 
   <!-- listings -->
-  <% @advisors.each do |advisor| %>
-    <% if advisor && advisor.profile && advisor.listings %>
-
-
-      <%= link_to show_listing_path(listing_id: advisor.listings[0].id) do %>
+  <% @listings.each do |listing| %>
+    <% if listing.advisor && listing.advisor.profile %>
+      <%= link_to show_listing_path(listing_id: listing) do %>
+        
         <div class="listing">
           <!-- Image -->
-          <% unless advisor.profile.nil? %>  
-            <% unless advisor.profile.profile_image.url.nil? %> 
-                <div class="centered"> <%= image_tag advisor.profile.profile_image.url %> </div>
+          <% unless listing.advisor.profile.nil? %>  
+            <% unless listing.advisor.profile.profile_image.url.nil? %> 
+                <div class="centered"> <%= image_tag listing.advisor.profile.profile_image.url %> </div>
             <% end %>
           <% end %>
           <!-- Title -->
-          <% unless advisor.listings[0].title.empty? %>
-            <div id="listing_title"> <h4> <%= advisor.first_name %> <%= advisor.second_name %> </h4> </div>
+          <% unless listing.title.empty? %>
+            <div id="listing_title"> <h4> <%= listing.advisor.first_name %> <%= listing.advisor.second_name %> </h4> </div>
           <% end %>
           <!-- Bottom -->
           <div id="listing_bottom"> 
-            <% unless advisor.listings[0].price.nil? %>
-              <% unless advisor.listings[0].price == 0 %>
+            <% unless listing.price.nil? %>
+              <% unless listing.price == 0 %>
               <span class="bottom">              
-                <%= link_to "Request #{advisor.first_name} |", new_request_path(listing_id: advisor.listings[0].id) %>
-                <%= link_to "#{advisor.listings[0].price} £ ", new_request_path(listing_id: advisor.listings[0].id) %>
+                <!-- <%= link_to "#{listing.advisor.first_name} #{listing.advisor.second_name[0]}. |", new_request_path(listing_id: listing.id) %> -->
+                <%= link_to "Request #{listing.advisor.first_name} |", new_request_path(listing_id: listing.id) %>
+                <%= link_to "#{listing.price} £ ", new_request_path(listing_id: listing.id) %>
               </span>
               <% else %>
               <span class="bottom">              
-                <%= link_to "Request #{advisor.first_name} |", new_request_path(listing_id: advisor.listings[0].id) %>
-                <%= link_to "Free", new_request_path(listing_id: advisor.listings[0].id) %>
+                <!-- <%= link_to "#{listing.advisor.first_name} #{listing.advisor.second_name[0]}. |", new_request_path(listing_id: listing.id) %> -->
+                <%= link_to "Request #{listing.advisor.first_name} |", new_request_path(listing_id: listing.id) %>
+                <%= link_to "Free", new_request_path(listing_id: listing.id) %>
               </span>
               <% end %>
             <% end %>
