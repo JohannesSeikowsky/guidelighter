@@ -1,13 +1,16 @@
 class ListingMessagesController < ApplicationController
 
   def create
-    @listing = Listing.find(params[:message][:listing_id])
-    @message = ListingMessage.create(listing_message_params)
+    @advisor = Advisor.find(params[:message][:advisor_id])
+    @profile = @advisor.profile
+    @content = params[:message][:content]
+    @reply_address = params[:message][:reply_address]
     # mailer
-    GeneralMailer.listing_message(@message, @listing).deliver
+    GeneralMailer.question_message(@advisor, @content, @reply_address).deliver
     # redirect
-    redirect_to show_listing_path(params[:message][:listing_id]), notice: "Your message has been sent. We will get back to you asap."
+    redirect_to show_profile_path(profile_id: @profile.id), notice: "Your message has been sent. We will get back to you asap."
   end
+
 
   private
   def listing_message_params

@@ -36,7 +36,7 @@
 
   <div id="request_from" style="display: none;">
     <h6> Request </h6>
-    <div class="grey_box" style="margin-bottom: 10px;">  
+    <div class="grey_box" style="margin-bottom: 25px;">  
       <h3> Request Form </h3>
       <%= form_for :request, url: create_request_path(advisor_id: @advisor.id) do |f| %>
         <h6> Briefly, what is your situation? What would you like help with? <br> </h6>
@@ -52,6 +52,21 @@
         <h6> Note: This request is not binding. It's purpose is to check wether it <br> is possible to arrange a session with the guide you are requesting. </h6>
       <% end %>     
     </div>
+  </div>
+
+  <div id="questions">
+    <h6> Questions? </h6>
+    <div class="grey_box" style="padding: 14px 52px 8px 52px;">
+      <br>
+      <%= form_for :message, url: question_message_path do |f| %> 
+        <%= f.text_area :content, placeholder: "your question", style: "height: 72px;" %>
+        <%= f.text_field :reply_address, placeholder: "your@email.com", style: "width: 100%;" %> <br>
+        <%= f.hidden_field :advisor_id, value: @advisor.id %>
+        <div class="button" style="padding-top: 0px;"> 
+          <%= f.submit "Ask", style: "padding: 2px 30px;", id: "std-btn" %>
+        </div>
+      <% end %>
+    </div> <br>
   </div>
 
   <div class="bottom_right_buttons">

@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   delete 'delete_listing/:listing_id', to: 'listings#destroy', as: 'delete_listing'
 
-  post 'listing_message', to: 'listing_messages#create', as: 'create_listing_message'
+  post 'question', to: 'listing_messages#create', as: 'question_message'
 
   # requests
   get 'request/:listing_id', to: "requests#new_request", as: 'new_request'

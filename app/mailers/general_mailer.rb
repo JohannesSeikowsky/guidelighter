@@ -23,10 +23,11 @@ class GeneralMailer < ApplicationMailer
     mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com, surojitc@gmail.com", subject: "New Message from Contact-Us Form")
   end
 
-  def listing_message(message, listing)
-    @message = message
-    @listing = listing
-    mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com, surojitc@gmail.com", subject: "New Message from a specific Listing")
+  def question_message(advisor, content, reply_address)
+    @advisor = advisor
+    @content = content
+    @reply_address = reply_address
+    mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com, surojitc@gmail.com", subject: "Question from user")
   end
 
   def daily_requests_count(number_of_requests)
