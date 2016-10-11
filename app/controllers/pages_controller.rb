@@ -1,9 +1,8 @@
 class PagesController < ApplicationController
 
   def home
-    @listings = Listing.order("updated_at ASC")
-    @advisors = Advisor.all
-    @price_selection = [15,25,30]
+    @advisors = Advisor.order("created_at DESC")
+    @price_selection = [15,25,35]
   end
 
   def about
