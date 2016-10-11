@@ -11,13 +11,12 @@ class RequestsController < ApplicationController
 
     if @request.save
       # notifying us
-      # GeneralMailer.request_notification(@request).deliver if Rails.env.production?
+      GeneralMailer.request_notification(@advisor, @request).deliver if Rails.env.production?
       # confirm to user
-      # GeneralMailer.request_delivery_confirmation(@request).deliver
+      GeneralMailer.request_delivery_confirmation(@advisor, @request).deliver
       # redirect
       redirect_to successful_request_path, notice: "Your request has been sent successfully."
     else
-      # this need to be changed.
       redirect_to show_profile_path(profile_id: @advisor.profile.id), notice: "Please fill out all fields before sending your request."
     end
   end

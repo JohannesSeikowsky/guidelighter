@@ -6,15 +6,14 @@ class GeneralMailer < ApplicationMailer
     mail(to: advisor.email, subject: "Signed up!")
   end 
 
-  def request_notification(request)
+  def request_notification(advisor, request)
+    @advisor = advisor
     @request = request
-    @listing = request.listing
-    @advisor = @listing.advisor
     mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com, surojitc@gmail.com", subject: "New Request for a Listing")
   end
 
-  def request_delivery_confirmation(request)
-    @requested_title = request.listing.title
+  def request_delivery_confirmation(advisor, request)
+    @advisor = advisor
     @requesting_email = request.requesting_email
     mail(to: @requesting_email, subject: "Your request has been sent.")
   end
