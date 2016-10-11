@@ -6,7 +6,7 @@
 
 <div class="simple_container">
   <p> <%= notice %> </p>
-  <h2> Managing Advisors | <%= link_to "Tag Management", tagging_path, class: "btn btn-md" %> </h2> <br>
+  <h2> Managing Advisors | <%= link_to "Tags", tagging_path, class: "btn btn-md" %> </h2> <br>
 
   <div style="font-size: 19px;"> 
     <span style="text-decoration: underline;"> Metrics </span> <br>
@@ -18,16 +18,15 @@
   <% @all_advisors.each do |adv| %>
     <p> 
       <%= link_to "https://www.google.com/search?q=#{adv.first_name}+#{adv.second_name}", target: "_blank" do %>
-        <%= adv.first_name %> <%= adv.second_name %> - search. <br>
+        <%= adv.first_name %> <%= adv.second_name %> <br>
       <% end %>
-      <%= adv.email %> <br>
       <% if adv.profile.nil? %>
-        profile: 0 <br>
+        profile: no <br>
       <% else %>
-        profile: 1 <br>
+        profile: yes <br>
       <% end %>
-      listings: <%= adv.listings.count %> <br>
-      <%= link_to "see and edit", advisors_resources_path(advisor_id: adv.id) %> <br>
+      <!-- listings: <%= adv.listings.count %> <br> -->
+      <%= link_to "edit", advisors_resources_path(advisor_id: adv.id) %> <br>
       <%= link_to "delete", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: "Destroy this Advisor? The advisor's profile and listings will be destroyed with it." } %>
     </p>
     <br>
