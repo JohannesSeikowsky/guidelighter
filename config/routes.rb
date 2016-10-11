@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   # requests
   get 'request/:listing_id', to: "requests#new_request", as: 'new_request'
-  post 'request/:listing_id', to: 'requests#create_request', as: 'create_request'
+  post 'request/:advisor_id', to: 'requests#create_request', as: 'create_request'
   get 'request_successful', to: 'requests#successful_request', as: 'successful_request'
 
   # sessions

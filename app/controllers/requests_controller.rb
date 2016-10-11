@@ -6,17 +6,19 @@ class RequestsController < ApplicationController
   end
 
   def create_request
-    @listing = Listing.find(params[:listing_id])
-    @request = @listing.requests.build(request_params)
+    @advisor = Advisor.find(params[:advisor_id])
+    @request = Request.new(request_params)
+
     if @request.save
-      # notifying us with details of request
-      GeneralMailer.request_notification(@request).deliver if Rails.env.production?
-      # notifying user that request was sent
-      GeneralMailer.request_delivery_confirmation(@request).deliver
+      # notifying us
+      # GeneralMailer.request_notification(@request).deliver if Rails.env.production?
+      # confirm to user
+      # GeneralMailer.request_delivery_confirmation(@request).deliver
       # redirect
       redirect_to successful_request_path, notice: "Your request has been sent successfully."
     else
-      redirect_to new_request_path(listing_id: @listing.id), notice: "Please fill out all fields before sending your request."
+      # this need to be changed.
+      redirect_to show_profile_path(profile_id: @advisor.profile.id), notice: "Please fill out all fields before sending your request."
     end
   end
 
@@ -25,7 +27,7 @@ class RequestsController < ApplicationController
 
   private
   def request_params
-    params.require(:request).permit(:requesting_email, :requesting_name, :indicated_interest, :requesting_availability, :listing_id)
+    params.require(:request).permit(:requesting_email, :requesting_name, :indicated_interest, :requesting_availability, :advisor_id)
   end
 
 end

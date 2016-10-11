@@ -29,16 +29,16 @@
       <h3> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>.  </h3>
       <p> <%= simple_format @profile.description, style: "line-height: 1.5;" %> </p>
       <div class="button">
-        <a id="std-btn" style="padding: 19px 92px;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
+        <a id="std-btn" style="padding: 19px 92px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
       </div>
     </div> <br>
   </div>
 
   <div id="request_from" style="display: none;">
     <h6> Request </h6>
-    <div class="grey_box">  
+    <div class="grey_box" style="margin-bottom: 10px;">  
       <h3> Request Form </h3>
-      <%= form_for :message, url: create_listing_message_path do |f| %> 
+      <%= form_for :request, url: create_request_path(advisor_id: @advisor.id) do |f| %>
         <h6> Briefly, what is your situation? What would you like help with? <br> </h6>
         <%= f.text_field :indicated_interest , style: "width: 372px;", class: "small_placeholder_text" %>
         <h6>When would you usually be available for a session? Days? Times? </h6>
@@ -47,7 +47,7 @@
         <%= f.text_field :requesting_email, style: "width: 372px;", class: "small_placeholder_text" %>
         <h6>Your Name - for a personal touch. </h6>
         <%= f.text_field :requesting_name, style: "width: 372px;", class: "small_placeholder_text" %>
-        <%= f.hidden_field :listing_id, value: @listing_id %>
+        <%= f.hidden_field :advisor_id, value: @advisor.id %>
         <%= f.submit "Done.", id: "std-btn" %> <br>
         <h6> Note: This request is not binding. It's purpose is to check wether it <br> is possible to arrange a session with the guide you are requesting. </h6>
       <% end %>     
@@ -69,7 +69,6 @@
 
   function showRequest(){
     $("#request_from").css("display", "block");
-    $("#love").css("display", "none");
   }
 </script>
 
