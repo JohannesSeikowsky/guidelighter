@@ -9,13 +9,13 @@ class GeneralMailer < ApplicationMailer
   def request_notification(advisor, request)
     @advisor = advisor
     @request = request
-    mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com, surojitc@gmail.com", subject: "New Request for a Listing")
+    mail(to: "founders@guidelighter.com, seikowsky@gmail.com, ogiberstein@gmail.com, surojitc@gmail.com", subject: "New Request")
   end
 
   def request_delivery_confirmation(advisor, request)
     @advisor = advisor
     @requesting_email = request.requesting_email
-    mail(to: @requesting_email, subject: "Your request has been sent.")
+    mail(to: @requesting_email, subject: "Success.")
   end
 
   def contact_us_message(message)

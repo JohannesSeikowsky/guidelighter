@@ -1,19 +1,17 @@
-<h4> User with email "<%= @request.requesting_email %>" has requested <%= @advisor.first_name %> <%= @advisor.second_name %>. Here some relevant data: </h4>
+<h4> User with email "<%= @request.requesting_email %>" has requested the guide "<%= @advisor.first_name %> <%= @advisor.second_name %>". <br> Here the relevant data: </h4>
 
 <p style="text-decoration: underline;"> 1. Indicated interest of requesting user </p>
-<p> User input: "<%= @request.indicated_interest %>" </p> <br>
+<p> "<%= @request.indicated_interest %>" </p> <br>
 
 <p style="text-decoration: underline;"> 1. Availability of requesting user </p>
-<p> User input: "<%= @request.requesting_availability %>" </p> <br>
+<p> "<%= @request.requesting_availability %>" </p> <br>
 
-<p style="text-decoration: underline;"> 2. Requested guide (to contact and check availability) </p>
+<p style="text-decoration: underline;"> 2. Requested Guide Info - to contact and check availability </p>
 <p> Guide name: <%= @advisor.first_name %> <%= @advisor.second_name %> </p>
 <p> Guide email: <%= @advisor.email %> </p> <br>
 
-<p style="text-decoration: underline;"> 3. Email address of requesting user (to get back to) </p>
-<p> User input: <%= @request.requesting_email %> </p> <br>
-
-<p style="text-decoration: underline;"> 4. Name of requesting user </p>
-<p> User input: <%= @request.requesting_name %> </p> <br>
-
+<p style="text-decoration: underline;"> 3. Requesting User Info - to get back to) </p>
+<p> User name: <%= @request.requesting_name %> </p> <br>
+<p> User email: <%= @request.requesting_email %> </p> <br>
+  
 <p> <strong> Also, Win! 5 points for Gryffindor. </strong> </p>
