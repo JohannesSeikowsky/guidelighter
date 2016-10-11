@@ -86,6 +86,23 @@ html, body {
   }
 }
 
+.bottom_right_buttons_home{
+  position: fixed;
+  bottom: 12px; 
+  right: 12px;
+  a{ 
+    background-color: white; color: black; padding: 9px 32px; border: 2px black solid;
+    margin-bottom: 4px; float: right; width: 139px;
+  }
+  a:hover{
+    background-color: #E49362;
+  }
+
+  @media (max-width: 1300px){
+    display: none;
+  }
+}
+
 .more-tags-btn:hover{
   font-weight: bold;
 }
