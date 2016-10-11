@@ -40,18 +40,20 @@
     </div>
   </div> <br>
 
-  <h6> Questions? </h6>
-  <div class="grey_box" style="padding: 14px 52px 8px 52px;">
-    <br>
-    <%= form_for :message, url: create_listing_message_path do |f| %> 
-      <%= f.text_area :content, placeholder: "your question", style: "height: 72px;" %>
-      <%= f.text_field :reply_address, placeholder: "your@email.com", style: "width: 100%;" %> <br>
-      <%= f.hidden_field :listing_id, value: @listing.id %>
-      <div class="button" style="padding-top: 0px;"> 
-        <%= f.submit "Check wether guide can help you out", style: "padding: 2px 30px;", id: "std-btn" %>
-      </div>
-    <% end %>
-  </div> <br>
+  <div id="questions">
+    <h6> Questions? </h6>
+    <div class="grey_box" style="padding: 14px 52px 8px 52px;">
+      <br>
+      <%= form_for :message, url: question_message_path do |f| %> 
+        <%= f.text_area :content, placeholder: "your question", style: "height: 72px;" %>
+        <%= f.text_field :reply_address, placeholder: "your@email.com", style: "width: 100%;" %> <br>
+        <%= f.hidden_field :advisor_id, value: @advisor.id %>
+        <div class="button" style="padding-top: 0px;"> 
+          <%= f.submit "Ask", style: "padding: 2px 30px;", id: "std-btn" %>
+        </div>
+      <% end %>
+    </div> <br>
+  </div>
 
   <div class="bottom_right_buttons">
     <%= link_to "Submit a request", new_user_request_path, class: "btn btn-md" %>
