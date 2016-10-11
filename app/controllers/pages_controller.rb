@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   def home
     @listings = Listing.order("updated_at ASC")
     @advisors = Advisor.all
+    @price_selection = [25,30,40]
   end
 
   def about

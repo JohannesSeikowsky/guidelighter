@@ -59,7 +59,7 @@
   </div> -->
 
 
-  <!-- onhover subtags -->
+  <!-- onhover subtags
   <%= link_to search_path(category: "application_help") do %>
     <div class="homepage_subtags" id="application_help_subtags" style="text-align: center;">
       <% ["Investment Banking", "Consulting", "University Application"].each do |title| %>
@@ -68,9 +68,9 @@
         </div>
       <% end %> ........ Click to see all categories and tags.
     </div>
-  <% end %>
+  <% end %>  -->
 
-  <!-- onhover subtags -->
+  <!-- onhover subtags 
   <%= link_to search_path(category: "career_insights") do %>
     <div class="homepage_subtags" id="career_insights_subtags" style="text-align: center;">
       <% ["Investment Banking", "Consulting", "Non-Profits"].each do |title| %>
@@ -79,9 +79,9 @@
         </div>
       <% end %> ........ Click to see all categories and tags.
     </div>
-  <% end %>
+  <% end %> -->
 
-  <!-- onhover subtags -->
+  <!-- onhover subtags 
   <%= link_to search_path(category: "practical_expertise") do %>
     <div class="homepage_subtags" id="practical_expertise_subtags" style="text-align: center;">
       <% ["Entrepreneurship", "Exam Preparation", "Brainstorming Partner"].each do |title| %>
@@ -90,14 +90,14 @@
         </div>
       <% end %> ........ Click to see all categories and tags.
     </div>
-  <% end %>
+  <% end %> -->
 
 
   <!-- listings -->
   <% @listings.each do |listing| %>
     <% if listing.advisor && listing.advisor.profile %>
+
       <%= link_to show_profile_path(profile_id: listing.advisor.profile) do %>
-        
         <div class="listing">
           <!-- Image -->
           <% unless listing.advisor.profile.nil? %>  
@@ -105,36 +105,25 @@
                 <div class="centered"> <%= image_tag listing.advisor.profile.profile_image.url %> </div>
             <% end %>
           <% end %>
-          <!-- Title -->
+          <!-- Name -->
           <% unless listing.title.empty? %>
-            <div id="listing_title"> <h4> <%= listing.advisor.first_name %> <%= listing.advisor.second_name %> </h4> </div>
+            <div id="listing_name"> <h4> <%= listing.advisor.first_name %> <%= listing.advisor.second_name %> </h4> </div>
           <% end %>
           <!-- Bottom -->
           <div id="listing_bottom"> 
-            <% unless listing.price.nil? %>
-              <% unless listing.price == 0 %>
-              <span class="bottom">              
-                <!-- <%= link_to "#{listing.advisor.first_name} #{listing.advisor.second_name[0]}. |", new_request_path(listing_id: listing.id) %> -->
-                <%= link_to "Request #{listing.advisor.first_name} |", new_request_path(listing_id: listing.id) %>
-                <%= link_to "#{listing.price} £ ", new_request_path(listing_id: listing.id) %>
-              </span>
-              <% else %>
-              <span class="bottom">              
-                <!-- <%= link_to "#{listing.advisor.first_name} #{listing.advisor.second_name[0]}. |", new_request_path(listing_id: listing.id) %> -->
-                <%= link_to "Request #{listing.advisor.first_name} |", new_request_path(listing_id: listing.id) %>
-                <%= link_to "Free", new_request_path(listing_id: listing.id) %>
-              </span>
-              <% end %>
-            <% end %>
+            <span class="bottom">              
+              <%= link_to "Request #{listing.advisor.first_name} |", new_request_path(listing_id: listing.id) %>
+              <%= link_to "#{@price_selection.sample} £", new_request_path(listing_id: listing.id) %>
+            </span>
           </div>
         </div>
-
       <% end %>
+
     <% end %>
   <% end %>
 
   <div class="bottom_right_buttons">
-   <h6 style="text-align: center;"> Find: </h6>
+   <h6 style="text-align: center;"> Find </h6>
     <%= link_to "Mentoring", search_path(category: "practical_expertise"), class: "btn btn-md", style:"margin-bottom: 4px; float: right; width: 123px;" %> <br>
     <%= link_to "Career Help", search_path(category: "career_insights"), class: "btn btn-md", style:"margin-bottom: 4px; float: right; width: 123px;" %> <br>
     <%= link_to "Applcations", search_path(category: "application_help"), class: "btn btn-md", style:"margin-bottom: 4px; float: right; width: 123px;" %> <br>
