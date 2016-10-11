@@ -10,9 +10,9 @@
 
   <div style="font-size: 19px;"> 
     <span style="text-decoration: underline;"> Metrics </span> <br>
-    Total Listings: <%= @listings_count %> <br> 
-    Advisors with Listings: <%= @advisors_with_listings %> <br>
-    Advisors without Listings: <%= @all_advisors.count - @advisors_with_listings %> <br>
+    Total Guides: <%= @advisor_count %> <br> 
+    Guides with Profile: <%= @advisors_with_profile %> <br>
+    Guides without Profile: <%= @advisors_without_profile %> <br>
   </div> <br> <br>
 
   <% @all_advisors.each do |adv| %>

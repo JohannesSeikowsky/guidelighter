@@ -10,15 +10,18 @@ class AdminActionsController < ApplicationController
 
 
   def admin
-    @all_advisors = Advisor.order("first_name ASC")
-    @listings_count = Listing.all.count
+    @all_advisors = Advisor.order("updated_at ASC")
+    #counts
+    @advisor_count = @all_advisors.count
     
-    @advisors_with_listings = 0
+    @advisors_with_profile = 0
     @all_advisors.each do |adv|
-      if adv.listings.count > 0
-        @advisors_with_listings += 1
+      unless adv.profile.nil?
+        @advisors_with_profile += 1
       end
     end
+
+    @advisors_without_profile = @advisor_count - @advisors_with_profile
   end
 
   
