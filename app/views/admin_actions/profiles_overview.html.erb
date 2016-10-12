@@ -7,15 +7,15 @@
 
 <div class="simple_container">
   <p> <%= notice %> </p>
-  <h2 style="margin-bottom: 0;"> Manage Profiles </h2> <br>
-  * profiles that havent been updated the longest are show first <br>
-  * click on name to get to edit profile page. <br> <br>
+  <h2 style="margin-bottom: 0;"> Profiles </h2> <br>
+  * profiles that havent been updated the longest are shown first. <br>
+  * click on name to get to edit profile page. <br> <br> <br>
 
   <% @profiles.each do |pro| %>
-    <ol>
-      <% if pro.advisor %>
-        <li> <%= pro.advisor.first_name %> <%= pro.advisor.second_name %> <br> </li>
+    <% if pro.advisor %>
+      <%= link_to admin_edit_profile_path(profile_id: pro.id) do %>
+        <p> <%= pro.advisor.first_name %> <%= pro.advisor.second_name %> </p>
+      <% end %>
     <% end %>
-    </ol>
   <% end %>
 </div>

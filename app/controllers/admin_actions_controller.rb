@@ -47,7 +47,7 @@ class AdminActionsController < ApplicationController
   def admin_update_profile
     @profile = Profile.find(params[:profile_id])
     @profile.update(profile_params)
-    redirect_to admin_path, notice: "Profile updated."
+    redirect_to profiles_overview_path, notice: "Profile updated."
   end
 
   def admin_edit_listing

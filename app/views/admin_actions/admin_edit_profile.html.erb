@@ -1,17 +1,24 @@
 <div class="gl_header"> 
   <div class="links">
     <%= link_to "Tagging", tagging_path %>
-    <%= link_to "Back to Admin", admin_path, class: "btn btn-warning" %>
+    <%= link_to " Admin", admin_path %>
   </div>
 </div>
 
 <div class="simple_container">  
-  <h2> Edit Profile of <%= @profile.advisor.first_name %> </h2>  
+  <h4 style="border: none;"> Edit Profile </h4>  
   <%= form_for @profile, url: admin_update_profile_path(profile_id: @profile.id) do |f| %>
-    <h6> 1. Description </h6>
     <%= f.text_area :description, style: "height: 205px;" %> 
-    <h6> 2. Image </h6>
     <%= f.file_field :profile_image %>
     <%= f.submit "Done." %>
-  <% end %>
+  <% end %> <br> <br> <br>
+
+  <div>
+    <h5> Guide's Listings - for incorporation into profiles. </h5> <br>
+    <% if @profile.advisor.listings.any? %>
+      <% @profile.advisor.listings.each do |list| %>
+        <div> <%= list.description %> </div> <br> <br>
+      <% end %>
+    <% end %>
+  </div>
 </div>
