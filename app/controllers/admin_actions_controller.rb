@@ -25,7 +25,7 @@ class AdminActionsController < ApplicationController
   end
 
   def profiles_overview
-    @profiles = Profile.all
+    @profiles = Profile.order("updated_at ASC")
   end
 
   

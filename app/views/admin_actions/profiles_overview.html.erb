@@ -7,10 +7,15 @@
 
 <div class="simple_container">
   <p> <%= notice %> </p>
-  <h2> Manage Profiles </h2> <br>
+  <h2 style="margin-bottom: 0;"> Manage Profiles </h2> <br>
+  * profiles that havent been updated the longest are show first <br>
+  * click on name to get to edit profile page. <br> <br>
 
-  <% @profiles.each do |prof| %>
-        hi
-    <br>
+  <% @profiles.each do |pro| %>
+    <ol>
+      <% if pro.advisor %>
+        <li> <%= pro.advisor.first_name %> <%= pro.advisor.second_name %> <br> </li>
+    <% end %>
+    </ol>
   <% end %>
 </div>

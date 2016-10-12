@@ -23,7 +23,7 @@
       <% end %>
       <!-- listings: <%= adv.listings.count %> <br> -->
       <!-- <%= link_to "edit", advisors_resources_path(advisor_id: adv.id) %> <br> -->
-      <%= link_to "delete", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: "DELETE THIS ADVISOR?" } %>
+      <%= link_to "x", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: "DELETE THIS ADVISOR?" } %>
     </p>
     <br>
   <% end %>
