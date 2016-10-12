@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @advisors = Advisor.order("created_at DESC")
-    @price_selection = [15,25,35]
+    @price_selection = [20,25,35]
   end
 
   def about
