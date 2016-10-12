@@ -1,19 +1,15 @@
 <div class="gl_header"> 
   <div class="links">
-    <%= link_to "Tagging", tagging_path, class: "btn btn-warning" %>
-  </div>
+    Metrics ----->
+    Total Guides: <%= @advisor_count %> |
+    with Profile: <%= @advisors_with_profile %> |
+    without Profile: <%= @advisors_without_profile %> 
+    </div>
 </div>
 
 <div class="simple_container">
   <p> <%= notice %> </p>
-  <h2> Managing Advisors | <%= link_to "Tags", tagging_path, class: "btn btn-md" %> </h2> <br>
-
-  <div style="font-size: 19px;"> 
-    <span style="text-decoration: underline;"> Metrics </span> <br>
-    Total Guides: <%= @advisor_count %> <br> 
-    Guides with Profile: <%= @advisors_with_profile %> <br>
-    Guides without Profile: <%= @advisors_without_profile %> <br>
-  </div> <br> <br>
+  <h2> Guides | <%= link_to "Profiles", profiles_overview_path, class: "btn btn-md" %> | <%= link_to "Tags", tagging_path, class: "btn btn-md" %> </h2> <br>
 
   <% @all_advisors.each do |adv| %>
     <p> 
@@ -21,13 +17,13 @@
         <%= adv.first_name %> <%= adv.second_name %> <br>
       <% end %>
       <% if adv.profile.nil? %>
-        profile: no <br>
+        --------- <br>
       <% else %>
-        profile: yes <br>
+        profile <br>
       <% end %>
       <!-- listings: <%= adv.listings.count %> <br> -->
-      <%= link_to "edit", advisors_resources_path(advisor_id: adv.id) %> <br>
-      <%= link_to "delete", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: "Destroy this Advisor? The advisor's profile and listings will be destroyed with it." } %>
+      <!-- <%= link_to "edit", advisors_resources_path(advisor_id: adv.id) %> <br> -->
+      <%= link_to "delete", admin_destroy_advisor_path(advisor_id: adv.id), method: :delete, data: { confirm: "DELETE THIS ADVISOR?" } %>
     </p>
     <br>
   <% end %>

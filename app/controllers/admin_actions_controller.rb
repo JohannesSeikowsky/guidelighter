@@ -24,6 +24,10 @@ class AdminActionsController < ApplicationController
     @advisors_without_profile = @advisor_count - @advisors_with_profile
   end
 
+  def profiles_overview
+    @profiles = Profile.all
+  end
+
   
   def listings_overview
     @listings = Listing.all

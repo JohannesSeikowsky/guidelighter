@@ -46,6 +46,8 @@ Rails.application.routes.draw do
 
   # admin
   get 'admin', to: "admin_actions#admin", as: 'admin' # ADMIN
+  get 'profiles_overview', to: "admin_actions#profiles_overview", as: "profiles_overview"
+
   get 'listings_overview', to: "admin_actions#listings_overview", as: "listings_overview"
 
   # advisor resources
