@@ -5,13 +5,19 @@
   </div>
 </div>
 
-<div class="simple_container">  
-  <h4 style="border: none;"> Edit Profile </h4>  
+<div class="simple_container">
+  <h6> <%= @profile.advisor.first_name %> <%= @profile.advisor.second_name %> - Editing Profile</h6>
+  <div style="text-align: center;"> <%= image_tag @profile.profile_image.url, style: "height: 100px; width: auto;" %> </div> <br>
+
   <%= form_for @profile, url: admin_update_profile_path(profile_id: @profile.id) do |f| %>
+    <h6> Description </h6>
     <%= f.text_area :description, style: "height: 205px;" %> 
+    <h6> Job Title / Profession </h6>
+    <%= f.text_field :job_title, style: "margin-top: 5x; margin-bottom: 5px;" %> 
+    <h6> Image </h6>
     <%= f.file_field :profile_image %>
-    <%= f.submit "Done." %>
-  <% end %> <br> <br> <br>
+    <%= f.submit "Update." %>
+  <% end %> <br> <br>
 
   <div>
     <h5> Guide's Listings - for incorporation into profiles. </h5> <br>
