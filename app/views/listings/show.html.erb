@@ -55,12 +55,15 @@
     </div> <br>
   </div>
 
-
-
-
-  <div class="bottom_right_buttons">
-    <%= link_to "Submit a request", new_user_request_path, class: "btn btn-md" %>
+  <div class="bottom_right_buttons_home">
+    <%= link_to "Mentoring", search_path(category: "practical_expertise"), class: "btn btn-md" %> <br>
+    <%= link_to "Career Help", search_path(category: "career_insights"), class: "btn btn-md" %> <br>
+    <%= link_to "Applications", search_path(category: "application_help"), class: "btn btn-md" %> <br>
   </div>
+
+  <!-- <div class="bottom_right_buttons">
+    <%= link_to "Submit a request", new_user_request_path, class: "btn btn-md" %>
+  </div> -->
 
   <p> Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona </p>
 </div>
