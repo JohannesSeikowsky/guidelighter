@@ -17,8 +17,9 @@
     </ul>
   <% end %>
   <!-- form -->
-  <div class="grey_box"> 
-    <h3> Become a guide <span style="font-size: 11px;"> - make a start by creating an account. </span> </h3>
+  <div style="position: relative;" class="grey_box"> 
+    <h6 style="position: absolute; top: -4px; right: 7px;"> 1/2 </h6>
+    <h3> Account <span style="font-size: 11px;"> - make a start by creating an account. </span> </h3>
     <%= form_for :advisor, path: signup_action_path do |f| %>
       <%= f.text_field :first_name, placeholder: "First name" %>
       <%= f.text_field :second_name, placeholder: "Last name" %>

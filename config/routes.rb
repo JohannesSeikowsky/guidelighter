@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: 'about' # RESOURCES
   get 'how', to: 'pages#how', as: 'how'
   get 'reviews', to: 'pages#reviews', as: 'reviews'
+  get 'successful_signup', to: 'pages#successful_signup', as: 'successful_signup'
   get 'ambassadors', to: 'pages#ambassadors'
 
   # advisors

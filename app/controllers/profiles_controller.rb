@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
       @advisor = Advisor.find(session[:id])
       @profile = @advisor.build_profile(profile_params)
       if @profile.save
-        redirect_to new_listing_path
+        redirect_to successful_signup_path, notice: "Success."
       else
         render 'new_profile'
       end
@@ -54,6 +54,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(:description, :profile_image, :job_title)
+    params.require(:profile).permit(:description, :profile_image, :job_title, :application_help, :career_insights_help, :mentoring_help, :general_help, :session_price)
   end
+
 end

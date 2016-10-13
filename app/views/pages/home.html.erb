@@ -116,6 +116,7 @@
             <span class="bottom">              
               <%= link_to "Request #{advisor.first_name} |", "#" %>
               <%= link_to "#{@price_selection.sample} £", "#" %>
+              <%= link_to "#{advisor.profile.session_price if advisor.profile.session_price} £", "#" %>
             </span>
           </div>
         </div>

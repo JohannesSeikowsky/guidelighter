@@ -8,9 +8,6 @@
   </div>
 </div> 
 
-
-
-
 <div class="simple_container">
   <!-- errors -->
   <% if @profile && @profile.errors.any? %>
@@ -22,60 +19,58 @@
       </ul> 
   <% end %>
 
-  <!-- form -->
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
-  <div class="grey_box">
-    <h3> Mini-Profile <span style="font-size: 11px;"> - to make your offers look more personal. </span> </h3>
+
+  <div style="position: relative;" class="grey_box">
+    <h6 style="position: absolute; top: -4px; right: 7px;"> 2/2 </h6>
+    <h2 style="margin-bottom: 24px;"> Become a guide (last step) <span style="font-size: 11px;">  </span> </h2>
+
+    <!-- form -->
     <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
-      <h6> 1. About yourself. </h6>
-      <%= f.text_area :description, style: "width: 355px; height: 145px; margin-bottom: 12px;" %>
-      <h6> 2. Your image. </h6>
-      <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %> <br>
-      <%= f.submit "Done." %> 
+      <h4> 1. What are you willing to help with? </h4>
+      <h6> Applications - helping out people who are applying to your line of work. </h6> <%= f.check_box :application_help, checked: true %>
+      <h6> Career insight - providing insight into your line of work given your own experience. </h6> <%= f.check_box :career_insights_help, checked: true %>
+      <h6> Mentoring - passing on knowledge to people starting out in your or related line of work. </h6> <%= f.check_box :mentoring_help, checked: true %>
+      <h6> General - for requests that relate to your expertise but don't squarely fit a category. </h6> <%= f.check_box :general_help, checked: true %>
+      <hr style="background-color: lightgrey;">
+
+      <h4> 2. About Yourself  </h4>
+      <h6> In a Nutshell </h6>
+      <%= f.text_field :job_title, placeholder: "e.g. Physicist, Astronout, Product Manager", style: "" %>
+      <h6> Informal Description </h6>
+      <%= f.text_area :description, placeholder: "A couple of sentences about who you are and what it is you do...", style: "width: 355px; height: 145px; margin-bottom: 12px;" %>
+      <h6> Your Image</h6>
+      <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %>  
+      <hr style="background-color: lightgrey;">
+
+      <h4> 3. Session Price <span style="font-size: 11px;"> - a session representing roughly 45-60 min. of your time. </span> </h4>
+      <%= f.radio_button :session_price, 10.0 %> 10 £ <br>
+      <%= f.radio_button :session_price, 15.0 %> 15 £ <br>
+      <%= f.radio_button :session_price, 20.0 , checked: true %> 20 £ <br>
+      <%= f.radio_button :session_price, 25.0 %> 25 £ <br>
+      <%= f.radio_button :session_price, 30.0 %> 30 £ <br>
+      <%= f.radio_button :session_price, 35.0 %> 35 £ <br> <br>
+
+      Why a price? <br> Guidelighter is built on the notion of openly sharing one's experience and expertise with those who can benefit from it. Yet we believe that the time and energy of capable people is valuable and that this is to be respected and honoured. Thus, a session price should be set. <br>
+      <!-- <%= f.text_field :job_title, style: "" %> -->
+      <%= f.submit "Done.", style: "padding: 14px 213px; background-color: #F5EFE6;" %> 
     <% end %>
   </div>
-  <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
+
+  <p id="love" style="margin-top: 10px;"> Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona </p>
+
+  <!-- Options for extension:
+    - add offer out of the ordinary in 1
+    - set your own price field in 3
+    - add a max number of sessions section as section 4
+    - obv: put into a wizard. 
+  -->
+    
+
+  <!-- <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
     See example-profiles below
-  </div> <br>
+  </div> <br> --> <br> <br>
 
-  <h3> Examples </h3>
-  <div class="example_listing grey_box" style="padding: 20px 35px; margin-bottom: 25px; background-color: #F7F7F7;">
-    <h4> Oleg Giberstein </h4>
-    <div>
-     I am the Co-Founder of Guidelighter. I studied Politics and International Relations at Royal Holloway (with an exchange year at the University of California, San Diego - yes, that was nice) followed by an MPhil in International Relations at the University of Oxford. <br> <br> Out of a post-graduation blues I found myself going into finance and first interned at Citigroup's Private Banking unit 
-     and ultimately joined Citigroup’s Corporate Banking group in London where I covered EMEA Corporates. After 3 years at Citi I made my corporate escape and finally, at Guidelighter, I am doing the thing I am really good at: helping others to improve and find their way in life.
-    </div> <br>
-    <%= image_tag 'oleg.jpg' %>
-  </div>
-
-  <div class="example_listing grey_box" style="padding: 20px 35px; margin-bottom: 25px; background-color: #F7F7F7;">
-    <h4> Johannes Seikowsky </h4>
-    <div>
-      I'm the CTO of Guidelighter, the very page you are on right now. That means that I do all the programming and development work around here.Despite my role as CTO I have never set foot in a Computer Science lecture, which is something I simultaneously regret and am proud of. Instead my formal education is in Economics. I hold a BA in "Economics and Management" from the University of Oxford. The stuff with computers I mostly taught myself through trial and error. Generally I have a wide range of interests and can pretty much be interested in anything as long as there's something to figure out. Right now I'm figuring out how to make Guidelighter great for you.
-    </div> <br>
-    <%= image_tag 'johannes.jpg' %>
-  </div>
-
-    <div class="example_listing grey_box" style="padding: 20px 35px; margin-bottom: 55px; background-color: #F7F7F7;">
-    <h4> Surojit Chakraverti </h4>
-    <div>
-      Healthcare M&A Associate at Rothschild. Value investor and co-founder of technology startups. <br> <br>
-      Worked and interned at Rothschild, Citi, Morgan Stanley and Bank of America Merrill Lynch amongst others. <br> <br>
-      Experience in: <br>
-      - Value investing, based on fundamental and special situations strategies: equities and derivatives <br> 
-      - Start-up consulting and entrepreneurship <br>
-      - Sell-side, buy-side M&A processes <br>
-      - Capital markets transactions <br>
-      - Spin-offs and carve-outs <br>
-      - PE backed portfolio exits and platform builds
-    </div> <br>
-    <%= image_tag 'suro.jpg' %>
-  </div>
-
-  <!-- love 
-  <div class="with_love">
-    Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona
-  </div> -->
 </div>
 
 <!-- alert if large uploads -->
