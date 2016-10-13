@@ -6,9 +6,15 @@ class Profile < ActiveRecord::Base
   # validations
   validates_presence_of :description
   validates_presence_of :profile_image
+  validates_presence_of :job_title  
+  validates_presence_of :application_help
+  validates_presence_of :career_insights_help 
+  validates_presence_of :mentoring_help
+  validates_presence_of :general_help
+  validates_presence_of :session_price
+
   validate :image_upload_max_size
       
-
   # associate uploaded img with model
   mount_uploader :profile_image, ProfileImageUploader
 
