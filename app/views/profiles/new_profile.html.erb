@@ -27,23 +27,32 @@
 
     <!-- form -->
     <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
-      <h4> 1. What are you willing to help with? Choose several. </h4>
+      
+      <h4> 1. About yourself </h4>
+      <!-- <h6> In a Nutshell </h6> 
+      <%= f.text_field :job_title, placeholder: "e.g. Product Manager and Developer, BSc. Engineering", style: "width: 358px" %> -->
+      <h6> 1.1. Description </h6>
+      <%= f.text_area :description, placeholder: "What are you currently doing? What have you done before? What are your fields of interest? etc.", style: "width: 358px; height: 197px; margin-bottom: 2px;" %>
+      <h6> 1.2. Your Image </h6>
+      <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field", style: "border: 1px solid grey; width: 358px; padding: 5px;" %>  
+      <hr style="background-color: lightgrey;">
+      
+      <h4> 2. What are you willing to help with? Choose several. </h4>
       <h6> Applications - helping out people who are in the process of applying to your field. </h6> <%= f.check_box :application_help, checked: true %>
       <h6> Career insight - providing insight into your profession given your personal experience. </h6> <%= f.check_box :career_insights_help, checked: true %>
       <h6> Mentoring - passing on knowledge to people starting out in your field or a related one. </h6> <%= f.check_box :mentoring_help, checked: true %>
       <h6> General - for requests that relate to your expertise but don't squarely fit a category. </h6> <%= f.check_box :general_help, checked: true %>
       <hr style="background-color: lightgrey;">
-
-      <h4> 2. About Yourself  </h4>
-      <h6> In a Nutshell </h6>
-      <%= f.text_field :job_title, placeholder: "Product Manager and Developer, BSc. Economics", style: "width: 358px" %>
-      <h6> Description </h6>
-      <%= f.text_area :description, placeholder: "What are you currently doing? What have you done before? What are your fields of interest?", style: "width: 358px; height: 197px; margin-bottom: 12px;" %>
-      <h6> Your Image</h6>
-      <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field", style: "border: 1px solid grey; width: 358px;" %>  
+      
+      <h4> 3. What is the maximum number of requests you would be happy to receive and do per week? </h4>
+      <%= f.radio_button :something, 2, style: "margin-bottom: 7px;" %> 2 per week <br>
+      <%= f.radio_button :something, 1, checked: true, style: "margin-bottom: 7px;" %> 1 per week <br>
+      <%= f.radio_button :something, 0.5, style: "margin-bottom: 7px;" %> 1 every 2 weeks <br>
+      <%= f.radio_button :something, 66 %> I don't mind
       <hr style="background-color: lightgrey;">
 
-      <h4> 3. Session Price <span style="font-size: 10px;"> - a session representing roughly 30-45 min. of your time. </span> </h4>
+
+      <h4> 4. Price per session <span style="font-size: 10px;"> - a session representing roughly 30-45 min. of your time. </span> </h4>
       <%= f.radio_button :session_price, 15.0 %> £ 15  <br>
       <%= f.radio_button :session_price, 20.0 %> £ 20 <br>
       <%= f.radio_button :session_price, 25.0, checked: true, id: "default_checked" %> £ 25 <br>
@@ -51,9 +60,9 @@
       <%= f.radio_button :session_price, 30.0 %> £ 35 <br>
       <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px;text-decoration: underline;" onclick="showSet();"> set yourself </p>
       <%= f.number_field :session_price, id: "set_yourself", placeholder: "...", style: "height: 28px; width: 60px; display: none; margin-bottom: 15px;" %>
+      <div style="margin-top: 16px;"> Why a price? <br> Guidelighter is built on the notion of openly sharing one's experience and expertise with those who can benefit from it. Yet we believe that the time and energy of capable people is valuable and that this is to be respected and honoured. Thus, a session price should be set. </div>
 
-      <div style="margin-top: 15px;"> Why a price? <br> Guidelighter is built on the notion of openly sharing one's experience and expertise with those who can benefit from it. Yet we believe that the time and energy of capable people is valuable and that this is to be respected and honoured. Thus, a session price should be set. </div>
-      <!-- <%= f.text_field :job_title, style: "" %> -->
+
       <%= f.submit "Done.", id: "std-btn", style: "padding: 14px 213px;" %> 
     <% end %>
   </div>
