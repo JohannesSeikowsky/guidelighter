@@ -36,21 +36,23 @@
 
       <h4> 2. About Yourself  </h4>
       <h6> In a Nutshell </h6>
-      <%= f.text_field :job_title, placeholder: "e.g. Product Manager & Developer, BSc. Economics", style: "width: 358px" %>
-      <h6> Summary / Description </h6>
-      <%= f.text_area :description, placeholder: "What are you currently doing? What have you done before? What are your fields of interest and expertise?", style: "width: 358px; height: 197px; margin-bottom: 12px;" %>
+      <%= f.text_field :job_title, placeholder: "Product Manager and Developer, BSc. Economics", style: "width: 358px" %>
+      <h6> Description </h6>
+      <%= f.text_area :description, placeholder: "What are you currently doing? What have you done before? What are your fields of interest?", style: "width: 358px; height: 197px; margin-bottom: 12px;" %>
       <h6> Your Image</h6>
-      <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %>  
+      <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field", style: "border: 1px solid grey; width: 358px;" %>  
       <hr style="background-color: lightgrey;">
 
-      <h4> 3. Session Price <span style="font-size: 11px;"> - a session representing roughly 30-45 min. of your time. </span> </h4>
-      <%= f.radio_button :session_price, 15.0 %> 15 £ <br>
-      <%= f.radio_button :session_price, 20.0 %> 20 £ <br>
-      <%= f.radio_button :session_price, 25.0, checked: true %> 25 £ <br>
-      <%= f.radio_button :session_price, 20.0 %> 30 £ <br>
-      <%= f.radio_button :session_price, 30.0 %> 35 £ <br> <br>
+      <h4> 3. Session Price <span style="font-size: 10px;"> - a session representing roughly 30-45 min. of your time. </span> </h4>
+      <%= f.radio_button :session_price, 15.0 %> £ 15  <br>
+      <%= f.radio_button :session_price, 20.0 %> £ 20 <br>
+      <%= f.radio_button :session_price, 25.0, checked: true %> £ 25 <br>
+      <%= f.radio_button :session_price, 20.0 %> £ 30 <br>
+      <%= f.radio_button :session_price, 30.0 %> £ 35 <br>
+      <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px;text-decoration: underline;" onclick="showSet();"> set yourself </p>
+      <%= f.number_field :session_price, id: "set_yourself", placeholder: "...", style: "height: 28px; width: 60px; display: none; margin-bottom: 15px;" %>
 
-      Why a price? <br> Guidelighter is built on the notion of openly sharing one's experience and expertise with those who can benefit from it. Yet we believe that the time and energy of capable people is valuable and that this is to be respected and honoured. Thus, a session price should be set. <br>
+      <div style="margin-top: 15px;"> Why a price? <br> Guidelighter is built on the notion of openly sharing one's experience and expertise with those who can benefit from it. Yet we believe that the time and energy of capable people is valuable and that this is to be respected and honoured. Thus, a session price should be set. </div>
       <!-- <%= f.text_field :job_title, style: "" %> -->
       <%= f.submit "Done.", id: "std-btn", style: "padding: 14px 213px;" %> 
     <% end %>
@@ -80,4 +82,8 @@
       alert('Please upload a smaller file.');
     }
   });
+
+  function showSet(){
+    $('#set_yourself').toggle();
+  };
 </script>
