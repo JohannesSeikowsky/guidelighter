@@ -36,9 +36,9 @@
 
       <h4> 2. About Yourself  </h4>
       <h6> In a Nutshell </h6>
-      <%= f.text_field :job_title, placeholder: "e.g. Physicist, Astronout, Product Manager", style: "" %>
-      <h6> Informal Description </h6>
-      <%= f.text_area :description, placeholder: "A couple of sentences about who you are and what it is you do...", style: "width: 355px; height: 145px; margin-bottom: 12px;" %>
+      <%= f.text_field :job_title, placeholder: "e.g. Product Manager & Developer, BSc. Economics", style: "width: 358px" %>
+      <h6> Summary / Description </h6>
+      <%= f.text_area :description, placeholder: "What are you currently doing? What have you done before? What are your fields of interest and expertise?", style: "width: 358px; height: 197px; margin-bottom: 12px;" %>
       <h6> Your Image</h6>
       <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field" %>  
       <hr style="background-color: lightgrey;">
@@ -47,9 +47,7 @@
       <%= f.radio_button :session_price, 15.0 %> 15 £ <br>
       <%= f.radio_button :session_price, 20.0 %> 20 £ <br>
       <%= f.radio_button :session_price, 25.0, checked: true %> 25 £ <br>
-      <%= f.radio_button :session_price, 30.0 %> 30 £ <br>
-      <%= f.radio_button :session_price, 30.0 %> 35 £ <br>
-      <%= f.radio_button :session_price, 30.0 %> 50 £ <br> <br>
+      <%= f.radio_button :session_price, 30.0 %> 35 £ <br> <br>
 
       Why a price? <br> Guidelighter is built on the notion of openly sharing one's experience and expertise with those who can benefit from it. Yet we believe that the time and energy of capable people is valuable and that this is to be respected and honoured. Thus, a session price should be set. <br>
       <!-- <%= f.text_field :job_title, style: "" %> -->
