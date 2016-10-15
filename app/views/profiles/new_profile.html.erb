@@ -57,10 +57,12 @@
       <%= f.radio_button :session_price, 25, :checked => true, id: "default_checked", class: "session_price" %> £ 25 <br>
       <%= f.radio_button :session_price, 20, class: "session_price" %> £ 30 <br>
       <%= f.radio_button :session_price, 30, class: "session_price"%> £ 35 <br>
+      <%= f.radio_button :session_price, 30, class: "session_price"%> £ 50 <br>
       
 
-      <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px;text-decoration: underline;" onclick="showSet();"> set yourself </p>
-      <%= f.number_field :session_price, id: "set_yourself", placeholder: "...", style: "height: 28px; width: 60px; display: none; margin-bottom: 15px;" %>
+      <!-- <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px;text-decoration: underline;" onclick="showSet();"> set yourself </p> 
+      <%= f.number_field :session_price, id: "set_yourself", placeholder: "...", style: "height: 28px; width: 60px; margin-bottom: 15px;" %>
+      -->
       <div style="margin-top: 16px;"> Why a price? <br> Guidelighter is built on the notion of openly sharing one's experience and expertise with those who can benefit from it. Yet we believe that the time and energy of capable people is valuable and that this is to be respected and honoured. Thus, a session price should be set. </div>
 
 
@@ -76,7 +78,6 @@
     - add a max number of sessions section as section 4
     - obv: put into a wizard. 
   -->
-    
 
   <!-- <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
     See example-profiles below
