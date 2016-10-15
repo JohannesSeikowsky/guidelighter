@@ -51,10 +51,10 @@
       <%= f.radio_button :max_no_of_session, "undefined" %> I don't mind
       <hr style="background-color: lightgrey;">
 
-      <h4> 4. Price for a session <span style="font-size: 10px;"> - a session representing roughly 30-45 min. of your time. </span> </h4>
+      <h4> 4. Set a price for a session (30-45min.)</h4>
       
-      <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px;text-decoration: underline;" onclick="showSet();"> click to set yourself or: </p>
-      <%= f.number_field :session_price, id: "set_yourself", placeholder: "...", style: "height: 28px; width: 60px; margin-bottom: 15px; display: none;" %>
+      <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px; text-decoration: underline;" onclick="showSet();"> set yourself </p>
+      <%= f.number_field :session_price, id: "set_yourself", style: "height: 28px; width: 60px; margin-bottom: 3px;" %> <br> <span style="text-decoration: underline;"> or choose </span> <br>
       <%= f.radio_button :session_price, 15, class: "session_price" %> £ 15  <br>
       <%= f.radio_button :session_price, 20, class: "session_price" %> £ 20 <br>
       <%= f.radio_button :session_price, 25, :checked => true, id: "default_checked", class: "session_price" %> £ 25 <br>
