@@ -54,7 +54,7 @@
   <br> <br> <br>
 
   <div>
-    <h5> Comeplete Listings - for incorporation into profiles: </h5> <br>
+    <h5> Complete Listings - for incorporation into profiles: </h5> <br>
     <% if @profile.advisor.listings.any? %>
       <% @profile.advisor.listings.each do |list| %>
         <div> <%= list.description %> </div> <br> <br>
@@ -63,7 +63,21 @@
   </div>
 </div>
 
-      
-  
+<!-- js -->      
+<script type="text/javascript">
+  // uncheck radio buttons when number field has focus
+  $('#set_yourself').focus(function () {
+    $('.session_price').removeAttr("checked");
+  });
 
+  // uncheck radio buttons when number field has a value
+  if($('#set_yourself').val().length != 0){
+    $('.session_price').removeAttr("checked");
+  }
+
+  // blanking number field when radio button is checked
+  $(".session_price").change(function(){
+    $("#set_yourself").val('');
+  });
+</script>
 
