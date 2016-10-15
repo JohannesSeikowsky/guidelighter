@@ -45,24 +45,22 @@
       <hr style="background-color: lightgrey;">
       
       <h4> 3. What is the maximum number of requests you would be happy to get and do per week? </h4>
-      <%= f.radio_button :max_no_of_session, "2", style: "margin-bottom: 7px;" %> 2 per week <br>
-      <%= f.radio_button :max_no_of_session, "1", :checked => true, style: "margin-bottom: 7px;" %> 1 per week <br>
-      <%= f.radio_button :max_no_of_session, "0.5", style: "margin-bottom: 7px;" %> 1 every 2 weeks <br>
+      <%= f.radio_button :max_no_of_session, "2", style: "margin-bottom: 9px;" %> 2 per week <br>
+      <%= f.radio_button :max_no_of_session, "1", :checked => true, style: "margin-bottom: 9px;" %> 1 per week <br>
+      <%= f.radio_button :max_no_of_session, "0.5", style: "margin-bottom: 9px;" %> 1 every 2 weeks <br>
       <%= f.radio_button :max_no_of_session, "undefined" %> I don't mind
       <hr style="background-color: lightgrey;">
 
       <h4> 4. Price for a session <span style="font-size: 10px;"> - a session representing roughly 30-45 min. of your time. </span> </h4>
+      
+      <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px;text-decoration: underline;" onclick="showSet();"> click to set yourself or: </p>
+      <%= f.number_field :session_price, id: "set_yourself", placeholder: "...", style: "height: 28px; width: 60px; margin-bottom: 15px; display: none;" %>
       <%= f.radio_button :session_price, 15, class: "session_price" %> £ 15  <br>
       <%= f.radio_button :session_price, 20, class: "session_price" %> £ 20 <br>
       <%= f.radio_button :session_price, 25, :checked => true, id: "default_checked", class: "session_price" %> £ 25 <br>
       <%= f.radio_button :session_price, 20, class: "session_price" %> £ 30 <br>
       <%= f.radio_button :session_price, 30, class: "session_price"%> £ 35 <br>
-      <%= f.radio_button :session_price, 30, class: "session_price"%> £ 50 <br>
       
-
-      <!-- <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px;text-decoration: underline;" onclick="showSet();"> set yourself </p> 
-      <%= f.number_field :session_price, id: "set_yourself", placeholder: "...", style: "height: 28px; width: 60px; margin-bottom: 15px;" %>
-      -->
       <div style="margin-top: 16px;"> Why a price? <br> Guidelighter is built on the notion of openly sharing one's experience and expertise with those who can benefit from it. Yet we believe that the time and energy of capable people is valuable and that this is to be respected and honoured. Thus, a session price should be set. </div>
 
 
@@ -95,7 +93,7 @@
   });
 
   function showSet(){
-    $('#set_yourself').toggle();
+    $('#set_yourself').css("display", "block");
   };
 
   $('#set_yourself').focus(function () {
