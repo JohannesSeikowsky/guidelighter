@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013175849) do
+ActiveRecord::Schema.define(version: 20161015011513) do
 
   create_table "advisors", force: :cascade do |t|
     t.string   "first_name"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20161013175849) do
     t.boolean  "mentoring_help",       default: true
     t.boolean  "general_help",         default: true
     t.integer  "session_price"
+    t.string   "max_no_of_session"
   end
 
   create_table "requests", force: :cascade do |t|

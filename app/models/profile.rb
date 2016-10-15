@@ -6,7 +6,7 @@ class Profile < ActiveRecord::Base
   # validations
   validates_presence_of :description
   validates_presence_of :profile_image
-  validates_presence_of :job_title  
+  validates_presence_of :max_no_of_session
   validates_presence_of :session_price
 
   validate :image_upload_max_size
