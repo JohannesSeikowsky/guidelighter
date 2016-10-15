@@ -32,7 +32,7 @@
     <%= f.radio_button :max_no_of_session, "undefined" %> <span style="margin-left: 4px;"> I don't mind </span>
     <hr style="background-color: lightgrey;">
 
-    <h6> Price of a session </h6>
+    <h6> Price per session </h6>
     <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px; text-decoration: underline;" onclick="showSet();"> set </p>
     <%= f.number_field :session_price, id: "set_yourself", style: "height: 28px; width: 60px; margin-bottom: 3px;" %> <br> <span style="text-decoration: underline;"> choose </span> <br>
     <%= f.radio_button :session_price, 15, class: "session_price", id: "session_price" %> £ 15  <br>

@@ -93,7 +93,8 @@
           <!-- Bottom -->
           <div id="listing_bottom"> 
             <span class="bottom">              
-              <%= link_to "Request #{advisor.first_name} |", "#" %>
+              <%= link_to "Request #{advisor.first_name} |", "#" %> £
+              <%= advisor.profile.session_price if advisor.profile.session_price %>
             </span>
           </div>
         </div>
