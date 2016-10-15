@@ -16,7 +16,7 @@
       <%= link_to "https://www.google.com/search?q=#{adv.first_name}+#{adv.second_name}", target: "_blank" do %>
         <%= adv.first_name %> <%= adv.second_name %> <br>
       <% end %>
-      <%= adv.second_name %> <br>
+      <%= adv.email %> <br>
       <% if adv.profile.nil? %>
         --------- <br>
       <% else %>

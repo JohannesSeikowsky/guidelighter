@@ -12,7 +12,7 @@
   <!-- signup loader -->
   <div class="signup_loader">
     <%= image_tag "page-loader.gif" %>
-    <p> We are processing your request. <br> One second. </p>
+    <p> We are processing. <br> One second. </p>
   </div> 
 
   <!-- errors -->
@@ -92,7 +92,7 @@
 <script type="text/javascript">
   // removing loader
   $(window).load(function() {
-    $(".signup_loader").delay(650).fadeOut("slow");
+    $(".signup_loader").delay(880).fadeOut("slow");
   })
 
   // alert if large uploads
