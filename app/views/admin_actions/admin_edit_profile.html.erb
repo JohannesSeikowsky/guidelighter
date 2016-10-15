@@ -6,21 +6,55 @@
 </div>
 
 <div class="simple_container">
-  <h6> <%= @profile.advisor.first_name %> <%= @profile.advisor.second_name %> - Editing Profile</h6>
-  <div style="text-align: center;"> <%= image_tag @profile.profile_image.url, style: "height: 100px; width: auto;" %> </div> <br>
-
+  <div> <%= image_tag @profile.profile_image.url, style: "height: 100px; width: auto;" %> </div> <br>
+  <h4> Editing - <%= @profile.advisor.first_name %> <%= @profile.advisor.second_name %>'s Profile </h4>
   <%= form_for @profile, url: admin_update_profile_path(profile_id: @profile.id) do |f| %>
     <h6> Description </h6>
     <%= f.text_area :description, style: "height: 205px;" %> 
-    <h6> Job Title / Profession </h6>
-    <%= f.text_field :job_title, style: "margin-top: 5x; margin-bottom: 5px;" %> 
     <h6> Image </h6>
-    <%= f.file_field :profile_image %>
+    <%= f.file_field :profile_image %> <br>
+    <h6> Headline / In a Nutshell </h6>
+    <%= f.text_field :job_title, style: "margin-top: 5x; margin-bottom: 5px;" %> 
+    <hr style="background-color: lightgrey;">
+
+
+    <h6> Selection of Offers </h6>
+    <h6> <%= f.check_box :application_help, checked: true %> Applications </h6>
+    <h6> <%= f.check_box :career_insights_help, checked: true %> Career insight </h6>
+    <h6> <%= f.check_box :mentoring_help, checked: true %> Mentoring </h6>
+    <h6> <%= f.check_box :general_help, checked: true %> General </h6>
+    <hr style="background-color: lightgrey;">
+
+    <h6> Maximim Number of Sessions per week </h6>
+    <%= f.radio_button :max_no_of_session, "2", style: "margin-bottom: 9px;" %> <span style="margin-left: 4px;"> 2 per week </span> <br>
+    <%= f.radio_button :max_no_of_session, "1", :checked => true, style: "margin-bottom: 9px;" %> <span style="margin-left: 4px;"> 1 per week </span> <br>
+    <%= f.radio_button :max_no_of_session, "0.5", style: "margin-bottom: 9px;" %> <span style="margin-left: 4px;"> 1 every 2 weeks </span> <br>
+    <%= f.radio_button :max_no_of_session, "undefined" %> <span style="margin-left: 4px;"> I don't mind </span>
+    <hr style="background-color: lightgrey;">
+
+    <h6> Price of a session </h6>
+    <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px; text-decoration: underline;" onclick="showSet();"> set </p>
+    <%= f.number_field :session_price, id: "set_yourself", style: "height: 28px; width: 60px; margin-bottom: 3px;" %> <br> <span style="text-decoration: underline;"> choose </span> <br>
+    <%= f.radio_button :session_price, 15, class: "session_price", id: "session_price" %> £ 15  <br>
+    <%= f.radio_button :session_price, 20, class: "session_price" %> £ 20 <br>
+    <%= f.radio_button :session_price, 25, :checked => true, id: "default_checked", class: "session_price" %> £ 25 <br>
+    <%= f.radio_button :session_price, 20, class: "session_price" %> £ 30 <br>
+    <%= f.radio_button :session_price, 30, class: "session_price"%> £ 35 <br>
+
+    <!-- submit -->      
     <%= f.submit "Update." %>
   <% end %> <br> <br>
+    Listing prices if any: <br>
+    <% if @profile.advisor.listings.any? %>
+      <% @profile.advisor.listings.each do |list| %>
+        <span> <%= list.price %>, </span>
+      <% end %>
+    <% end %>
+
+  <br> <br> <br>
 
   <div>
-    <h5> Guide's Listings - for incorporation into profiles. </h5> <br>
+    <h5> Comeplete Listings - for incorporation into profiles: </h5> <br>
     <% if @profile.advisor.listings.any? %>
       <% @profile.advisor.listings.each do |list| %>
         <div> <%= list.description %> </div> <br> <br>
@@ -28,3 +62,8 @@
     <% end %>
   </div>
 </div>
+
+      
+  
+
+
