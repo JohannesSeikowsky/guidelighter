@@ -8,11 +8,12 @@
   </div>
 </div> 
 
+<br>
 <div class="simple_container">
   <!-- signup loader -->
   <div class="signup_loader">
     <%= image_tag "page-loader.gif" %>
-    <p> We are processing. <br> One second. </p>
+    <p> Your account is being created ...</p>
   </div> 
 
   <!-- errors -->
@@ -57,7 +58,7 @@
       <%= f.radio_button :max_no_of_session, "undefined" %> <span style="margin-left: 4px;"> I don't mind </span>
       <hr style="background-color: lightgrey;">
 
-      <h4> 4. Set a price for a session (roughly 40min.)</h4>
+      <h4> 4. Set a price for a session (roughly 40min. of your time)</h4>
       
       <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px; text-decoration: underline;" onclick="showSet();"> set yourself </p>
       <%= f.number_field :session_price, id: "set_yourself", style: "height: 28px; width: 60px; margin-bottom: 3px;" %> <br> <span style="text-decoration: underline;"> or choose a standard </span> <br>
@@ -92,7 +93,7 @@
 <script type="text/javascript">
   // removing loader
   $(window).load(function() {
-    $(".signup_loader").delay(880).fadeOut("slow");
+    $(".signup_loader").delay(1320).fadeOut("slow");
   })
 
   // alert if large uploads

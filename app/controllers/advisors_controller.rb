@@ -32,7 +32,7 @@ class AdvisorsController < ApplicationController
     if @advisor.save
       GeneralMailer.successful_signup(@advisor).deliver if Rails.env.production?
       log_in
-      redirect_to new_profile_path, notice: "Account created."
+      redirect_to new_profile_path #, notice: "Account created."
     else
       render 'signup'
     end
