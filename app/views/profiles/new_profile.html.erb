@@ -9,6 +9,12 @@
 </div> 
 
 <div class="simple_container">
+  <!-- signup loader -->
+  <div class="signup_loader">
+    <%= image_tag "page-loader.gif" %>
+    <p> We are processing your request. <br> One second. </p>
+  </div> 
+
   <!-- errors -->
   <% if @profile && @profile.errors.any? %>
       <h4> Try again. </h4>
@@ -23,15 +29,15 @@
 
   <div style="position: relative;" class="grey_box">
     <h6 style="position: absolute; top: -4px; right: 7px;"> 2/2 </h6>
-    <h2 style="margin-bottom: 24px;"> Become a guide - Last step <span style="font-size: 11px;">  </span> </h2>
+    <h2 style="margin-bottom: 24px;"> Become a guide - All you have to do <span style="font-size: 11px;">  </span> </h2>
 
     <!-- form -->
     <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
       
-      <h4> 1. About yourself </h4>
+      <h4> 1. Mini-Profile </h4>
       <!-- <h6> In a Nutshell </h6> 
       <%= f.text_field :job_title, placeholder: "e.g. Product Manager and Developer, BSc. Engineering", style: "width: 358px" %> -->
-      <h6> 1.1. Description </h6>
+      <h6> 1.1. About Yourself </h6>
       <%= f.text_area :description, placeholder: "What are you currently doing? What have you done before? What are your fields of interest? etc.", style: "width: 358px; height: 197px; margin-bottom: 2px;" %>
       <h6> 1.2. Your Image </h6>
       <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field", style: "border: 1px solid grey; width: 358px; padding: 5px;" %>  
@@ -54,8 +60,8 @@
       <h4> 4. Set a price for a session (30-45min.)</h4>
       
       <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px; text-decoration: underline;" onclick="showSet();"> set yourself </p>
-      <%= f.number_field :session_price, id: "set_yourself", style: "height: 28px; width: 60px; margin-bottom: 3px;" %> <br> <span style="text-decoration: underline;"> or choose </span> <br>
-      <%= f.radio_button :session_price, 15, class: "session_price" %> £ 15  <br>
+      <%= f.number_field :session_price, id: "set_yourself", style: "height: 28px; width: 60px; margin-bottom: 3px;" %> <br> <span style="text-decoration: underline;"> or choose a standard </span> <br>
+      <%= f.radio_button :session_price, 15, class: "session_price", id: "session_price" %> £ 15  <br>
       <%= f.radio_button :session_price, 20, class: "session_price" %> £ 20 <br>
       <%= f.radio_button :session_price, 25, :checked => true, id: "default_checked", class: "session_price" %> £ 25 <br>
       <%= f.radio_button :session_price, 20, class: "session_price" %> £ 30 <br>
@@ -80,11 +86,16 @@
   <!-- <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;" >
     See example-profiles below
   </div> <br> --> <br> <br>
-
 </div>
 
-<!-- alert if large uploads -->
+
 <script type="text/javascript">
+  // removing loader
+  $(window).load(function() {
+    $(".signup_loader").delay(650).fadeOut("slow");
+  })
+
+  // alert if large uploads
   $('#image_upload_field').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
     if (size_in_megabytes > 5) {
@@ -92,12 +103,22 @@
     }
   });
 
-  function showSet(){
-    $('#set_yourself').css("display", "block");
-  };
-
+  // uncheck radio buttons when number field has focus
   $('#set_yourself').focus(function () {
-      $('.session_price').removeAttr("checked");
+    $('.session_price').removeAttr("checked");
+  });
 
+  // uncheck radio buttons when number field has a value
+  if($('#set_yourself').val().length != 0){
+    $('.session_price').removeAttr("checked");
+  }
+
+  // blanking number field when radio button is checked
+  $(".session_price").change(function(){
+    $("#set_yourself").val('');
   });
 </script>
+
+
+
+
