@@ -52,11 +52,11 @@
       <hr style="background-color: lightgrey;">
 
       <h4> 4. Price for a session <span style="font-size: 10px;"> - a session representing roughly 30-45 min. of your time. </span> </h4>
-      <%= f.radio_button :session_price, 15 %> £ 15  <br>
-      <%= f.radio_button :session_price, 20 %> £ 20 <br>
-      <%= f.radio_button :session_price, 25, :checked => true, id: "default_checked" %> £ 25 <br>
-      <%= f.radio_button :session_price, 20 %> £ 30 <br>
-      <%= f.radio_button :session_price, 30 %> £ 35 <br>
+      <%= f.radio_button :session_price, 15, class: "session_price" %> £ 15  <br>
+      <%= f.radio_button :session_price, 20, class: "session_price" %> £ 20 <br>
+      <%= f.radio_button :session_price, 25, :checked => true, id: "default_checked", class: "session_price" %> £ 25 <br>
+      <%= f.radio_button :session_price, 20, class: "session_price" %> £ 30 <br>
+      <%= f.radio_button :session_price, 30, class: "session_price"%> £ 35 <br>
       
 
       <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px;text-decoration: underline;" onclick="showSet();"> set yourself </p>
@@ -98,7 +98,7 @@
   };
 
   $('#set_yourself').focus(function () {
-      $('input[type=radio]').removeAttr("checked");
+      $('.session_price').removeAttr("checked");
 
   });
 </script>
