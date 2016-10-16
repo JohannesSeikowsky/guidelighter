@@ -14,7 +14,7 @@
   <div class="color_background"> </div>
   
   <div class="btn-on-show related_users" style="text-align: center; width: 145px;">
-    <h6 style="text-decoration: underline; margin-bottom: 0px;"> Related guides </h6>
+    <h6 style="text-decoration: underline; margin-bottom: 0px;"> Related Guides </h6>
     <% @related_profiles.each do |pro| %>
       <% if pro.advisor %>
         <a href="<%= show_profile_path(profile_id: pro.id)%>" style="border: none;">
@@ -35,11 +35,11 @@
   </div>
 
   <div id="guide_show" style="margin-bottom: 5px;">
-    <h6> Guide - <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. </h6>
+    <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. </h6>
     <div class="grey_box" style="padding: 4px 52px 8px 52px;">
       <h3> <span style="font-size: 18px;"> <%= @profile.job_title if @profile.job_title %> </span> </h3>
       <p> <%= simple_format @profile.description, style: "line-height: 1.5; font-size: 15px;" %> </p>
-      <h6 style="font-size: 13px; text-decoration: underline;"> Session price: £ <%= @profile.session_price if @profile.session_price %> </h6>
+      <h6 style="font-size: 13px;"> Session price: £ <%= @profile.session_price if @profile.session_price %> </h6>
       <div class="button">
         <a id="std-btn" style="padding: 19px 92px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
       </div>
