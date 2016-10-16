@@ -16,7 +16,12 @@
   <div class="btn-on-show" style="text-align: center; width: 130px;">
     <h6 style="text-decoration: underline; margin-bottom: 0px;"> Related guides </h6>
     <% @related_profiles.each do |pro| %>
-      <%= image_tag pro.profile_image.url, style: "width: 60px; height: auto; margin-bottom: 0px;" %> 
+        <%= image_tag pro.profile_image.url, style: "width: 60px; height: auto; margin-bottom: 0px;" %>
+
+
+      <% if pro.advisor %>
+        <h6> <%= pro.advisor.first_name %> <%= pro.advisor.second_name[0] %>. </h6>
+      <% end %>
     <% end %>
   </div>
 
