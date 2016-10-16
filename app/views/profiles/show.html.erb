@@ -37,9 +37,9 @@
   <% if @profile.max_no_of_session %> 
     <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center; margin-top: 5px;">
       <% unless @profile.max_no_of_session == "undefined" %>
-        Currently available? <i class="fa fa-check" aria-hidden="true"></i>
+        Max. requests per week: <%= @profile.max_no_of_session %> | Currently available? <i class="fa fa-check" aria-hidden="true"></i>
       <% else %>
-        Max. requests per week: n.a.| Currently available? <i class="fa fa-check" aria-hidden="true"></i>
+        Currently available? <i class="fa fa-check" aria-hidden="true"></i>
       <% end %>
     </div>
   <% end %>
