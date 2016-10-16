@@ -193,6 +193,12 @@ html, body {
 } 
 
 
+.related_users{
+  @media (max-width: 900px){
+    display: none;
+  }
+}
+
 
 body {
   height: 100%;
