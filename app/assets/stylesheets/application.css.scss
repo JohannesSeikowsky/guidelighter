@@ -194,8 +194,14 @@ html, body {
 
 
 .related_users{
+  position: fixed;
+  top: 50px;
+  right: 10px;
   @media (max-width: 900px){
     display: none;
+  }
+  a:hover{
+    background-color: #FAFAFA;
   }
 }
 
