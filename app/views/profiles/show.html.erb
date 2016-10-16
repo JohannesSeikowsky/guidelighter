@@ -14,43 +14,32 @@
   <div class="color_background"> </div>
   
   <div class="btn-on-show">
-    <%= link_to "Back", "#", onclick: "goBack();", class: "btn btn-md" %>
-    <!-- <%= link_to "Browse more Listings", search_path(), class: "btn btn-md" %> <br> -->
+    <!-- add related guides here -->
   </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
-  <h6> Your Guide <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. </h6>
+  <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %> / Your Guide </h6>
   <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> <br>
 
-  <h6> On Offer </h6>
+  <h6> Offering </h6>
   <div class="grey_box" style="padding: 4px 52px 8px 52px; text-align: center;">
-    Application Help <i class="fa fa-check" aria-hidden="true"></i> Career Advice and Insights <i class="fa fa-check" aria-hidden="true"></i> <br> Mentoring of skills <i class="fa fa-check" aria-hidden="true"></i> General support <i class="fa fa-check" aria-hidden="true"></i>
+    Help with Applications <i class="fa fa-check" aria-hidden="true"></i> Career Advice and Insights <i class="fa fa-check" aria-hidden="true"></i> <br> Mentoring of skills <i class="fa fa-check" aria-hidden="true"></i> General support <i class="fa fa-check" aria-hidden="true"></i>
   </div>
 
-  <div id="guide_show">
-    <h6> The Guide </h6>
+  <div id="guide_show" style="margin-bottom: 5px;">
+    <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %> </h6>
     <div class="grey_box" style="padding: 4px 52px 8px 52px;">
-      <h3> <%= @advisor.first_name %> <%= @advisor.second_name[0] %> <span style="font-size: 14px;"> - <%= @profile.job_title if @profile.job_title %> </span> </h3>
-      <p> <%= simple_format @profile.description, style: "line-height: 1.5;" %> </p>
-      <h6> Price per session: £ <%= @profile.session_price if @profile.session_price %> </h6>
+      <h3> <span style="font-size: 18px;"> <%= @profile.job_title if @profile.job_title %> </span> </h3>
+      <p> <%= simple_format @profile.description, style: "line-height: 1.5; font-size: 15px;" %> </p>
+      <h6 style="font-size: 13px; text-decoration: underline;"> Session price: £ <%= @profile.session_price if @profile.session_price %> </h6>
       <div class="button">
         <a id="std-btn" style="padding: 19px 92px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
       </div>
     </div>
   </div>
 
-  <% if @profile.max_no_of_session %> 
-    <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center; margin-top: 5px;">
-      <% unless @profile.max_no_of_session == "undefined" %>
-        Max. requests per week: <%= @profile.max_no_of_session %> | Currently available? <i class="fa fa-check" aria-hidden="true"></i>
-      <% else %>
-        Currently available? <i class="fa fa-check" aria-hidden="true"></i>
-      <% end %>
-    </div>
-  <% end %>
-
   <div id="request_from" style="display: none;">
-    <div class="grey_box" style="margin-bottom: 25px;">  
+    <div class="grey_box" style="margin-bottom: 5px;">  
       <h3> Request Form </h3>
       <%= form_for :request, url: create_request_path(advisor_id: @advisor.id) do |f| %>
         <h6> Briefly, what is your situation? What would you like help with? <br> </h6>
@@ -68,6 +57,21 @@
     </div>
   </div>
 
+  <% if @profile.max_no_of_session %> 
+    <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;">
+      <% unless @profile.max_no_of_session == "undefined" %>
+        Max. requests per week: <%= @profile.max_no_of_session %> | Currently available? <i class="fa fa-check" aria-hidden="true"></i>
+      <% else %>
+        Currently available? <i class="fa fa-check" aria-hidden="true"></i>
+      <% end %>
+    </div>
+  <% end %>
+
+  <!-- love 
+  <p id="love" style="margin-top: 5px;"> Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona </p>
+  -->
+
+  <!-- Make questions ausfahrbar 
   <br>
   <h6> Questions? </h6>
   <div id="questions">
@@ -82,7 +86,7 @@
         </div>
       <% end %>
     </div> <br>
-  </div>
+  </div> -->
 
   <div class="bottom_right_buttons_home">
     <%= link_to "Mentoring", search_path(category: "practical_expertise"), class: "btn btn-md" %> <br>
@@ -94,7 +98,6 @@
     <%= link_to "Submit a request", new_user_request_path, class: "btn btn-md" %>
   </div> -->
    
-  <p id="love"> Guidelighter - Made with <i class="fa fa-heart" aria-hidden="true"></i> in Barcelona </p>
 </div>
 
 <!-- js for back button -->
