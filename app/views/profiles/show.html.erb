@@ -34,9 +34,15 @@
     </div>
   </div>
 
-  <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center; margin-top: 6px;" >
-     Max. requests per week: <%= @profile.max_no_of_session %> | Currently available? <i class="fa fa-check" aria-hidden="true"></i>
-  </div>
+  <% if @profile.max_no_of_session %> 
+    <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center; margin-top: 5px;">
+      <% unless @profile.max_no_of_session == "undefined" %>
+        Currently available? <i class="fa fa-check" aria-hidden="true"></i>
+      <% else %>
+        Max. requests per week: n.a.| Currently available? <i class="fa fa-check" aria-hidden="true"></i>
+      <% end %>
+    </div>
+  <% end %>
 
   <div id="request_from" style="display: none;">
     <div class="grey_box" style="margin-bottom: 25px;">  
