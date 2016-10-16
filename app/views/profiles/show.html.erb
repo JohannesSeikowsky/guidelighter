@@ -27,7 +27,7 @@
   </div>
 
   <div id="guide_show" style="margin-bottom: 5px;">
-    <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %> </h6>
+    <h6> Guide - <%= @advisor.first_name %> <%= @advisor.second_name[0] %> </h6>
     <div class="grey_box" style="padding: 4px 52px 8px 52px;">
       <h3> <span style="font-size: 18px;"> <%= @profile.job_title if @profile.job_title %> </span> </h3>
       <p> <%= simple_format @profile.description, style: "line-height: 1.5; font-size: 15px;" %> </p>
