@@ -13,8 +13,11 @@
 <div class="simple_container">
   <div class="color_background"> </div>
   
-  <div class="btn-on-show">
-    <!-- add related guides here -->
+  <div class="btn-on-show" style="text-align: center; width: 130px;">
+    <h6 style="text-decoration: underline; margin-bottom: 0px;"> Related guides </h6>
+    <% @related_profiles.each do |pro| %>
+      <%= image_tag pro.profile_image.url, style: "width: 60px; height: auto; margin-bottom: 0px;" %> 
+    <% end %>
   </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
@@ -27,7 +30,7 @@
   </div>
 
   <div id="guide_show" style="margin-bottom: 5px;">
-    <h6> Guide - <%= @advisor.first_name %> <%= @advisor.second_name[0] %> </h6>
+    <h6> Guide - <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. </h6>
     <div class="grey_box" style="padding: 4px 52px 8px 52px;">
       <h3> <span style="font-size: 18px;"> <%= @profile.job_title if @profile.job_title %> </span> </h3>
       <p> <%= simple_format @profile.description, style: "line-height: 1.5; font-size: 15px;" %> </p>
@@ -43,13 +46,13 @@
       <h3> Request Form </h3>
       <%= form_for :request, url: create_request_path(advisor_id: @advisor.id) do |f| %>
         <h6> Briefly, what is your situation? What would you like help with? <br> </h6>
-        <%= f.text_field :indicated_interest , style: "width: 392px;", class: "small_placeholder_text" %>
+        <%= f.text_field :indicated_interest , style: "width: 418px;", class: "small_placeholder_text" %>
         <h6>When would you usually be available for a session? Days? Times? </h6>
-        <%= f.text_field :requesting_availability, style: "width: 392px;", class: "small_placeholder_text" %>
+        <%= f.text_field :requesting_availability, style: "width: 418px;", class: "small_placeholder_text" %>
         <h6>Your Email - so we can reply. </h6>
-        <%= f.text_field :requesting_email, style: "width: 392px;", class: "small_placeholder_text" %>
+        <%= f.text_field :requesting_email, style: "width: 418px;", class: "small_placeholder_text" %>
         <h6>Your Name - for a personal touch. </h6>
-        <%= f.text_field :requesting_name, style: "width: 392px;", class: "small_placeholder_text" %>
+        <%= f.text_field :requesting_name, style: "width: 418px;", class: "small_placeholder_text" %>
         <%= f.hidden_field :advisor_id, value: @advisor.id %>
         <%= f.submit "Done.", id: "std-btn" %> <br>
         <h6> Note: This request is not binding. It's purpose is to check wether it <br> is possible to arrange a session with the guide you are requesting. </h6>

@@ -26,6 +26,7 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:profile_id])
     @advisor = @profile.advisor
+    @related_profiles = Profile.limit(3).order("RANDOM()")
   end
 
   def edit
