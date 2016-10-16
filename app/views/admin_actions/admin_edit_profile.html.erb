@@ -9,6 +9,7 @@
   <div> <%= image_tag @profile.profile_image.url, style: "height: 100px; width: auto;" %> </div> <br>
   <h4> Editing - <%= @profile.advisor.first_name %> <%= @profile.advisor.second_name %>'s Profile </h4>
   <%= form_for @profile, url: admin_update_profile_path(profile_id: @profile.id) do |f| %>
+    
     <h6> Description </h6>
     <%= f.text_area :description, style: "height: 205px;" %> 
     <h6> Image </h6>
@@ -29,22 +30,17 @@
     <% else %>
       <h6> Maximum Number of Sessions </h6>
     <% end %>
-
     <%= f.radio_button :max_no_of_session, "2", class: "max_sessions", style: "margin-bottom: 9px;" %> <span style="margin-left: 4px;"> 2 per week </span> <br>
     <%= f.radio_button :max_no_of_session, "1", class: "max_sessions", style: "margin-bottom: 9px;" %> <span style="margin-left: 4px;"> 1 per week </span> <br>
     <%= f.radio_button :max_no_of_session, "0.5", class: "max_sessions", style: "margin-bottom: 9px;" %> <span style="margin-left: 4px;"> 1 every 2 weeks </span> <br>
     <%= f.radio_button :max_no_of_session, "undefined", class: "max_sessions" %> <span style="margin-left: 4px;"> I don't mind </span>
     <hr style="background-color: lightgrey;">
 
-
     <% if @profile.session_price %>
       <h6> <%= @profile.session_price %> is set as the current value. <br> Only select a button or type a new value if you want to change this. </h6>
     <% else %>
       <h6> Price per session </h6>
     <% end %>
-
-
-
     <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px; text-decoration: underline;" onclick="showSet();"> reset </p>
     <%= f.number_field :session_price, id: "set_yourself", style: "height: 28px; width: 60px; margin-bottom: 3px;" %> <br> <span style="text-decoration: underline;"> choose new </span> <br>
     <%= f.radio_button :session_price, 15, class: "session_price", id: "session_price" %> £ 15  <br>
@@ -56,12 +52,13 @@
     <!-- submit -->      
     <%= f.submit "Update." %>
   <% end %> <br> <br>
-    Listing prices if any: <br>
-    <% if @profile.advisor.listings.any? %>
-      <% @profile.advisor.listings.each do |list| %>
-        <span> <%= list.price %>, </span>
-      <% end %>
+
+  Listing prices if any: <br>
+  <% if @profile.advisor.listings.any? %>
+    <% @profile.advisor.listings.each do |list| %>
+      <span> <%= list.price %>, </span>
     <% end %>
+  <% end %>
 
   <br> <br> <br>
 
