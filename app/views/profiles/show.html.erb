@@ -30,18 +30,18 @@
   <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> <br>
 
   <h6> Offering </h6>
-  <div class="grey_box" style="padding: 4px 52px 8px 52px; text-align: center;">
-    Applications Help <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Career Advice and Insight <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <br> Skills Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> General support <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i>
+  <div class="grey_box" style="padding: 4px 52px 8px 52px; text-align: center; font-size: 15px;">
+    General support <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Applications Help <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <br> Career Advice and Insight <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Skills Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i>
   </div>
 
   <div id="guide_show" style="margin-bottom: 5px;">
     <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. </h6>
     <div class="grey_box" style="padding: 4px 52px 8px 52px;">
-      <h3> <span style="font-size: 18px;"> <%= @profile.job_title if @profile.job_title %> </span> </h3>
+      <h3> <span style="font-size: 19px;"> <%= @profile.job_title if @profile.job_title %> </span> </h3>
       <p> <%= simple_format @profile.description, style: "line-height: 1.5; font-size: 15px;" %> </p>
       <h6 style="font-size: 15px;"> Session: £ <%= @profile.session_price if @profile.session_price %> </h6>
       <div class="button">
-        <a id="std-btn" style="padding: 19px 114px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
+        <a id="std-btn" style="font-size: 18px; padding: 18px 110px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@
   </div>
 
   <% if @profile.max_no_of_session %> 
-    <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center;">
+    <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center; font-size: 15px;">
       <% unless @profile.max_no_of_session == "undefined" %>
         Max. requests per week: <%= @profile.max_no_of_session %> | Currently available: <i class="fa fa-check" aria-hidden="true"></i>
       <% else %>
@@ -78,7 +78,7 @@
   <div id="questions" style="margin-top: 5px;">
     <div class="grey_box" style="padding: 14px 52px 14px 52px;">
       <h4> What <%= @advisor.first_name %> can help with: </h4>
-      <h6> <span> General </span> - anything that would help you that directly or indirectly relates to <%= @advisor.first_name %>'s expertise and experience. You choose. What do you need? </h6>
+      <h6> <span> General support </span> - anything that would help you that directly or indirectly relates to <%= @advisor.first_name %>'s expertise and experience. You choose. What do you need? </h6>
       <h6> Applications - if you are currently applying to or are planning to apply to <%= @advisor.first_name %>'s career path, definitely get in touch to get some valuable help. </h6>
       <h6> Career Advice and Insight - if you are interested in gaining insight into <%= @advisor.first_name %>'s career path to see what it's all about and how it works. </h6>
       <h6> Skill Mentoring - if you are interested in acquiring some of the skills - hard and soft - that faciltate success in <%= @advisor.first_name %>'s occupation. 
@@ -86,7 +86,7 @@
     </div>
   </div>
   
-  <p id="love" style="margin-top: 5px;"> Guidelighter - Made with you in mind. </p>
+  <p id="love" style="margin-top: 5px;"> Guidelighter - Made with you in mind | Any Questions? click here to ask. </p>
 
 
   <!-- Make questions ausfahrbar 
