@@ -5,7 +5,7 @@
     <%= link_to "Contact Us", contact_path %>
     <%= link_to "How it works", how_path %>
     <%= link_to "What people say", reviews_path %>
-    <%= link_to "Become a Guide in 3 Minutes", signup_path, class: "btn white_border", style: "margin-left: 8px; padding: 5px 28px;" %>
+    <%= link_to "Become a Guide in 3 Minutes", signup_path, class: "btn white_border", style: "margin-left: 8px; padding: 5px 28px; border: none;" %>
   </div>
 </div>
 
@@ -39,7 +39,7 @@
     <div class="grey_box" style="padding: 4px 52px 8px 52px;">
       <h3> <span style="font-size: 18px;"> <%= @profile.job_title if @profile.job_title %> </span> </h3>
       <p> <%= simple_format @profile.description, style: "line-height: 1.5; font-size: 15px;" %> </p>
-      <h6 style="font-size: 13px;"> Session price: £ <%= @profile.session_price if @profile.session_price %> </h6>
+      <h6 style="font-size: 15px;"> Session: £ <%= @profile.session_price if @profile.session_price %> </h6>
       <div class="button">
         <a id="std-btn" style="padding: 19px 92px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
       </div>
