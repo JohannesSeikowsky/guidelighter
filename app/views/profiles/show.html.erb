@@ -26,7 +26,7 @@
   </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
-  <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %> / Your Guide </h6>
+  <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %> / Guide </h6>
   <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> <br>
 
   <h6> Offering </h6>
@@ -78,7 +78,7 @@
 
   <div id="questions" style="margin-top: 5px;">
     <div class="grey_box" style="padding: 14px 52px 14px 52px;">
-      <h4> What is <%= @advisor.first_name %> willing to help with? </h4>
+      <h4> What can <%= @advisor.first_name %> help with? </h4>
       <h6> <span> General </span> - anything that would help you that directly or indirectly relates to <%= @advisor.first_name %>'s expertise and experience. You choose. What do you need? </h6>
       <h6> Applications - if you are currently applying to or are planning to apply to <%= @advisor.first_name %>'s career path, definitely get in touch to get some valuable help. </h6>
       <h6> Career Advice and Insight - if you are interested in gaining insight into <%= @advisor.first_name %>'s career path to see what it's all about and how it works. </h6>
