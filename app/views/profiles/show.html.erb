@@ -49,9 +49,8 @@
   <div id="request_from" style="display: none;">
     <div class="grey_box" style="margin-bottom: 5px;">  
       <!-- <h3> Request Form </h3> -->
-      <br>
       <%= form_for :request, url: create_request_path(advisor_id: @advisor.id) do |f| %>
-        <h6> Briefly, what is your situation? What would you like help with? <br> </h6>
+        <h6 style="margin-top: 18px;"> Briefly, what is your situation? What would you like help with? <br> </h6>
         <%= f.text_field :indicated_interest , style: "width: 418px;", class: "small_placeholder_text" %>
         <h6>When would you usually be available for a session? Days? Times? </h6>
         <%= f.text_field :requesting_availability, style: "width: 418px;", class: "small_placeholder_text" %>
@@ -78,7 +77,7 @@
 
   <div id="questions" style="margin-top: 5px;">
     <div class="grey_box" style="padding: 14px 52px 14px 52px;">
-      <h4> What can <%= @advisor.first_name %> help with? </h4>
+      <h4> What <%= @advisor.first_name %> can help with: </h4>
       <h6> <span> General </span> - anything that would help you that directly or indirectly relates to <%= @advisor.first_name %>'s expertise and experience. You choose. What do you need? </h6>
       <h6> Applications - if you are currently applying to or are planning to apply to <%= @advisor.first_name %>'s career path, definitely get in touch to get some valuable help. </h6>
       <h6> Career Advice and Insight - if you are interested in gaining insight into <%= @advisor.first_name %>'s career path to see what it's all about and how it works. </h6>
