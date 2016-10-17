@@ -41,7 +41,7 @@
       <p> <%= simple_format @profile.description, style: "line-height: 1.5; font-size: 15px;" %> </p>
       <h6 style="font-size: 15px;"> Session: £ <%= @profile.session_price if @profile.session_price %> </h6>
       <div class="button">
-        <a id="std-btn" style="font-size: 18px; padding: 18px 110px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
+        <a id="std-btn" style="font-size: 18px; padding: 18px 114px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
       </div>
     </div>
   </div>
@@ -77,16 +77,17 @@
 
   <div id="questions" style="margin-top: 5px;">
     <div class="grey_box" style="padding: 14px 52px 14px 52px;">
-      <h4> What <%= @advisor.first_name %> can help with: </h4>
-      <h6> <span> General support </span> - anything that would help you that directly or indirectly relates to <%= @advisor.first_name %>'s expertise and experience. You choose. What do you need? </h6>
-      <h6> Applications - if you are currently applying to or are planning to apply to <%= @advisor.first_name %>'s career path, definitely get in touch to get some valuable help. </h6>
-      <h6> Career Advice and Insight - if you are interested in gaining insight into <%= @advisor.first_name %>'s career path to see what it's all about and how it works. </h6>
-      <h6> Skill Mentoring - if you are interested in acquiring some of the skills - hard and soft - that faciltate success in <%= @advisor.first_name %>'s occupation. 
-      </h6> 
+      <h4 style="font-size: 19px;"> What <%= @advisor.first_name %> can help with. </h4>
+      <ul style="margin-left: -20px; margin-top: -3px;">
+      <li> <h6 style="font-size: 15px;"> General support </span> - anything that would help you that directly or indirectly relates to <%= @advisor.first_name %>'s expertise. You choose. What do you need? </h6> </li>
+      <li> <h6 style="font-size: 15px;"> Applications - if you are currently applying to or are planning to apply to <%= @advisor.first_name %>'s career path, make sure to get in touch to get some valuable help. </h6> </li>
+      <li> <h6 style="font-size: 15px;"> Career Advice and Insight - if you are interested in gaining insight into <%= @advisor.first_name %>'s career path to see what it's all about and how it works. </h6> </li>
+      <li> <h6 style="font-size: 15px;"> Skill Mentoring - if you are interested in acquiring some of the skills - hard and soft - that faciltate success in <%= @advisor.first_name %>'s occupation. </h6> </li>
+      </ul>
     </div>
   </div>
   
-  <p id="love" style="margin-top: 5px;"> Guidelighter - Made with you in mind | Any Questions? click here to ask. </p>
+  <p id="love" style="margin-top: 5px;"> Any Questions? click here to ask. </p>
 
 
   <!-- Make questions ausfahrbar 
