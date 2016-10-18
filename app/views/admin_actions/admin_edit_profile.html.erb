@@ -26,7 +26,7 @@
     <hr style="background-color: lightgrey;">
 
     <% if @profile.max_no_of_session %> 
-      <h6> <%= @profile.max_no_of_session %> is set as the current value. (undefined = I don't mind) <br> Only select a button if you want to change this. </h6>
+      <h6> current value = <%= @profile.max_no_of_session %> (undefined = I dont mind) </h6>
     <% else %>
       <h6> Maximum Number of Sessions </h6>
     <% end %>
@@ -37,18 +37,12 @@
     <hr style="background-color: lightgrey;">
 
     <% if @profile.session_price %>
-      <h6> <%= @profile.session_price %> is set as the current value. <br> Only select a button or type a new value if you want to change this. </h6>
+      <h6> current value = <%= @profile.session_price %> </h6>
     <% else %>
       <h6> Price per session </h6>
     <% end %>
-    <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px; text-decoration: underline;" onclick="showSet();"> reset </p>
-    <%= f.number_field :session_price, id: "set_yourself", style: "height: 28px; width: 60px; margin-bottom: 3px;" %> <br> <span style="text-decoration: underline;"> choose new </span> <br>
-    <%= f.radio_button :session_price, 15, class: "session_price", id: "session_price" %> £ 15  <br>
-    <%= f.radio_button :session_price, 20, class: "session_price" %> £ 20 <br>
-    <%= f.radio_button :session_price, 25, id: "default_checked", class: "session_price" %> £ 25 <br>
-    <%= f.radio_button :session_price, 20, class: "session_price" %> £ 30 <br>
-    <%= f.radio_button :session_price, 30, class: "session_price"%> £ 35 <br>
-
+    <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px; text-decoration: underline;" onclick="showSet();"> set: </p>
+    <%= f.number_field :session_price, id: "set_yourself", style: "height: 28px; width: 60px; margin-bottom: 3px;" %> <br>
     <!-- submit -->      
     <%= f.submit "Update." %>
   <% end %> <br> <br>
