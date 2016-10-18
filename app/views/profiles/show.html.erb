@@ -26,16 +26,16 @@
   </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
-  <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %> / Guide </h6>
-  <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6;"  %> <br>
+  <h6 style="font-size: 15px; text-decoration: underline;"> <%= @advisor.first_name %> <%= @advisor.second_name[0] %> / Your Guide </h6>
+  <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6; margin-top: 7px; margin-bottom: 3px;" %> <br>
 
-  <h6> Offering </h6>
+  <h6 style="font-size: 15px; text-decoration: underline;"> Offering </h6>
   <div class="grey_box" style="padding: 4px 52px 8px 52px; text-align: center; font-size: 15px;">
     General support <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Applications Help <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <br> Career Advice and Insight <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Skills Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i>
   </div>
 
   <div id="guide_show" style="margin-bottom: 5px;">
-    <h6> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. </h6>
+    <h6 style="font-size: 15px; text-decoration: underline;"> <%= @advisor.first_name %> <%= @advisor.second_name[0] %>. </h6>
     <div class="grey_box" style="padding: 4px 52px 8px 52px;">
       <h3> <span style="font-size: 19px;"> <%= @profile.job_title if @profile.job_title %> </span> </h3>
       <p> <%= simple_format @profile.description, style: "line-height: 1.5; font-size: 15px;" %> </p>
@@ -87,7 +87,7 @@
     </div>
   </div>
   
-  <p id="love" style="margin-top: 5px;"> Any Questions? click here to ask. </p>
+  <p id="love" style="margin-top: 5px;"> Any Questions? Click here to ask. </p>
 
 
   <!-- Make questions ausfahrbar 
