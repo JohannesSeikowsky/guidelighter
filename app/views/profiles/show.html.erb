@@ -75,7 +75,7 @@
     </div>
   <% end %>
 
-  <div id="questions" style="margin-top: 5px;">
+  <div id="offering" style="margin-top: 5px;">
     <div class="grey_box" style="padding: 14px 52px 14px 52px;">
       <h4 style="font-size: 19px;"> What <%= @advisor.first_name %> can help with. </h4>
       <ul style="margin-left: -20px; margin-top: -3px;">
@@ -87,17 +87,13 @@
     </div>
   </div>
   
-  <p id="love" style="margin-top: 5px;"> Any Questions? Click here to ask. </p>
+  <p id="love" style="margin-top: 5px; cursor: pointer; margin-bottom: 5px;" onclick="showQuestions();"> Any Questions? Click here to ask. </p>
 
-
-  <!-- Make questions ausfahrbar 
-  <br>
-  <h6> Questions? </h6>
-  <div id="questions">
+  <div id="questions" style="display: none;">
     <div class="grey_box" style="padding: 14px 52px 8px 52px;">
-      <br>
+      <h6 style="text-decoration: underline;">Get in touch</h6>
       <%= form_for :message, url: question_message_path do |f| %> 
-        <%= f.text_area :content, placeholder: "Any question? just ask.", style: "height: 72px;" %>
+        <%= f.text_area :content, placeholder: "your question", style: "height: 72px;" %>
         <%= f.text_field :reply_address, placeholder: "your@email.com", style: "width: 100%;" %> <br>
         <%= f.hidden_field :advisor_id, value: @advisor.id %>
         <div class="button" style="padding-top: 0px;"> 
@@ -105,7 +101,7 @@
         </div>
       <% end %>
     </div> <br>
-  </div> -->
+  </div>
 
   <div class="bottom_right_buttons_home">
     <%= link_to "Mentoring", search_path(category: "practical_expertise"), class: "btn btn-md" %> <br>
@@ -127,6 +123,10 @@
 
   function showRequest(){
     $("#request_from").toggle();
+  }
+
+  function showQuestions(){
+    $("#questions").css("display", "inline");
   }
 </script>
 
