@@ -31,7 +31,10 @@
 
   <h6 style="font-size: 15px; text-decoration: underline;"> Offering </h6>
   <div class="grey_box" style="padding: 4px 52px 8px 52px; text-align: center; font-size: 15px;">
-    General support <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Applications Help <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <br> Career Advice and Insight <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Skills Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i>
+    <% if @profile.general_help? %> General support <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %>
+    <% if @profile.application_help? %> Applications Help <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %> <br>
+    <% if @profile.career_insights_help? %> Career Advice and Insight <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %>
+    <% if @profile.mentoring_help? %> Skills Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %>
   </div>
 
   <div id="guide_show" style="margin-bottom: 5px;">
@@ -79,10 +82,10 @@
     <div class="grey_box" style="padding: 14px 52px 14px 52px;">
       <h4 style="font-size: 19px;"> What <%= @advisor.first_name %> can help with. </h4>
       <ul style="margin-left: -20px; margin-top: -3px;">
-      <li> <h6 style="font-size: 15px;"> General support </span> - anything that would help you out that directly or indirectly relates to <%= @advisor.first_name %>'s expertise. You choose. What do you need? </h6> </li>
-      <li> <h6 style="font-size: 15px;"> Applications - if you are currently applying to or are planning to apply to <%= @advisor.first_name %>'s career path, make sure to get in touch to get some valuable help. </h6> </li>
-      <li> <h6 style="font-size: 15px;"> Career Advice and Insight - if you are interested in gaining insight into <%= @advisor.first_name %>'s career path to see what it's all about and how it works. </h6> </li>
-      <li> <h6 style="font-size: 15px;"> Skill Mentoring - if you are interested in acquiring some of the skills - hard and soft - that faciltate success in <%= @advisor.first_name %>'s occupation. </h6> </li>
+        <% if @profile.general_help? %> <li> <h6 style="font-size: 15px;"> General support </span> - anything that would help you out that directly or indirectly relates to <%= @advisor.first_name %>'s expertise. You choose. What do you need? </h6> </li> <% end %>
+        <% if @profile.application_help? %> <li> <h6 style="font-size: 15px;"> Applications - if you are currently applying to or are planning to apply to <%= @advisor.first_name %>'s career path, make sure to get in touch to get some valuable help. </h6> </li> <% end %>
+        <% if @profile.career_insights_help? %> <li> <h6 style="font-size: 15px;"> Career Advice and Insight - if you are interested in gaining insight into <%= @advisor.first_name %>'s career path to see what it's all about and how it works. </h6> </li> <% end %>
+        <% if @profile.mentoring_help? %> <li> <h6 style="font-size: 15px;"> Skill Mentoring - if you are interested in acquiring some of the skills - hard and soft - that faciltate success in <%= @advisor.first_name %>'s occupation. </h6> </li> <% end %>
       </ul>
     </div>
   </div>
