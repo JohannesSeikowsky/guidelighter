@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'edit_profile', to: 'profiles#edit', as: 'edit_profile'
   patch 'update_profile', to: 'profiles#update', as: 'update_profile'
 
+
   # listings 
   get 'listing/:listing_id', to: 'listings#show', as: 'show_listing'
   

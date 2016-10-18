@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       if !@advisor.profile
         redirect_to new_profile_path, notice: "Logged in. Make a Profile."      
       else
-        redirect_to new_listing_path, notice: "Logged in."
+        redirect_to edit_profile_path, notice: "Logged in."
       end
     else
       redirect_to login_path, notice: "Try again."
