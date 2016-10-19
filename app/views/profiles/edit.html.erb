@@ -16,8 +16,8 @@
     <h3> Edit Your Settings <span style="font-size: 11px;"> - update your profile settings to your liking. </span> </h3>
       <%= form_for @profile, url: update_profile_path do |f| %>
      
-      <h4> 1. Mini-Profile </h4>
-      <h6> 1.1. About Yourself </h6>
+      <h4> 1. About Yourself </h4>
+      <h6> 1.1. Description </h6>
       <%= f.text_area :description, placeholder: "What are you currently doing? What have you done before? What are your fields of interest? etc.", style: "width: 358px; height: 197px; margin-bottom: 2px;" %>
       <h6> 1.2. Your Image </h6>
       <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field", style: "border: 1px solid grey; width: 358px; padding: 5px;" %>  

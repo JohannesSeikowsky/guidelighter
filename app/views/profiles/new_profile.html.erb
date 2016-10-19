@@ -35,11 +35,11 @@
     <!-- form -->
     <%= form_for :profile, path: new_profile_action_path, html: { multipart: true } do |f|%>
       
-      <h4> 1. Mini-Profile </h4>
+      <h4> 1. About Yourself </h4>
       <!-- <h6> In a Nutshell </h6> 
       <%= f.text_field :job_title, placeholder: "e.g. Product Manager and Developer, BSc. Engineering", style: "width: 358px" %> -->
-      <h6> 1.1. About Yourself </h6>
-      <%= f.text_area :description, placeholder: "What are you currently doing? What have you done before? What are your fields of interest? etc.", style: "width: 358px; height: 197px; margin-bottom: 2px;" %>
+      <h6> 1.1. Description </h6>
+      <%= f.text_area :description, placeholder: "What are you currently doing? What have you done before? What are your fields of expertise and interest? etc.", style: "width: 358px; height: 197px; margin-bottom: 2px;" %>
       <h6> 1.2. Your Image </h6>
       <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field", style: "border: 1px solid grey; width: 358px; padding: 5px;" %>  
       <hr style="background-color: lightgrey;">
@@ -65,8 +65,8 @@
       <%= f.radio_button :session_price, 15, class: "session_price", id: "session_price" %> £ 15  <br>
       <%= f.radio_button :session_price, 20, class: "session_price" %> £ 20 <br>
       <%= f.radio_button :session_price, 25, :checked => true, id: "default_checked", class: "session_price" %> £ 25 <br>
-      <%= f.radio_button :session_price, 20, class: "session_price" %> £ 30 <br>
-      <%= f.radio_button :session_price, 30, class: "session_price"%> £ 35 <br>
+      <%= f.radio_button :session_price, 35, class: "session_price" %> £ 35 <br>
+      <%= f.radio_button :session_price, 50, class: "session_price"%> £ 50 <br>
       
       <div style="margin-top: 16px;"> Why a price? <br> Guidelighter is built on the notion of openly sharing one's experience and expertise with those who can benefit from it. Yet we believe that the time and energy of capable people is valuable and that this is to be respected and honoured. Thus, a session price should be set. </div>
 
