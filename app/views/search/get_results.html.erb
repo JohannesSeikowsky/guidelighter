@@ -7,7 +7,7 @@
     <% if logged_in? %>
       <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
     <% else %>
-      <%= link_to "Become a Guide in 3 Minutes", signup_path, class: "btn white_border", style: "margin-left: 8px; padding: 5px 28px; border: none;" %>
+      <%= link_to "Become a Guide in 3 Minutes", signup_path, class: "btn white_border", style: "margin-left: 8px; padding: 5px 28px; border: 1px solid white;" %>
     <% end %>
   </div>
 </div>
