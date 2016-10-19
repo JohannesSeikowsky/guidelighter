@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # available in views
-  helper_method :logged_in?
+  helper_method :logged_in?, :current_user
 
   # session related helper methods
   def log_in
@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     session[:id]
+  end
+
+  def current_user
+    Advisor.find(session[:id])
   end
 
 end

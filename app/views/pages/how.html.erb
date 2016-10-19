@@ -4,9 +4,12 @@
     <%= link_to "About Us", about_path %>
     <%= link_to "Contact Us", contact_path %>
     <%= link_to "What people say", reviews_path %>
-    <%= link_to "EXPLORE LISTINGS", search_path(category: "career_insights"), class: "btn white_border" %>
-    <%= link_to "BECOME A GUIDE", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
-  </div>
+    <%= link_to "EXPLORE", search_path(category: "career_insights"), class: "btn white_border" %>
+    <% if logged_in? %>
+      <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+    <% else %>
+      <%= link_to "Become a Guide in 3 Minutes", signup_path, class: "btn white_border", style: "margin-left: 8px; padding: 5px 28px; border: none;" %>
+    <% end %>  </div>
 </div>
 
 <!--content  -->
