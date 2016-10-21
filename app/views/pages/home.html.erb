@@ -3,12 +3,12 @@
     <%= link_to "About Us", about_path %>
     <%= link_to "Contact Us", contact_path %>
     <%= link_to "How it works", how_path %>
-    <%= link_to "What people say", reviews_path %>
+    <%= link_to "Reviews", reviews_path %>
     <% if logged_in? %>
       <%= link_to "Logout", logout_path, style: "text-decoration: underline;" %>
       <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
     <% else %>
-      <%= link_to "BECOME A GUIDE", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px; padding: 6px 58px 5px 58px;" %>
+      <%= link_to "BECOME A GUIDE IN 3 MIN", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px; padding: 6px 40px 5px 40px;" %>
     <% end %>    
   </div>
 </div>
