@@ -106,13 +106,20 @@
     <% end %>
   <% end %>
 
+  <!-- "Footer" -->
+  <div class="links">
+    <h3> <%= link_to "Our Blog |", about_path %>
+    <%= link_to "Becoming an Ambassador |", ambassadors_path %>
+    <%= link_to "Terms & Conditions", how_path %> </h3>
+  </div>
+
+  <!-- Categories -->
   <div class="bottom_right_buttons_home">
    <h6 style="text-align: center;"> Categories </h6>
     <%= link_to "Mentoring", search_path(category: "practical_expertise"), class: "btn btn-md" %> <br>
     <%= link_to "Career Help", search_path(category: "career_insights"), class: "btn btn-md" %> <br>
     <%= link_to "Applications", search_path(category: "application_help"), class: "btn btn-md" %> <br>
   </div>
-
 </div>
 
 
