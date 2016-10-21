@@ -3,7 +3,9 @@
   <div class="links">
     <%= link_to "Contact Us", contact_path %>
     <%= link_to "How it works", how_path %>
-    <%= link_to "What people say", reviews_path %>
+    <%= link_to "Reviews", reviews_path %>
+    <%= link_to "Terms & Conditions", terms_path %>
+
     <%= link_to "EXPLORE", search_path(category: "career_insights"), class: "btn white_border" %>
     <% if logged_in? %>
       <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>

@@ -1,0 +1,121 @@
+<!-- header -->
+<div class="gl_header">
+  <div class="links">
+    <%= link_to "About Us", about_path %>
+    <%= link_to "Contact Us", contact_path %>
+    <%= link_to "How it works", how_path %>
+    <%= link_to "EXPLORE", search_path(category: "career_insights"), class: "btn white_border" %>
+    <% if logged_in? %>
+      <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+    <% else %>
+      <%= link_to "Become a Guide in 3 Minutes", signup_path, class: "btn white_border", style: "margin-left: 8px; padding: 5px 28px; border: 1px solid white;" %>
+    <% end %>
+  </div>
+</div>
+
+<!-- content -->
+<div class="simple_container">
+ 
+  <h3> Guidelighter Terms of Service </h3>
+  <h4> Version: September 2016 </h4>
+
+  <p> Guidelighter.com is a marketplace platform for mentoring, professional experience sharing and associated services provided by its users.
+  The following terms and conditions (these "Terms of Service"), govern your access to and use of the Guidelighter website, including any content, functionality and services offered on or through www.guidelighter.com (the "Site"), by Guidelighter Limited., as applicable.
+  <br> <br>
+  Please read the Terms of Service carefully before you start to use the Site. By using the Site, opening an account or by clicking to accept or agree to the Terms of Service when this option is made available to you, you accept and agree to be bound and abide by these Terms of Service, incorporated herein by reference. If you do not want to agree to these Terms of Service or the Privacy Policy, you must not access or use the Site. For more detailed policies surrounding the activity and usage on the Site, please access the designated articles found on in the table of contents on this page.
+  This Site is offered and available to users who are 13 years of age or older. If you are under 13 you may not use this Site or the Guidelighter services. By using this Site, you represent and warrant that you are of legal age to form a binding contract with the Company and meet all of the foregoing eligibility requirements. If you do not meet all of these requirements, you must not access or use the Site. </p>
+
+  <h3> Key Terms </h3>
+  <p> Guides are users who offer and perform mentoring and associated professional services on Guidelighter.
+  Buyers are users who purchase services on Guidelighter.
+  Marketplace is where the Guide can describe their services and service-specific terms, and the buyer can purchase the services and create an order.
+  Orders are the formal agreement between a buyer and Guidelighter after a purchase is made 
+  Disputes are disagreements experienced during an order between a buyer and a Guide.
+  Revenue is the money Guides earn from completed orders. </p>
+
+  <h2> Users </h2>
+    • You may not offer guides to pay, or make payment using any method other than through the Guidelighter.com site and process. <br>
+    • Guidelighter retains the right to use all published delivered service listings for Guidelighter marketing and promotional purposes. <br>
+    • Users may request a specific service from the Post a Request feature. Services requested on Guidelighter must be an allowed service on Guidelighter. <br>
+  <h3> Purchasing </h3>
+    • Users pay Guidelighter to create an order from a Guide’s listing page, through the Request guidance button.<br>
+    • Services may be purchased using a Credit Card or Debit Card and PayPal<br>
+    • You may not offer sellers to pay, or make payment using any method other than through the Guidelighter.com site. In case you have been asked to use an alternative payment method, please report it immediately here.<br>
+    • To protect against fraud, unauthorized transactions (such as money laundering), claims or other liabilities, we do not collect credit information; but allow our payment vendors to collect information for the purpose of collecting payments from users on the Site or transferring payments to sellers on the Site. We are not exposed to the payment information provided to our payment vendors, and this information is subject to the privacy policy applicable to the payment vendor. <br> <br>
+
+  <h2> ORDERS </h2>
+  <h3> Basics </h3>
+    • Once a Guide has confirmed the order, we will issue an invoice to the user. As soon as the invoice has been paid, Guidelighter will connect Guide and user to agree on a mutually convenient time and process of conversation <br>
+    • A Guide may cancel an order without the user’s consent at any given moment (Force Cancellation). However, this will have a negative effect on the seller's rating.<br>
+    • We encourage our users and guides to try and settle any conflicts that may arise amongst themselves. If for any reason this fails, users can contact Guidelighter’s customer support department for assistance here.<br>
+  <h3> Withdrawal of funds earned by Guides </h3>
+    • Guidelighter commissions of 20% of the list price and processing fees are deducted at the time of payment to the guide. Processing fees cover payment processing and administrative fees. As of September 2016 the current fees assessed to the total purchase amount are £0.50 on purchases up to £10 and 5% on purchases above £10.<br>
+    • Funds are transferred to the guide immediately after deduction of the Guidelighter commission and payment processing fees.<br>
+  <h3> Reviews </h3>
+    • Feedback reviews provided by users while completing an order are an essential part of Guidelighter’s rating system. Reviews demonstrate the buyer's overall experience with the sellers and their service. Buyers are encouraged to communicate to the seller any concerns experienced during their active order in regards to the service provided by the seller.<br>
+    • Leaving a user’s feedback is a basic prerogative of a user. Feedback reviews will not be removed unless there are clear violations to our Terms of Service.<br>
+    • To prevent any misuse of our Feedback system, all feedback reviews must come from legitimate sales executed exclusively through the Guidelighter platform from users within our Community. Purchases arranged, determined to artificially enhance seller ratings, or to abuse the Guidelighter platform with purchases from additional accounts, will result in a permanent suspension of all related accounts.<br>
+    • Feedback comments given by users are publicly displayed on a guide’s listing page. Buyers have the option not to include a comment, but still rate the service. Cancellation of an order does not remove feedback unless mutually agreed.<br>
+    • Withholding the delivery of services to complete the listing’s service with the intent to gain favorable reviews or additional services is prohibited.<br>
+    • Responding and posting a review: Once work is delivered, the user has three days to respond and post a review. If no response is provided within the response period, the order will be considered completed.<br>
+    • Users are allowed to leave reviews on orders up to 30 days after an order is marked as complete. No new reviews may be added to an order after 30 days.<br>
+  <h3> Disputes and Cancellations </h3>
+    • We encourage our users and guides to try and settle conflicts amongst themselves. If for any reason this fails, users can contact Guidelighter’s Customer Support department for assistance here.<br>
+    • Order cancellations (when eligible) can be performed by Customer Support only up to a period of 13 days from order completion date. We will not cancel orders after that time.<br>
+    • Filing a transaction dispute or reversing a payment through your payment provider or your bank is a violation to these Terms of Service. Doing so may get your account temporarily disabled to investigate possible security violations. Note: once you have filed a dispute with your payment provider, the funds will be ineligible for a refund due to our obligations towards the payment provider.<br>
+    • In the event of a dispute, you are encouraged to use the Site's dispute resolution tools to attempt to resolve the matter by working it out with the seller or if not possible, contact customer support for a resolution.<br>
+    • Eligibility to cancel an order will be assessed by our Customer Support team based on a number of factors, including violations to our Terms of Service, general misconduct, and improper usage of the Guidelighter delivery system.<br>
+    • Orders are not eligible to be cancelled based on the quality of service delivered by the seller if the service was rendered as described in the listing page. Users may rate their experience with the seller on the order page, including the overall level of service quality received.<br>
+    • Guidelighter reserves the right to cancel orders or place funds on hold for any suspected fraudulent transactions made on the Site.<br>
+  <h3> Refunds </h3>
+    • Guidelighter will refund payments made for cancelled orders back to your payment provider automatically. Funds from order cancellations are refunded to the user’s balance less any charges and processing fees incurred by Guidelighter as a part of receipt and transmission of funds <br>
+  <h2> USER CONDUCT </h2>
+  <p> Guidelighter enables people around the world to share, sell and purchase nearly any type of professional experience as a service they need at an unbeatable value. Members of the Guidelighter community communicate and engage through orders, social media, and on Guidelighter’s website. Guidelighter maintains a friendly, community spirited, and professional environment. Users should keep to that spirit while participating in any activity or extensions of Guidelighter. This section relates to the expected conduct users should adhere to while interacting with each other on Guidelighter. </p>
+  <h3> Basics </h3>
+    • To protect our users' privacy, user identities are kept anonymous until the moment when guide and user are connected following a transaction. Requesting or providing Email addresses, Skype/IM usernames, telephone numbers or any other personal contact details to communicate outside of Guidelighter prior to a transaction is not permitted. <br>
+    • Any necessary exchange of personal information required to continue a service may be exchanged following the placing of an order. <br>
+    • Guidelighter does not provide any guarantee of the level of service offered to users. You may leave a review and contact us here in case of any dispute or violation of our Terms of Service. <br>
+    • Guidelighter does not provide protection for users who interact outside of the Guidelighter platform or that are actively violating our Terms of Service. <br>
+    • All information and file exchanges must be performed exclusively on Guidelighter’s platform or via Guidelighter approved means of communication. <br>
+    • Rude, abusive, improper language, or violent messages sent to guides or users will not be tolerated and may result in an account warning or the suspension/removal of your account. <br>
+  <h3> Reporting Violations </h3>
+  <p> If you come across any content that may violate our Terms of Service, you should report it to us through the appropriate channels created to handle those issues as outlined in our Terms of Service. </p>
+  <h3> Violations </h3>
+  <p> Users may receive a warning to their account for violations of our Terms of Service or any user misconduct reported to us. A warning will be sent to the user's email address and will be displayed for such user on the Site. Warnings do not limit account activity, but can lead to your account becoming permanently disabled based on the severity of the violation. </p>
+  <h4> Non-Permitted Usage </h4>
+  <p> Adult Services & Pornography - Guidelighter does not allow any exchange of adult oriented or pornographic materials and services. <br>
+  Inappropriate Behaviour & Language - Communication on Guidelighter should be friendly, constructive, and professional. Guidelighter condemns bullying, harassment, and hate speech towards others. We allow users a medium for which messages are exchanged between individuals, a system to rate orders, and to engage on other platforms and Social Media pages. <br>
+  Phishing and Spam - Guidelighter takes the matter of its members’ security seriously. Any attempts to publish or send malicious content with the intent to compromise another member’s account or computer environment is strictly prohibited. Please respect our members’ privacy by not contacting them for commercial purposes without their consent. <br>
+  Privacy & Identity - You may not publish or post other people's private and confidential information. Any exchange of personal information required for the completion of a service must be provided in the order page. Guides further confirm that whatever information they receive from the user, which is not public domain or confidential to that specific user, shall not be used for any purpose whatsoever other than for the delivery of the services to the user. Any users who engage and communicate off of Guidelighter or its approved and recommended means of communication will not be protected by our Terms of Service. Guides further confirm that they will not engage in or be party to any form of sharing of confidential information and information outside of the public domain that is available to them as part of their current or prior employment. <br>
+  Intellectual Property Claims - Guidelighter will respond to clear and complete notices of alleged copyright or trademark infringement. 
+  Fraud / Unlawful Use - You may not use Guidelighter for any unlawful purposes or to conduct illegal activities. </p>
+  <h4> Abuse and Spam </h4>
+  <p> Multiple Accounts - To prevent fraud and abuse, users are limited to one active account. Any additional account determined to be created to circumvent guidelines, promote competitive advantages, or mislead the Guidelighter community will be disabled. Mass account creation may result in disabling of all related accounts. Note: any violations to Guidelighter’s Terms of Service is cause for permanent suspension of all accounts. <br>
+  Targeted Abuse - We do not tolerate users who engage in targeted abuse or harassment towards other users on Guidelighter. This includes creating new multiple accounts to harass members through our message or ordering system. <br>
+  Selling Accounts - You may not buy or sell Guidelighter accounts. </p>
+
+  <h2> Other General Terms </h2>
+    • Guidelighter reserves the right to put any account on hold or permanently disable accounts due to breach of these terms of service or due to any illegal or inappropriate use of the Site or services. <br>
+    • Violation of Guidelighter Terms of Service may get your account disabled permanently. <br>
+    • Users with disabled accounts will not be able to sell or buy on Guidelighter. <br>
+    • Users who have violated our Terms of Service and had their account disabled may contact our Customer Support team for more information surrounding the violation and status of the account. <br>
+    • Users must be able to verify their account ownership through Customer Support by providing materials that prove ownership of that account. <br>
+    • Disputes should be handled by contacting Guidelighter Customer Support. <br>
+    • Guidelighter may make changes to its Terms of Service from time to time. When these changes are made, Guidelighter will make a new copy of the terms of service available on this page. <br>
+    • You understand and agree that if you use Guidelighter after the date on which the Terms of Service have changed, Guidelighter will treat your use as acceptance of the updated Terms of Service. <br>
+  <h3> Rights of Content </h3>
+  <p> The Guides themselves retain the right to all text, pictures and other content that they create in the service. The users allow others to utilize the content in accordance with the nature of the service and furthermore allow the service provider to file information and data and make changes that are necessary for the service or the study, however other rights are not transferred from the users, unless specifically otherwise agreed. The responsibility of the content lies with the user, who has produced it to the service. The service provider has the right to remove any material when it deems it necessary.</p>
+  <h3> The Removal of a User </h3>
+  <p> The service provider has the right to remove any Guides and/or users from Guidelighter and terminate their right of use of the service without any specific reason and without being liable for compensation. </p>
+  <h2> User Generated Content </h2>
+  <p> User Generated Content ("UGC") refers to the content added by users as opposed to content created by the Site. All content uploaded to Guidelighter by our users (Users and Guides) is User Generated Content. Guidelighter does not check user uploaded/created content for appropriateness, violations of copyright, trademarks, other rights or violations. We invite everyone to report violations together with proof of ownership as appropriate. Reported violating content may be removed or disabled.
+  Furthermore, Guidelighter is not responsible for the content, quality or the level of service provided by the Guides. We provide no warranty with respect to the services, their delivery, and any communications between users and guides. We encourage users to take advantage of our rating system, our community and common sense in choosing appropriate mentoring service offers.
+  By offering a service, the guide undertakes that he/she has sufficient permissions, rights and/or licenses to provide, sell or resell the advice/service offered on Guidelighter. Guides advertising their service listings online must comply with laws and terms of service of the advertising platform or relevant website used to advertise. Failing to do so may result in removal of the listing and may lead to the suspension of seller's account. </p>
+  <h2> Disclaimer of Warranties </h2>
+  <p> YOUR USE OF THE SITE, ITS CONTENT AND ANY SERVICES OR ITEMS OBTAINED THROUGH THE WEBSITE IS AT YOUR OWN RISK. THE SITE, ITS CONTENT AND ANY SERVICES OR ITEMS OBTAINED THROUGH THE WEBSITE ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. NEITHER GUIDELIGHTER NOR ANY PERSON ASSOCIATED WITH GUIDELIGHTER MAKES ANY WARRANTY OR REPRESENTATION WITH RESPECT TO THE COMPLETENESS, SECURITY, RELIABILITY, QUALITY, ACCURACY OR AVAILABILITY OF THE WEBSITE.
+  ADDITIONALLY, PLEASE NOTE THAT WHILST WE STRIVE TO PROVIDE A HIGH QUALITY USER EXPERIENCE, WE DO NOT PROVIDE ANY REPRESENTATIONS OR WARRANTIES PERTAINING TO THE FACTUAL ACCURACY AND/OR THE POTENTIAL CONSEQUENCES ARISING FROM FOLLOWING OR NOT FOLLOWING ADVICE PROVIDED BY GUIDES CONTACTED VIA/AS A RESULT OF THE GUIDELIGHTER PLATFORM.
+  THE FOREGOING DOES NOT AFFECT ANY WARRANTIES WHICH CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW. </p>
+  <h2> Limitation on Liability </h2>
+  <p> IN NO EVENT WILL GUIDELIGHTER, ITS AFFILIATES OR THEIR LICENSORS, SERVICE PROVIDERS, EMPLOYEES, AGENTS, OFFICERS OR DIRECTORS BE LIABLE FOR DAMAGES OF ANY KIND, UNDER ANY LEGAL THEORY, ARISING OUT OF OR IN CONNECTION WITH YOUR USE, OR INABILITY TO USE, THE WEBSITE, ANY WEBSITES LINKED TO IT, ANY CONTENT ON THE WEBSITE OR SUCH OTHER WEBSITES OR ANY SERVICES OR ITEMS OBTAINED THROUGH THE WEBSITE OR SUCH OTHER WEBSITES, INCLUDING ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO, PERSONAL INJURY, PAIN AND SUFFERING, EMOTIONAL DISTRESS, LOSS OF REVENUE, LOSS OF PROFITS, LOSS OF BUSINESS OR ANTICIPATED SAVINGS, LOSS OF USE, LOSS OF GOODWILL, LOSS OF DATA, AND WHETHER CAUSED BY TORT (INCLUDING NEGLIGENCE), BREACH OF CONTRACT OR OTHERWISE, EVEN IF FORESEEABLE.
+  THE FOREGOING DOES NOT AFFECT ANY LIABILITY WHICH CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW </p>
+</div>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'reviews', to: 'pages#reviews', as: 'reviews'
   get 'successful_signup', to: 'pages#successful_signup', as: 'successful_signup'
   get 'ambassadors', to: 'pages#ambassadors'
+  get 'terms', to: 'pages#terms'
 
   # advisors
   get 'signup', to: 'advisors#signup', as: 'signup'

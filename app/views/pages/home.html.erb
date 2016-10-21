@@ -1,9 +1,9 @@
 <div class="gl_header">
   <div class="links">
     <%= link_to "About Us", about_path %>
-    <%= link_to "Contact Us", contact_path %>
     <%= link_to "How it works", how_path %>
     <%= link_to "Reviews", reviews_path %>
+    <%= link_to "Ambassadors", ambassadors_path %>
     <% if logged_in? %>
       <%= link_to "Logout", logout_path, style: "text-decoration: underline;" %>
       <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
@@ -77,6 +77,7 @@
 
 
   <!-- listings -->
+  <div style="position: relative;">
   <% @advisors.each do |advisor| %>
     <% if advisor && advisor.profile && advisor.listings %>
 
@@ -105,20 +106,23 @@
 
     <% end %>
   <% end %>
-
-  <!-- "Footer" -->
-  <div class="links">
-    <h3> <%= link_to "Our Blog |", about_path %>
-    <%= link_to "Becoming an Ambassador |", ambassadors_path %>
-    <%= link_to "Terms & Conditions", how_path %> </h3>
   </div>
 
-  <!-- Categories -->
-  <div class="bottom_right_buttons_home">
-   <h6 style="text-align: center;"> Categories </h6>
+  <!-- "Footer" 
     <%= link_to "Mentoring", search_path(category: "practical_expertise"), class: "btn btn-md" %> <br>
     <%= link_to "Career Help", search_path(category: "career_insights"), class: "btn btn-md" %> <br>
     <%= link_to "Applications", search_path(category: "application_help"), class: "btn btn-md" %> <br>
+-->
+
+    <%= link_to "Our Blog", "http://www.guidelighter.net/", target: "_blank" %>
+    <%= link_to "Ambassadors", ambassadors_path, target: "_blank" %>
+    <%= link_to "Terms&Conditions", how_path %>
+
+  <!-- Categories -->
+  <div class="bottom_right_buttons_home">
+   <!-- <h6 style="text-align: center;"> Categories </h6> -->
+    <%= link_to "Our Terms", terms_path, class: "btn btn-md" %> <br>
+    <%= link_to "Contact Us", contact_path, class: "btn btn-md" %> <br>
   </div>
 </div>
 

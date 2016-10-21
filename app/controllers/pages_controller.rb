@@ -24,4 +24,7 @@ class PagesController < ApplicationController
     redirect_to "https://docs.google.com/forms/d/1T577lD9Nrl3MrGx_IVzEHHTmdmAKcDQkIWOGgsd8Ehk/edit?ts=57fa4bd5"
   end
 
+  def terms
+  end
+
 end
