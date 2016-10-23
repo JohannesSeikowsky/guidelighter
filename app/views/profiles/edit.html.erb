@@ -17,7 +17,9 @@
       <%= form_for @profile, url: update_profile_path do |f| %>
      
       <h4> 1. About Yourself </h4>
-      <h6> 1.1. Description </h6>
+      <h6> 1.1. Job Title / Profession </h6>
+      <%= f.text_field :job_title, placeholder: "e.g. Physicist", style: "width: 358px; margin-bottom: 2px;" %>
+      <h6> 1.2. Description </h6>
       <%= f.text_area :description, placeholder: "What are you currently doing? What have you done before? What are your fields of interest? etc.", style: "width: 358px; height: 197px; margin-bottom: 2px;" %>
       <h6> 1.2. Your Image </h6>
       <%= f.file_field :profile_image, accept: 'image/jpeg,image/gif,image/png', id: "image_upload_field", style: "border: 1px solid grey; width: 358px; padding: 5px;" %>  
@@ -38,7 +40,7 @@
       <hr style="background-color: lightgrey;">
 
       <h4> 4. Set a price for a session (roughly 40min. of your time)</h4>
-      <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px; text-decoration: underline;" onclick="showSet();"> set yourself: </p>
+      <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px; text-decoration: underline;" onclick="showSet();"> specifiy price: </p>
       <%= f.number_field :session_price, id: "set_yourself", style: "height: 28px; width: 60px; margin-bottom: 3px;" %> <br>
       
       <%= f.submit "Done Editing." %>
