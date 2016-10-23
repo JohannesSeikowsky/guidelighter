@@ -2,20 +2,22 @@
 <div class="gl_header">
   <div class="links">
     <%= link_to "About Us", about_path %>
+    <%= link_to "Reviews", reviews_path %>
+    <%= link_to "Terms & Conditions", terms_path %>
     <%= link_to "Contact Us", contact_path %>
-    <%= link_to "What people say", reviews_path %>
+
     <%= link_to "EXPLORE", search_path(category: "career_insights"), class: "btn white_border" %>
     <% if logged_in? %>
       <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
     <% else %>
       <%= link_to "Become a Guide in 3 Minutes", signup_path, class: "btn white_border", style: "margin-left: 8px; padding: 5px 28px; border: 1px solid white;" %>
-    <% end %>  </div>
+    <% end %>
+  </div>
 </div>
-
 <!--content  -->
 <div class="simple_container">
   <h2> What Guidelighter is </h2>
-  <p>   
+  <p style="margin-bottom: 20px;">   
     Guidelighter is a peer to peer marketplace for personal mentoring, advice and guidance. Firstly, Guidelighter allows you to easily share your personal experience and expertise by becoming a guide. Secondly, you can legitimately request the support of all guides for your benefit.
   </p>
 
@@ -26,7 +28,6 @@
     <p> On the one hand people can share their personal advice, mentorship and guidance in a certain regard and get paid for doing so. This  may involve things like career advice about their current or past profession, help with applications and CVs, general mentoring or the teaching a specific skill. On the other hand people who are in need for such guidance, can easily and legitimately request it from the guides listed on Guideligher.
     </p>
 
-  <br>
   <h2> FAQs - Guides </h2>
   <p class="faq_question">  How much should I charge? </p>
   <div class="faq_answer" > This is entirely up to you and what you feel your time and listing are worth. A good indicator would normally be to compare yourself to similar listings on the marketplace. But there is no right or wrong price as it depends entirely on you! </div>
