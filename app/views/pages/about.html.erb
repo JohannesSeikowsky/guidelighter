@@ -1,10 +1,10 @@
 <!-- header -->
 <div class="gl_header">
   <div class="links">
-    <%= link_to "Contact Us", contact_path %>
     <%= link_to "How it works", how_path %>
     <%= link_to "Reviews", reviews_path %>
     <%= link_to "Terms & Conditions", terms_path %>
+    <%= link_to "Contact Us", contact_path %>
 
     <%= link_to "EXPLORE", search_path(category: "career_insights"), class: "btn white_border" %>
     <% if logged_in? %>
