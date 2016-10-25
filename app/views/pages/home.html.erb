@@ -3,7 +3,7 @@
     <%= link_to "About Us", about_path %>
     <%= link_to "How it works", how_path %>
     <!-- <%= link_to "Success Stories", reviews_path %> -->
-    <%= link_to "Our Newsletter", "#", class: "btn btn-small", style: "border: 1px solid white;" %>
+    <%= link_to "Our Newsletter", newsletter_path, class: "btn btn-small", style: "border: 1px solid white;" %>
     <% if logged_in? %>
       <%= link_to "Logout", logout_path, style: "text-decoration: underline;" %>
       <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
@@ -22,7 +22,7 @@
     <p class="centered"> <%= notice %> </p>
     <!-- <h2 id="gl_slogan"> Personal guidance from real people <br> who care </h2> -->
 
-    <h2 id="gl_slogan"> Find Mentorship by real people who care - <br> easy and hassle-free </h2>
+    <h2 id="gl_slogan"> Find Mentorship by real people who care - <br> easy and hassle-free. </h2>
     <p style="text-align: center;"> Help with Applications <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Career Advice and Insights <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Specific Requests <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> </p>
 
     <div class="button" style="margin-top: -30px;">    
@@ -31,7 +31,7 @@
       </div>
     </div>
   </div>
-  <h3 style="padding-top: 54px; padding-bottom: 12px; line-height: 1.35; font-size: 25px;"> Find your guide below </h3> 
+  <h3 style="padding-top: 54px; padding-bottom: 12px; line-height: 1.35; font-size: 26px;"> Find your guide below </h3> 
 
 
   <!-- <h3 style="padding-top: 28px; padding-bottom: 16px; text-align: center; line-height: 1.35; font-size: 22px;"> At Guidelighter you can request the help of real people who are willing to share their personal and professional expertise and experience. Browse through our guides and request the support you are looking for - or become a guide yourself. </h3> -->
@@ -113,8 +113,8 @@
   <!-- Bottom right -->
   <div class="bottom_right_buttons_home">
    <!-- <h6 style="text-align: center;"> Categories </h6> -->
-    <%= link_to "Premium", "https://glpremium.wishpond.com/home/", class: "btn btn-md" %> <br>
-    <%= link_to "Our Blog", "http://www.guidelighter.net/", target: "_blank", class: "btn btn-md" %> <br>
+    <%= link_to "GL Premium", "https://glpremium.wishpond.com/home/", class: "btn btn-md" %> <br>
+    <%= link_to "GL Blog", "http://www.guidelighter.net/", target: "_blank", class: "btn btn-md" %> <br>
     <%= link_to "Ambassadors", ambassadors_path, class: "btn btn-md", target: "_blank" %> <br>
   </div>
 </div>
