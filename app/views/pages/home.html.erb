@@ -3,7 +3,7 @@
     <%= link_to "About Us", about_path %>
     <%= link_to "How it works", how_path %>
     <!-- <%= link_to "Success Stories", reviews_path %> -->
-    <%= link_to "Our Newsletter", nl_path, class: "btn btn-small", style: "border: 1px solid white;" %>
+    <%= link_to "Our Newsletter", newsletter_path, class: "btn btn-small", style: "border: 1px solid white;" %>
     <% if logged_in? %>
       <%= link_to "Logout", logout_path, style: "text-decoration: underline;" %>
       <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
