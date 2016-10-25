@@ -2,8 +2,8 @@
   <div class="links">
     <%= link_to "About Us", about_path %>
     <%= link_to "How it works", how_path %>
-    <%= link_to "Reviews", reviews_path %>
-    <%= link_to "Ambassadors", ambassadors_path %>
+    <%= link_to "Success Stories", reviews_path %>
+    <%= link_to "Ambassadors", ambassadors_path, target: "_blank" %>
     <% if logged_in? %>
       <%= link_to "Logout", logout_path, style: "text-decoration: underline;" %>
       <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
@@ -20,19 +20,21 @@
   <!-- Intro  -->
   <div class="intro">
     <p class="centered"> <%= notice %> </p>
-    <h2 id="gl_slogan"> Personal guidance from real people <br> who care </h2>
-    <div class="button">    
-      <%= link_to "FIND GUIDANCE", search_path(category: "career_insights"), id: "hp_button" %> <br> <br>
+    <!-- <h2 id="gl_slogan"> Personal guidance from real people <br> who care </h2> -->
+
+    <h2 id="gl_slogan"> The easiest way to find face-to-face Mentorship from real people. </h2>
+    <p style="text-align: center;"> Applications <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Career Advice and Insights <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Specific Requests <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> </p>
+
+    <div class="button" style="margin-top: -30px;">    
       <div style="height: 30px;">
         <div class="fb-like" data-href="https://www.facebook.com/Guidelighter/?fref=ts" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="true" style="padding-top: 10px;"></div>
       </div>
     </div>
   </div>
+  <h3 style="padding-top: 54px; padding-bottom: 12px; text-align: center; line-height: 1.35; font-size: 22px;"> Find and request guides from a wide range of backgrounds and industries: </h3> 
 
-  <!-- subheader 
-  <h3 style="padding-top: 28px;"> Find the guide and guidance you are looking for. </h3> -->
 
-  <h3 style="padding-top: 28px; padding-bottom: 16px; text-align: center; line-height: 1.35; font-size: 22px;"> At Guidelighter you can request the help of real people who are willing to share their personal and professional expertise and experience. Browse through our guides and request the support you are looking for - or become a guide yourself. </h3>
+  <!-- <h3 style="padding-top: 28px; padding-bottom: 16px; text-align: center; line-height: 1.35; font-size: 22px;"> At Guidelighter you can request the help of real people who are willing to share their personal and professional expertise and experience. Browse through our guides and request the support you are looking for - or become a guide yourself. </h3> -->
 
   <!-- the threee categories -
   <div style="margin-bottom: 12px;">
@@ -111,8 +113,8 @@
   <!-- Bottom right -->
   <div class="bottom_right_buttons_home">
    <!-- <h6 style="text-align: center;"> Categories </h6> -->
-    <%= link_to "GL Premium", "https://glpremium.wishpond.com/home/", class: "btn btn-md" %> <br>
-    <%= link_to "Our Terms", terms_path, class: "btn btn-md" %> <br>
+    <%= link_to "Premium", "https://glpremium.wishpond.com/home/", class: "btn btn-md" %> <br>
+    <%= link_to "Our Blog", "http://www.guidelighter.net/", target: "_blank", class: "btn btn-md" %> <br>
     <%= link_to "Contact Us", contact_path, class: "btn btn-md" %> <br>
   </div>
 </div>
