@@ -61,6 +61,12 @@ class AdminActionsController < ApplicationController
   # tagging
   def profile_tagging
     @profiles = Profile.order("updated_at ASC")
+    @profiles_with_advisor = []
+    @profiles.each do |prof|
+      if prof.advisor
+        @profiles_with_advisor << prof 
+      end
+    end
   end
 
   def tagging

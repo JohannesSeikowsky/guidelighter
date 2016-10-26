@@ -12,7 +12,7 @@
   <br> <br> <br>
   <h2> Profile Tags </h2> <br>
 
-  <% @profiles.each do |prof| %>
+  <% @profiles_with_advisor.each do |prof| %>
     <div style="margin-bottom: 50px;">
       <p style="font-size: 18px;"> 
         <%= prof.advisor.first_name if prof.advisor %> <%= prof.advisor.second_name if prof.advisor %> - 
