@@ -6,7 +6,9 @@
     <%= link_to "Our Newsletter", "/newsletter", class: "btn btn-small", style: "border: 1px solid white;" %>
     <% if logged_in? %>
       <%= link_to "Logout", logout_path, style: "text-decoration: underline;" %>
-      <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+      <% if current_user.profile %>
+        <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+      <% end %>
     <% else %>
       <%= link_to "BECOME A GUIDE IN 3 MIN", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 6px; padding: 6px 40px 5px 40px;" %>
     <% end %>    
@@ -22,7 +24,7 @@
     <p class="centered"> <%= notice %> </p>
     <!-- <h2 id="gl_slogan"> Personal guidance from real people <br> who care </h2> -->
 
-    <h2 id="gl_slogan"> Find Mentorship by real people who care - <br> easy and hassle-free. </h2>
+    <h2 id="gl_slogan"> Mentorship by real people who care - <br> easy and hassle-free. </h2>
     <p style="text-align: center;"> Help with Applications <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Career Advice and Insights <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Specific Requests <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> </p>
 
     <div class="button" style="margin-top: -30px;">    
