@@ -41,51 +41,35 @@
     <% end %>
   </div> <br>
 
+  <!-- search results, if any. -->
+  <% if @search_results %>
+    <h6> Tag: <%= @category %> </h6>
+    <div style="position: relative;">
+      <% @search_results.each do |profile| %>
+          <%= link_to show_profile_path(profile_id: profile) do %>
+            <div class="listing" style="background-color: #F5EFE6;">
+              <!-- Image -->
+              <% unless profile.profile_image.url.nil? %> 
+                  <div class="centered"> <%= image_tag profile.profile_image.url %> </div>
+              <% end %>
 
-
-  <!-- <h3 style="padding-top: 28px; padding-bottom: 16px; text-align: center; line-height: 1.35; font-size: 22px;"> At Guidelighter you can request the help of real people who are willing to share their personal and professional expertise and experience. Browse through our guides and request the support you are looking for - or become a guide yourself. </h3> -->
-
-  <!-- the threee categories -
-  <div style="margin-bottom: 12px;">
-    <%= link_to "Help with Applications", search_path(category: "application_help"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "", id: "applications_category" %>
-    <%= link_to "Insights into Career Paths", search_path(category: "career_insights"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "", id: "insights_category" %>
-    <%= link_to "Mentoring & Support", search_path(category: "practical_expertise"), class: "btn btn-lg tag-btn", style: "width: 33%;", onmouseover: "", id: "practical_category" %>
-  </div> -->
-
-
-  <!-- onhover subtags
-  <%= link_to search_path(category: "application_help") do %>
-    <div class="homepage_subtags" id="application_help_subtags" style="text-align: center;">
-      <% ["Investment Banking", "Consulting", "University Application"].each do |title| %>
-        <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
-          <%= title %>
-        </div>
-      <% end %> ........ Click to see all categories and tags.
+              <!-- Name -->
+              <div id="listing_name"> 
+                <h4 style="margin-bottom: 16px;"> <%= profile.advisor.first_name if profile.advisor %> <%= profile.advisor.second_name[0] if profile.advisor %>. </h4>
+                <h4> <%= profile.job_title if profile.job_title %> </h4>
+                </h4> 
+              </div>
+              <!-- Bottom -->
+              <div id="listing_bottom"> 
+                <span class="bottom">              
+                  <%= link_to "Request #{profile.advisor.first_name} | £ #{profile.advisor.profile.session_price} per session", "#" %> 
+                </span>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
     </div>
-  <% end %>  -->
-
-  <!-- onhover subtags 
-  <%= link_to search_path(category: "career_insights") do %>
-    <div class="homepage_subtags" id="career_insights_subtags" style="text-align: center;">
-      <% ["Investment Banking", "Consulting", "Non-Profits"].each do |title| %>
-        <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
-          <%= title %>
-        </div>
-      <% end %> ........ Click to see all categories and tags.
-    </div>
-  <% end %> -->
-
-  <!-- onhover subtags 
-  <%= link_to search_path(category: "practical_expertise") do %>
-    <div class="homepage_subtags" id="practical_expertise_subtags" style="text-align: center;">
-      <% ["Entrepreneurship", "Exam Preparation", "Brainstorming Partner"].each do |title| %>
-        <div class= "btn btn-lg subtag-btn" style= "font-size: 11px; padding: 8px 10px; margin: 1px;"> 
-          <%= title %>
-        </div>
-      <% end %> ........ Click to see all categories and tags.
-    </div>
-  <% end %> -->
-
+  <% end %>
 
   <!-- listings -->
   <div style="position: relative;">

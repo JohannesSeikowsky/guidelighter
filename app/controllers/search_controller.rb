@@ -33,7 +33,8 @@ class SearchController < ApplicationController
   def profile_search
     @category = params[:category] if params[:category]
     @search_results = Profile.where("tags like ?", "%#{@category}%").order("updated_at DESC")
-    redirect_to root_path
+    @advisors = Advisor.order("created_at DESC")
+    render "pages/home"
   end
-  
+
 end
