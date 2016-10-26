@@ -1,0 +1,35 @@
+<!-- header -->
+<div class="gl_header"> 
+  <div class="links">
+    <%= link_to "Admin", admin_path, class: "btn btn-warning" %>
+  </div>
+</div>
+
+<!-- content -->
+<div class="col-xs-6 col-xs-offset-2">
+  
+  <!-- form for each profile -->
+  <br> <br> <br>
+  <h2> Profile Tags </h2> <br>
+
+  <% @profiles.each do |prof| %>
+    <div style="margin-bottom: 50px;">
+      <p style="font-size: 18px;"> 
+        <%= prof.advisor.first_name if prof.advisor %> <%= prof.advisor.second_name if prof.advisor %> - 
+        <%= prof.job_title if prof.advisor && prof.job_title %>
+      </p>
+      <!-- setting tags -->
+      <%= form_for :listing, url: root_path do |f| %>
+        <%= f.text_area :tags, value: "asdsa", style: "width: 100%; height: 48px;" %> <br>
+        <%= f.submit "update", style: "padding: 0px 3px; margin-right: 5px;" %>
+      <% end %> 
+    </div>
+  <% end %>
+
+  <!-- available tags -->
+  <div class="tags_in_use grey_box">
+    <br> <br> <br>
+    <p>available tags go here</p>
+  </div>
+
+</div>

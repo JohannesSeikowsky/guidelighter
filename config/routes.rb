@@ -67,8 +67,10 @@ Rails.application.routes.draw do
   delete 'destroy_advisor/:advisor_id', to: "admin_actions#destroy_advisor", as: 'admin_destroy_advisor'
 
   # tagging by admin
-  get "tagging", to: "admin_actions#tagging", as: "tagging"
-  post "update_tags/:listing_id", to: "admin_actions#update_tags", as: "update_tags"
+  # get "tagging", to: "admin_actions#tagging", as: "tagging"
+  # post "update_tags/:listing_id", to: "admin_actions#update_tags", as: "update_tags"
+  get "profile_tagging", to: "admin_actions#profile_tagging", as: "profile_tagging"
+
 
 
   # functionalities

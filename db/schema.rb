@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026001928) do
+ActiveRecord::Schema.define(version: 20161026160209) do
 
   create_table "advisors", force: :cascade do |t|
     t.string   "first_name"
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 20161026001928) do
     t.string   "profile_image"
     t.text     "description"
     t.integer  "advisor_id"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.string   "job_title"
     t.boolean  "application_help",     default: true
     t.boolean  "career_insights_help", default: true
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20161026001928) do
     t.integer  "session_price"
     t.string   "max_no_of_session"
     t.boolean  "charity_option",       default: false
+    t.string   "tags",                 default: "no_tags_yet"
   end
 
   create_table "requests", force: :cascade do |t|

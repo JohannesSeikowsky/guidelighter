@@ -9,8 +9,8 @@
 
 <div class="simple_container">
   <p> <%= notice %> </p>
-  <h2> Guides | <%= link_to "Profiles", profiles_overview_path, class: "btn btn-md" %> | <%= link_to "Tags", tagging_path, class: "btn btn-md" %> </h2> <br>
-
+  <h2> Guides | <%= link_to "Profiles", profiles_overview_path, class: "btn btn-md" %> | 
+        <%= link_to "Profile Tags", profile_tagging_path, class: "btn btn-md" %> </h2> <br>
   <% @all_advisors.each do |adv| %>
     <p> 
       <%= link_to "https://www.google.com/search?q=#{adv.first_name}+#{adv.second_name}", target: "_blank" do %>

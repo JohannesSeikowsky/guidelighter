@@ -27,12 +27,10 @@ class AdminActionsController < ApplicationController
   def profiles_overview
     @profiles = Profile.order("updated_at ASC")
   end
-
   
   def listings_overview
     @listings = Listing.all
   end
-
 
   def advisors_resources
     @advisor = Advisor.find(params[:advisor_id])
@@ -61,6 +59,10 @@ class AdminActionsController < ApplicationController
   end
 
   # tagging
+  def profile_tagging
+    @profiles = Profile.order("updated_at ASC")
+  end
+
   def tagging
     if params[:category] == "none"
       @all_listings = Listing.where(tags: "no_tag_yet").order("updated_at ASC")   
@@ -81,7 +83,6 @@ class AdminActionsController < ApplicationController
     redirect_to tagging_path, notice: "Tags Updated."
   end
 
-
   def destroy_advisor
     @advisor = Advisor.find(params[:advisor_id])
     if @advisor
@@ -99,7 +100,7 @@ class AdminActionsController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(:description, :profile_image, :job_title, :application_help, :career_insights_help, :mentoring_help, :general_help, :session_price, :max_no_of_session, :charity_option)
+    params.require(:profile).permit(:description, :profile_image, :job_title, :application_help, :career_insights_help, :mentoring_help, :general_help, :session_price, :max_no_of_session, :charity_option, :tags)
   end
 
   def listing_params
