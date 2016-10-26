@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   get 'how', to: 'pages#how', as: 'how'
   get 'reviews', to: 'pages#reviews', as: 'reviews'
   get 'successful_signup', to: 'pages#successful_signup', as: 'successful_signup'
-  get 'ambassadors', to: 'pages#ambassadors'
   get 'terms', to: 'pages#terms'
+  get 'ambassadors', to: 'pages#ambassadors'
+  get "newsletter", to: "pages#newsletter", as: "newsletter"
 
   # advisors
   get 'signup', to: 'advisors#signup', as: 'signup'
@@ -45,7 +46,6 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#login', as: "login"
   post 'login', to: 'sessions#login_action', as: "login_action"
   get 'logout', to: 'sessions#logout', as: 'logout'
-
 
   # admin
   get 'admin', to: "admin_actions#admin", as: 'admin' # ADMIN
