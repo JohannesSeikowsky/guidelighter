@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
  
-   def get_results
+  def get_results
     @category = params[:category] if params[:category]
     @tag = params[:tag] if params[:tag]
    
@@ -28,6 +28,12 @@ class SearchController < ApplicationController
       format.html { render "get_results.html.erb" }
       format.js { render "get_results.erb.js" }
     end
+  end
+
+  def profile_search
+    @category = params[:category] if params[:category]
+    @search_results = Profile.where("tags like ?", "%#{@category}%").order("updated_at DESC")
+    redirect_to root_path
   end
   
 end

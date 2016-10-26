@@ -88,5 +88,6 @@ Rails.application.routes.draw do
 
   # search
   get "search", to: "search#get_results", as: "search"
+  get "profile_search", to: "search#profile_search", as: "profile_search"
 
 end
