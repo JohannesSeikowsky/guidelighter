@@ -69,6 +69,16 @@ class AdminActionsController < ApplicationController
     end
   end
 
+  def update_profile_tags
+    @profile = Profile.find(params[:profile_id])
+    if @profile.update_attribute(:tags, params[:profile][:tags])
+      redirect_to profile_tagging_path, notice: "tags updated."
+    else
+      redirect_to profile_tagging_path, notice: "tags not updated."
+    end
+  end
+
+
   def tagging
     if params[:category] == "none"
       @all_listings = Listing.where(tags: "no_tag_yet").order("updated_at ASC")   

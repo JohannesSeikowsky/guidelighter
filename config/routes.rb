@@ -70,7 +70,7 @@ Rails.application.routes.draw do
   # get "tagging", to: "admin_actions#tagging", as: "tagging"
   # post "update_tags/:listing_id", to: "admin_actions#update_tags", as: "update_tags"
   get "profile_tagging", to: "admin_actions#profile_tagging", as: "profile_tagging"
-
+  post "update_profile_tags/:profile_id", to: "admin_actions#update_profile_tags", as: "update_profile_tags"
 
 
   # functionalities

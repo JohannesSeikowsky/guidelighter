@@ -10,19 +10,20 @@
   
   <!-- form for each profile -->
   <br> <br> <br>
+  <p> <%= notice %> </p>
   <h2> Profile Tags </h2> <br>
-
-  <% @profiles_with_advisor.each do |prof| %>
+  <% @profiles_with_advisor.each do |pro| %>
     <div style="margin-bottom: 50px;">
       <p style="font-size: 18px;"> 
-        <%= prof.advisor.first_name if prof.advisor %> <%= prof.advisor.second_name if prof.advisor %> - 
-        <%= prof.job_title if prof.advisor && prof.job_title %>
+        <%= pro.advisor.first_name if pro.advisor %> <%= pro.advisor.second_name if pro.advisor %> - 
+        <%= pro.job_title if pro.advisor && pro.job_title %>
       </p>
       <!-- setting tags -->
-      <%= form_for :listing, url: root_path do |f| %>
-        <%= f.text_area :tags, value: "asdsa", style: "width: 100%; height: 48px;" %> <br>
-        <%= f.submit "update", style: "padding: 0px 3px; margin-right: 5px;" %>
+      <%= form_for :profile, url: update_profile_tags_url(profile_id: pro.id) do |f| %>
+        <%= f.text_area :tags, value: pro.tags, style: "width: 100%; height: 68px;" %> <br>
+        <%= f.submit "update tags", style: "padding: 0px 3px; margin-right: 5px;" %>
       <% end %> 
+
     </div>
   <% end %>
 
