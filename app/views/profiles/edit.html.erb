@@ -39,10 +39,15 @@
       <%= f.radio_button :max_no_of_session, "undefined" %> <span style="margin-left: 4px;"> I don't mind </span>
       <hr style="background-color: lightgrey;">
 
-      <h4> 4. Set a price for a session (roughly 40min. of your time)</h4>
+      <h4> 4. Set a price for a session - roughly 40min. of your time </h4>
       <p style="font-size: 14px; margin-top: 5px; cursor: pointer; margin-bottom: 3px; text-decoration: underline;" onclick="showSet();"> set price: </p>
       <%= f.number_field :session_price, id: "set_yourself", style: "height: 28px; width: 60px; margin-bottom: 3px;" %> <br>
-      
+      <hr style="background-color: lightgrey;">
+
+      <h4> 5. Charity option - for those who like </h4>
+      <%= f.check_box :charity_option, style: "margin-bottom: 9px;" %> <span style="margin-left: 4px;"> I want the proceedings from my mentoring to go to charity. </span> <br>
+
+
       <%= f.submit "Done Editing." %>
     <% end %> 
   </div> 
