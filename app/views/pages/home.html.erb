@@ -2,7 +2,7 @@
   <div class="links">
     <%= link_to "About Us", about_path %>
     <%= link_to "How it works", how_path %>
-    <%= link_to "Get Newsletter", "/newsletter", class: "btn btn-small", style: "border: 1px solid white;" %>
+    <%= link_to "Get Newsletter", "/newsletter", style: "margin-right: 4px;" %>
     
     <% if logged_in? %>
       <%= link_to "Logout", logout_path, style: "text-decoration: underline;" %>
@@ -12,7 +12,7 @@
         <%= link_to "Make Your Profile", new_profile_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
       <% end %>
     <% else %>
-      <%= link_to "BECOME A GUIDE | LOGIN", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 6px; padding: 6px 40px 5px 40px;" %>
+      <%= link_to "BECOME A GUIDE | LOGIN", signup_path, class: "btn btn-small ", style: "margin-left: 6px; padding: 6px 40px 5px 40px; border: 1px solid white;" %>
     <% end %>    
   </div>
 </div>
@@ -108,8 +108,8 @@
   <!-- Bottom right -->
   <div class="bottom_right_buttons_home">
    <!-- <h6 style="text-align: center;"> Categories </h6> -->
-    <%= link_to "GL Premium", "https://glpremium.wishpond.com/home/", class: "btn btn-md" %> <br>
-    <%= link_to "GL Blog", "http://www.guidelighter.net/", target: "_blank", class: "btn btn-md" %> <br>
+    <%= link_to "Blog", "http://www.guidelighter.net/", target: "_blank", class: "btn btn-md" %> <br>
+    <%= link_to "Premium", "https://glpremium.wishpond.com/home/", class: "btn btn-md" %> <br>
     <%= link_to "Ambassadors", ambassadors_path, class: "btn btn-md", target: "_blank" %> <br>
   </div>
 </div>

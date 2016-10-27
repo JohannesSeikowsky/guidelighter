@@ -99,7 +99,7 @@
 
   <div id="offering" style="margin-top: 5px;">
     <div class="grey_box" style="padding: 14px 52px 14px 52px;">
-      <h4 style="font-size: 19px;"> What <%= @advisor.first_name %> can help with. </h4>
+      <h4 style="font-size: 19px;"> What <%= @advisor.first_name %> can help with </h4>
       <ul style="margin-left: -20px; margin-top: -3px;">
         <% if @profile.application_help? %> <li> <h6 style="font-size: 15px;"> Applications - if you are currently applying to or are planning to apply to <%= @advisor.first_name %>'s career path, make sure to get in touch to get some valuable help. </h6> </li> <% end %>
         <% if @profile.career_insights_help? %> <li> <h6 style="font-size: 15px;"> Career Support - if you are interested in gaining insight into <%= @advisor.first_name %>'s career path to see what it's all about and how it works. </h6> </li> <% end %>
