@@ -24,8 +24,8 @@
     <p class="centered"> <%= notice %> </p>
     <!-- <h2 id="gl_slogan"> Personal guidance from real people <br> who care </h2> -->
 
-    <h2 id="gl_slogan"> Mentorship by real people who care - <br> easy and hassle-free. </h2>
-    <p style="text-align: center;"> Help with Applications <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Career Advice and Insights <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Specific Requests <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> </p>
+    <h2 id="gl_slogan"> Find Mentorship by real people who care - <br> easy and comfortably </h2>
+    <p style="text-align: center; font-size: 20px;"> Applications <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Career Support <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> </p>
 
     <div class="button" style="margin-top: -30px;">    
       <div style="height: 30px;">
@@ -36,14 +36,14 @@
   </div>
   <!-- generating links --> 
   <div style="text-align: center; margin-top: -25px;">
-    <% {"Management Consulting" => "consulting", "Investment-Banking and Trading" => "banking_and_trading", "Entrepreneurship" => "entrepreneurship", "Finance & Accounting" => "finance_accounting", "Programming and Software Development" => "programming_development", "International Organizations, NGOs and Politics" => "ngos_politics", "Academic Careers" => "academic_careers", "Product Management" => "product_management", "Marketing and Sales" => "marketing_sales", "Art, Design, Theatre, Film & Graphics" => "arts", "The Sciences & Engineering" => "sciences_engineering", "Teaching" => "teaching", "Hospitality" => "hospitality", "Law" => "law", "Healthcare" => "healthcare", "Coaching" => "coaching", "Practical help and guidance" => "practical_support", "University Applications and Professional Exams" => "university_applications_exams"}.each do |name, category| %>
+    <% {"Management Consulting" => "consulting", "Investment-banking and Trading" => "banking_and_trading", "Entrepreneurship" => "entrepreneurship", "Finance & Accounting" => "finance_accounting", "Programming and Software Development" => "programming_development", "International Organizations, NGOs and Politics" => "ngos_politics", "Academic Careers" => "academic_careers", "Product Management" => "product_management", "Marketing and Sales" => "marketing_sales", "Art, Design, Theatre, Film & Graphics" => "arts", "The Sciences & Engineering" => "sciences_engineering", "Teaching" => "teaching", "Hospitality" => "hospitality", "Law" => "law", "Healthcare" => "healthcare", "Coaching" => "coaching", "Practical help and guidance" => "practical_support", "University Applications and Professional Exams" => "university_applications_exams"}.each do |name, category| %>
       <%= link_to "#{name}", profile_search_path(category: "#{category}"), class: "btn btn-lg tag-btn", style: "font-size: 12px; padding: 8px 14px; margin: 1px; z-index: 1000;" %>
     <% end %>
   </div> <br>
 
   <!-- search results, if any. -->
   <% if @search_results %>
-    <h6> Tag: <%= @category %> </h6>
+    <h6> <%= @category.capitalize %> - Find a guide who suits your needs below. </h6>
     <div style="position: relative;">
       <% @search_results.each do |profile| %>
           <%= link_to show_profile_path(profile_id: profile) do %>
