@@ -4,11 +4,16 @@
     <%= link_to "About Us", about_path %>
     <%= link_to "Contact Us", contact_path %>
     <%= link_to "How it works", how_path %>
-    <%= link_to "EXPLORE", search_path(category: "career_insights"), class: "btn white_border" %>
+
     <% if logged_in? %>
-      <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+      <%= link_to "Logout", logout_path, style: "text-decoration: underline;" %>
+      <% if current_user.profile %>
+        <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+      <% else %>
+        <%= link_to "Make Your Profile", new_profile_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+      <% end %>
     <% else %>
-      <%= link_to "Become a Guide in 3 Minutes", signup_path, class: "btn white_border", style: "margin-left: 8px; padding: 5px 28px; border: 1px solid white;" %>
+      <%= link_to "BECOME A GUIDE | LOGIN", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 6px; padding: 6px 40px 5px 40px;" %>
     <% end %>
   </div>
 </div>

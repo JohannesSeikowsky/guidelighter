@@ -2,15 +2,17 @@
   <div class="links">
     <%= link_to "About Us", about_path %>
     <%= link_to "How it works", how_path %>
-    <!-- <%= link_to "Success Stories", reviews_path %> -->
-    <%= link_to "Our Newsletter", "/newsletter", class: "btn btn-small", style: "border: 1px solid white;" %>
+    <%= link_to "Get Newsletter", "/newsletter", class: "btn btn-small", style: "border: 1px solid white;" %>
+    
     <% if logged_in? %>
       <%= link_to "Logout", logout_path, style: "text-decoration: underline;" %>
       <% if current_user.profile %>
         <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
+      <% else %>
+        <%= link_to "Make Your Profile", new_profile_path, class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
       <% end %>
     <% else %>
-      <%= link_to "BECOME A GUIDE IN 3 MIN", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 6px; padding: 6px 40px 5px 40px;" %>
+      <%= link_to "BECOME A GUIDE | LOGIN", signup_path, class: "btn btn-small btn-turquoise", style: "margin-left: 6px; padding: 6px 40px 5px 40px;" %>
     <% end %>    
   </div>
 </div>
@@ -36,7 +38,7 @@
   </div>
   <!-- generating links --> 
   <div style="text-align: center; margin-top: -28px;">
-    <% {"Management Consulting" => "consulting", "Banking & Trading" => "banking_and_trading", "Finance & Accounting" => "finance_accounting", "Freelancers & Digital Nomands" => "freelancer_digital", "Entrepreneurship" => "entrepreneurship", "Programming" => "programming_development", "NGOs & Politics" => "ngos_politics", "Academic Careers" => "academic_careers", "Product Management" => "product_management", "Marketing & Sales" => "marketing_sales", "Teaching" => "teaching", "Consumer Goods industry" => "consumer_goods", "Art, Design, Theatre, Film and Graphics" => "arts", "Sciences & Engineering" => "sciences_engineering", "Hospitality & Travel" => "hospitality", "Journalism" => "journalism", "Healthcare" => "healthcare", "Coaching" => "coaching", "Hands-on Support" => "practical_support", "University Applications" => "university_applications_exams", "MBA" => "mba", "Professional Exams" => "professional_exams"}.each do |name, category| %>
+    <% {"Management Consulting" => "consulting", "Banking & Trading" => "banking_and_trading", "Finance & Accounting" => "finance_accounting", "Freelancers & Digital Nomands" => "freelancer_digital", "Entrepreneurship" => "entrepreneurship", "Programming" => "programming_development", "Product Management" => "product_management", "Marketing & Sales" => "marketing_sales", "NGOs & Politics" => "ngos_politics", "Academic Careers" => "academic_careers", "Teaching" => "teaching", "Consumer Goods industry" => "consumer_goods", "Art, Design, Theatre, Film and Graphics" => "arts", "Sciences & Engineering" => "sciences_engineering", "Hospitality & Travel" => "hospitality", "Journalism" => "journalism", "Healthcare" => "healthcare", "Coaching" => "coaching", "Hands-on Support" => "practical_support", "University Applications" => "university_applications_exams", "MBA" => "mba", "Professional Exams" => "professional_exams"}.each do |name, category| %>
       <%= link_to "#{name}", profile_search_path(category: "#{category}"), class: "btn btn-lg tag-btn", style: "font-size: 12px; padding: 8px 14px; margin: 1px; z-index: 1000;" %>
     <% end %>
   </div> <br>
