@@ -4,12 +4,7 @@
     <%= link_to "About Us", about_path %>
     <%= link_to "Contact Us", contact_path %>
     <%= link_to "How it works", how_path %>
-    <%= link_to "What people say", reviews_path %>
-    <% if logged_in? %>
-      <%= link_to "Edit Your Profile", edit_profile_path(profile_id: current_user.profile.id), class: "btn btn-small btn-turquoise", style: "margin-left: 18px;" %>
-    <% else %>
-      <%= link_to "Become a Guide in 3 Minutes", signup_path, class: "btn white_border", style: "margin-left: 8px; padding: 5px 28px; border: 1px solid white;" %>
-    <% end %>
+    <%= link_to "See all guides", reviews_path, class: "btn white_border", style: "margin-left: 8px; padding: 5px 28px; border: 1px solid white;" %>
   </div>
 </div>
 
@@ -18,7 +13,7 @@
   <div class="color_background"> </div>
   
   <div class="btn-on-show related_users" style="text-align: center; width: 145px;">
-    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 8px 26px;"> Back </div>
+    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 8px 26px; margin-top: 14px; "> Go Back </div>
     <h6 style="text-decoration: underline; margin-bottom: 0px;"> Related Guides </h6>
     <% @related_profiles.each do |pro| %>
       <% if pro.advisor %>
@@ -35,11 +30,11 @@
   <%= image_tag @profile.profile_image.url, style: "border: 1px solid #A6A6A6; margin-top: 7px; margin-bottom: 3px;" %> <br>
 
   <h6 style="font-size: 15px; text-decoration: underline;"> Offering </h6>
-  <div class="grey_box" style="padding: 4px 52px 8px 52px; text-align: center; font-size: 15px;">
-    <% if @profile.general_help? %> General support <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %>
-    <% if @profile.application_help? %> Applications Help <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %> <br>
-    <% if @profile.career_insights_help? %> Career Advice and Insight <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %>
-    <% if @profile.mentoring_help? %> Skills Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %>
+  <div class="" style="padding: 4px 52px 8px 52px; text-align: center; font-size: 15px;">
+    <% if @profile.application_help? %> Help with Applications <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %>
+    <% if @profile.career_insights_help? %> Career Support <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %> <br>
+    <% if @profile.mentoring_help? %> Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %>
+    <% if @profile.general_help? %> Specific requests <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> <% end %>
   </div>
 
   <div id="guide_show" style="margin-bottom: 5px;">
@@ -57,6 +52,7 @@
   <div id="request_from" style="display: none;">
     <div class="grey_box" style="margin-bottom: 5px;">  
       <!-- <h3> Request Form </h3> -->
+      <h4 style="margin-top: 17px; margin-bottom: -13px; text-decoration: underline;"> Request Form </h4>
       <%= form_for :request, url: create_request_path(advisor_id: @advisor.id) do |f| %>
         <h6 style="margin-top: 18px;"> Briefly, what is your situation? What would you like help with? <br> </h6>
         <%= f.text_field :indicated_interest , style: "width: 418px;", class: "small_placeholder_text" %>
@@ -87,10 +83,10 @@
     <div class="grey_box" style="padding: 14px 52px 14px 52px;">
       <h4 style="font-size: 19px;"> What <%= @advisor.first_name %> can help with. </h4>
       <ul style="margin-left: -20px; margin-top: -3px;">
-        <% if @profile.general_help? %> <li> <h6 style="font-size: 15px;"> General support </span> - anything that would help you out that directly or indirectly relates to <%= @advisor.first_name %>'s expertise. You choose. What do you need? </h6> </li> <% end %>
         <% if @profile.application_help? %> <li> <h6 style="font-size: 15px;"> Applications - if you are currently applying to or are planning to apply to <%= @advisor.first_name %>'s career path, make sure to get in touch to get some valuable help. </h6> </li> <% end %>
-        <% if @profile.career_insights_help? %> <li> <h6 style="font-size: 15px;"> Career Advice and Insight - if you are interested in gaining insight into <%= @advisor.first_name %>'s career path to see what it's all about and how it works. </h6> </li> <% end %>
-        <% if @profile.mentoring_help? %> <li> <h6 style="font-size: 15px;"> Skill Mentoring - if you are interested in acquiring some of the skills - hard and soft - that faciltate success in <%= @advisor.first_name %>'s occupation. </h6> </li> <% end %>
+        <% if @profile.career_insights_help? %> <li> <h6 style="font-size: 15px;"> Career Support - if you are interested in gaining insight into <%= @advisor.first_name %>'s career path to see what it's all about and how it works. </h6> </li> <% end %>
+        <% if @profile.mentoring_help? %> <li> <h6 style="font-size: 15px;"> Mentoring - if you are interested in acquiring some of the skills - hard and soft - that faciltate success in <%= @advisor.first_name %>'s occupation. </h6> </li> <% end %>
+        <% if @profile.general_help? %> <li> <h6 style="font-size: 15px;"> General support </span> - anything that would help you out that directly or indirectly relates to <%= @advisor.first_name %>'s expertise. You choose. What do you need? </h6> </li> <% end %>
       </ul>
     </div>
   </div>
