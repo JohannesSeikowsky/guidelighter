@@ -18,6 +18,7 @@
   <div class="color_background"> </div>
   
   <div class="btn-on-show related_users" style="text-align: center; width: 145px;">
+    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 8px 26px;"> Back </div>
     <h6 style="text-decoration: underline; margin-bottom: 0px;"> Related Guides </h6>
     <% @related_profiles.each do |pro| %>
       <% if pro.advisor %>
@@ -110,11 +111,13 @@
     </div> <br>
   </div>
 
+  <!--
   <div class="bottom_right_buttons_home">
     <%= link_to "Mentoring", search_path(category: "practical_expertise"), class: "btn btn-md" %> <br>
     <%= link_to "Career Help", search_path(category: "career_insights"), class: "btn btn-md" %> <br>
     <%= link_to "Applications", search_path(category: "application_help"), class: "btn btn-md" %> <br>
   </div>
+  -->
 
   <!-- <div class="bottom_right_buttons">
     <%= link_to "Submit a request", new_user_request_path, class: "btn btn-md" %>
