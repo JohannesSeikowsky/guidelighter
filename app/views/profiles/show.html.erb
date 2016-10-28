@@ -65,38 +65,36 @@
   <% end %>
 
   <h6 style="font-size: 15px; text-decoration: underline; margin-top: 12px;"> Offering </h6>
-  <!--
   <div class="" style="padding: 4px 52px 8px 52px; text-align: center; font-size: 15px; border: 1px solid lightgrey; padding: 12px; margin-bottom: 10px;">
-    Applications Help
-    <% if @profile.application_help? %> 
-      <i class="fa fa-check" aria-hidden="true" style="color: grey;"></i> 
-    <% else %>
-      <i class="fa fa-times" aria-hidden="true" style="color: grey;"></i>
-    <% end %>
+  Applications Help
+  <% if @profile.application_help? %> 
+    <i class="fa fa-check" aria-hidden="true" style="color: grey;"></i> 
+  <% else %>
+    <i class="fa fa-times" aria-hidden="true" style="color: grey;"></i>
+  <% end %>
 
-    Career Support
-    <% if @profile.career_insights_help? %>  
-      <i class="fa fa-check" aria-hidden="true" style="color: grey;"></i> 
-    <% else %>
-      <i class="fa fa-times" aria-hidden="true" style="color: grey;"></i>
-    <% end %> <br>
-    
-    Mentoring
-    <% if @profile.mentoring_help? %> 
-      <i class="fa fa-check" aria-hidden="true" style="color: grey;"></i> 
-     <% else %>
-      <i class="fa fa-times" aria-hidden="true" style="color: grey;"></i>
-     <% end %>
-    
-    Specific Requests
-    <% if @profile.general_help? %> 
-      <i class="fa fa-check" aria-hidden="true" style="color: grey;"></i> 
-    <% else %>
-      <i class="fa fa-times" aria-hidden="true" style="color: grey;"></i>
-    <% end %>
-  </div>
-  -->
-
+  Career Support
+  <% if @profile.career_insights_help? %>  
+    <i class="fa fa-check" aria-hidden="true" style="color: grey;"></i> 
+  <% else %>
+    <i class="fa fa-times" aria-hidden="true" style="color: grey;"></i>
+  <% end %> <br>
+  
+  Mentoring
+  <% if @profile.mentoring_help? %> 
+    <i class="fa fa-check" aria-hidden="true" style="color: grey;"></i> 
+   <% else %>
+    <i class="fa fa-times" aria-hidden="true" style="color: grey;"></i>
+   <% end %>
+  
+  Specific Requests
+  <% if @profile.general_help? %> 
+    <i class="fa fa-check" aria-hidden="true" style="color: grey;"></i> 
+  <% else %>
+    <i class="fa fa-times" aria-hidden="true" style="color: grey;"></i>
+  <% end %>
+</div>
+  
   <div id="offering" style="margin-top: 5px;">
     <div class="grey_box" style="padding: 14px 52px 14px 52px;">
       <!-- <h4 style="font-size: 19px;"> What <%= @advisor.first_name %> can help with </h4> -->
