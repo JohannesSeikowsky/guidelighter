@@ -106,8 +106,32 @@
         <% if @profile.mentoring_help? %> <li> <h6 style="font-size: 15px;"> Mentoring - if you are interested in acquiring some of the skills - hard and soft - that faciltate success in <%= @advisor.first_name %>'s occupation. </h6> </li> <% end %>
         <% if @profile.general_help? %> <li> <h6 style="font-size: 15px;"> Specific Requests </span> - anything that would help you out that directly or indirectly relates to <%= @advisor.first_name %>'s expertise. You choose. What do you need? </h6> </li> <% end %>
       </ul>
+      <div class="button">
+        <a id="std-btn" style="font-size: 18px; padding: 14px 76px; cursor: pointer;" onclick="showRequestBottom();" return false;> Request <%= @advisor.first_name %> </a>
+      </div>
     </div>
   </div>
+
+  <div id="request_from_bottom" style="display: none; margin-top: 10px;">
+    <div class="grey_box" style="margin-bottom: 5px;">  
+      <!-- <h3> Request Form </h3> -->
+      <h4 style="margin-top: 17px; margin-bottom: -13px; text-decoration: underline;"> Request Form </h4>
+      <%= form_for :request, url: create_request_path(advisor_id: @advisor.id) do |f| %>
+        <h6 style="margin-top: 18px;"> Briefly, what is your situation? What would you like help with? <br> </h6>
+        <%= f.text_field :indicated_interest , style: "width: 418px;", class: "small_placeholder_text" %>
+        <h6>When would you usually be available for a session? Days? Times? </h6>
+        <%= f.text_field :requesting_availability, style: "width: 418px;", class: "small_placeholder_text" %>
+        <h6>Your Email - so we can reply. </h6>
+        <%= f.text_field :requesting_email, style: "width: 418px;", class: "small_placeholder_text" %>
+        <h6>Your Name - for a personal touch. </h6>
+        <%= f.text_field :requesting_name, style: "width: 418px;", class: "small_placeholder_text" %>
+        <%= f.hidden_field :advisor_id, value: @advisor.id %>
+        <%= f.submit "Done.", id: "std-btn" %> <br>
+        <h6> Note: This request is not binding. It's purpose is to check whether it <br> is possible to arrange a session with the guide you are requesting. </h6>
+      <% end %>     
+    </div>
+  </div>
+
   
   <p id="love" style="margin-top: 5px; cursor: pointer; margin-bottom: 5px;" onclick="showQuestions();"> Any Questions? Click here to ask. </p>
 
@@ -139,6 +163,10 @@
 
   function showRequest(){
     $("#request_from").toggle();
+  }
+
+ function showRequestBottom(){
+    $("#request_from_bottom").toggle();
   }
 
   function showQuestions(){
