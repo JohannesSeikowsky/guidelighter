@@ -14,7 +14,7 @@
   
   <div class="btn-on-show" style="text-align: center; width: 252px;">
     <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 14px 81px; margin-top: 2px;"> ALL GUIDES </div>    
-    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 20px 51px; margin-top: 4px;"> KEEP ON BROWSING </div>
+    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 20px 63px; margin-top: 4px;"> KEEP BROWSING </div>
   </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
@@ -107,7 +107,7 @@
         <% if @profile.general_help? %> <li> <h6 style="font-size: 15px;"> Specific Requests </span> - anything that would help you out that directly or indirectly relates to <%= @advisor.first_name %>'s expertise. You choose. What do you need? </h6> </li> <% end %>
       </ul>
       <div class="button">
-        <a id="std-btn" style="font-size: 18px; padding: 14px 76px; cursor: pointer;" onclick="showRequestBottom();" return false;> Request <%= @advisor.first_name %> </a>
+        <a id="std-btn" style="font-size: 18px; padding: 11px 58px; cursor: pointer;" onclick="showRequestBottom();" return false;> Request <%= @advisor.first_name %> </a>
       </div>
     </div>
   </div>
