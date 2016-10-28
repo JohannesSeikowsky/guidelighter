@@ -12,8 +12,9 @@
 <div class="simple_container">
   <div class="color_background"> </div>
   
-  <div class="btn-on-show related_users" style="text-align: center; width: 288px;">
-    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 19px 34px; margin-top: 0px; "> GO BACK TO KEEP ON LOOKING </div>
+  <div class="btn-on-show" style="text-align: center; width: 252px;">
+    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 14px 81px; margin-top: 2px;"> ALL GUIDES </div>    
+    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 20px 51px; margin-top: 4px;"> KEEP ON BROWSING </div>
   </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
@@ -128,10 +129,6 @@
     <%= link_to "Can't find what you are looking for?", new_user_request_path, class: "btn btn-md", style: "width: 264px;" %> <br>
   </div>
 
-  <!-- <div class="bottom_right_buttons">
-    <%= link_to "Submit a request", new_user_request_path, class: "btn btn-md" %>
-  </div> -->
-   
 </div>
 
 <!-- js for back button -->
