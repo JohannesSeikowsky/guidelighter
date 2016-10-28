@@ -65,7 +65,7 @@
 
   <h6 style="font-size: 15px; text-decoration: underline; margin-top: 24px;"> Offering </h6>
   <div class="" style="padding: 4px 52px 8px 52px; text-align: center; font-size: 15px; border: 1px solid lightgrey; padding: 12px; margin-bottom: 10px;">
-    Applications 
+    Applications Help
     <% if @profile.application_help? %> 
       <i class="fa fa-check" aria-hidden="true" style="color: grey;"></i> 
     <% else %>
@@ -99,7 +99,7 @@
     <div class="grey_box" style="padding: 14px 52px 14px 52px;">
       <!-- <h4 style="font-size: 19px;"> What <%= @advisor.first_name %> can help with </h4> -->
       <ul style="margin-left: -20px; margin-top: -3px;">
-        <% if @profile.application_help? %> <li> <h6 style="font-size: 15px;"> Applications - if you are currently applying to or are planning to apply to <%= @advisor.first_name %>'s career path, make sure to get in touch to get some valuable help. </h6> </li> <% end %>
+        <% if @profile.application_help? %> <li> <h6 style="font-size: 15px;"> Applications Help - if you are currently applying to or are planning to apply to <%= @advisor.first_name %>'s career path, make sure to get in touch to get some valuable help. </h6> </li> <% end %>
         <% if @profile.career_insights_help? %> <li> <h6 style="font-size: 15px;"> Career Support - if you are interested in gaining insight into <%= @advisor.first_name %>'s career path to see what it's all about, how it works and how to progress. </h6> </li> <% end %>
         <% if @profile.mentoring_help? %> <li> <h6 style="font-size: 15px;"> Mentoring - if you are interested in acquiring some of the skills - hard and soft - that faciltate success in <%= @advisor.first_name %>'s occupation. </h6> </li> <% end %>
         <% if @profile.general_help? %> <li> <h6 style="font-size: 15px;"> Specific Requests </span> - anything that would help you out that directly or indirectly relates to <%= @advisor.first_name %>'s expertise. You choose. What do you need? </h6> </li> <% end %>
