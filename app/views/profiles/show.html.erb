@@ -12,8 +12,8 @@
 <div class="simple_container">
   <div class="color_background"> </div>
   
-  <div class="btn-on-show related_users" style="text-align: center; width: 322px;">
-    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 19px 34px; margin-top: 0px; "> GO BACK TO BROWSE MORE GUIDES</div>
+  <div class="btn-on-show related_users" style="text-align: center; width: 264px;">
+    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 19px 34px; margin-top: 0px; "> GO BACK TO KEEP LOOKING </div>
   </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
@@ -123,13 +123,9 @@
     </div> <br>
   </div>
 
-  <!--
   <div class="bottom_right_buttons_home">
-    <%= link_to "Mentoring", search_path(category: "practical_expertise"), class: "btn btn-md" %> <br>
-    <%= link_to "Career Help", search_path(category: "career_insights"), class: "btn btn-md" %> <br>
-    <%= link_to "Applications", search_path(category: "application_help"), class: "btn btn-md" %> <br>
+    <%= link_to "Can't find what you are looking for?", new_user_request_path, class: "btn btn-md", style: "width: 264px;" %> <br>
   </div>
-  -->
 
   <!-- <div class="bottom_right_buttons">
     <%= link_to "Submit a request", new_user_request_path, class: "btn btn-md" %>
