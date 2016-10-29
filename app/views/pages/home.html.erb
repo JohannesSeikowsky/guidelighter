@@ -25,10 +25,7 @@
 
   <!-- search -->
   <div class="btn-on-show">
-    <input id="search_form" type="text" name="search" placeholder="type search term." />
-    <div onclick="executeSearch();" class="btn" style="background-color: #E59667; margin-right: 5px;"> 
-      click.
-    </div>
+    <input id="search_form" type="text" name="search" placeholder="type search term" onkeyup="executeSearch();" />
   </div>
 
 
@@ -134,8 +131,10 @@
 <script type="text/javascript">
 
   function executeSearch(){
-    search_value = document.getElementById('search_form').value;
-    find(search_value);
+    setTimeout(function(){
+      search_value = document.getElementById('search_form').value;
+      find(search_value);
+    }, 2100);
   }
 
 
