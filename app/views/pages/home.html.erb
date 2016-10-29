@@ -2,6 +2,7 @@
   <div class="links">
     <%= link_to "About Us", about_path %>
     <%= link_to "How it works", how_path %>
+    <%= link_to "Blog", "http://www.guidelighter.net/", target: "_blank" %> 
     <%= link_to "Get Newsletter", "/newsletter", style: "margin-right: 4px;" %>
     
     <% if logged_in? %>
@@ -17,9 +18,15 @@
   </div>
 </div>
 
+
 <div class="home_container">
   <div class="image_background"> </div>
   <div class="color_background"> </div>
+
+  <!-- search -->
+  <div class="btn-on-show">
+      <input id="search_form" type="text" name="search" placeholder="type to search" onkeyup="executeSearch();" />
+  </div>
 
   <!-- Intro  -->
   <div class="intro">
@@ -107,15 +114,26 @@
 
   <!-- Bottom right -->
   <div class="bottom_right_buttons_home">
-   <!-- <h6 style="text-align: center;"> Categories </h6> -->
+   <!-- <h6 style="text-align: center;"> Categories </h6> 
     <%= link_to "Blog", "http://www.guidelighter.net/", target: "_blank", class: "btn btn-md" %> <br>
     <%= link_to "Premium", "https://glpremium.wishpond.com/home/", class: "btn btn-md" %> <br>
-    <%= link_to "Ambassadors", ambassadors_path, class: "btn btn-md", target: "_blank" %> <br>
+    <%= link_to "Ambassadors", ambassadors_path, class: "btn btn-md", target: "_blank" %> <br> -->
   </div>
+
+  <div class="bottom_right_buttons_home">
+    <%= link_to "Can't find what you need?", new_user_request_path, class: "btn btn-md", style: "width: 208px;" %> <br>
+  </div>
+
 </div>
 
 
 <script type="text/javascript">
+
+  function executeSearch(){
+    find("s");
+  }
+
+
   function showApplicationTags(){
     // show subtags & hide others
     $("#career_insights_subtags").css("display", "none");
