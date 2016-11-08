@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @advisors = Advisor.find([307,268,158,185,184,177,161,121,130,129,3,37]) if Rails.env.production?
+    @advisors = Advisor.find([307,268,158,184,177,121,129,3,37]) if Rails.env.production?
     @advisors = Advisor.all if Rails.env.development?
   end
 
