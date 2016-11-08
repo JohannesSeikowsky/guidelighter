@@ -34,7 +34,7 @@
     <!-- <h2 id="gl_slogan"> Personal guidance from real people <br> who care </h2> -->
 
     <h2 id="gl_slogan"> Find and connect with the Mentors <br> who have the career you want. </h2>
-    <p style="text-align: center; font-size: 22px;"> Personal Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i>  Applications Help <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> </p>
+    <p id="sub_slogan" style="text-align: center; font-size: 22px;"> Personal Mentoring <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i>  Applications Help <i class="fa fa-check" aria-hidden="true" style="color: #E59667;"></i> </p>
 
     <div class="button" style="margin-top: -30px;">    
       <div style="height: 30px;">
@@ -127,16 +127,19 @@
 
 <div class="gl_footer" style="text-align: center; padding-top: 8px;">
   <div style="width: 700px; margin: 0px auto;">
-    <%= link_to "Click to search all 189 Guides using industry tags.", root_path, style: "font-size: 26px; border: 2px solid white; padding: 18px 62px;; color: white;" %>
+    <%= link_to "Click to search all 189 Guides using industry tags.", "", onclick: "return move_up();", style: "font-size: 26px; border: 2px solid white; padding: 18px 62px;; color: white;" %>
   </div>
 </div>
 
 
 
-
-
-
 <script type="text/javascript">
+
+  function move_up() {
+    location.href = "#";
+    location.href = "#sub_slogan";
+    return false;
+  }
 
   function executeSearch(){
     setTimeout(function(){
