@@ -1,8 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @advisors = Advisor.where(id: [])
-    @advisors = Advisor.order("created_at DESC")
+    @advisors = Advisor.find([307,268,158,185,184,177,161,121,130,129,3,37])
   end
 
   def about
