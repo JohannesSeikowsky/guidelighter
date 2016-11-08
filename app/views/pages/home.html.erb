@@ -41,12 +41,12 @@
         <div class="fb-like" data-href="https://www.facebook.com/Guidelighter/?fref=ts" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="true" style="padding-top: 10px;"></div>
       </div>
     </div>
-    <h3 style="padding-top: 45px; padding-bottom: 4px; line-height: 1.35; font-size: 24px; text-decoration: underline; border: none;"> Use industry tags to find your guide </h3> 
+    <h3 style="padding-top: 32px; padding-bottom: 4px; line-height: 1.35; font-size: 25px; text-decoration: underline; border: none;"> Use industry tags to find your guide </h3> 
   </div>
   <!-- generating links --> 
   <div style="text-align: center; margin-top: -28px;">
-    <% {"Management Consulting" => "consulting", "Banking & Trading" => "banking_and_trading", "Finance & Accounting" => "finance_accounting","Entrepreneurship" => "entrepreneurship", "Freelancers & Digital Nomands" => "freelancer_digital", "Programming" => "programming_development", "Product Management" => "product_management", "Marketing & Sales" => "marketing_sales", "NGOs & Politics" => "ngos_politics", "Academic Careers" => "academic_careers", "Teaching" => "teaching", "Consumer Goods industry" => "consumer_goods", "Art, Design, Theatre, Film & Graphics" => "arts", "Sciences & Engineering" => "sciences_engineering", "Hospitality & Travel" => "hospitality", "Journalism" => "journalism", "Healthcare" => "healthcare", "Coaching" => "coaching", "Hands-on Support" => "practical_support", "University Applications" => "university_applications_exams", "MBA" => "mba", "Professional Exams" => "professional_exams"}.each do |name, category| %>
-      <%= link_to "#{name}", profile_search_path(category: "#{category}"), class: "btn btn-lg tag-btn", style: "font-size: 12px; padding: 8px 14px; margin: 1px; z-index: 1000;" %>
+    <% {"Management Consulting" => "consulting", "Banking & Trading" => "banking_and_trading", "Finance & Accounting" => "finance_accounting","Entrepreneurship" => "entrepreneurship", "Freelancers & Digital Nomands" => "freelancer_digital", "Programming" => "programming_development", "Product Management" => "product_management", "Marketing & Sales" => "marketing_sales", "NGOs & Politics" => "ngos_politics", "Academic Careers" => "academic_careers", "Teaching" => "teaching", "Consumer Goods industry" => "consumer_goods", "Art, Design, Theatre, Film & Graphics" => "arts", "Sciences & Engineering" => "sciences_engineering", "Hospitality & Travel" => "hospitality", "Journalism" => "journalism", "Healthcare" => "healthcare", "Personal Coaching" => "coaching", "MBA" => "mba", "Professional Examinations" => "professional_exams", "University Application Help" => "university_applications_exams"}.each do |name, category| %>
+      <%= link_to "#{name}", profile_search_path(category: "#{category}"), class: "btn btn-lg tag-btn", style: "font-size: 12px; padding: 9px 16px; margin: 1px; z-index: 1000;" %>
     <% end %>
   </div> <br>
 
