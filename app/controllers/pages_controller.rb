@@ -1,8 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @advisors = Advisor.order("created_at DESC")
-    @price_selection = [20,25,35]
+    @advisors = Advisor.find([77,78,79,80,81,82,83,84,85,86,87,88,89,90])
   end
 
   def about
