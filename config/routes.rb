@@ -76,6 +76,7 @@ Rails.application.routes.draw do
   # functionalities
   # contacts
   get 'contact', to: 'contact_messages#new', as: 'contact' # FUNCTIONALITIES
+  get 'request_consultation', to: 'contact_messages#request_consultation', as: 'request_consultation'
   post 'contact', to: 'contact_messages#create', as: 'create_contact'
   get 'new_user_request', to: 'contact_messages#new_user_request', as: 'new_user_request'
 
