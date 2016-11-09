@@ -64,7 +64,7 @@
       <p> <%= simple_format @profile.description, style: "line-height: 1.5; font-size: 15px;" %> </p>
       <h6 style="font-size: 15px;"> Session: £ <%= @profile.session_price if @profile.session_price %> </h6>
       <div class="button">
-        <a id="std-btn" style="font-size: 18px; padding: 22px 129px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
+        <a id="std-btn" style="font-size: 18px; background-color: #DFCFB6; padding: 22px 129px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
       </div>
     </div>
   </div>
@@ -110,7 +110,7 @@
         <% if @profile.general_help? %> <li> <h6 style="font-size: 15px;"> Specific Requests </span> - anything that would help you out that directly or indirectly relates to <%= @advisor.first_name %>'s expertise. You choose. What do you need? </h6> </li> <% end %>
       </ul>
       <div class="button" style="margin-top: 20px;">
-        <a id="std-btn" style="font-size: 18px; padding: 21px 100px; cursor: pointer;" onclick="showRequestBottom();" return false;> Request <%= @advisor.first_name %> </a>
+        <a id="std-btn" style="font-size: 18px; background-color: #DFCFB6; padding: 21px 100px; cursor: pointer;" onclick="showRequestBottom();" return false;> Request <%= @advisor.first_name %> </a>
       </div>
     </div>
   </div>
