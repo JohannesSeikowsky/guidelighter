@@ -12,10 +12,10 @@
 <div class="simple_container">
   <div class="color_background"> </div>
   
-  <div class="btn-on-show" style="text-align: center; width: 252px;">
-    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 14px 72px; margin-top: 2px;"> MORE GUIDES </div>    
-    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 20px 63px; margin-top: 4px;"> KEEP BROWSING </div>
-    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 12px 88px; margin-top: 4px;"> GO BACK </div>
+  <div class="btn-on-show" style="text-align: center; width: 312px;">
+    <!-- <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 14px 72px; margin-top: 2px;"> MORE GUIDES </div> -->
+    <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 23px 63px; margin-top: 4px;"> BACK TO KEEP BROWSING </div>
+    <!-- <div onclick="goBack();" class="btn" style="border: 1px solid black; padding: 12px 88px; margin-top: 4px;"> GO BACK </div> -->
   </div>
 
   <div style="color: grey; margin-bottom: 5px;"> <%= notice %> </div>
@@ -64,7 +64,7 @@
       <p> <%= simple_format @profile.description, style: "line-height: 1.5; font-size: 15px;" %> </p>
       <h6 style="font-size: 15px;"> Session: £ <%= @profile.session_price if @profile.session_price %> </h6>
       <div class="button">
-        <a id="std-btn" style="font-size: 18px; padding: 18px 114px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
+        <a id="std-btn" style="font-size: 18px; padding: 19px 129px; cursor: pointer;" onclick="showRequest();" return false;> Request <%= @advisor.first_name %> </a>
       </div>
     </div>
   </div>
@@ -91,16 +91,15 @@
 
   <% if @profile.max_no_of_session %> 
     <div style="height: 40px; background-color: #FFD990; line-height: 40px; text-align: center; font-size: 15px;">
-      Currently available: <i class="fa fa-check" aria-hidden="true"></i>
-
-      <!-- <% unless @profile.max_no_of_session == "undefined" %>
-        Max. requests per week: <%= @profile.max_no_of_session %> | Currently available: <i class="fa fa-check" aria-hidden="true"></i>
+      <% if @profile.max_no_of_session == "undefined" %>
+        Currently available: <i class="fa fa-check" aria-hidden="true"></i>
       <% else %>
-      <% end %> -->
+        Max. requests per week: <%= @profile.max_no_of_session %> | Currently available: <i class="fa fa-check" aria-hidden="true"></i>
+      <% end %>
     </div>
   <% end %>
 
-  <h6 style="font-size: 15px; text-decoration: underline; margin-top: 12px;"> Offering </h6>
+  <h6 style="font-size: 15px; text-decoration: underline; margin-top: 12px;"> What <%= @advisor.first_name %> is offering: </h6>
   <div id="offering" style="margin-top: 5px;">
     <div class="grey_box" style="padding: 14px 52px 14px 52px;">
       <!-- <h4 style="font-size: 19px;"> What <%= @advisor.first_name %> can help with </h4> -->
@@ -140,8 +139,7 @@
   <p id="love" style="margin-top: 5px; cursor: pointer; margin-bottom: 5px;" onclick="showQuestions();"> Any Questions? Click here to ask. </p>
 
   <div id="questions" style="display: none;">
-    <div class="grey_box" style="padding: 14px 52px 8px 52px;">
-      <h6 style="text-decoration: underline;">Get in touch</h6>
+    <div class="grey_box" style="padding: 20px 52px 8px 52px;">
       <%= form_for :message, url: question_message_path do |f| %> 
         <%= f.text_area :content, placeholder: "your question", style: "height: 72px;" %>
         <%= f.text_field :reply_address, placeholder: "your@email.com", style: "width: 100%;" %> <br>
