@@ -138,9 +138,20 @@
 <% end %>
 
 
+<script type="text/javascript">
+(function(d, s, id) {
+  window.Wishpond = window.Wishpond || {};
+  Wishpond.merchantId = '1010063';
+  Wishpond.writeKey = 'ef80972ca880';
+  var js, wpjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//cdn.wishpond.net/connect.js";
+  wpjs.parentNode.insertBefore(js, wpjs);
+}(document, 'script', 'wishpond-connect'));
+</script>
 
 <script type="text/javascript">
-
   function move_up() {
     location.href = "#";
     location.href = "#sub_slogan";
@@ -185,6 +196,5 @@
     $("#insights_category").css("background-color", "#F5EFE6");
     $("#practical_category").css("background-color", "#E49362");
   };
-
 </script>
 
