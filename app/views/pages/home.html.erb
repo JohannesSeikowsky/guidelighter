@@ -3,7 +3,7 @@
     <%= link_to "About Us", about_path %>
     <%= link_to "How it works", how_path %>
     <%= link_to "Blog", "http://www.guidelighter.net/", target: "_blank" %> 
-    <%= link_to "Get Newsletter", "/newsletter", style: "margin-right: 4px;" %>
+    <%= link_to "Success Stories", reviews_path, style: "margin-right: 4px;" %>
     
     <% if logged_in? %>
       <%= link_to "Logout", logout_path, style: "text-decoration: underline;" %>
@@ -53,17 +53,17 @@
     <h3 style="padding-top: 32px; padding-bottom: 1px; line-height: 1.35; font-size: 21px; text-decoration: underline; border: none; text-align: center;"></h3>
 
       <div style="font-size: 15px; width: 470px; text-align: center; margin: 0px 200px;">
-        <h3 style="float: left;"> Get Mentor Support </h3>
+        <h3 style="float: left; font-size: 22px;"> Get Mentor Support </h3>
         <%= form_for :message, url: contact_path do |f| %>
-          <%= f.text_area :user_input, placeholder: "Briefly describe you and your situation. We will suggest 3 mentors that can help you out via E-Mail.", style: "height: 73px;" %>
+          <%= f.text_area :user_input, placeholder: "Briefly describe your situation. We will email you with a suggestion of 3 of our mentors who can help you out.", style: "height: 75px;" %>
           <%= f.text_field :email, placeholder: "you@gmail.com", style: "width: 100%;" %>
-          <%= f.submit "Done.", id: "std-btn", style: "margin-top: 5px;" %>
+          <%= f.submit "Done.", id: "std-btn", style: "margin-top: 5px; padding: 7px 55px;" %>
         <% end %>
       </div>
 
-    <h3 style="padding-top: 28px; padding-bottom: 1px; line-height: 1.35; font-size: 23px; text-decoration: underline; border: none;"> 
+    <h3 style="padding-top: 18px; padding-bottom: 1px; line-height: 1.35; font-size: 23px; text-decoration: underline; border: none;"> 
       <!-- Find one of 287 Mentors to request -->
-      Examples of guides that were recently requested to help someone out. </h3>
+      Some of our 289 guides who were recently requested to help someone out: </h3>
       <!-- <%= link_to "or click to request a free consultation.", request_consultation_path, style: "padding: 8px 10px 8px 4px; margin-left: 0px; font-size: 18px;" %></h3> -->
   </div>
   <!-- generating links 
@@ -134,17 +134,10 @@
     <% end %>
   <% end %>
   </div>
-
-  <!-- Bottom right -->
+ 
   <div class="bottom_right_buttons_home">
-   <!-- <h6 style="text-align: center;"> Categories </h6> 
-    <%= link_to "Blog", "http://www.guidelighter.net/", target: "_blank", class: "btn btn-md" %> <br>
-    <%= link_to "Premium", "https://glpremium.wishpond.com/home/", class: "btn btn-md" %> <br>
-    <%= link_to "Ambassadors", ambassadors_path, class: "btn btn-md", target: "_blank" %> <br> -->
-  </div>
-
-  <div class="bottom_right_buttons_home">
-    <%= link_to "Can't find what you need?", new_user_request_path, class: "btn btn-md", style: "width: 208px;" %> <br>
+    <%= link_to "Get weekly Newsletter", "/newsletter", class: "btn btn-md", style: "width: 208px;" %> <br>
+    <!-- <%= link_to "Can't find what you need?", new_user_request_path, class: "btn btn-md", style: "width: 208px;" %> <br> -->
   </div>
 </div>
 
@@ -152,7 +145,7 @@
   <div class="gl_footer" style="text-align: center; padding-top: 8px;">
     <div style="width: 700px; margin: 0px auto;">
       <%= link_to "Browse through our guides by category.", "", onclick: "return move_up();", style: "font-size: 26px; border: 2px solid white; padding: 18px 62px;; color: white;" %>
-    </div>
+    </div>  
   </div>
 <% end %>
 
