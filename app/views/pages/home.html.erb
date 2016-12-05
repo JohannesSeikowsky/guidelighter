@@ -68,12 +68,15 @@
     <% {"Management Consulting" => "consulting", "Banking & Trading" => "banking_and_trading", "Finance & Accounting" => "finance_accounting","Entrepreneurship" => "entrepreneurship", "Freelancers & Digital Nomands" => "freelancer_digital", "Programming" => "programming_development", "Product Management" => "product_management", "Marketing & Sales" => "marketing_sales", "NGOs & Politics" => "ngos_politics", "Academic Careers" => "academic_careers", "Teaching" => "teaching", "Consumer Goods industry" => "consumer_goods", "Art, Design, Theatre, Film & Graphics" => "arts", "Sciences & Engineering" => "sciences_engineering", "Hospitality & Travel" => "hospitality", "Journalism" => "journalism", "Healthcare" => "healthcare", "Personal Coaching" => "coaching", "MBA" => "mba", "Professional Examinations" => "professional_exams", "University Application Help" => "university_applications_exams"}.each do |name, category| %>
       <%= link_to "#{name}", profile_search_path(category: "#{category}"), class: "btn btn-lg tag-btn", style: "font-size: 12px; padding: 11px 17px; margin: 1px; z-index: 1000;" %>
     <% end %>
-      <h3 style="padding-top: 0px; padding-bottom: 1px; line-height: 1.35; font-size: 23px; text-decoration: underline; border: none; float: left;"> Examples: Some of our 289 guides who recently helped someone out </h3>
+      <% if @search_results %>
+        <h3 style="padding-top: 0px; padding-bottom: 1px; line-height: 1.35; font-size: 23px; text-decoration: underline; border: none; float: left;"> Find your guide below | <%= @category.capitalize %> </h3>
+      <% else %>
+        <h3 style="padding-top: 0px; padding-bottom: 1px; line-height: 1.35; font-size: 23px; text-decoration: underline; border: none; float: left;"> Examples: Some of our 289 guides who recently helped someone out </h3>
+      <% end %>
   </div> <br> <br>
 
   <!-- search results, if any. -->
   <% if @search_results %>
-    <h6> Find your guide below | <%= @category.capitalize %>  </h6>
     <div style="position: relative;">
       <% @search_results.each do |profile| %>
           <%= link_to show_profile_path(profile_id: profile) do %>
